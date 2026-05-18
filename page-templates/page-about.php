@@ -22,7 +22,7 @@ get_header();
                         <p class="lead text-muted my-4">Od lat dostarczamy kompleksowe rozwiązania informatyczne dla przedsiębiorstw. Pomagamy firmom rosnąć poprzez automatyzację procesów biznesowych.</p>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <div class="p-5 bg-secondary text-white rounded shadow-sm">[Placeholder: Zdjęcie zespołu / firmy]</div>
+                        <div class="p-5 bg-secondary text-white rounded shadow-sm"></div>
                     </div>
                 </div>
             </div>

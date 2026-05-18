@@ -22,8 +22,24 @@ get_header();
                         <p class="lead text-muted my-4">Podpisuj dokumenty, umowy i deklaracje urzędowe bez wychodzenia z biura. Oferujemy szybkie wydanie certyfikatu i pełne wsparcie techniczne.</p>
                         <a href="#contact" class="btn btn-primary">Uzyskaj podpis w 30 minut</a>
                     </div>
-                    <div class="col-md-5 text-center d-none d-md-block">
-                        <div class="p-5 bg-white rounded shadow-sm">[Icon/Graphic Placeholder]</div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <div class="card border-0 shadow-lg p-4 rounded-4 bg-dark text-white position-relative overflow-hidden" style="max-width: 350px; margin: 0 auto;">
+                            <div class="position-absolute top-0 end-0 p-3 opacity-25">
+                                <span class="display-1">🔒</span>
+                            </div>
+                            <div class="mb-4">
+                                <span class="badge bg-primary text-white mb-2">EuroCert Partner</span>
+                                <h4 class="fw-bold mb-0">SimplySign</h4>
+                                <small class="text-muted">Mobilny podpis kwalifikowany</small>
+                            </div>
+                            <div class="pt-5 mt-4 border-top border-secondary">
+                                <p class="small text-uppercase tracking-wider text-muted mb-1">Status Certyfikatu</p>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="d-inline-block bg-success rounded-circle" style="width: 10px; height: 10px;"></span>
+                                    <span class="small fw-semibold">Aktywny i bezpieczny</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,14 @@
+// Style dla page-contact.php
+.contact-section {
+    .bg-light {
+        border-top: 4px solid $primary;
+    }
+    
+    a {
+        color: $dark;
+        font-weight: 600;
+        &:hover {
+            color: $primary;
+        }
+    }
+}

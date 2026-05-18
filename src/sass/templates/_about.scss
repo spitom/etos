@@ -1,0 +1,11 @@
+// Style dla page-about.php
+.about-hero {
+    background-color: $white;
+}
+
+.about-values {
+    .border {
+        border-left: 4px solid $primary !important; // Akcent kolorystyczny z boku karty
+        background-color: $light;
+    }
+}

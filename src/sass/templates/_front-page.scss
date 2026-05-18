@@ -1,0 +1,233 @@
+// ==========================================================================
+// Front Page Custom Styles
+// ==========================================================================
+
+.hero-section {
+    background: radial-gradient(circle at 70% 10%, rgba($primary, 0.08) 0%, rgba(255, 255, 255, 0) 50%),
+                radial-gradient(circle at 10% 80%, rgba($secondary, 0.05) 0%, rgba(255, 255, 255, 0) 40%);
+    position: relative;
+    
+    .badge-partner {
+        background-color: rgba($primary, 0.1);
+        color: $primary;
+        border: 1px solid rgba($primary, 0.2);
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+}
+
+// Efekt unoszenia się kart dla systemów ERP (Trend: Micro-interactions)
+.transition-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 3rem rgba(30, 37, 43, 0.1) !important;
+    }
+}
+
+.mockup-window {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 6px;
+    }
+    
+    .mockup-bar {
+        height: 12px;
+        background-color: #e2e8f0;
+        border-radius: 6px;
+    }
+}
+
+// --- Stylizacja przycisków ---
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    box-shadow: 0 4px 14px rgba($primary, 0.2);
+    font-weight: 700;
+    transition: all 0.25s ease;
+
+    &:hover {
+        background-color: darken($primary, 8%);
+        border-color: darken($primary, 8%);
+        box-shadow: 0 6px 20px rgba($primary, 0.3);
+        transform: translateY(-2px); // Silniejszy efekt uniesienia
+    }
+}
+
+.btn-outline-dark {
+    color: $body-color;
+    border-color: rgba($body-color, 0.1);
+    
+    &:hover {
+        background-color: rgba($body-color, 0.05);
+        color: $dark;
+        border-color: rgba($body-color, 0.3);
+    }
+}
+
+// ==========================================================================
+// Advanced Premium ERP Grid (No-Bootstrap Design Style)
+// ==========================================================================
+
+.software-grid {
+    background-color: #f8fafc;
+    padding: 7rem 0;
+
+    .section-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+        color: #0f172a;
+    }
+
+    // Całkowicie autorski kontener - odcinamy się od .card z Bootstrapa
+    .erp-vendor-block {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 3rem 2.5rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.05);
+        box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        // Element dekoracyjny udający nowoczesną pigułkę statusu aplikacji
+        .vendor-pill {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 2rem;
+            width: fit-content;
+        }
+
+        .vendor-name {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .vendor-text {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+        }
+
+        // Dedykowany, luksusowy link akcji ze strzałką
+        .vendor-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            
+            svg {
+                transition: transform 0.3s ease;
+            }
+        }
+
+        // --- AUTENTYCZNE BRANDOWANIE I INTEGRACJA WIZUALNA PRODUCENTÓW ---
+
+        // 1. SYMFONIA (Szafir + Fuksja/Amarant)
+        &.vendor-symfonia {
+            .vendor-name { color: #0a1128; }
+            .vendor-pill { background: rgba(#e1005a, 0.06); color: #e1005a; border: 1px solid rgba(#e1005a, 0.1); }
+            .vendor-link { color: #003399; }
+
+            &:hover {
+                transform: translateY(-12px);
+                border-color: rgba(#e1005a, 0.25);
+                box-shadow: 0 30px 60px -15px rgba(#003399, 0.15), inset 0 0 20px rgba(#e1005a, 0.03) !important;
+                background: linear-gradient(180deg, #ffffff 0%, rgba(#003399, 0.02) 100%);
+                
+                .vendor-link {
+                    color: #e1005a;
+                    svg { transform: translateX(6px); }
+                }
+            }
+        }
+
+        // 2. InsERT (Nexo Zieleń + Subiekt Pomarańcz na bazie InsERT Red)
+        &.vendor-insert {
+            .vendor-name { color: #0f172a; }
+            .vendor-pill { background: rgba(#70b62c, 0.08); color: #2e7d32; border: 1px solid rgba(#70b62c, 0.15); }
+            .vendor-link { color: #d62127; } // Czerwień InsERT
+
+            &:hover {
+                transform: translateY(-12px);
+                border-color: rgba(#f37022, 0.3); // Subiekt Orange border
+                box-shadow: 0 30px 60px -15px rgba(#d62127, 0.12), inset 0 0 20px rgba(#70b62c, 0.03) !important;
+                background: linear-gradient(180deg, #ffffff 0%, rgba(#70b62c, 0.02) 100%); // Nexo Green glow
+
+                .vendor-link {
+                    color: #f37022; // Zmiana na pomarańcz przy hoverze
+                    svg { transform: translateX(6px); }
+                }
+            }
+        }
+
+        // 3. STREAMSOFT (Głęboki Kobalt + Alarmowa Czerwień Przemysłowa)
+        &.vendor-streamsoft {
+            .vendor-name { color: #0f172a; }
+            .vendor-pill { background: rgba(#004b87, 0.06); color: #004b87; border: 1px solid rgba(#004b87, 0.15); }
+            .vendor-link { color: #004b87; }
+
+            &:hover {
+                transform: translateY(-12px);
+                border-color: rgba(#e30613, 0.3); // Streamsoft Red border
+                box-shadow: 0 30px 60px -15px rgba(#004b87, 0.15), inset 0 0 20px rgba(#e30613, 0.02) !important;
+                background: linear-gradient(180deg, #ffffff 0%, rgba(#e30613, 0.01) 100%);
+
+                .vendor-link {
+                    color: #e30613;
+                    svg { transform: translateX(6px); }
+                }
+            }
+        }
+    }
+}
+
+// --- Dolna Infrastruktura (Modernizacja boksów) ---
+.other-services {
+    background-color: $body-bg;
+    
+    .row > .col-md-4 {
+        transition: transform 0.2s ease;
+        
+        &:hover {
+            transform: translateY(-4px);
+        }
+    }
+    
+    .d-flex.p-3 {
+        background-color: #ffffff;
+        border: 1px solid rgba($dark, 0.02) !important;
+        box-shadow: 0 4px 10px -2px rgba($dark, 0.03);
+        
+        // Stylizacja ikon
+        .fs-3 {
+            opacity: 0.8;
+        }
+    }
+}

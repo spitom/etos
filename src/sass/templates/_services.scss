@@ -1,0 +1,22 @@
+// Wspólne style dla page-services.php oraz page-it-service.php
+.services-hero {
+    background: linear-gradient(135deg, $dark 0%, #111518 100%);
+}
+
+.services-list, .it-service-scope {
+    .card, .p-4 {
+        border: 1px solid rgba($dark, 0.08) !important;
+        border-radius: $border-radius-lg;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        
+        &::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: $primary;
+            margin-bottom: 1rem;
+            border-radius: 2px;
+        }
+    }
+}
