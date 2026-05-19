@@ -25,8 +25,8 @@ get_header();
                         </h1>
 
                         <p class="etos-hero__lead">
-                            Projektujemy, wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż,
-                            magazyn, finanse, KSeF, infrastrukturę IT i codzienną pracę Twojej firmy.
+                            Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż,
+                            magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy.
                         </p>
 
                         <div class="etos-hero__actions d-flex flex-wrap gap-3">
@@ -43,20 +43,20 @@ get_header();
                         <div class="etos-command-center" aria-label="Schemat procesów biznesowych obsługiwanych przez ETOS">
                             <div class="etos-command-center__top">
                                 <span></span><span></span><span></span>
-                                <strong>ETOS Business Command Center</strong>
+                                <strong>ETOS Automatyzacja Procesów Biznesowych</strong>
                             </div>
 
                             <div class="etos-command-center__grid">
                                 <div class="etos-process-card etos-process-card--active">
-                                    <span>Sprzedaż</span>
+                                    <span>Wdrożenia ERP</span>
                                     <strong>320</strong>
-                                    <small>zamówień</small>
+                                    <small>od 2002</small>
                                 </div>
 
                                 <div class="etos-process-card">
-                                    <span>Magazyn</span>
+                                    <span>Obsługa IT</span>
                                     <strong>1 250</strong>
-                                    <small>operacji</small>
+                                    <small>firm</small>
                                 </div>
 
                                 <div class="etos-process-card">
@@ -127,7 +127,7 @@ get_header();
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="etos-operation-card">
                             <span class="etos-operation-card__icon">03</span>
-                            <h2>Operacje</h2>
+                            <h2>Procesy</h2>
                             <p>sprzedaż, magazyn, zamówienia, obieg dokumentów</p>
                         </a>
                     </div>
@@ -151,7 +151,7 @@ get_header();
                     <div class="col-lg-7">
                         <span class="etos-kicker">Systemy ERP dopasowane do procesów</span>
                         <h2 class="etos-section__title">
-                            Budujemy środowisko pracy firmy, nie tylko wdrażamy program.
+                            Budujemy środowisko pracy firmy, nie tylko wdrażamy programy.
                         </h2>
                     </div>
 
@@ -260,7 +260,7 @@ get_header();
                     <div class="col-lg-5">
                         <p class="etos-services__lead">
                             Zapewniamy wszystkie kluczowe elementy środowiska IT — od podpisu elektronicznego,
-                            przez urządzenia fiskalne, po serwis, outsourcing i administrację.
+                            przez sprzęt komputerowy i urządzenia fiskalne, po serwis, outsourcing i administrację.
                         </p>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ get_header();
                         <article class="etos-service-card">
                             <span>IT</span>
                             <h3>Serwis & outsourcing</h3>
-                            <p>Pomoc zdalna, administracja serwerami, bazy danych MS SQL i opieka techniczna.</p>
+                            <p>Pomoc zdalna, administracja serwerami i opieka techniczna.</p>
                         </article>
                     </div>
 

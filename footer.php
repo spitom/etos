@@ -90,9 +90,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <div class="col-sm-6">
                                 <h3>Systemy ERP</h3>
                                 <ul>
-                                    <li><a href="#">Symfonia ERP</a></li>
-                                    <li><a href="#">InsERT nexo / GT</a></li>
-                                    <li><a href="#">Streamsoft Prestiż</a></li>
+                                    <li><a href="#">Symfonia</a></li>
+                                    <li><a href="#">InsERT</a></li>
+                                    <li><a href="#">Streamsoft</a></li>
                                 </ul>
                             </div>
 
