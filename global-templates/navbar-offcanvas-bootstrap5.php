@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-xl navbar-light bg-white" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-xl etos-navbar" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 
 		<button
-			class="navbar-toggler"
+			class="navbar-toggler etos-navbar__toggle"
 			type="button"
 			data-bs-toggle="offcanvas"
 			data-bs-target="#navbarNavOffcanvas"
@@ -36,7 +36,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarNavOffcanvas">
+		<div class="offcanvas offcanvas-end etos-navbar__offcanvas" tabindex="-1" id="navbarNavOffcanvas">
 
 			<div class="offcanvas-header justify-content-end">
 				<button

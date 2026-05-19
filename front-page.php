@@ -11,173 +11,291 @@ get_header();
 ?>
 
 <div class="wrapper" id="content" tabindex="-1">
-    <main class="site-main" id="main" role="main">
+    <main class="site-main site-main--front" id="main" role="main">
 
-        <!-- HERO SECTION -->
-        <section class="hero-section bg-light py-5 position-relative overflow-hidden">
-            <div class="container py-lg-5">
+        <!-- HERO -->
+        <section class="etos-hero position-relative overflow-hidden">
+            <div class="container etos-container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <span class="badge-partner d-inline-block rounded-pill mb-4">Autoryzowany Partner ERP & IT</span>
-                        <h1 class="display-4 fw-bold text-dark lh-sm mb-3">Cyfryzujemy procesy,<br>automatyzujemy biznes.</h1>
-                        <p class="lead text-muted mb-4">Kompleksowo wdrażamy systemy Symfonia, InsERT i Streamsoft. Zapewniamy stabilną opiekę informatyczną oraz ciągłość działania Twojej firmy.</p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="#contact" class="btn btn-primary btn-lg px-4 fw-semibold text-white">Porozmawiaj z konsultantem</a>
-                            <a href="#erp" class="btn btn-outline-dark btn-lg px-4">Poznaj systemy ERP</a>
+                        <span class="etos-kicker">Autoryzowany partner ERP & IT</span>
+
+                        <h1 class="etos-hero__title">
+                            Łączymy procesy, ludzi i technologię.
+                        </h1>
+
+                        <p class="etos-hero__lead">
+                            Projektujemy, wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż,
+                            magazyn, finanse, KSeF, infrastrukturę IT i codzienną pracę Twojej firmy.
+                        </p>
+
+                        <div class="etos-hero__actions d-flex flex-wrap gap-3">
+                            <a href="#contact" class="btn btn-primary btn-lg">
+                                Umów prezentację
+                            </a>
+                            <a href="#ecosystem" class="btn btn-outline-dark btn-lg">
+                                Zobacz rozwiązania ERP
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        
-                        <div class="mockup-window shadow-lg rounded-4 p-3 bg-white">
-                           
-                            <div class="d-flex align-items-center border-bottom pb-3 mb-3">
-                                <span class="dot" style="background: #ff5f56;"></span>
-                                <span class="dot" style="background: #ffbd2e;"></span>
-                                <span class="dot" style="background: #27c93f;"></span>
-                                <div class="mockup-bar w-50 ms-3"></div>
+
+                    <div class="col-lg-6">
+                        <div class="etos-command-center" aria-label="Schemat procesów biznesowych obsługiwanych przez ETOS">
+                            <div class="etos-command-center__top">
+                                <span></span><span></span><span></span>
+                                <strong>ETOS Business Command Center</strong>
                             </div>
-                            
-                            <div class="p-2">
-                                <div class="row g-2 mb-3">
-                                    <div class="col-4"><div class="p-3 bg-light rounded-3 text-center"><small class="fw-bold text-primary">Faktury</small><div class="mockup-bar w-75 mx-auto mt-2"></div></div></div>
-                                    <div class="col-4"><div class="p-3 bg-light rounded-3 text-center"><small class="fw-bold text-success">Magazyn</small><div class="mockup-bar w-50 mx-auto mt-2"></div></div></div>
-                                    <div class="col-4"><div class="p-3 bg-light rounded-3 text-center"><small class="fw-bold text-warning">KSeF</small><div class="mockup-bar w-100 mx-auto mt-2"></div></div></div>
+
+                            <div class="etos-command-center__grid">
+                                <div class="etos-process-card etos-process-card--active">
+                                    <span>Sprzedaż</span>
+                                    <strong>320</strong>
+                                    <small>zamówień</small>
                                 </div>
-                                <div class="p-4 bg-light rounded-3">
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <div class="mockup-bar w-25 bg-secondary-subtle"></div>
-                                        <div class="mockup-bar w-25 bg-primary"></div>
+
+                                <div class="etos-process-card">
+                                    <span>Magazyn</span>
+                                    <strong>1 250</strong>
+                                    <small>operacji</small>
+                                </div>
+
+                                <div class="etos-process-card">
+                                    <span>Finanse</span>
+                                    <strong>KSeF</strong>
+                                    <small>gotowość</small>
+                                </div>
+
+                                <div class="etos-process-card etos-process-card--wide">
+                                    <span>Przepływ dokumentów</span>
+                                    <div class="etos-flow">
+                                        <i>Oferta</i>
+                                        <b></b>
+                                        <i>Zamówienie</i>
+                                        <b></b>
+                                        <i>Faktura</i>
+                                        <b></b>
+                                        <i>KSeF</i>
                                     </div>
-                                    <div class="mockup-bar w-100 mb-2"></div>
-                                    <div class="mockup-bar w-75"></div>
+                                </div>
+
+                                <div class="etos-chart-card">
+                                    <span>Stabilność operacyjna</span>
+                                    <div class="etos-chart">
+                                        <i style="height: 32%"></i>
+                                        <i style="height: 48%"></i>
+                                        <i style="height: 42%"></i>
+                                        <i style="height: 68%"></i>
+                                        <i style="height: 76%"></i>
+                                        <i style="height: 92%"></i>
+                                    </div>
+                                </div>
+
+                                <div class="etos-status-card">
+                                    <span>Opieka IT</span>
+                                    <strong>ciągłość pracy</strong>
+                                    <small>serwery · backup · SQL · helpdesk</small>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
+                </div>
+            </div>
+
+            <div class="etos-hero__pattern" aria-hidden="true"></div>
+        </section>
+
+        <!-- OPERATION AREAS -->
+        <section id="ecosystem" class="etos-operations">
+            <div class="container etos-container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="etos-operation-card">
+                            <span class="etos-operation-card__icon">01</span>
+                            <h2>Integracje</h2>
+                            <p>systemy ERP, e-commerce, urządzenia fiskalne i raportowanie</p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="etos-operation-card">
+                            <span class="etos-operation-card__icon">02</span>
+                            <h2>Finanse</h2>
+                            <p>księgowość, kadry, płace, faktury i gotowość na KSeF</p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="etos-operation-card">
+                            <span class="etos-operation-card__icon">03</span>
+                            <h2>Operacje</h2>
+                            <p>sprzedaż, magazyn, zamówienia, obieg dokumentów</p>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" class="etos-operation-card">
+                            <span class="etos-operation-card__icon">04</span>
+                            <h2>Infrastruktura</h2>
+                            <p>serwery, sieci, backup, bezpieczeństwo i opieka IT</p>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        
-        <section class="stats-section py-4 border-bottom bg-white">
-            <div class="container">
-                <div class="row text-center g-4">
-                    <div class="col-6 col-md-3">
-                        <p class="display-6 fw-bold text-primary mb-0">20+</p>
-                        <small class="text-muted text-uppercase fw-semibold tracking-wider">Lat na rynku</small>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <p class="display-6 fw-bold text-primary mb-0">500+</p>
-                        <small class="text-muted text-uppercase fw-semibold tracking-wider">Obsłużonych firm</small>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <p class="display-6 fw-bold text-primary mb-0">1500+</p>
-                        <small class="text-muted text-uppercase fw-semibold tracking-wider">Wdrożonych modułów</small>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <p class="display-6 fw-bold text-primary mb-0">100%</p>
-                        <small class="text-muted text-uppercase fw-semibold tracking-wider">Wsparcia dla KSeF</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       
-        <section id="erp" class="software-grid">
-            <div class="container">
-                
+        <!-- ERP ECOSYSTEM -->
+        <section id="erp" class="etos-section etos-section--soft">
+            <div class="container etos-container">
                 <div class="row mb-5 align-items-end g-4">
                     <div class="col-lg-7">
-                        <h2 class="section-title">Wdrożenia systemów klasyfikowanych</h2>
+                        <span class="etos-kicker">Systemy ERP dopasowane do procesów</span>
+                        <h2 class="etos-section__title">
+                            Budujemy środowisko pracy firmy, nie tylko wdrażamy program.
+                        </h2>
                     </div>
+
                     <div class="col-lg-5">
-                        <p class="text-muted mb-0 border-start ps-4 py-1" style="border-width: 3px !important; border-color: #00A0E3 !important; font-size: 0.95rem;">
-                            Nie dopasowujemy Twojego biznesu do szablonu. Analizujemy procesy i integrujemy ekosystemy ERP liderów rynku, gwarantując bezwzględną stabilność i pełną gotowość prawną.
+                        <p class="etos-section__lead">
+                            Dobieramy system ERP do skali, branży i sposobu działania organizacji.
+                            Pomagamy uporządkować procesy, wdrożyć moduły i utrzymać stabilną pracę firmy.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="row g-4">
-                    
                     <div class="col-lg-4">
-                        <div class="erp-vendor-block vendor-symfonia">
-                            <span class="vendor-pill">Dla dużych struktur i HR</span>
-                            <h3 class="vendor-name">Symfonia ERP</h3>
-                            <p class="vendor-text">Skomplikowane finanse, zautomatyzowane kadry i płace oraz zaawansowany Business Intelligence. Potężne środowisko dla organizacji poszukujących bezkompromisowej stabilności i precyzji raportowania.</p>
-                            
-                            <a href="#" class="vendor-link">
-                                Poznaj moduły Symfonii
-                                <svg class="ms-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
+                        <article class="etos-vendor-card etos-vendor-card--symfonia">
+                            <span class="etos-vendor-card__tag">dla większych struktur i HR</span>
+                            <h3>Symfonia ERP</h3>
+                            <p>
+                                Finanse, kadry i płace, handel, produkcja oraz analityka dla organizacji,
+                                które potrzebują stabilnego środowiska i precyzyjnego raportowania.
+                            </p>
+                            <a href="#">Poznaj moduły Symfonii →</a>
+                        </article>
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="erp-vendor-block vendor-insert">
-                            <span class="vendor-pill">Ekosystem Nexo / GT</span>
-                            <h3 class="vendor-name">InsERT</h3>
-                            <p class="vendor-text">Niezrównana intuicyjność połączona z potężnymi możliwościami. Najpopularniejsze w Polsce rozwiązanie do zarządzania sprzedażą (Subiekt), gospodarką magazynową oraz elastyczną księgowością.</p>
-                            
-                            <a href="#" class="vendor-link">
-                                Poznaj ekosystem InsERT
-                                <svg class="ms-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
+                        <article class="etos-vendor-card etos-vendor-card--insert">
+                            <span class="etos-vendor-card__tag">ekosystem nexo / GT</span>
+                            <h3>InsERT</h3>
+                            <p>
+                                Sprawdzone rozwiązania dla sprzedaży, magazynu, księgowości i kadr.
+                                Dobry wybór dla firm, które potrzebują intuicyjnego i elastycznego systemu.
+                            </p>
+                            <a href="#">Poznaj ekosystem InsERT →</a>
+                        </article>
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="erp-vendor-block vendor-streamsoft">
-                            <span class="vendor-pill">Przemysł, Logistyka, WMS</span>
-                            <h3 class="vendor-name">Streamsoft Prestiż</h3>
-                            <p class="vendor-text">Bezlitosna wydajność i kontrola procesów. Autorskie moduły zaawansowanego planowania produkcji (APS), precyzyjne zarządzanie logistyką magazynową oraz automatyczna integracja z e-commerce.</p>
-                            
-                            <a href="#" class="vendor-link">
-                                Poznaj system Prestiż
-                                <svg class="ms-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                        </div>
+                        <article class="etos-vendor-card etos-vendor-card--streamsoft">
+                            <span class="etos-vendor-card__tag">produkcja, logistyka, WMS</span>
+                            <h3>Streamsoft Prestiż</h3>
+                            <p>
+                                Rozwiązanie dla bardziej złożonych procesów: produkcji, logistyki,
+                                planowania, magazynu, integracji i automatyzacji pracy przedsiębiorstwa.
+                            </p>
+                            <a href="#">Poznaj Streamsoft Prestiż →</a>
+                        </article>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- 4. COMPLEMENTARY SERVICES (Inne usługi ETOS: Podpisy, Kasy, Opieka) -->
-        <section class="other-services py-5 bg-white">
-            <div class="container py-3">
-                <div class="text-center max-width-600 mx-auto mb-5">
-                    <h2 class="fw-bold text-dark">Kompleksowa infrastruktura IT</h2>
-                    <p class="text-muted">Zamykamy wszystkie potrzeby technologiczne Twojego biura w jednym ręku.</p>
+        <!-- WORKFLOW -->
+        <section class="etos-section bg-white">
+            <div class="container etos-container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <span class="etos-kicker">Od procesu do wdrożenia</span>
+                        <h2 class="etos-section__title">
+                            Porządkujemy przepływ pracy w całej firmie.
+                        </h2>
+                        <p class="etos-section__lead">
+                            Zaczynamy od analizy sposobu działania firmy. Następnie dobieramy system,
+                            konfigurujemy procesy, integrujemy moduły i zapewniamy wsparcie po wdrożeniu.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="etos-workflow">
+                            <div>
+                                <span>01</span>
+                                <strong>Analiza</strong>
+                                <p>procesy, potrzeby, ryzyka</p>
+                            </div>
+                            <div>
+                                <span>02</span>
+                                <strong>Dobór systemu</strong>
+                                <p>Symfonia, InsERT, Streamsoft</p>
+                            </div>
+                            <div>
+                                <span>03</span>
+                                <strong>Wdrożenie</strong>
+                                <p>konfiguracja, migracja, szkolenia</p>
+                            </div>
+                            <div>
+                                <span>04</span>
+                                <strong>Utrzymanie</strong>
+                                <p>opieka IT, rozwój, bezpieczeństwo</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="etos-section etos-services">
+            <div class="container etos-container">
+                <div class="row mb-5 g-4 align-items-end">
+                    <div class="col-lg-7">
+                        <span class="etos-kicker etos-kicker--light">Kompleksowa infrastruktura IT</span>
+                        <h2 class="etos-section__title text-white">
+                            Technologia, która wspiera codzienną pracę biznesu.
+                        </h2>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="etos-services__lead">
+                            Zapewniamy wszystkie kluczowe elementy środowiska IT — od podpisu elektronicznego,
+                            przez urządzenia fiskalne, po serwis, outsourcing i administrację.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="d-flex p-3 rounded-3 border h-100">
-                            <div class="me-3 fs-3 text-primary">📑</div>
-                            <div>
-                                <h3 class="h5 fw-bold mb-2">Podpis Elektroniczny</h3>
-                                <p class="text-muted small mb-0">Certyfikaty kwalifikowane EuroCert/KIR. Wydanie, odnowienie i konfiguracja w 30 minut.</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-3 col-md-6">
+                        <article class="etos-service-card">
+                            <span>Podpis</span>
+                            <h3>Podpis elektroniczny</h3>
+                            <p>Certyfikaty kwalifikowane, odnowienia, konfiguracja i wsparcie użytkowników.</p>
+                        </article>
                     </div>
-                    <div class="col-md-4">
-                        <div class="d-flex p-3 rounded-3 border h-100">
-                            <div class="me-3 fs-3 text-primary">🛒</div>
-                            <div>
-                                <h3 class="h5 fw-bold mb-2">Urządzenia Fiskalne</h3>
-                                <p class="text-muted small mb-0">Kasy i drukarki fiskalne online wiodących producentów (Posnet, Novitus). Pełen serwis i przeglądy.</p>
-                            </div>
-                        </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="etos-service-card">
+                            <span>Fiskalizacja</span>
+                            <h3>Urządzenia fiskalne</h3>
+                            <p>Kasy i drukarki online, sprzedaż, konfiguracja, serwis oraz przeglądy.</p>
+                        </article>
                     </div>
-                    <div class="col-md-4">
-                        <div class="d-flex p-3 rounded-3 border h-100">
-                            <div class="me-3 fs-3 text-primary">🛠️</div>
-                            <div>
-                                <h3 class="h5 fw-bold mb-2">Serwis & Outsourcing IT</h3>
-                                <p class="text-muted small mb-0">Błyskawiczna pomoc zdalna, administracja serwerami oraz opieka nad bazami danych MS SQL.</p>
-                            </div>
-                        </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="etos-service-card">
+                            <span>IT</span>
+                            <h3>Serwis & outsourcing</h3>
+                            <p>Pomoc zdalna, administracja serwerami, bazy danych MS SQL i opieka techniczna.</p>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <article class="etos-service-card">
+                            <span>Bezpieczeństwo</span>
+                            <h3>Backup i infrastruktura</h3>
+                            <p>Sieci, serwery, kopie zapasowe, zabezpieczenia i ciągłość działania firmy.</p>
+                        </article>
                     </div>
                 </div>
             </div>

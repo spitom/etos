@@ -1,233 +1,591 @@
 // ==========================================================================
-// Front Page Custom Styles
+// Front Page — ETOS
 // ==========================================================================
 
-.hero-section {
-    background: radial-gradient(circle at 70% 10%, rgba($primary, 0.08) 0%, rgba(255, 255, 255, 0) 50%),
-                radial-gradient(circle at 10% 80%, rgba($secondary, 0.05) 0%, rgba(255, 255, 255, 0) 40%);
-    position: relative;
-    
-    .badge-partner {
-        background-color: rgba($primary, 0.1);
-        color: $primary;
-        border: 1px solid rgba($primary, 0.2);
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        font-size: 0.8rem;
-    }
+$font-family-sans-serif: 'Manrope',
+system-ui,
+-apple-system,
+"Segoe UI",
+Roboto,
+sans-serif;
+$headings-font-weight: 760;
+
+.etos-container {
+    max-width: 1320px;
 }
 
-// Efekt unoszenia się kart dla systemów ERP (Trend: Micro-interactions)
-.transition-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 1rem 3rem rgba(30, 37, 43, 0.1) !important;
-    }
+.site-main--front {
+    background: #fff;
 }
 
-.mockup-window {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: #ffffff;
-    
-    .dot {
-        width: 12px;
-        height: 12px;
-        display: inline-block;
-        border-radius: 50%;
-        margin-right: 6px;
-    }
-    
-    .mockup-bar {
-        height: 12px;
-        background-color: #e2e8f0;
-        border-radius: 6px;
-    }
+.btn {
+    --bs-btn-border-radius: .72rem;
+    font-weight: 760;
+    letter-spacing: -.01em;
+    box-shadow: none !important;
+    transition:
+        transform .18s ease,
+        background-color .18s ease,
+        border-color .18s ease,
+        color .18s ease;
 }
 
-// --- Stylizacja przycisków ---
 .btn-primary {
-    background-color: $primary;
-    border-color: $primary;
-    box-shadow: 0 4px 14px rgba($primary, 0.2);
-    font-weight: 700;
-    transition: all 0.25s ease;
+    background: $etos-accent;
+    border-color: $etos-accent;
+    color: $etos-ink;
 
-    &:hover {
-        background-color: darken($primary, 8%);
-        border-color: darken($primary, 8%);
-        box-shadow: 0 6px 20px rgba($primary, 0.3);
-        transform: translateY(-2px); // Silniejszy efekt uniesienia
+    &:hover,
+    &:focus {
+        background: darken($etos-accent, 7%);
+        border-color: darken($etos-accent, 7%);
+        color: $etos-ink;
+        transform: translateY(-1px);
     }
 }
 
 .btn-outline-dark {
-    color: $body-color;
-    border-color: rgba($body-color, 0.1);
-    
-    &:hover {
-        background-color: rgba($body-color, 0.05);
-        color: $dark;
-        border-color: rgba($body-color, 0.3);
+    color: $etos-ink;
+    border-color: rgba($etos-ink, .16);
+    background: rgba(#fff, .72);
+
+    &:hover,
+    &:focus {
+        color: $etos-ink;
+        background: #fff;
+        border-color: rgba($primary, .38);
+        transform: translateY(-1px);
     }
 }
 
-// ==========================================================================
-// Advanced Premium ERP Grid (No-Bootstrap Design Style)
-// ==========================================================================
+.etos-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color: $primary;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 
-.software-grid {
-    background-color: #f8fafc;
-    padding: 7rem 0;
-
-    .section-title {
-        font-size: 2.75rem;
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.15;
-        color: #0f172a;
+    &::before {
+        content: '';
+        width: .55rem;
+        height: .55rem;
+        border-radius: 999px;
+        background: $primary;
+        box-shadow: 0 0 0 .35rem rgba($primary, .12);
     }
 
-    // Całkowicie autorski kontener - odcinamy się od .card z Bootstrapa
-    .erp-vendor-block {
-        background: #ffffff;
-        border-radius: 24px;
-        padding: 3rem 2.5rem;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(15, 23, 42, 0.05);
-        box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    &--light {
+        color: $etos-accent-soft;
+
+        &::before {
+            background: $etos-accent;
+            box-shadow: 0 0 0 .35rem rgba($etos-accent, .16);
+        }
+    }
+}
+
+// HERO
+.etos-hero {
+    padding: clamp(6rem, 10vw, 9rem) 0 clamp(4.5rem, 7vw, 7rem);
+    background:
+        radial-gradient(circle at 85% 15%, rgba($primary, .13), transparent 34rem),
+        linear-gradient(180deg, #f7fbfe 0%, #ffffff 100%);
+    border-bottom: 1px solid rgba(#0f172a, .07);
+
+    &__title {
+        max-width: 11ch;
+        font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: -.055em;
+        font-weight: 720;
+    }
+
+    &__lead {
+        max-width: 660px;
+        margin-bottom: 2rem;
+        color: #526174;
+        font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+        line-height: 1.7;
+    }
+
+    &__actions {
+        .btn {
+            min-height: 54px;
+            padding-inline: 1.4rem;
+        }
+
+        .btn-outline-dark {
+            border-color: rgba(#0f172a, .12);
+            background: rgba(#fff, .72);
+
+            &:hover {
+                border-color: rgba($primary, .35);
+                background: #fff;
+            }
+        }
+    }
+
+    &__pattern {
+        position: absolute;
+        right: 3vw;
+        top: 6rem;
+        width: 220px;
+        height: 220px;
+        opacity: .45;
+        background-image: radial-gradient($primary 1px, transparent 1px);
+        background-size: 16px 16px;
+        pointer-events: none;
+    }
+}
+
+// Hero dashboard
+.etos-command-center {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid rgba(#0f172a, .1);
+    border-radius: 1.5rem;
+    background: rgba(#ffffff, .86);
+    box-shadow: 0 28px 80px rgba(#0f172a, .12);
+    backdrop-filter: blur(16px);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 1rem auto auto -1.5rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 999px;
+        background: rgba($primary, .14);
+        filter: blur(10px);
+        z-index: -1;
+    }
+
+    &__top {
         display: flex;
-        flex-direction: column;
-        height: 100%;
+        align-items: center;
+        gap: .5rem;
+        padding: .85rem 1rem 1rem;
+        border-bottom: 1px solid rgba(#0f172a, .08);
 
-        // Element dekoracyjny udający nowoczesną pigułkę statusu aplikacji
-        .vendor-pill {
-            display: inline-block;
-            font-size: 0.7rem;
+        span {
+            width: .65rem;
+            height: .65rem;
+            border-radius: 999px;
+
+            &:nth-child(1) {
+                background: #ff5f56;
+            }
+
+            &:nth-child(2) {
+                background: #ffbd2e;
+            }
+
+            &:nth-child(3) {
+                background: #27c93f;
+            }
+        }
+
+        strong {
+            margin-left: .75rem;
+            color: #334155;
+            font-size: .85rem;
             font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            margin-bottom: 2rem;
-            width: fit-content;
         }
+    }
 
-        .vendor-name {
-            font-size: 1.85rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.25rem;
-        }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .85rem;
+        padding: 1rem;
 
-        .vendor-text {
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.65;
-            margin-bottom: 2.5rem;
-        }
-
-        // Dedykowany, luksusowy link akcji ze strzałką
-        .vendor-link {
-            margin-top: auto;
-            display: inline-flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            
-            svg {
-                transition: transform 0.3s ease;
-            }
-        }
-
-        // --- AUTENTYCZNE BRANDOWANIE I INTEGRACJA WIZUALNA PRODUCENTÓW ---
-
-        // 1. SYMFONIA (Szafir + Fuksja/Amarant)
-        &.vendor-symfonia {
-            .vendor-name { color: #0a1128; }
-            .vendor-pill { background: rgba(#e1005a, 0.06); color: #e1005a; border: 1px solid rgba(#e1005a, 0.1); }
-            .vendor-link { color: #003399; }
-
-            &:hover {
-                transform: translateY(-12px);
-                border-color: rgba(#e1005a, 0.25);
-                box-shadow: 0 30px 60px -15px rgba(#003399, 0.15), inset 0 0 20px rgba(#e1005a, 0.03) !important;
-                background: linear-gradient(180deg, #ffffff 0%, rgba(#003399, 0.02) 100%);
-                
-                .vendor-link {
-                    color: #e1005a;
-                    svg { transform: translateX(6px); }
-                }
-            }
-        }
-
-        // 2. InsERT (Nexo Zieleń + Subiekt Pomarańcz na bazie InsERT Red)
-        &.vendor-insert {
-            .vendor-name { color: #0f172a; }
-            .vendor-pill { background: rgba(#70b62c, 0.08); color: #2e7d32; border: 1px solid rgba(#70b62c, 0.15); }
-            .vendor-link { color: #d62127; } // Czerwień InsERT
-
-            &:hover {
-                transform: translateY(-12px);
-                border-color: rgba(#f37022, 0.3); // Subiekt Orange border
-                box-shadow: 0 30px 60px -15px rgba(#d62127, 0.12), inset 0 0 20px rgba(#70b62c, 0.03) !important;
-                background: linear-gradient(180deg, #ffffff 0%, rgba(#70b62c, 0.02) 100%); // Nexo Green glow
-
-                .vendor-link {
-                    color: #f37022; // Zmiana na pomarańcz przy hoverze
-                    svg { transform: translateX(6px); }
-                }
-            }
-        }
-
-        // 3. STREAMSOFT (Głęboki Kobalt + Alarmowa Czerwień Przemysłowa)
-        &.vendor-streamsoft {
-            .vendor-name { color: #0f172a; }
-            .vendor-pill { background: rgba(#004b87, 0.06); color: #004b87; border: 1px solid rgba(#004b87, 0.15); }
-            .vendor-link { color: #004b87; }
-
-            &:hover {
-                transform: translateY(-12px);
-                border-color: rgba(#e30613, 0.3); // Streamsoft Red border
-                box-shadow: 0 30px 60px -15px rgba(#004b87, 0.15), inset 0 0 20px rgba(#e30613, 0.02) !important;
-                background: linear-gradient(180deg, #ffffff 0%, rgba(#e30613, 0.01) 100%);
-
-                .vendor-link {
-                    color: #e30613;
-                    svg { transform: translateX(6px); }
-                }
-            }
+        @media (max-width: 575.98px) {
+            grid-template-columns: 1fr;
         }
     }
 }
 
-// --- Dolna Infrastruktura (Modernizacja boksów) ---
-.other-services {
-    background-color: $body-bg;
-    
-    .row > .col-md-4 {
-        transition: transform 0.2s ease;
-        
-        &:hover {
-            transform: translateY(-4px);
+.etos-process-card,
+.etos-chart-card,
+.etos-status-card {
+    padding: 1rem;
+    border: 0;
+    background: #f8fbfd;
+    box-shadow:
+        inset 0 0 0 1px rgba(#0f172a, .04);
+
+    span {
+        display: block;
+        margin-bottom: .5rem;
+        color: #64748b;
+        font-size: .75rem;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+
+    strong {
+        display: block;
+        color: #0f172a;
+        font-size: 1.35rem;
+        line-height: 1.1;
+    }
+
+    small {
+        color: #64748b;
+    }
+
+    &--active {
+        background: linear-gradient(135deg, $etos-ink, $etos-graphite-2);
+        color: #fff;
+
+        span,
+        small,
+        strong {
+            color: #fff;
         }
     }
-    
-    .d-flex.p-3 {
-        background-color: #ffffff;
-        border: 1px solid rgba($dark, 0.02) !important;
-        box-shadow: 0 4px 10px -2px rgba($dark, 0.03);
-        
-        // Stylizacja ikon
-        .fs-3 {
-            opacity: 0.8;
+
+    &--wide {
+        grid-column: span 3;
+        background: #fff;
+
+        @media (max-width: 575.98px) {
+            grid-column: span 1;
         }
+    }
+}
+
+.etos-flow {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    flex-wrap: wrap;
+
+    i {
+        padding: .5rem .75rem;
+        border-radius: 999px;
+        background: #eef7fc;
+        color: #0f172a;
+        font-style: normal;
+        font-size: .82rem;
+        font-weight: 700;
+    }
+
+    b {
+        width: 1.5rem;
+        height: 1px;
+        background: rgba($primary, .55);
+    }
+}
+
+.etos-chart {
+    display: flex;
+    align-items: end;
+    gap: .45rem;
+    height: 86px;
+    margin-top: 1rem;
+
+    i {
+        flex: 1;
+        border-radius: .5rem .5rem 0 0;
+        background: linear-gradient(180deg, rgba($primary, .95), rgba($primary, .25));
+    }
+}
+
+.etos-status-card {
+    background: #ffffff;
+}
+
+// CARDS
+
+.etos-operation-card,
+.etos-vendor-card,
+.etos-workflow,
+.etos-command-center {
+    border-radius: 1rem;
+    border-color: rgba(#0f172a, .075);
+    box-shadow: 0 16px 44px rgba(#0f172a, .055);
+}
+
+.etos-operation-card:hover,
+.etos-vendor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 54px rgba(#0f172a, .085);
+}
+
+
+// OPERATIONS
+.etos-operations {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 clamp(4rem, 6vw, 6rem);
+    margin-top: -2.25rem;
+}
+
+.etos-operation-card {
+    display: block;
+    height: 100%;
+    padding: 2rem;
+    min-height: 220px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba($primary, .35);
+        box-shadow: 0 22px 60px rgba(#0f172a, .1);
+        text-decoration: none;
+    }
+
+    &__icon {
+        display: inline-flex;
+        margin-bottom: 1.5rem;
+        color: $primary;
+        font-size: .85rem;
+        font-weight: 900;
+        letter-spacing: .08em;
+    }
+
+    h2 {
+        margin-bottom: .65rem;
+        color: #0f172a;
+        font-size: 1.35rem;
+        font-weight: 800;
+    }
+
+    p {
+        margin: 0;
+        color: #64748b;
+        line-height: 1.6;
+    }
+}
+
+// SECTIONS
+.etos-section {
+    padding: clamp(6rem, 9vw, 8rem) 0;
+
+    &--soft {
+        background: #f3f6f9;
+        border-top: 1px solid rgba(#0f172a, .06);
+        border-bottom: 1px solid rgba(#0f172a, .06);
+    }
+
+    &__title {
+        max-width: 760px;
+        margin: 0;
+        padding-bottom: 1rem;
+        color: #0f172a;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.05;
+        letter-spacing: -.04em;
+        font-weight: 700;
+    }
+
+    &__lead {
+        margin: 0;
+        color: #64748b;
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+}
+
+// ERP CARDS
+.etos-vendor-card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    padding: 2rem;
+    background: linear-gradient(180deg,
+            rgba(#ffffff, .96),
+            rgba(#f8fbfd, .96));
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        background: var(--vendor-color, #00A0E3);
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba($primary, .32);
+        box-shadow: 0 24px 60px rgba(#0f172a, .09);
+    }
+
+    &__tag {
+        display: inline-flex;
+        margin-bottom: 1.25rem;
+        color: var(--vendor-color, #00A0E3);
+        font-size: .72rem;
+        font-weight: 900;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+        color: #0f172a;
+        font-size: 1.55rem;
+        font-weight: 850;
+        letter-spacing: -.025em;
+    }
+
+    p {
+        color: #64748b;
+        line-height: 1.7;
+    }
+
+    a {
+        display: inline-flex;
+        margin-top: 1rem;
+        color: var(--vendor-color, #00A0E3);
+        font-weight: 800;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--symfonia {
+        --vendor-color: #13B84A;
+        background:
+            radial-gradient(circle at 92% 16%, rgba(#13B84A, .12), transparent 7rem),
+            #fff;
+    }
+
+    &--insert {
+        --vendor-color: #0077C8;
+        background:
+            radial-gradient(circle at 92% 16%, rgba(#0077C8, .12), transparent 7rem),
+            #fff;
+    }
+
+    &--streamsoft {
+        --vendor-color: #2457D6;
+        background:
+            radial-gradient(circle at 92% 16%, rgba(#2457D6, .12), transparent 7rem),
+            #fff;
+    }
+}
+
+// WORKFLOW
+.etos-workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(#0f172a, .08);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 16px 48px rgba(#0f172a, .07);
+
+    @media (max-width: 991.98px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: 1fr;
+    }
+
+    div {
+        position: relative;
+        min-height: 240px;
+        padding: 1.5rem;
+        border-right: 1px solid rgba(#0f172a, .07);
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 5rem;
+            color: $primary;
+            font-size: .8rem;
+            font-weight: 900;
+            letter-spacing: .08em;
+        }
+
+        strong {
+            display: block;
+            margin-bottom: .5rem;
+            color: #0f172a;
+            font-size: 1.2rem;
+            font-weight: 850;
+        }
+
+        p {
+            margin: 0;
+            color: #64748b;
+            line-height: 1.6;
+        }
+    }
+}
+
+// SERVICES
+.etos-services {
+    background:
+        radial-gradient(circle at 78% 0%, rgba($primary, .08), transparent 30rem),
+        radial-gradient(circle at 12% 100%, rgba($etos-accent, .055), transparent 28rem),
+        $etos-graphite;
+
+    .etos-section__title {
+        color: #fff;
+    }
+
+    &__lead {
+        margin: 0;
+        color: rgba(#fff, .68);
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+}
+
+.etos-service-card {
+    height: 100%;
+    min-height: 220px;
+    padding: 1.5rem;
+    border: 1px solid rgba(#fff, .11);
+    border-radius: 1.05rem;
+    background: rgba(#fff, .045);
+    color: #fff;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba($etos-accent, .38);
+        background: rgba(#fff, .07);
+    }
+
+    span {
+        display: inline-flex;
+        margin-bottom: 1.25rem;
+        color: $etos-accent-soft;
+        font-size: .75rem;
+        font-weight: 900;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        margin-bottom: .85rem;
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 780;
+    }
+
+    p {
+        margin: 0;
+        color: rgba(#fff, .68);
+        line-height: 1.65;
     }
 }
