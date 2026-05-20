@@ -52,10 +52,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
-					'container_class' => 'offcanvas-body',
-					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
-					'fallback_cb'     => '',
+					'container'       => 'div',
+					'container_class' => 'offcanvas-body etos-navbar__offcanvas-body',
+					'container_id'    => 'navbarNavOffcanvasBody',
+					'menu_class'      => 'navbar-nav etos-navbar__menu ms-auto',
+					'fallback_cb'     => 'false',
 					'menu_id'         => 'main-menu',
 					'depth'           => 2,
 					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
