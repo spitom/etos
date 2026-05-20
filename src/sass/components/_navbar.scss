@@ -26,10 +26,6 @@ body.logged-in {
     border-bottom: 1px solid rgba($etos-ink, .07);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    transition:
-        background-color .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
 
     .container,
     .container-fluid {
@@ -45,10 +41,16 @@ body.logged-in {
     padding: 0;
     background: transparent;
 
+    .container,
+    .container-fluid {
+        display: flex;
+        align-items: center;
+    }
+
     .navbar-brand {
         display: inline-flex;
         align-items: center;
-        margin-right: clamp(1.5rem, 3vw, 3rem);
+        margin-right: clamp(2rem, 4vw, 4rem);
         padding: 0;
 
         img {
@@ -62,16 +64,12 @@ body.logged-in {
         justify-content: center;
         width: 44px;
         height: 44px;
+        margin-left: auto;
         padding: 0;
         border: 1px solid rgba($etos-ink, .12);
         border-radius: .8rem;
         background: rgba(#fff, .72);
         box-shadow: none;
-
-        &:hover {
-            border-color: rgba($primary, .28);
-            background: #fff;
-        }
 
         &:focus {
             box-shadow: 0 0 0 .2rem rgba($primary, .16);
@@ -81,15 +79,6 @@ body.logged-in {
     .navbar-toggler-icon {
         width: 1.15em;
         height: 1.15em;
-    }
-
-    .navbar-nav {
-        align-items: center;
-        gap: .18rem;
-    }
-
-    .nav-item {
-        position: relative;
     }
 
     .nav-link {
@@ -104,20 +93,11 @@ body.logged-in {
         line-height: 1.2;
         letter-spacing: -.01em;
         text-decoration: none;
-        transition:
-            color .18s ease,
-            background-color .18s ease;
 
         &:hover,
         &:focus,
         &.active {
             color: $etos-ink;
-        }
-
-        &:focus-visible {
-            outline: 3px solid rgba($primary, .28);
-            outline-offset: 3px;
-            border-radius: .6rem;
         }
     }
 
@@ -142,152 +122,105 @@ body.logged-in {
         transform-origin: left;
     }
 
-    .dropdown-toggle {
-        gap: .35rem;
-
-        &::after {
-            margin-left: .12rem;
-            color: rgba($etos-ink, .46);
-            transition:
-                transform .18s ease,
-                color .18s ease;
-        }
+    .dropdown-toggle::after {
+        margin-left: .35rem;
+        color: rgba($etos-ink, .46);
     }
 
     .dropdown:hover>.dropdown-toggle::after,
     .dropdown.show>.dropdown-toggle::after {
         color: $etos-accent;
-        transform: rotate(180deg);
     }
 
-    // Dropdown desktop
     .dropdown-menu {
         min-width: 260px;
         margin-top: .65rem;
         padding: .45rem;
         border: 1px solid rgba($etos-ink, .08);
         border-radius: 1rem;
-        background:
-            linear-gradient(180deg, rgba(#fff, .98), rgba(#f8fafc, .98));
-        box-shadow:
-            0 24px 70px rgba($etos-ink, .14),
-            0 0 0 1px rgba(#fff, .65) inset;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: -.45rem;
-            left: 1.4rem;
-            width: .85rem;
-            height: .85rem;
-            border-top: 1px solid rgba($etos-ink, .08);
-            border-left: 1px solid rgba($etos-ink, .08);
-            background: #fff;
-            transform: rotate(45deg);
-        }
+        background: #fff;
+        box-shadow: 0 24px 70px rgba($etos-ink, .14);
     }
 
     .dropdown-item {
-        position: relative;
         display: flex;
         align-items: center;
         min-height: 42px;
-        padding: .72rem .9rem .72rem 1rem;
+        padding: .72rem .9rem;
         border-radius: .72rem;
         color: rgba($etos-ink, .72);
         font-size: .9rem;
         font-weight: 650;
-        line-height: 1.25;
-        text-decoration: none;
-        transition:
-            color .18s ease,
-            background-color .18s ease,
-            transform .18s ease;
-
-        &::before {
-            content: '';
-            width: .38rem;
-            height: .38rem;
-            margin-right: .65rem;
-            border-radius: 999px;
-            background: rgba($primary, .28);
-            transition:
-                background-color .18s ease,
-                transform .18s ease;
-        }
 
         &:hover,
         &:focus,
         &.active {
             color: $etos-ink;
             background: rgba($etos-accent, .14);
-            transform: translateX(2px);
-        }
-
-        &:hover::before,
-        &:focus::before,
-        &.active::before {
-            background: $etos-accent;
-            transform: scale(1.15);
-        }
-
-        &:focus-visible {
-            outline: 3px solid rgba($primary, .22);
-            outline-offset: 2px;
         }
     }
 }
 
-// Desktop only dropdown positioning
+// Desktop: Bootstrap offcanvas becomes normal navbar content.
 @media (min-width: 1200px) {
     .etos-navbar {
+
+        .navbar-toggler,
+        .offcanvas-header {
+            display: none;
+        }
+
+        .etos-navbar__offcanvas {
+            position: static;
+            visibility: visible;
+            transform: none;
+            flex: 1 1 auto;
+            width: auto;
+            height: auto;
+            border: 0;
+            background: transparent;
+        }
+
+        .etos-navbar__offcanvas-body {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-grow: 1;
+            padding: 0;
+            overflow: visible;
+        }
+
+        .etos-navbar__menu {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: .18rem;
+            margin-left: auto;
+            padding-right: 0;
+        }
+
         .dropdown-menu {
             position: absolute;
         }
     }
 }
 
-// Desktop behaviour
-@media (min-width: 1200px) {
-    .etos-navbar {
-        .navbar-toggler {
-            display: none;
-        }
-
-        .offcanvas-header {
-            display: none;
-        }
-
-        .offcanvas-body {
-            padding: 0;
-            overflow: visible;
-        }
-
-        .etos-navbar__menu {
-            margin-left: auto;
-        }
-    }
-}
-
-
-// Mobile / offcanvas
-// Mobile / offcanvas — keep Bootstrap mechanics
+// Mobile.
 @media (max-width: 1199.98px) {
     .etos-navbar {
         min-height: 68px;
 
-        .navbar-toggler {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .navbar-brand img {
             max-height: 32px;
+        }
+
+        .navbar-toggler {
+            display: inline-flex;
         }
     }
 
     .etos-navbar__offcanvas {
+        width: min(420px, 92vw);
         background: $etos-graphite;
         color: #fff;
 
@@ -300,15 +233,19 @@ body.logged-in {
             padding: .75rem 1.25rem 1.5rem;
         }
 
-        .navbar-nav {
+        .etos-navbar__menu {
+            flex-direction: column;
             align-items: stretch;
             gap: 0;
             padding-right: 0;
         }
 
+        .nav-item {
+            width: 100%;
+        }
+
         .nav-link {
             display: flex;
-            align-items: center;
             width: 100%;
             min-height: 52px;
             padding: .95rem 0;
@@ -327,7 +264,6 @@ body.logged-in {
         }
 
         .dropdown-toggle::after {
-            display: inline-block;
             margin-left: auto;
             color: rgba(#fff, .52);
         }
@@ -335,24 +271,22 @@ body.logged-in {
         .dropdown-menu {
             position: static;
             margin: 0;
-            padding: .35rem 0 .7rem;
+            padding: .25rem 0 .75rem 1rem;
             border: 0;
             border-radius: 0;
             background: transparent;
             box-shadow: none;
-
-            &::before {
-                display: none;
-            }
         }
 
         .dropdown-item {
-            padding: .6rem 0 .6rem 1rem;
+            padding: .6rem 0;
             color: rgba(#fff, .72);
             background: transparent;
+            border-radius: 0;
 
             &:hover,
-            &:focus {
+            &:focus,
+            &.active {
                 color: $etos-accent-soft;
                 background: transparent;
             }
