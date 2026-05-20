@@ -16,7 +16,7 @@ get_header();
         <!-- HERO -->
         <section class="etos-hero position-relative overflow-hidden">
             <div class="container etos-container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4 g-lg-5">
                     <div class="col-lg-6">
                         <span class="etos-kicker">Autoryzowany partner ERP & IT</span>
 
@@ -43,7 +43,7 @@ get_header();
                         <div class="etos-command-center" aria-label="Schemat procesów biznesowych obsługiwanych przez ETOS">
                             <div class="etos-command-center__top">
                                 <span></span><span></span><span></span>
-                                <strong>ETOS Automatyzacja Procesów Biznesowych</strong>
+                                <strong>Automatyzacja Procesów Biznesowych</strong>
                             </div>
 
                             <div class="etos-command-center__grid">
@@ -206,7 +206,7 @@ get_header();
         <!-- WORKFLOW -->
         <section class="etos-section bg-white">
             <div class="container etos-container">
-                <div class="row g-5 align-items-center">
+                <div class="row g-4 g-lg-5 align-items-center">
                     <div class="col-lg-5">
                         <span class="etos-kicker">Od procesu do wdrożenia</span>
                         <h2 class="etos-section__title">

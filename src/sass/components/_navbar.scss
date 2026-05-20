@@ -2,13 +2,6 @@
 // Navbar — ETOS
 // ==========================================================================
 
-html {
-    scrollbar-gutter: stable;
-}
-
-body {
-    overflow-y: scroll;
-}
 
 #content {
     padding-top: 0;
@@ -356,23 +349,4 @@ body.admin-bar {
         background: transparent;
         border-radius: 0;
     }
-}
-
-// Bootstrap offcanvas stacking fix
-.offcanvas-backdrop {
-    z-index: 1040;
-}
-
-.etos-navbar__offcanvas {
-    z-index: 1055;
-}
-
-body.offcanvas-open,
-body.modal-open {
-    padding-right: 0 !important;
-}
-
-body.offcanvas-open #wrapper-navbar,
-body.modal-open #wrapper-navbar {
-    padding-right: 0 !important;
 }
