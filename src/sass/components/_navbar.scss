@@ -2,12 +2,20 @@
 // Navbar — ETOS
 // ==========================================================================
 
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    overflow-y: scroll;
+}
+
 #content {
     padding-top: 0;
     padding-bottom: 0;
 }
 
-body.logged-in {
+body.admin-bar {
     #wrapper-navbar {
         top: 32px;
 
@@ -20,12 +28,12 @@ body.logged-in {
 #wrapper-navbar {
     position: sticky;
     top: 0;
-    z-index: 1030;
+    z-index: 1035;
     padding: 0;
-    background: rgba(#fff, .9);
+    background: #fff;
     border-bottom: 1px solid rgba($etos-ink, .07);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+
+
 
     .container,
     .container-fluid {
@@ -41,8 +49,8 @@ body.logged-in {
     padding: 0;
     background: transparent;
 
-    .container,
-    .container-fluid {
+    >.container,
+    >.container-fluid {
         display: flex;
         align-items: center;
     }
@@ -60,108 +68,98 @@ body.logged-in {
     }
 
     .navbar-toggler {
+        position: relative;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
+
+        width: 46px;
+        height: 46px;
+
         margin-left: auto;
         padding: 0;
-        border: 1px solid rgba($etos-ink, .12);
-        border-radius: .8rem;
-        background: rgba(#fff, .72);
-        box-shadow: none;
+
+        border: 1px solid rgba($etos-ink, .08);
+        border-radius: .9rem;
+
+        background:
+            linear-gradient(180deg,
+                rgba(#fff, .96),
+                rgba(#f7fafc, .96));
+
+        box-shadow:
+            0 10px 30px rgba($etos-ink, .06),
+            inset 0 1px 0 rgba(#fff, .9);
+
+        transition:
+            border-color .18s ease,
+            background-color .18s ease,
+            box-shadow .18s ease;
+
+        &:hover {
+            border-color: rgba($primary, .22);
+
+            box-shadow:
+                0 14px 34px rgba($etos-ink, .08),
+                0 0 0 4px rgba($primary, .05);
+        }
 
         &:focus {
-            box-shadow: 0 0 0 .2rem rgba($primary, .16);
+            box-shadow:
+                0 0 0 4px rgba($primary, .12),
+                0 10px 30px rgba($etos-ink, .08);
+        }
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            inset: 0;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(135deg,
+                    rgba($primary, .05),
+                    transparent 45%);
+
+            pointer-events: none;
         }
     }
 
     .navbar-toggler-icon {
-        width: 1.15em;
-        height: 1.15em;
-    }
-
-    .nav-link {
         position: relative;
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: .55rem .72rem;
-        color: rgba($etos-ink, .72);
-        font-size: .9rem;
-        font-weight: 680;
-        line-height: 1.2;
-        letter-spacing: -.01em;
-        text-decoration: none;
 
-        &:hover,
-        &:focus,
-        &.active {
-            color: $etos-ink;
-        }
+        width: 18px;
+        height: 12px;
+
+        background-image: none;
+
+        border-top: 2px solid $etos-ink;
+        border-bottom: 2px solid $etos-ink;
     }
 
-    .nav-link:not(.dropdown-toggle)::after {
+    .navbar-toggler-icon::after {
         content: '';
+
         position: absolute;
-        right: .72rem;
-        bottom: .34rem;
-        left: .72rem;
+        top: 50%;
+        left: 0;
+
+        width: 100%;
         height: 2px;
-        border-radius: 999px;
-        background: $etos-accent;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform .24s cubic-bezier(.16, 1, .3, 1);
-    }
 
-    .nav-link:not(.dropdown-toggle):hover::after,
-    .nav-link:not(.dropdown-toggle):focus::after,
-    .nav-link:not(.dropdown-toggle).active::after {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
+        background: $etos-ink;
 
-    .dropdown-toggle::after {
-        margin-left: .35rem;
-        color: rgba($etos-ink, .46);
-    }
-
-    .dropdown:hover>.dropdown-toggle::after,
-    .dropdown.show>.dropdown-toggle::after {
-        color: $etos-accent;
-    }
-
-    .dropdown-menu {
-        min-width: 260px;
-        margin-top: .65rem;
-        padding: .45rem;
-        border: 1px solid rgba($etos-ink, .08);
-        border-radius: 1rem;
-        background: #fff;
-        box-shadow: 0 24px 70px rgba($etos-ink, .14);
-    }
-
-    .dropdown-item {
-        display: flex;
-        align-items: center;
-        min-height: 42px;
-        padding: .72rem .9rem;
-        border-radius: .72rem;
-        color: rgba($etos-ink, .72);
-        font-size: .9rem;
-        font-weight: 650;
-
-        &:hover,
-        &:focus,
-        &.active {
-            color: $etos-ink;
-            background: rgba($etos-accent, .14);
-        }
+        transform: translateY(-50%);
     }
 }
 
-// Desktop: Bootstrap offcanvas becomes normal navbar content.
+
+// ==========================================================================
+// Desktop navbar
+// ==========================================================================
+
 @media (min-width: 1200px) {
     .etos-navbar {
 
@@ -172,11 +170,11 @@ body.logged-in {
 
         .etos-navbar__offcanvas {
             position: static;
-            visibility: visible;
-            transform: none;
             flex: 1 1 auto;
             width: auto;
             height: auto;
+            visibility: visible;
+            transform: none;
             border: 0;
             background: transparent;
         }
@@ -185,7 +183,6 @@ body.logged-in {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            flex-grow: 1;
             padding: 0;
             overflow: visible;
         }
@@ -199,13 +196,94 @@ body.logged-in {
             padding-right: 0;
         }
 
-        .dropdown-menu {
+        .etos-navbar__offcanvas-title {
+            margin: 0;
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: .55rem .72rem;
+            color: rgba($etos-ink, .72);
+            font-size: .9rem;
+            font-weight: 680;
+            line-height: 1.2;
+            letter-spacing: -.01em;
+            text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $etos-ink;
+            }
+        }
+
+        .nav-link:not(.dropdown-toggle)::after {
+            content: '';
             position: absolute;
+            right: .72rem;
+            bottom: .34rem;
+            left: .72rem;
+            height: 2px;
+            border-radius: 999px;
+            background: $etos-accent;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .24s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .nav-link:not(.dropdown-toggle):hover::after,
+        .nav-link:not(.dropdown-toggle):focus::after,
+        .nav-link:not(.dropdown-toggle).active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: .35rem;
+            color: rgba($etos-ink, .46);
+        }
+
+        .dropdown-menu {
+            min-width: 260px;
+            margin-top: .65rem;
+            padding: .45rem;
+            border: 1px solid rgba($etos-ink, .08);
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 24px 70px rgba($etos-ink, .14);
+        }
+
+        .dropdown-item {
+            min-height: 42px;
+            padding: .72rem .9rem;
+            border-radius: .72rem;
+            color: rgba($etos-ink, .72);
+            font-size: .9rem;
+            font-weight: 650;
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $etos-ink;
+                background: rgba($etos-accent, .14);
+            }
         }
     }
 }
 
-// Mobile.
+
+// ==========================================================================
+// Mobile offcanvas — minimal styling only
+// ==========================================================================
+
 @media (max-width: 1199.98px) {
     .etos-navbar {
         min-height: 68px;
@@ -220,76 +298,81 @@ body.logged-in {
     }
 
     .etos-navbar__offcanvas {
-        width: min(420px, 92vw);
         background: $etos-graphite;
         color: #fff;
-
-        .offcanvas-header {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid rgba(#fff, .08);
-        }
-
-        .offcanvas-body {
-            padding: .75rem 1.25rem 1.5rem;
-        }
-
-        .etos-navbar__menu {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0;
-            padding-right: 0;
-        }
-
-        .nav-item {
-            width: 100%;
-        }
-
-        .nav-link {
-            display: flex;
-            width: 100%;
-            min-height: 52px;
-            padding: .95rem 0;
-            color: rgba(#fff, .86);
-            border-bottom: 1px solid rgba(#fff, .08);
-
-            &:hover,
-            &:focus,
-            &.active {
-                color: #fff;
-            }
-
-            &::after {
-                display: none;
-            }
-        }
-
-        .dropdown-toggle::after {
-            margin-left: auto;
-            color: rgba(#fff, .52);
-        }
-
-        .dropdown-menu {
-            position: static;
-            margin: 0;
-            padding: .25rem 0 .75rem 1rem;
-            border: 0;
-            border-radius: 0;
-            background: transparent;
-            box-shadow: none;
-        }
-
-        .dropdown-item {
-            padding: .6rem 0;
-            color: rgba(#fff, .72);
-            background: transparent;
-            border-radius: 0;
-
-            &:hover,
-            &:focus,
-            &.active {
-                color: $etos-accent-soft;
-                background: transparent;
-            }
-        }
     }
+
+    .etos-navbar__offcanvas .offcanvas-header {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(#fff, .08);
+    }
+
+    .etos-navbar__offcanvas .offcanvas-body {
+        padding: .75rem 1.25rem 1.5rem;
+    }
+
+    .etos-navbar__offcanvas .etos-navbar__menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-right: 0;
+    }
+
+    .etos-navbar__offcanvas .nav-item {
+        width: 100%;
+    }
+
+    .etos-navbar__offcanvas .nav-link {
+        display: flex;
+        width: 100%;
+        min-height: 52px;
+        padding: .95rem 0;
+        color: rgba(#fff, .86);
+        border-bottom: 1px solid rgba(#fff, .08);
+    }
+
+    .etos-navbar__offcanvas .nav-link::after {
+        display: none;
+    }
+
+    .etos-navbar__offcanvas .dropdown-toggle::after {
+        margin-left: auto;
+        color: rgba(#fff, .52);
+    }
+
+    .etos-navbar__offcanvas .dropdown-menu {
+        position: static;
+        margin: 0;
+        padding: .25rem 0 .75rem 1rem;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .etos-navbar__offcanvas .dropdown-item {
+        padding: .6rem 0;
+        color: rgba(#fff, .72);
+        background: transparent;
+        border-radius: 0;
+    }
+}
+
+// Bootstrap offcanvas stacking fix
+.offcanvas-backdrop {
+    z-index: 1040;
+}
+
+.etos-navbar__offcanvas {
+    z-index: 1055;
+}
+
+body.offcanvas-open,
+body.modal-open {
+    padding-right: 0 !important;
+}
+
+body.offcanvas-open #wrapper-navbar,
+body.modal-open #wrapper-navbar {
+    padding-right: 0 !important;
 }

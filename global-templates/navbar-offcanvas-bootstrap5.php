@@ -26,9 +26,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="offcanvas offcanvas-end etos-navbar__offcanvas" tabindex="-1" id="navbarNavOffcanvas">
+		<div
+			class="offcanvas offcanvas-end etos-navbar__offcanvas"
+			tabindex="-1"
+			id="navbarNavOffcanvas"
+			aria-labelledby="navbarNavOffcanvasLabel"
+		>
 
-			<div class="offcanvas-header justify-content-end">
+			<div class="offcanvas-header justify-content-between">
+				<h2 class="etos-navbar__offcanvas-title" id="navbarNavOffcanvasLabel">
+					Menu
+				</h2>
+
 				<button
 					class="btn-close btn-close-white"
 					type="button"
