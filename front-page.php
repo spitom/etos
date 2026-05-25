@@ -33,7 +33,7 @@ get_header();
                             <a href="#contact" class="btn btn-primary btn-lg">
                                 Umów prezentację
                             </a>
-                            <a href="#ecosystem" class="btn btn-outline-dark btn-lg">
+                            <a href="#ecosystem" class="btn etos-btn-secondary btn-lg">
                                 Zobacz rozwiązania ERP
                             </a>
                         </div>
@@ -107,51 +107,71 @@ get_header();
         <!-- OPERATION AREAS -->
         <section id="ecosystem" class="etos-operations">
             <div class="container etos-container">
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="etos-operation-card">
-                            <span class="etos-operation-card__icon">01</span>
-                            <h2>Integracje</h2>
-                            <p>systemy ERP, e-commerce, urządzenia fiskalne i raportowanie</p>
-                        </a>
-                    </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="etos-operation-card">
-                            <span class="etos-operation-card__icon">02</span>
-                            <h2>Finanse</h2>
-                            <p>księgowość, kadry, płace, faktury i gotowość na KSeF</p>
-                        </a>
-                    </div>
+                <div class="etos-capabilities">
 
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="etos-operation-card">
-                            <span class="etos-operation-card__icon">03</span>
-                            <h2>Procesy</h2>
-                            <p>sprzedaż, magazyn, zamówienia, obieg dokumentów</p>
-                        </a>
-                    </div>
+                    <a href="#" class="etos-capability">
+                        <span class="etos-capability__index">01</span>
 
-                    <div class="col-lg-3 col-md-6">
-                        <a href="#" class="etos-operation-card">
-                            <span class="etos-operation-card__icon">04</span>
-                            <h2>Infrastruktura</h2>
-                            <p>serwery, sieci, backup, bezpieczeństwo i opieka IT</p>
-                        </a>
-                    </div>
+                        <h2>Integracje</h2>
+
+                        <p>
+                            systemy ERP, e-commerce,
+                            urządzenia fiskalne i raportowanie
+                        </p>
+                    </a>
+
+                    <a href="#" class="etos-capability">
+                        <span class="etos-capability__index">02</span>
+
+                        <h2>Finanse</h2>
+
+                        <p>
+                            księgowość, kadry, płace,
+                            faktury i gotowość na KSeF
+                        </p>
+                    </a>
+
+                    <a href="#" class="etos-capability">
+                        <span class="etos-capability__index">03</span>
+
+                        <h2>Procesy</h2>
+
+                        <p>
+                            sprzedaż, magazyn, zamówienia,
+                            obieg dokumentów
+                        </p>
+                    </a>
+
+                    <a href="#" class="etos-capability">
+                        <span class="etos-capability__index">04</span>
+
+                        <h2>Infrastruktura</h2>
+
+                        <p>
+                            serwery, sieci, backup,
+                            bezpieczeństwo i opieka IT
+                        </p>
+                    </a>
 
                 </div>
+
             </div>
         </section>
 
         <!-- ERP ECOSYSTEM -->
         <section id="erp" class="etos-section etos-section--soft">
             <div class="container etos-container">
+
                 <div class="row mb-5 align-items-end g-4">
                     <div class="col-lg-7">
-                        <span class="etos-kicker">Systemy ERP dopasowane do procesów</span>
+                        <span class="etos-kicker">
+                            Systemy ERP dopasowane do procesów
+                        </span>
+
                         <h2 class="etos-section__title">
-                            Budujemy środowisko pracy firmy, nie tylko wdrażamy programy.
+                            Budujemy środowisko pracy firmy,
+                            nie tylko wdrażamy programy.
                         </h2>
                     </div>
 
@@ -163,43 +183,130 @@ get_header();
                     </div>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-lg-4">
-                        <article class="etos-vendor-card etos-vendor-card--symfonia">
-                            <span class="etos-vendor-card__tag">dla większych struktur i HR</span>
-                            <h3>Symfonia ERP</h3>
+                <div class="etos-erp-suites">
+
+                    <!-- SYMFONIA -->
+                    <div class="etos-erp-suite etos-erp-suite--symfonia">
+
+                        <div class="etos-erp-suite__intro">
+                            <span class="etos-erp-suite__label">
+                                Symfonia ERP
+                            </span>
+
+                            <h3>
+                                Finanse, kadry i procesy
+                                w stabilnym środowisku ERP.
+                            </h3>
+
                             <p>
-                                Finanse, kadry i płace, handel, produkcja oraz analityka dla organizacji,
-                                które potrzebują stabilnego środowiska i precyzyjnego raportowania.
+                                Dobieramy, wdrażamy i rozwijamy moduły Symfonii
+                                dla firm, które potrzebują kontroli nad księgowością,
+                                kadrami, dokumentami i raportowaniem.
                             </p>
-                            <a href="#">Poznaj moduły Symfonii →</a>
-                        </article>
+
+                            <a href="/oprogramowanie/symfonia-erp/"
+                            class="etos-erp-suite__main-link">
+                                Zobacz stronę Symfonia ERP →
+                            </a>
+                        </div>
+
+                        <div class="etos-erp-suite__modules">
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-finanse"
+                            class="etos-erp-module">
+                                Finanse i Księgowość
+                            </a>
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-kadry-place"
+                            class="etos-erp-module">
+                                Kadry i Płace
+                            </a>
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-handel"
+                            class="etos-erp-module">
+                                Handel i Magazyn
+                            </a>
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-bi"
+                            class="etos-erp-module">
+                                Business Intelligence
+                            </a>
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-obieg"
+                            class="etos-erp-module">
+                                Obieg dokumentów
+                            </a>
+
+                            <a href="/oprogramowanie/symfonia-erp/#modul-ksef"
+                            class="etos-erp-module">
+                                KSeF
+                            </a>
+
+                        </div>
+
                     </div>
 
-                    <div class="col-lg-4">
-                        <article class="etos-vendor-card etos-vendor-card--insert">
-                            <span class="etos-vendor-card__tag">ekosystem nexo / GT</span>
-                            <h3>InsERT</h3>
+                    <!-- INSERT -->
+                    <div class="etos-erp-suite etos-erp-suite--insert">
+
+                        <div class="etos-erp-suite__intro">
+                            <span class="etos-erp-suite__label">InsERT nexo / GT</span>
+
+                            <h3>Sprzedaż, magazyn i księgowość w sprawdzonym ekosystemie.</h3>
+
                             <p>
-                                Sprawdzone rozwiązania dla sprzedaży, magazynu, księgowości i kadr.
-                                Dobry wybór dla firm, które potrzebują intuicyjnego i elastycznego systemu.
+                                Wdrażamy rozwiązania InsERT dla firm, które potrzebują intuicyjnego systemu
+                                do sprzedaży, magazynu, fakturowania, księgowości, kadr i obsługi klientów.
                             </p>
-                            <a href="#">Poznaj ekosystem InsERT →</a>
-                        </article>
+
+                            <a href="/oprogramowanie/insert/" class="etos-erp-suite__main-link">
+                                Zobacz stronę InsERT →
+                            </a>
+                        </div>
+
+                        <div class="etos-erp-suite__modules">
+                            <a href="/oprogramowanie/insert/#modul-subiekt" class="etos-erp-module">Subiekt</a>
+                            <a href="/oprogramowanie/insert/#modul-rewizor" class="etos-erp-module">Rewizor</a>
+                            <a href="/oprogramowanie/insert/#modul-rachmistrz" class="etos-erp-module">Rachmistrz</a>
+                            <a href="/oprogramowanie/insert/#modul-gratyfikant" class="etos-erp-module">Gratyfikant</a>
+                            <a href="/oprogramowanie/insert/#modul-gestor" class="etos-erp-module">Gestor</a>
+                            <a href="/oprogramowanie/insert/#modul-sello" class="etos-erp-module">Sello / e-commerce</a>
+                        </div>
+
                     </div>
 
-                    <div class="col-lg-4">
-                        <article class="etos-vendor-card etos-vendor-card--streamsoft">
-                            <span class="etos-vendor-card__tag">produkcja, logistyka, WMS</span>
-                            <h3>Streamsoft Prestiż</h3>
+
+                    <!-- STREAMSOFT -->
+                    <div class="etos-erp-suite etos-erp-suite--streamsoft">
+
+                        <div class="etos-erp-suite__intro">
+                            <span class="etos-erp-suite__label">Streamsoft Prestiż</span>
+
+                            <h3>ERP dla produkcji, logistyki i bardziej złożonych procesów.</h3>
+
                             <p>
-                                Rozwiązanie dla bardziej złożonych procesów: produkcji, logistyki,
-                                planowania, magazynu, integracji i automatyzacji pracy przedsiębiorstwa.
+                                Pomagamy wdrażać Streamsoft Prestiż w firmach, które potrzebują kontroli
+                                nad produkcją, magazynem, logistyką, sprzedażą, finansami i integracjami.
                             </p>
-                            <a href="#">Poznaj Streamsoft Prestiż →</a>
-                        </article>
+
+                            <a href="/oprogramowanie/streamsoft-prestiz/" class="etos-erp-suite__main-link">
+                                Zobacz stronę Streamsoft →
+                            </a>
+                        </div>
+
+                        <div class="etos-erp-suite__modules">
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-produkcja" class="etos-erp-module">Produkcja</a>
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-wms" class="etos-erp-module">WMS / Magazyn</a>
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-logistyka" class="etos-erp-module">Logistyka</a>
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-handel" class="etos-erp-module">Handel</a>
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-finanse" class="etos-erp-module">Finanse i księgowość</a>
+                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-integracje" class="etos-erp-module">Integracje</a>
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
         </section>
 
@@ -219,28 +326,32 @@ get_header();
                     </div>
 
                     <div class="col-lg-7">
-                        <div class="etos-workflow">
-                            <div>
+                        <div class="etos-process-flow">
+
+                            <div class="etos-process-step">
                                 <span>01</span>
-                                <strong>Analiza</strong>
+                                <h3>Analiza</h3>
                                 <p>procesy, potrzeby, ryzyka</p>
                             </div>
-                            <div>
+
+                            <div class="etos-process-step">
                                 <span>02</span>
-                                <strong>Dobór systemu</strong>
+                                <h3>Dobór systemu</h3>
                                 <p>Symfonia, InsERT, Streamsoft</p>
                             </div>
-                            <div>
+
+                            <div class="etos-process-step">
                                 <span>03</span>
-                                <strong>Wdrożenie</strong>
+                                <h3>Wdrożenie</h3>
                                 <p>konfiguracja, migracja, szkolenia</p>
                             </div>
-                            <div>
+
+                            <div class="etos-process-step">
                                 <span>04</span>
-                                <strong>Utrzymanie</strong>
-                                <p>opieka IT, rozwój, bezpieczeństwo</p>
+                                <h3>Rozwój i opieka</h3>
+                                <p>IT, bezpieczeństwo, wsparcie</p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
