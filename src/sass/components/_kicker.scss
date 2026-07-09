@@ -1,0 +1,40 @@
+.etos-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color: var(--software-color, #{$primary});
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        flex: 0 0 auto;
+        width: .55rem;
+        height: .55rem;
+        border-radius: 999px;
+        background: var(--software-color, #{$primary});
+        box-shadow: 0 0 0 .35rem rgba(var(--software-rgb, 0, 160, 227), .12);
+    }
+
+    &--light {
+        color: $etos-accent-soft;
+
+        &::before {
+            background: $etos-accent;
+            box-shadow: 0 0 0 .35rem rgba($etos-accent, .16);
+        }
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .etos-kicker {
+        max-width: 100%;
+        font-size: .72rem;
+        line-height: 1.35;
+        letter-spacing: .07em;
+    }
+}

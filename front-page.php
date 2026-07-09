@@ -30,71 +30,49 @@ get_header();
                         </p>
 
                         <div class="etos-hero__actions d-flex flex-wrap gap-3">
-                            <a href="#contact" class="btn btn-primary btn-lg">
+                            <a href="#contact" class="btn etos-btn-primary">
                                 Umów prezentację
                             </a>
-                            <a href="#ecosystem" class="btn etos-btn-secondary btn-lg">
+                            <a href="#ecosystem" class="btn etos-btn-secondary">
                                 Zobacz rozwiązania ERP
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="etos-command-center" aria-label="Schemat procesów biznesowych obsługiwanych przez ETOS">
+                        <div class="etos-command-center etos-command-center--partners" aria-label="Partnerzy technologiczni ETOS">
                             <div class="etos-command-center__top">
                                 <span></span><span></span><span></span>
-                                <strong>Automatyzacja Procesów Biznesowych</strong>
+                                <strong>Ekosystem technologii ETOS</strong>
                             </div>
 
-                            <div class="etos-command-center__grid">
-                                <div class="etos-process-card etos-process-card--active">
-                                    <span>Wdrożenia ERP</span>
-                                    <strong>320</strong>
-                                    <small>od 2002</small>
-                                </div>
+                            <div class="etos-partner-cloud">
+                                <a href="/oprogramowanie/symfonia-erp/" class="etos-partner-logo etos-partner-logo--symfonia" aria-label="Symfonia ERP">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/symfonia.png' ); ?>" alt="Symfonia">
+                                </a>
 
-                                <div class="etos-process-card">
-                                    <span>Obsługa IT</span>
-                                    <strong>1 250</strong>
-                                    <small>firm</small>
-                                </div>
+                                <a href="/oprogramowanie/insert/" class="etos-partner-logo etos-partner-logo--insert" aria-label="InsERT">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/insert.png' ); ?>" alt="InsERT">
+                                </a>
 
-                                <div class="etos-process-card">
-                                    <span>Finanse</span>
-                                    <strong>KSeF</strong>
-                                    <small>gotowość</small>
-                                </div>
+                                <a href="/oprogramowanie/streamsoft-prestiz/" class="etos-partner-logo etos-partner-logo--streamsoft" aria-label="Streamsoft Prestiż">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/streamsoft.png' ); ?>" alt="Streamsoft">
+                                </a>
 
-                                <div class="etos-process-card etos-process-card--wide">
-                                    <span>Przepływ dokumentów</span>
-                                    <div class="etos-flow">
-                                        <i>Oferta</i>
-                                        <b></b>
-                                        <i>Zamówienie</i>
-                                        <b></b>
-                                        <i>Faktura</i>
-                                        <b></b>
-                                        <i>KSeF</i>
-                                    </div>
-                                </div>
+                                <a href="/urzadzenia-fiskalne/" class="etos-partner-logo etos-partner-logo--posnet" aria-label="POSNET">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/posnet.png' ); ?>" alt="POSNET">
+                                </a>
 
-                                <div class="etos-chart-card">
-                                    <span>Stabilność operacyjna</span>
-                                    <div class="etos-chart">
-                                        <i style="height: 32%"></i>
-                                        <i style="height: 48%"></i>
-                                        <i style="height: 42%"></i>
-                                        <i style="height: 68%"></i>
-                                        <i style="height: 76%"></i>
-                                        <i style="height: 92%"></i>
-                                    </div>
-                                </div>
+                                <a href="/podpis-elektroniczny/" class="etos-partner-logo etos-partner-logo--certum" aria-label="Certum">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/certum.png' ); ?>" alt="Certum">
+                                </a>
+                            </div>
 
-                                <div class="etos-status-card">
-                                    <span>Opieka IT</span>
-                                    <strong>ciągłość pracy</strong>
-                                    <small>serwery · backup · SQL · helpdesk</small>
-                                </div>
+                            <div class="etos-partner-note">
+                                <span>ERP</span>
+                                <span>Fiskalizacja</span>
+                                <span>Podpis elektroniczny</span>
+                                <span>Infrastruktura IT</span>
                             </div>
                         </div>
                     </div>
@@ -104,54 +82,55 @@ get_header();
             <div class="etos-hero__pattern" aria-hidden="true"></div>
         </section>
 
-        <!-- OPERATION AREAS -->
+        <!-- SUPPORT AREAS -->
         <section id="ecosystem" class="etos-operations">
             <div class="container etos-container">
 
-                <div class="etos-capabilities">
+                <div class="etos-operations__header">
+                    <span class="etos-kicker">Zakres wsparcia ETOS</span>
+                    <h2>W jakich obszarach możemy wesprzeć Twoją pracę?</h2>
+                </div>
 
-                    <a href="#" class="etos-capability">
+                <div class="etos-capabilities etos-capabilities--services">
+
+                    <a href="/oprogramowanie/" class="etos-capability etos-capability--software">
                         <span class="etos-capability__index">01</span>
-
-                        <h2>Integracje</h2>
-
-                        <p>
-                            systemy ERP, e-commerce,
-                            urządzenia fiskalne i raportowanie
-                        </p>
+                        <h3>Dostawa oprogramowania</h3>
+                        <ul>
+                            <li>Symfonia</li>
+                            <li>Streamsoft</li>
+                            <li>InsERT</li>
+                        </ul>
                     </a>
 
-                    <a href="#" class="etos-capability">
+                    <a href="/uslugi-it/" class="etos-capability etos-capability--implementation">
                         <span class="etos-capability__index">02</span>
-
-                        <h2>Finanse</h2>
-
-                        <p>
-                            księgowość, kadry, płace,
-                            faktury i gotowość na KSeF
-                        </p>
+                        <h3>Specjalistyczne usługi</h3>
+                        <ul>
+                            <li>Wdrożenia</li>
+                            <li>Szkolenia</li>
+                        </ul>
                     </a>
 
-                    <a href="#" class="etos-capability">
+                    <a href="/podpis-elektroniczny/" class="etos-capability etos-capability--signature">
                         <span class="etos-capability__index">03</span>
-
-                        <h2>Procesy</h2>
-
-                        <p>
-                            sprzedaż, magazyn, zamówienia,
-                            obieg dokumentów
-                        </p>
+                        <h3>e-Podpis</h3>
+                        <ul>
+                            <li>Podpis kwalifikowany</li>
+                            <li>odnowienia</li>
+                            <li>konfiguracja i wsparcie</li>
+                        </ul>
                     </a>
 
-                    <a href="#" class="etos-capability">
+                    <a href="/urzadzenia-fiskalne/" class="etos-capability etos-capability--fiscal">
                         <span class="etos-capability__index">04</span>
-
-                        <h2>Infrastruktura</h2>
-
-                        <p>
-                            serwery, sieci, backup,
-                            bezpieczeństwo i opieka IT
-                        </p>
+                        <h3>Fiskalizacja</h3>
+                        <ul>
+                            <li>Kasy</li>
+                            <li>drukarki fiskalne</li>
+                            <li>konfiguracja</li>
+                            <li>przeglądy i serwis</li>
+                        </ul>
                     </a>
 
                 </div>
@@ -188,60 +167,45 @@ get_header();
                     <!-- SYMFONIA -->
                     <div class="etos-erp-suite etos-erp-suite--symfonia">
 
-                        <div class="etos-erp-suite__intro">
-                            <span class="etos-erp-suite__label">
-                                Symfonia ERP
-                            </span>
+                        <div class="etos-erp-suite__content">
+                            <img
+                                src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/symfonia.png' ); ?>"
+                                alt="Symfonia"
+                                class="etos-erp-suite__logo"
+                            >
 
-                            <h3>
-                                Finanse, kadry i procesy
-                                w stabilnym środowisku ERP.
-                            </h3>
+                            <div class="etos-erp-suite__intro">
+                                <span class="etos-erp-suite__label">Symfonia ERP</span>
 
-                            <p>
-                                Dobieramy, wdrażamy i rozwijamy moduły Symfonii
-                                dla firm, które potrzebują kontroli nad księgowością,
-                                kadrami, dokumentami i raportowaniem.
-                            </p>
+                                <h3>Finanse, kadry i procesy w stabilnym środowisku ERP.</h3>
 
-                            <a href="/oprogramowanie/symfonia-erp/"
-                            class="etos-erp-suite__main-link">
-                                Zobacz stronę Symfonia ERP →
-                            </a>
+                                <p>
+                                    Dobieramy, wdrażamy i rozwijamy moduły Symfonii dla firm,
+                                    które potrzebują kontroli nad księgowością, kadrami,
+                                    dokumentami i raportowaniem.
+                                </p>
+
+                                <a href="/oprogramowanie/symfonia-erp/" class="etos-erp-suite__main-link">
+                                    Zobacz stronę Symfonia ERP →
+                                </a>
+                            </div>
+
+                            <div class="etos-erp-suite__modules">
+                                <a href="#" class="etos-erp-module etos-erp-module--wide">Finanse i Księgowość</a>
+                                <a href="#" class="etos-erp-module">Kadry i Płace</a>
+                                <a href="#" class="etos-erp-module etos-erp-module--short">Handel i Magazyn</a>
+                                <a href="#" class="etos-erp-module">Business Intelligence</a>
+                                <a href="#" class="etos-erp-module etos-erp-module--wide">Obieg dokumentów</a>
+                                <a href="#" class="etos-erp-module etos-erp-module--short">KSeF</a>
+                            </div>
                         </div>
 
-                        <div class="etos-erp-suite__modules">
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-finanse"
-                            class="etos-erp-module">
-                                Finanse i Księgowość
-                            </a>
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-kadry-place"
-                            class="etos-erp-module">
-                                Kadry i Płace
-                            </a>
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-handel"
-                            class="etos-erp-module">
-                                Handel i Magazyn
-                            </a>
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-bi"
-                            class="etos-erp-module">
-                                Business Intelligence
-                            </a>
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-obieg"
-                            class="etos-erp-module">
-                                Obieg dokumentów
-                            </a>
-
-                            <a href="/oprogramowanie/symfonia-erp/#modul-ksef"
-                            class="etos-erp-module">
-                                KSeF
-                            </a>
-
+                        <div class="etos-erp-suite__media">
+                            <img
+                                src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/front/symfonia.webp' ); ?>"
+                                alt=""
+                                loading="lazy"
+                            >
                         </div>
 
                     </div>

@@ -2,126 +2,8 @@
 // Front Page — ETOS
 // ==========================================================================
 
-.etos-container {
-    max-width: 1320px;
-}
-
 .site-main--front {
     background: #fff;
-}
-
-// ==========================================================================
-// Shared UI
-// ==========================================================================
-
-.etos-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: 1rem;
-    color: $primary;
-    font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-
-    &::before {
-        content: '';
-        flex: 0 0 auto;
-        width: .55rem;
-        height: .55rem;
-        border-radius: 999px;
-        background: $primary;
-        box-shadow: 0 0 0 .35rem rgba($primary, .12);
-    }
-
-    &--light {
-        color: $etos-accent-soft;
-
-        &::before {
-            background: $etos-accent;
-            box-shadow: 0 0 0 .35rem rgba($etos-accent, .16);
-        }
-    }
-}
-
-.btn {
-    --bs-btn-border-radius: .72rem;
-    font-weight: 760;
-    letter-spacing: -.01em;
-    box-shadow: none;
-    transition:
-        transform .18s ease,
-        background-color .18s ease,
-        border-color .18s ease,
-        color .18s ease;
-}
-
-.btn-primary {
-    background: $etos-accent;
-    border-color: $etos-accent;
-    color: $etos-ink;
-    box-shadow:
-        0 12px 28px rgba($etos-accent, .28);
-
-    &:hover,
-    &:focus {
-        background: darken($etos-accent, 7%);
-        border-color: darken($etos-accent, 7%);
-        color: $etos-ink;
-        transform: translateY(-2px);
-    }
-}
-
-.etos-btn-secondary {
-    position: relative;
-
-    min-height: 54px;
-
-    padding-inline: 1.5rem;
-
-    border: 1px solid rgba(#0f172a, .08);
-    border-radius: .95rem;
-
-    background:
-        linear-gradient(180deg,
-            rgba(#ffffff, .92),
-            rgba(#f8fbfd, .92));
-
-    color: $etos-ink;
-
-    font-weight: 760;
-    letter-spacing: -.015em;
-
-    box-shadow:
-        0 10px 30px rgba(#0f172a, .045),
-        inset 0 1px 0 rgba(#fff, .9);
-
-    backdrop-filter: blur(10px);
-
-    transition:
-        transform .18s ease,
-        border-color .18s ease,
-        box-shadow .18s ease,
-        background-color .18s ease;
-
-    &:hover,
-    &:focus {
-        color: $etos-ink;
-
-        border-color: rgba($primary, .22);
-
-        background:
-            linear-gradient(180deg,
-                rgba(#ffffff, 1),
-                rgba(#f8fbfd, 1));
-
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 18px 40px rgba(#0f172a, .08),
-            0 0 0 4px rgba($primary, .05);
-    }
 }
 
 // ==========================================================================
@@ -295,29 +177,6 @@
     }
 }
 
-.etos-flow {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: .65rem;
-
-    i {
-        padding: .5rem .75rem;
-        border-radius: 999px;
-        background: #eef7fc;
-        color: #0f172a;
-        font-style: normal;
-        font-size: .82rem;
-        font-weight: 700;
-    }
-
-    b {
-        width: 1.5rem;
-        height: 1px;
-        background: rgba($primary, .55);
-    }
-}
-
 .etos-chart {
     display: flex;
     align-items: end;
@@ -334,6 +193,119 @@
 
 .etos-status-card {
     background: #fff;
+}
+
+.etos-command-center--partners {
+    min-height: 430px;
+}
+
+.etos-partner-cloud {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: .9rem;
+    padding: 1rem;
+}
+
+.etos-partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 112px;
+    padding: 1.25rem;
+    border: 1px solid rgba($etos-ink, .07);
+    border-radius: 1rem;
+    background:
+        linear-gradient(180deg, rgba(#fff, .98), rgba(#f8fbfd, .96));
+    box-shadow: inset 0 0 0 1px rgba(#fff, .7);
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        border-color: rgba($primary, .26);
+        box-shadow: 0 18px 44px rgba($etos-ink, .08);
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 52px;
+        object-fit: contain;
+    }
+}
+
+.etos-partner-logo--symfonia {
+    // min-height: 128px;
+    max-height: 56px;
+}
+
+.etos-partner-logo--insert img {
+    max-height: 54px;
+    max-width: 82%;
+}
+
+.etos-partner-logo--streamsoft {
+    grid-column: span 2;
+    min-height: 116px;
+
+    img {
+        max-height: 58px;
+    }
+}
+
+.etos-partner-logo--posnet {
+    background:
+        linear-gradient(180deg, rgba(#fff, .99), rgba(#fff, .96)),
+        rgba(#e30613, .05);
+
+    img {
+        max-height: 62px;
+    }
+}
+
+.etos-partner-logo--certum {
+    background: linear-gradient(180deg, #fff, #f9fbfd);
+
+    img {
+        max-height: 58px;
+        max-width: 82%;
+    }
+}
+
+.etos-partner-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: 0 1rem 1rem;
+
+    span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: .35rem .65rem;
+        border: 1px solid rgba($etos-ink, .07);
+        border-radius: 999px;
+        background: rgba(#fff, .72);
+        color: $etos-muted;
+        font-size: .75rem;
+        font-weight: 800;
+        letter-spacing: .03em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-command-center--partners {
+        min-height: auto;
+    }
+
+    .etos-partner-cloud {
+        grid-template-columns: 1fr;
+    }
+
+    .etos-partner-logo--streamsoft {
+        grid-column: auto;
+    }
 }
 
 // ==========================================================================
@@ -406,35 +378,138 @@
     }
 }
 
-// ==========================================================================
-// Sections
-// ==========================================================================
+.etos-operations__header {
+    max-width: 860px;
+    margin: 0 auto clamp(2rem, 4vw, 3.25rem);
+    text-align: center;
 
-.etos-section {
-    padding: clamp(6rem, 9vw, 8rem) 0;
-
-    &--soft {
-        background: #f3f6f9;
-        border-top: 1px solid rgba(#0f172a, .06);
-        border-bottom: 1px solid rgba(#0f172a, .06);
-    }
-
-    &__title {
-        max-width: 760px;
-        margin: 0;
-        padding-bottom: 1rem;
-        color: #0f172a;
-        font-size: clamp(2rem, 4vw, 3.5rem);
-        line-height: 1.05;
+    h2 {
+        margin: .75rem 0 0;
+        color: $etos-ink;
+        font-size: clamp(2rem, 3.6vw, 3.2rem);
+        line-height: 1.08;
         letter-spacing: -.04em;
-        font-weight: 700;
+        font-weight: 720;
+    }
+}
+
+.etos-capabilities--services {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.etos-capability {
+    ul {
+        display: grid;
+        gap: .35rem;
+        padding: 0;
+        margin: 1rem 0 0;
+        list-style: none;
+        color: $etos-muted;
+        line-height: 1.6;
     }
 
-    &__lead {
+    h3 {
         margin: 0;
-        color: #64748b;
-        font-size: 1.05rem;
-        line-height: 1.75;
+        color: $etos-ink;
+        font-size: 1.25rem;
+        font-weight: 760;
+        letter-spacing: -.02em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-capabilities--services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-capabilities--services {
+        grid-template-columns: 1fr;
+    }
+}
+
+.etos-capabilities--services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba($etos-ink, .09);
+    border-bottom: 1px solid rgba($etos-ink, .09);
+}
+
+.etos-capabilities--services .etos-capability {
+    position: relative;
+    padding: 2rem 2rem 2.25rem;
+    border-right: 1px solid rgba($etos-ink, .08);
+    background: transparent;
+    box-shadow: none;
+    transition: background-color .18s ease;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+        background: rgba($primary, .035);
+    }
+}
+
+.etos-capability__index {
+    display: inline-flex;
+    margin-bottom: 1.15rem;
+    color: $primary;
+    font-size: .78rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+}
+
+.etos-capabilities--services .etos-capability h3 {
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.etos-capabilities--services .etos-capability ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.etos-capabilities--services .etos-capability li {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: .35rem .7rem;
+    border: 1px solid rgba($etos-ink, .09);
+    border-radius: 999px;
+    background: #fff;
+    color: $etos-muted;
+    font-size: .9rem;
+    font-weight: 650;
+}
+
+@media (max-width: 991.98px) {
+    .etos-capabilities--services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .etos-capabilities--services .etos-capability:nth-child(2n) {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-capabilities--services {
+        grid-template-columns: 1fr;
+    }
+
+    .etos-capabilities--services .etos-capability {
+        border-right: 0;
+        border-bottom: 1px solid rgba($etos-ink, .08);
     }
 }
 
@@ -442,269 +517,8 @@
 // ERP suites
 // ==========================================================================
 
-.etos-erp-suites {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.etos-erp-suite {
-    display: grid;
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr);
-    gap: 1.5rem;
-
-    padding: 1.5rem;
-
-    border-radius: 1.25rem;
-
-    background: #fff;
-
-    box-shadow:
-        0 16px 44px rgba(#0f172a, .055);
-
-    &__intro {
-        position: relative;
-        padding: 1.5rem;
-        border-radius: 1rem;
-
-        background:
-            linear-gradient(135deg,
-                rgba(var(--suite-rgb), .10),
-                rgba(var(--suite-rgb), .03));
-
-        border-left: 4px solid var(--suite-color);
-    }
-
-    &__label {
-        display: inline-flex;
-
-        margin-bottom: 1rem;
-
-        color: var(--suite-color);
-
-        font-size: .75rem;
-        font-weight: 900;
-
-        letter-spacing: .08em;
-        text-transform: uppercase;
-    }
-
-    h3 {
-        margin-bottom: 1rem;
-
-        color: $etos-ink;
-
-        font-size: clamp(1.35rem, 2vw, 1.85rem);
-        line-height: 1.15;
-        letter-spacing: -.03em;
-
-        font-weight: 780;
-    }
-
-    p {
-        margin-bottom: 1.25rem;
-
-        color: $etos-muted;
-
-        line-height: 1.7;
-    }
-
-    &__main-link {
-        display: inline-flex;
-        align-items: center;
-
-        color: var(--suite-color);
-
-        font-weight: 850;
-
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &__modules {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: .75rem;
-
-        align-content: start;
-    }
-
-    &--symfonia {
-        --suite-color: #13B84A;
-        --suite-rgb: 19, 184, 74;
-    }
-
-    &--insert {
-        --suite-color: #0077C8;
-        --suite-rgb: 0, 119, 200;
-    }
-
-    &--streamsoft {
-        --suite-color: #2457D6;
-        --suite-rgb: 36, 87, 214;
-    }
-}
-
 .etos-erp-suite+.etos-erp-suite {
     margin-top: 2rem;
-}
-
-.etos-erp-module {
-    display: flex;
-    align-items: center;
-
-    min-height: 64px;
-
-    padding: .85rem 1rem;
-
-    border: 1px solid rgba(var(--suite-rgb), .16);
-    border-radius: .85rem;
-
-    background: rgba(var(--suite-rgb), .06);
-
-    color: $etos-ink;
-
-    font-size: .95rem;
-    font-weight: 720;
-
-    text-decoration: none;
-
-    transition:
-        transform .18s ease,
-        border-color .18s ease,
-        background-color .18s ease,
-        box-shadow .18s ease;
-
-    &::before {
-        content: '';
-
-        width: .42rem;
-        height: .42rem;
-
-        margin-right: .7rem;
-
-        border-radius: 999px;
-
-        background: var(--suite-color);
-
-        flex: 0 0 auto;
-    }
-
-    &:hover,
-    &:focus {
-        color: $etos-ink;
-
-        border-color: rgba(var(--suite-rgb), .34);
-
-        background: rgba(var(--suite-rgb), .08);
-
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 10px 24px rgba(#0f172a, .05);
-
-        text-decoration: none;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .etos-erp-suite {
-        grid-template-columns: 1fr;
-
-        &__modules {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-}
-
-@media (max-width: 575.98px) {
-    .etos-erp-suite {
-        padding: 1rem;
-
-        &__intro {
-            padding: 1rem;
-        }
-
-        &__modules {
-            grid-template-columns: 1fr;
-        }
-    }
-}
-
-// ==========================================================================
-// Workflow
-// ==========================================================================
-
-.etos-process-flow {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    position: relative;
-
-    &::before {
-        content: '';
-
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        right: 0;
-
-        height: 1px;
-
-        background:
-            linear-gradient(90deg,
-                rgba($primary, .25),
-                rgba($primary, .08));
-    }
-}
-
-.etos-process-step {
-    position: relative;
-    padding-top: 3rem;
-
-    span {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 2rem;
-        height: 2rem;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 999px;
-
-        background: #fff;
-
-        border: 1px solid rgba($primary, .16);
-
-        color: $primary;
-
-        font-size: .75rem;
-        font-weight: 900;
-    }
-
-    h3 {
-        margin-bottom: .65rem;
-
-        font-size: 1.2rem;
-        font-weight: 780;
-
-        color: $etos-ink;
-    }
-
-    p {
-        margin: 0;
-
-        color: $etos-muted;
-
-        line-height: 1.65;
-    }
 }
 
 // ==========================================================================
@@ -773,11 +587,6 @@
 // Responsive
 // ==========================================================================
 
-@media (max-width: 991.98px) {
-    .etos-workflow {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (max-width: 767.98px) {
 
@@ -819,13 +628,6 @@
         }
     }
 
-    .etos-kicker {
-        max-width: 100%;
-        font-size: .72rem;
-        line-height: 1.35;
-        letter-spacing: .07em;
-    }
-
     .etos-command-center {
         display: none;
     }
@@ -834,6 +636,8 @@
         margin-top: 0;
         padding-top: 2rem;
     }
+
+
 }
 
 @media (max-width: 575.98px) {
@@ -846,18 +650,6 @@
     .etos-status-card {
         &--wide {
             grid-column: span 1;
-        }
-    }
-
-    .etos-workflow {
-        grid-template-columns: 1fr;
-
-        div {
-            min-height: auto;
-
-            span {
-                margin-bottom: 2rem;
-            }
         }
     }
 }

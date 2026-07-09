@@ -29,30 +29,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <footer class="site-footer etos-footer" id="colophon" role="contentinfo">
 
-            <div class="etos-footer__cta">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-7">
-                        <span class="etos-footer__eyebrow">
-                            <?php echo esc_html( $footer_cta['eyebrow'] ); ?>
-                        </span>
-                        <h2>
-                            <?php echo esc_html( $footer_cta['title'] ); ?>
-                        </h2>
-                        <p>
-                            <?php echo esc_html( $footer_cta['text'] ); ?>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-5 text-lg-end">
-                        <a
-                            href="<?php echo esc_url( $footer_cta['url'] ); ?>"
-                            class="etos-footer__cta-btn"
-                        >
-                            <?php echo esc_html( $footer_cta['button'] ); ?>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php if ( empty( $GLOBALS['etos_footer_cta_hide'] ) ) : ?>
+                <?php
+                get_template_part(
+                    'template-parts/components/cta',
+                    'panel',
+                    array(
+                        'cta' => $footer_cta + array(
+                            'class' => 'etos-cta-panel--footer',
+                        ),
+                    )
+                );
+                ?>
+            <?php endif; ?>
 
             <div class="etos-footer__main">
                 <div class="row g-5">

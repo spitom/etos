@@ -13,17 +13,22 @@
 @import "assets/understrap/theme/blocks"; // <-------- This adds Bootstrap styles to blocks.
 @import "assets/understrap/theme/contact-form7"; // <-------- Contact Form 7 - Bootstrap 4 support
 
+@import "components/navbar";
+@import "components/footer";
+@import "components/cta";
+@import "components/sections";
+@import "components/page-hero";
+@import "components/buttons";
+@import "components/kicker";
+@import "components/erp-suite";
+@import "components/software-module";
+@import "components/process-flow";
+
 @import "templates/front-page";
 @import "templates/about";
-@import "templates/software";
 @import "templates/services";
 @import "templates/fiscal";
 @import "templates/signature";
 @import "templates/contact";
-
-@import "components/navbar";
-@import "components/footer";
-@import "components/software";
-
 
 @import "helpers/mixins";

@@ -1,0 +1,31 @@
+.etos-container {
+    max-width: 1320px;
+}
+
+.etos-section {
+    padding: clamp(6rem, 9vw, 8rem) 0;
+
+    &--soft {
+        background: #f3f6f9;
+        border-top: 1px solid rgba(#0f172a, .06);
+        border-bottom: 1px solid rgba(#0f172a, .06);
+    }
+
+    &__title {
+        max-width: 760px;
+        margin: 0;
+        padding-bottom: 1rem;
+        color: #0f172a;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.05;
+        letter-spacing: -.04em;
+        font-weight: 700;
+    }
+
+    &__lead {
+        margin: 0;
+        color: #64748b;
+        font-size: 1.05rem;
+        line-height: 1.75;
+    }
+}
