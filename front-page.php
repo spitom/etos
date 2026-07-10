@@ -68,12 +68,6 @@ get_header();
                                 </a>
                             </div>
 
-                            <div class="etos-partner-note">
-                                <span>ERP</span>
-                                <span>Fiskalizacja</span>
-                                <span>Podpis elektroniczny</span>
-                                <span>Infrastruktura IT</span>
-                            </div>
                         </div>
                     </div>
                 </div>

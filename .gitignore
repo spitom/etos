@@ -49,7 +49,6 @@ node_modules
 phpcs.xml
 dist/
 dist-product/
-**/img
 
 # Generated build files
 css/*.css
