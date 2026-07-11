@@ -94,3 +94,4 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 require_once get_stylesheet_directory() . '/inc/etos-theme-setup.php';
+require_once get_stylesheet_directory() . '/inc/etos-erp-helpers.php';

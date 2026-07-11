@@ -51,7 +51,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="etos-footer__logo" aria-label="ETOS — strona główna">
 
                                 <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/logo.png' ); ?>"
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/footer/logo.png' ); ?>"
                                     alt="ETOS"
                                     class="img-fluid"
                                     loading="lazy"

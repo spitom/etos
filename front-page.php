@@ -43,28 +43,28 @@ get_header();
                         <div class="etos-command-center etos-command-center--partners" aria-label="Partnerzy technologiczni ETOS">
                             <div class="etos-command-center__top">
                                 <span></span><span></span><span></span>
-                                <strong>Ekosystem technologii ETOS</strong>
+                                <strong>Partnerzy ETOS</strong>
                             </div>
 
                             <div class="etos-partner-cloud">
                                 <a href="/oprogramowanie/symfonia-erp/" class="etos-partner-logo etos-partner-logo--symfonia" aria-label="Symfonia ERP">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/symfonia.png' ); ?>" alt="Symfonia">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/symfonia.png' ); ?>" alt="Symfonia">
                                 </a>
 
                                 <a href="/oprogramowanie/insert/" class="etos-partner-logo etos-partner-logo--insert" aria-label="InsERT">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/insert.png' ); ?>" alt="InsERT">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/insert.png' ); ?>" alt="InsERT">
                                 </a>
 
                                 <a href="/oprogramowanie/streamsoft-prestiz/" class="etos-partner-logo etos-partner-logo--streamsoft" aria-label="Streamsoft Prestiż">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/streamsoft.png' ); ?>" alt="Streamsoft">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/streamsoft.webp' ); ?>" alt="Streamsoft">
                                 </a>
 
                                 <a href="/urzadzenia-fiskalne/" class="etos-partner-logo etos-partner-logo--posnet" aria-label="POSNET">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/posnet.png' ); ?>" alt="POSNET">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/posnet.png' ); ?>" alt="POSNET">
                                 </a>
 
                                 <a href="/podpis-elektroniczny/" class="etos-partner-logo etos-partner-logo--certum" aria-label="Certum">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/certum.png' ); ?>" alt="Certum">
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/certum.png' ); ?>" alt="Certum">
                                 </a>
                             </div>
 
@@ -133,137 +133,137 @@ get_header();
         </section>
 
         <!-- ERP ECOSYSTEM -->
-        <section id="erp" class="etos-section etos-section--soft">
+        <section id="erp" class="etos-section etos-section--soft etos-erp">
             <div class="container etos-container">
 
-                <div class="row mb-5 align-items-end g-4">
-                    <div class="col-lg-7">
-                        <span class="etos-kicker">
-                            Systemy ERP dopasowane do procesów
-                        </span>
+                <header class="etos-erp__header">
+                    <span class="etos-kicker">
+                        Systemy ERP dopasowane do procesów
+                    </span>
 
-                        <h2 class="etos-section__title">
-                            Budujemy środowisko pracy firmy,
-                            nie tylko wdrażamy programy.
-                        </h2>
-                    </div>
+                    <h2 class="etos-section__title">
+                        Dobieramy oprogramowanie do sposobu pracy Twojej firmy.
+                    </h2>
+                </header>
 
-                    <div class="col-lg-5">
-                        <p class="etos-section__lead">
-                            Dobieramy system ERP do skali, branży i sposobu działania organizacji.
-                            Pomagamy uporządkować procesy, wdrożyć moduły i utrzymać stabilną pracę firmy.
-                        </p>
-                    </div>
-                </div>
+                <?php
+                $erp_defaults = array(
+                    'symfonia' => array(
+                        'logo'      => get_stylesheet_directory_uri() . '/assets/images/partners/symfonia.png',
+                        'image'     => get_stylesheet_directory_uri() . '/assets/images/software/symfonia.webp',
+                        'image_alt' => 'Praca z systemem Symfonia ERP',
+                        'title'     => 'Finanse, kadry i procesy w stabilnym środowisku ERP.',
+                        'url'       => '/oprogramowanie/symfonia-erp/',
+                        'cta'       => 'Zobacz stronę Symfonia ERP',
+                        'accent'    => '#13B84A',
+                        'products'  => implode(
+                            PHP_EOL,
+                            array(
+                                'Symfonia Handel Sprzedaż|/oprogramowanie/symfonia-handel-sprzedaż/',
+                                'Symfonia Finanse i Księgowość|/oprogramowanie/symfonia-finanse-i-ksiegowosc/',
+                                'Symfonia Kadry i Płace|/oprogramowanie/symfonia-kadry-i-place/',
+                                'Symfonia R2Płatnik|/oprogramowanie/symfonia-r2platnik/',
+                                'Symfonia Detal|/oprogramowanie/symfonia-detal/',
+                                'Symfonia Business Intelligence|/oprogramowanie/symfonia-business-intelligence/',
+                                'Symfonia Zarządzanie Produkcją|/oprogramowanie/symfonia-zarzadzanie-produkcja/',
+                                'Symfonia eDokumenty|/oprogramowanie/symfonia-edokumenty/',
+                                'Symfonia ERP|/oprogramowanie/symfonia-erp/',
+                            )
+                        ),
+                        'reverse'   => false,
+                    ),
 
-                <div class="etos-erp-suites">
+                    'insert' => array(
+                        'logo'      => get_stylesheet_directory_uri() . '/assets/images/partners/insert.png',
+                        'image'     => get_stylesheet_directory_uri() . '/assets/images/software/insert.webp',
+                        'image_alt' => 'Praca z oprogramowaniem InsERT',
+                        'title'     => 'Sprzedaż, magazyn i księgowość w sprawdzonym ekosystemie.',
+                        'url'       => '/oprogramowanie/insert/',
+                        'cta'       => 'Zobacz stronę InsERT',
+                        'accent'    => '#0077C8',
+                        'products'  => implode(
+                            PHP_EOL,
+                            array(
+                                'Subiekt nexo|/oprogramowanie/subiekt-nexo/',
+                                'Rewizor nexo|/oprogramowanie/rewizor-nexo/',
+                                'Rachmistrz nexo|/oprogramowanie/rachmistrz-nexo/',
+                                'Gratyfikant nexo|/oprogramowanie/gratyfikant-nexo/',
+                                'Gestor nexo|/oprogramowanie/gestor-nexo/',
+                                'Sello NX|/oprogramowanie/sello-nx/',
+                            )
+                        ),
+                        'reverse'   => true,
+                    ),
 
-                    <!-- SYMFONIA -->
-                    <div class="etos-erp-suite etos-erp-suite--symfonia">
+                    'streamsoft' => array(
+                        'logo'      => get_stylesheet_directory_uri() . '/assets/images/partners/streamsoft.webp',
+                        'image'     => get_stylesheet_directory_uri() . '/assets/images/software/streamsoft.webp',
+                        'image_alt' => 'System Streamsoft dla przedsiębiorstw',
+                        'title'     => 'Produkcja, logistyka i złożone procesy pod pełną kontrolą.',
+                        'url'       => '/oprogramowanie/streamsoft-prestiz/',
+                        'cta'       => 'Zobacz stronę Streamsoft',
+                        'accent'    => '#2457D6',
+                        'products'  => implode(
+                            PHP_EOL,
+                            array(
+                                'Streamsoft Prestiż|/oprogramowanie/streamsoft-prestiz/',
+                                'Produkcja|/oprogramowanie/streamsoft-produkcja/',
+                                'WMS i magazyn|/oprogramowanie/streamsoft-wms/',
+                                'Logistyka|/oprogramowanie/streamsoft-logistyka/',
+                                'Handel|/oprogramowanie/streamsoft-handel/',
+                                'Finanse i księgowość|/oprogramowanie/streamsoft-finanse/',
+                            )
+                        ),
+                        'reverse'   => false,
+                    ),
+                );
 
-                        <div class="etos-erp-suite__content">
-                            <img
-                                src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/partners/symfonia.png' ); ?>"
-                                alt="Symfonia"
-                                class="etos-erp-suite__logo"
-                            >
+                foreach ( $erp_defaults as $vendor_name => $fallback ) {
+                    $logo_value  = function_exists( 'get_field' ) ? get_field( "{$vendor_name}_logo" ) : null;
+                    $image_value = function_exists( 'get_field' ) ? get_field( "{$vendor_name}_image" ) : null;
 
-                            <div class="etos-erp-suite__intro">
-                                <span class="etos-erp-suite__label">Symfonia ERP</span>
+                    $title = function_exists( 'get_field' )
+                        ? get_field( "{$vendor_name}_title" )
+                        : '';
 
-                                <h3>Finanse, kadry i procesy w stabilnym środowisku ERP.</h3>
+                    $url = function_exists( 'get_field' )
+                        ? get_field( "{$vendor_name}_url" )
+                        : '';
 
-                                <p>
-                                    Dobieramy, wdrażamy i rozwijamy moduły Symfonii dla firm,
-                                    które potrzebują kontroli nad księgowością, kadrami,
-                                    dokumentami i raportowaniem.
-                                </p>
+                    $cta = function_exists( 'get_field' )
+                        ? get_field( "{$vendor_name}_cta" )
+                        : '';
 
-                                <a href="/oprogramowanie/symfonia-erp/" class="etos-erp-suite__main-link">
-                                    Zobacz stronę Symfonia ERP →
-                                </a>
-                            </div>
+                    $accent = function_exists( 'get_field' )
+                        ? get_field( "{$vendor_name}_accent" )
+                        : '';
 
-                            <div class="etos-erp-suite__modules">
-                                <a href="#" class="etos-erp-module etos-erp-module--wide">Finanse i Księgowość</a>
-                                <a href="#" class="etos-erp-module">Kadry i Płace</a>
-                                <a href="#" class="etos-erp-module etos-erp-module--short">Handel i Magazyn</a>
-                                <a href="#" class="etos-erp-module">Business Intelligence</a>
-                                <a href="#" class="etos-erp-module etos-erp-module--wide">Obieg dokumentów</a>
-                                <a href="#" class="etos-erp-module etos-erp-module--short">KSeF</a>
-                            </div>
-                        </div>
+                    $products_raw = function_exists( 'get_field' )
+                        ? get_field( "{$vendor_name}_products" )
+                        : '';
 
-                        <div class="etos-erp-suite__media">
-                            <img
-                                src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/front/symfonia.webp' ); ?>"
-                                alt=""
-                                loading="lazy"
-                            >
-                        </div>
+                    $suite = array(
+                        'name'      => $vendor_name,
+                        'logo'      => etos_get_image_url( $logo_value, $fallback['logo'] ),
+                        'image'     => etos_get_image_url( $image_value, $fallback['image'] ),
+                        'image_alt' => $fallback['image_alt'],
+                        'title'     => $title ?: $fallback['title'],
+                        'url'       => $url ?: $fallback['url'],
+                        'cta'       => $cta ?: $fallback['cta'],
+                        'accent'    => $accent ?: $fallback['accent'],
+                        'products'  => etos_parse_erp_products(
+                            $products_raw ?: $fallback['products']
+                        ),
+                        'reverse'   => $fallback['reverse'],
+                    );
 
-                    </div>
-
-                    <!-- INSERT -->
-                    <div class="etos-erp-suite etos-erp-suite--insert">
-
-                        <div class="etos-erp-suite__intro">
-                            <span class="etos-erp-suite__label">InsERT nexo / GT</span>
-
-                            <h3>Sprzedaż, magazyn i księgowość w sprawdzonym ekosystemie.</h3>
-
-                            <p>
-                                Wdrażamy rozwiązania InsERT dla firm, które potrzebują intuicyjnego systemu
-                                do sprzedaży, magazynu, fakturowania, księgowości, kadr i obsługi klientów.
-                            </p>
-
-                            <a href="/oprogramowanie/insert/" class="etos-erp-suite__main-link">
-                                Zobacz stronę InsERT →
-                            </a>
-                        </div>
-
-                        <div class="etos-erp-suite__modules">
-                            <a href="/oprogramowanie/insert/#modul-subiekt" class="etos-erp-module">Subiekt</a>
-                            <a href="/oprogramowanie/insert/#modul-rewizor" class="etos-erp-module">Rewizor</a>
-                            <a href="/oprogramowanie/insert/#modul-rachmistrz" class="etos-erp-module">Rachmistrz</a>
-                            <a href="/oprogramowanie/insert/#modul-gratyfikant" class="etos-erp-module">Gratyfikant</a>
-                            <a href="/oprogramowanie/insert/#modul-gestor" class="etos-erp-module">Gestor</a>
-                            <a href="/oprogramowanie/insert/#modul-sello" class="etos-erp-module">Sello / e-commerce</a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- STREAMSOFT -->
-                    <div class="etos-erp-suite etos-erp-suite--streamsoft">
-
-                        <div class="etos-erp-suite__intro">
-                            <span class="etos-erp-suite__label">Streamsoft Prestiż</span>
-
-                            <h3>ERP dla produkcji, logistyki i bardziej złożonych procesów.</h3>
-
-                            <p>
-                                Pomagamy wdrażać Streamsoft Prestiż w firmach, które potrzebują kontroli
-                                nad produkcją, magazynem, logistyką, sprzedażą, finansami i integracjami.
-                            </p>
-
-                            <a href="/oprogramowanie/streamsoft-prestiz/" class="etos-erp-suite__main-link">
-                                Zobacz stronę Streamsoft →
-                            </a>
-                        </div>
-
-                        <div class="etos-erp-suite__modules">
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-produkcja" class="etos-erp-module">Produkcja</a>
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-wms" class="etos-erp-module">WMS / Magazyn</a>
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-logistyka" class="etos-erp-module">Logistyka</a>
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-handel" class="etos-erp-module">Handel</a>
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-finanse" class="etos-erp-module">Finanse i księgowość</a>
-                            <a href="/oprogramowanie/streamsoft-prestiz/#modul-integracje" class="etos-erp-module">Integracje</a>
-                        </div>
-
-                    </div>
-
-                </div>
+                    get_template_part(
+                        'template-parts/components/erp-suite',
+                        null,
+                        $suite
+                    );
+                }
+                ?>
 
             </div>
         </section>
