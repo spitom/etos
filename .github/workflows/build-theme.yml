@@ -1,0 +1,44 @@
+name: Build ETOS WordPress theme
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build deployable theme package
+        run: npm run package
+
+      - name: Verify production assets
+        run: |
+          test -f dist/css/child-theme.min.css
+          test -f dist/js/child-theme.min.js
+
+      - name: Upload deployable theme
+        uses: actions/upload-artifact@v7
+        with:
+          name: etos-wordpress-theme-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

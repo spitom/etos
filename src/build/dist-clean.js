@@ -11,7 +11,7 @@ const { rm } = require( 'fs' );
 const dir = './dist';
 
 // Delete directory recursively.
-rm( dir, { recursive: true }, ( error ) => {
+rm( dir, { recursive: true, force: true }, ( error ) => {
 	if ( error ) {
 		console.error( error.name + ': ' + error.message + '\n' );
 	} else {
