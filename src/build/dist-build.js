@@ -8,6 +8,7 @@ async function copyDir(src, dest) {
 		'node_modules',
 		'dist',
 		'src',
+		'.git',
 		'.github',
 		'.browserslistrc',
 		'.editorconfig',
@@ -21,6 +22,7 @@ async function copyDir(src, dest) {
 		'package.json',
 		'package-lock.json',
 		'phpcs.xml.dist',
+		'README.md',
 		'readme.txt'
 	];
 
