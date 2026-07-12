@@ -1,0 +1,63 @@
+// ==========================================================================
+// Hero
+// ==========================================================================
+
+.etos-hero {
+    padding: clamp(6rem, 10vw, 9rem) 0 clamp(4.5rem, 7vw, 7rem);
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba($primary, 0.13),
+            transparent 34rem
+        ),
+        linear-gradient(180deg, #f7fbfe 0%, #fff 100%);
+    border-bottom: 1px solid rgba($etos-ink, 0.07);
+
+    &__title {
+        max-width: 11ch;
+        margin-bottom: 1rem;
+        color: $etos-ink;
+        font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+        font-weight: 720;
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+    }
+
+    &__lead {
+        max-width: 660px;
+        margin-bottom: 2rem;
+        color: #526174;
+        font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+        line-height: 1.7;
+    }
+
+    &__actions {
+        .btn {
+            min-height: 54px;
+            padding-inline: 1.4rem;
+        }
+
+        .btn-outline-dark {
+            border-color: rgba($etos-ink, 0.12);
+            background: rgba(#fff, 0.72);
+
+            &:hover,
+            &:focus {
+                border-color: rgba($primary, 0.35);
+                background: #fff;
+            }
+        }
+    }
+
+    &__pattern {
+        position: absolute;
+        top: 6rem;
+        right: 3vw;
+        width: 220px;
+        height: 220px;
+        opacity: 0.45;
+        background-image: radial-gradient($primary 1px, transparent 1px);
+        background-size: 16px 16px;
+        pointer-events: none;
+    }
+}

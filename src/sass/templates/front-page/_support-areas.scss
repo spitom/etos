@@ -1,0 +1,104 @@
+// ==========================================================================
+// Support areas
+// ==========================================================================
+
+.etos-operations {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0 clamp(4rem, 6vw, 6rem);
+
+    &__header {
+        max-width: 860px;
+        margin: 0 auto clamp(2rem, 4vw, 3.25rem);
+        text-align: center;
+
+        h2 {
+            margin: 0.75rem 0 0;
+            color: $etos-ink;
+            font-size: clamp(2rem, 3.6vw, 3.2rem);
+            font-weight: 720;
+            line-height: 1.08;
+            letter-spacing: -0.04em;
+        }
+    }
+}
+
+.etos-capabilities {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    &--services {
+        gap: 0;
+        border-top: 1px solid rgba($etos-ink, 0.09);
+        border-bottom: 1px solid rgba($etos-ink, 0.09);
+    }
+}
+
+.etos-capability {
+    color: inherit;
+    text-decoration: none;
+
+    &__index {
+        display: inline-flex;
+        margin-bottom: 1.15rem;
+        color: $primary;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+    }
+
+    h3 {
+        margin: 0 0 1.25rem;
+        color: $etos-ink;
+        font-size: 1.2rem;
+        font-weight: 760;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        transition: color 0.18s ease;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid rgba($etos-ink, 0.09);
+        border-radius: 999px;
+        background: #fff;
+        color: $etos-muted;
+        font-size: 0.9rem;
+        font-weight: 650;
+    }
+
+    .etos-capabilities--services & {
+        position: relative;
+        padding: 2rem 2rem 2.25rem;
+        border-right: 1px solid rgba($etos-ink, 0.08);
+        background: transparent;
+        box-shadow: none;
+        transition: background-color 0.18s ease;
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background: rgba($primary, 0.035);
+            text-decoration: none;
+
+            h3 {
+                color: $primary;
+            }
+        }
+    }
+}
