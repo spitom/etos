@@ -1,78 +1,44 @@
 <?php
 /**
- * Understrap Child Theme functions and definitions
+ * ETOS child theme bootstrap.
  *
- * @package UnderstrapChild
+ * @package ETOS
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
-
 /**
- * Removes the parent themes stylesheet and scripts from inc/enqueue.php
+ * Remove the parent theme's compiled stylesheet and script.
  */
-function understrap_remove_scripts() {
+function etos_remove_parent_assets() {
 	wp_dequeue_style( 'understrap-styles' );
 	wp_deregister_style( 'understrap-styles' );
 
 	wp_dequeue_script( 'understrap-scripts' );
 	wp_deregister_script( 'understrap-scripts' );
 }
-add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
-
-
+add_action( 'wp_enqueue_scripts', 'etos_remove_parent_assets', 20 );
 
 /**
- * Enqueue our stylesheet and javascript file
+ * Load the ETOS translation files.
  */
-function theme_enqueue_styles() {
-	etos_enqueue_theme_assets();
+function etos_load_textdomain() {
+	load_child_theme_textdomain( 'etos', get_stylesheet_directory() . '/languages' );
 }
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-
-
+add_action( 'after_setup_theme', 'etos_load_textdomain' );
 
 /**
- * Load the child theme's text domain
- */
-function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
-}
-add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
-
-
-
-/**
- * Overrides the theme_mod to default to Bootstrap 5
- *
- * This function uses the `theme_mod_{$name}` hook and
- * can be duplicated to override other theme settings.
+ * Use Bootstrap 5 as the default Understrap compatibility mode.
  *
  * @return string
  */
-function understrap_default_bootstrap_version() {
+function etos_default_bootstrap_version() {
 	return 'bootstrap5';
 }
-add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
-
-
-
-/**
- * Loads javascript for showing customizer warning dialog.
- */
-function understrap_child_customize_controls_js() {
-	wp_enqueue_script(
-		'understrap_child_customizer',
-		get_stylesheet_directory_uri() . '/js/customizer-controls.js',
-		array( 'customize-preview' ),
-		'20130508',
-		true
-	);
-}
-add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+add_filter( 'theme_mod_understrap_bootstrap_version', 'etos_default_bootstrap_version', 20 );
 
 require_once get_stylesheet_directory() . '/inc/etos-assets.php';
 require_once get_stylesheet_directory() . '/inc/etos-theme-setup.php';
 require_once get_stylesheet_directory() . '/inc/etos-erp-helpers.php';
+add_action( 'wp_enqueue_scripts', 'etos_enqueue_theme_assets' );
