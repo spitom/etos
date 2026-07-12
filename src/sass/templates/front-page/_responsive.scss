@@ -1,0 +1,88 @@
+// ==========================================================================
+// Responsive
+// ==========================================================================
+
+@media (max-width: 991.98px) {
+    .etos-capabilities {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        &--services {
+            .etos-capability:nth-child(2n) {
+                border-right: 0;
+            }
+
+            .etos-capability:nth-child(-n + 2) {
+                border-bottom: 1px solid rgba($etos-ink, 0.08);
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .row.g-5,
+    .row.gx-5 {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .etos-hero {
+        padding: clamp(3.5rem, 14vw, 5rem) 0 clamp(3rem, 12vw, 4rem);
+
+        &__title {
+            max-width: 100%;
+            font-size: clamp(2.6rem, 13vw, 3.7rem);
+            line-height: 0.98;
+            letter-spacing: -0.06em;
+        }
+
+        &__lead {
+            max-width: 100%;
+            font-size: 1.05rem;
+        }
+
+        &__actions .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__pattern {
+            top: 6.5rem;
+            right: -2rem;
+            width: 180px;
+            height: 180px;
+            opacity: 0.32;
+        }
+    }
+
+    .etos-command-center {
+        display: none;
+    }
+
+    .etos-operations {
+        padding-top: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-partner-cloud {
+        grid-template-columns: 1fr;
+    }
+
+    .etos-partner-logo--streamsoft {
+        grid-column: auto;
+    }
+
+    .etos-capabilities {
+        grid-template-columns: 1fr;
+
+        &--services {
+            .etos-capability {
+                border-right: 0;
+                border-bottom: 1px solid rgba($etos-ink, 0.08);
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
