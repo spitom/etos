@@ -1,0 +1,285 @@
+{
+    "key": "group_etos_service",
+    "title": "Usługa — dane strony",
+    "fields": [
+        {
+            "key": "field_etos_service_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_kicker",
+            "label": "Nadtytuł",
+            "name": "etos_service_kicker",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 80,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_service_lead",
+            "label": "Lead",
+            "name": "etos_service_lead",
+            "type": "textarea",
+            "instructions": "Krótki opis usługi wyświetlany w hero.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 320,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_icon",
+            "label": "Ikona usługi",
+            "name": "etos_service_icon",
+            "type": "image",
+            "instructions": "Prosta ikona wykorzystywana na kartach i stronie głównej.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "thumbnail",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_etos_service_hero_image",
+            "label": "Grafika hero",
+            "name": "etos_service_hero_image",
+            "type": "image",
+            "instructions": "Gdy pole jest puste, szablon może użyć obrazka wyróżniającego.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_etos_service_primary_cta",
+            "label": "Główny przycisk",
+            "name": "etos_service_primary_cta",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_service_tab_visibility",
+            "label": "Widoczność",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_show_in_menu",
+            "label": "Pokaż w menu Usługi",
+            "name": "etos_service_show_in_menu",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Tak",
+            "ui_off_text": "Nie"
+        },
+        {
+            "key": "field_etos_service_menu_label",
+            "label": "Etykieta w menu",
+            "name": "etos_service_menu_label",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć tytułu wpisu.",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 80,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_service_featured_on_home",
+            "label": "Wyróżnij na stronie głównej",
+            "name": "etos_service_featured_on_home",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Tak",
+            "ui_off_text": "Nie"
+        },
+        {
+            "key": "field_etos_service_home_title",
+            "label": "Tytuł na stronie głównej",
+            "name": "etos_service_home_title",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć tytułu wpisu.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 140,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_service_home_text",
+            "label": "Opis na stronie głównej",
+            "name": "etos_service_home_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 260,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_tab_cta",
+            "label": "CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_cta_title",
+            "label": "Tytuł CTA",
+            "name": "etos_service_cta_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 180,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_service_cta_text",
+            "label": "Opis CTA",
+            "name": "etos_service_cta_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 320,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_cta_link",
+            "label": "Przycisk CTA",
+            "name": "etos_service_cta_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "etos_service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola używane przez szablon pojedynczej usługi, menu i stronę główną.",
+    "show_in_rest": 0,
+    "modified": 1783938444
+}

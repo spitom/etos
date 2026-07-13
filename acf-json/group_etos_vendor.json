@@ -1,0 +1,143 @@
+{
+    "key": "group_etos_vendor",
+    "title": "Producent oprogramowania — dane",
+    "fields": [
+        {
+            "key": "field_etos_vendor_logo",
+            "label": "Logo producenta",
+            "name": "etos_vendor_logo",
+            "type": "image",
+            "instructions": "Logo używane na stronie Oprogramowanie i w mega menu.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_etos_vendor_image",
+            "label": "Grafika producenta",
+            "name": "etos_vendor_image",
+            "type": "image",
+            "instructions": "Opcjonalna grafika używana na stronie zbiorczej.",
+            "required": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "medium",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_etos_vendor_accent",
+            "label": "Kolor akcentu",
+            "name": "etos_vendor_accent",
+            "type": "color_picker",
+            "instructions": "Kolor identyfikujący producenta w kartach i detalach.",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#2457D6",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_etos_vendor_menu_order",
+            "label": "Kolejność",
+            "name": "etos_vendor_menu_order",
+            "type": "number",
+            "instructions": "Mniejsza liczba oznacza wcześniejszą kolumnę.",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 10,
+            "min": 0,
+            "max": "",
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_vendor_show_in_mega_menu",
+            "label": "Pokaż w mega menu",
+            "name": "etos_vendor_show_in_mega_menu",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Tak",
+            "ui_off_text": "Nie"
+        },
+        {
+            "key": "field_etos_vendor_intro",
+            "label": "Krótki opis",
+            "name": "etos_vendor_intro",
+            "type": "textarea",
+            "instructions": "Zwięzły opis producenta wykorzystywany na stronie zbiorczej.",
+            "required": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 320,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "etos_vendor"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Dane producenta wykorzystywane w mega menu i na stronach oprogramowania.",
+    "show_in_rest": 0,
+    "modified": 1783938444
+}
