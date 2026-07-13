@@ -53,6 +53,8 @@ function etos_register_content_types() {
 			),
 			'menu_position'       => 20,
 			'menu_icon'           => 'dashicons-laptop',
+			'template'            => etos_get_software_block_template(),
+			'template_lock'       => false,
 			'supports'            => array(
 				'title',
 				'editor',
