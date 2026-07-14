@@ -1,0 +1,441 @@
+// ============================================================================
+// ETOS dynamic navigation
+// ============================================================================
+
+.etos-navbar {
+    .etos-nav-parent__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+        appearance: none;
+
+        &::after {
+            content: '';
+            display: block;
+            width: .45rem;
+            height: .45rem;
+            margin: 0;
+            border: 0;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg) translate(-1px, -1px);
+            transition: transform .18s ease;
+        }
+
+        &.show::after {
+            transform: rotate(-135deg) translate(-1px, -1px);
+        }
+    }
+
+    .etos-mega-menu__grid,
+    .etos-mega-menu__list,
+    .etos-services-menu__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        >.container,
+        >.container-fluid {
+            position: relative;
+        }
+
+        .etos-nav-item--dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        .etos-nav-parent__link {
+            padding-right: .2rem;
+        }
+
+        .etos-nav-parent__toggle {
+            width: 28px;
+            height: 44px;
+            margin-left: -.1rem;
+            border-radius: .65rem;
+            color: rgba($etos-ink, .48);
+
+            &:hover,
+            &.show {
+                color: $etos-ink;
+                background: rgba($etos-accent, .14);
+            }
+
+            &:focus-visible {
+                outline: 0;
+                box-shadow: 0 0 0 3px rgba($primary, .14);
+            }
+        }
+
+        .etos-menu-software {
+            position: static;
+        }
+
+        .etos-menu-services {
+            position: relative;
+        }
+
+        .etos-mega-menu {
+            top: calc(100% - .1rem);
+            right: 1.5rem;
+            left: 1.5rem;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba($etos-ink, .09);
+            border-radius: 1.25rem;
+            background: #fff;
+            box-shadow: 0 28px 80px rgba($etos-ink, .16);
+        }
+
+        .etos-mega-menu__inner {
+            padding: 1.35rem;
+        }
+
+        .etos-mega-menu__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .etos-mega-menu__column {
+            padding: 1rem;
+            border-top: 3px solid var(--etos-vendor-accent);
+            border-radius: .9rem;
+            background: rgba($etos-ink, .025);
+        }
+
+        .etos-mega-menu__vendor {
+            display: flex;
+            align-items: center;
+            min-height: 42px;
+            margin-bottom: .7rem;
+            color: $etos-ink;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .etos-mega-menu__logo {
+            width: auto;
+            max-width: 150px;
+            max-height: 32px;
+            object-fit: contain;
+        }
+
+        .etos-mega-menu__list {
+            display: grid;
+            gap: .12rem;
+
+            a {
+                display: block;
+                padding: .55rem .65rem;
+                border-radius: .65rem;
+                color: rgba($etos-ink, .72);
+                font-size: .89rem;
+                font-weight: 650;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: $etos-ink;
+                    background: rgba($etos-accent, .13);
+                }
+            }
+        }
+
+        .etos-mega-menu__empty,
+        .etos-services-menu__empty {
+            margin: 0;
+            color: rgba($etos-ink, .58);
+            font-size: .88rem;
+            line-height: 1.5;
+        }
+
+        .etos-mega-menu__all,
+        .etos-services-menu__all {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba($etos-ink, .08);
+            color: $primary;
+            font-size: .9rem;
+            font-weight: 750;
+            text-decoration: none;
+
+            &::after {
+                content: '\2192';
+                margin-left: .45rem;
+            }
+        }
+
+        .etos-services-menu {
+            top: calc(100% + .45rem);
+            right: 0;
+            left: auto;
+            min-width: 310px;
+            margin: 0;
+            padding: .8rem;
+        }
+
+        .etos-services-menu__empty {
+            padding: .35rem .1rem;
+        }
+
+        .etos-nav-item--cta {
+            margin-left: .45rem;
+
+            .etos-navbar__cta {
+                min-height: 44px;
+                padding: .65rem 1rem;
+                border-radius: .8rem;
+                background: $primary;
+                color: #fff;
+                box-shadow: 0 10px 24px rgba($primary, .2);
+
+                &::after {
+                    display: none;
+                }
+
+                &:hover,
+                &:focus,
+                &.active {
+                    color: #fff;
+                    background: darken($primary, 6%);
+                    transform: translateY(-1px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-nav-item--dropdown {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 52px;
+        }
+
+        .etos-nav-parent__link {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .etos-nav-parent__toggle {
+            grid-column: 2;
+            grid-row: 1;
+            width: 52px;
+            min-height: 52px;
+            border-bottom: 1px solid rgba(#fff, .08);
+            color: rgba(#fff, .62);
+
+            &:hover,
+            &:focus-visible,
+            &.show {
+                color: #fff;
+                background: rgba(#fff, .06);
+            }
+        }
+
+        .etos-mega-menu,
+        .etos-services-menu {
+            grid-column: 1 / -1;
+            position: static;
+            width: 100%;
+            margin: 0;
+            padding: .75rem 0 1rem .75rem;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .etos-mega-menu__inner {
+            padding: 0;
+        }
+
+        .etos-mega-menu__grid {
+            display: grid;
+            gap: .65rem;
+        }
+
+        .etos-mega-menu__column {
+            padding: .85rem;
+            border-left: 3px solid var(--etos-vendor-accent);
+            border-radius: .75rem;
+            background: rgba(#fff, .045);
+        }
+
+        .etos-mega-menu__vendor {
+            display: flex;
+            align-items: center;
+            margin-bottom: .45rem;
+            color: #fff;
+            font-weight: 780;
+            text-decoration: none;
+        }
+
+        .etos-mega-menu__logo {
+            width: auto;
+            max-width: 135px;
+            max-height: 28px;
+            object-fit: contain;
+        }
+
+        .etos-mega-menu__list {
+            display: grid;
+
+            a {
+                display: block;
+                padding: .5rem .25rem;
+                color: rgba(#fff, .72);
+                font-size: .88rem;
+                text-decoration: none;
+            }
+        }
+
+        .etos-mega-menu__empty,
+        .etos-services-menu__empty {
+            margin: 0;
+            color: rgba(#fff, .64);
+            font-size: .86rem;
+            line-height: 1.5;
+        }
+
+        .etos-mega-menu__all,
+        .etos-services-menu__all {
+            display: flex;
+            align-items: center;
+            margin-top: .65rem;
+            padding-top: .75rem;
+            border-top: 1px solid rgba(#fff, .08);
+            color: $etos-accent;
+            font-size: .88rem;
+            font-weight: 740;
+            text-decoration: none;
+
+            &::after {
+                content: '\2192';
+                margin-left: .45rem;
+            }
+        }
+
+        .etos-nav-item--cta {
+            margin-top: .8rem;
+
+            .etos-navbar__cta {
+                justify-content: center;
+                min-height: 48px;
+                padding: .75rem 1rem;
+                border: 0;
+                border-radius: .8rem;
+                background: $primary;
+                color: #fff;
+                font-weight: 750;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Single-button dropdown parents
+// ==========================================================================
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        .etos-nav-parent__toggle {
+            width: auto;
+            height: auto;
+            min-height: 44px;
+            margin-left: 0;
+            padding: .55rem .72rem;
+            gap: .45rem;
+            color: rgba($etos-ink, .72);
+            text-align: left;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-nav-item--dropdown {
+            display: block;
+        }
+
+        .etos-nav-parent__toggle {
+            grid-column: auto;
+            grid-row: auto;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+            min-height: 52px;
+            padding: .95rem 0;
+            color: rgba(#fff, .86);
+            text-align: left;
+        }
+    }
+}
+
+// ==========================================================================
+// Navigation hover polish
+// ==========================================================================
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        .etos-nav-parent__toggle {
+            position: relative;
+            background: transparent;
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: .72rem;
+                bottom: .34rem;
+                left: .72rem;
+                height: 2px;
+                border-radius: 999px;
+                background: $etos-accent;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform .24s cubic-bezier(.16, 1, .3, 1);
+            }
+
+            &:hover,
+            &:focus-visible,
+            &.show {
+                color: $etos-ink;
+                background: transparent;
+            }
+
+            &:hover::before,
+            &:focus-visible::before,
+            &.show::before {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+
+        .etos-mega-menu {
+            top: calc(100% + .45rem);
+        }
+
+        .etos-services-menu {
+            top: calc(100% + .65rem);
+        }
+    }
+}
