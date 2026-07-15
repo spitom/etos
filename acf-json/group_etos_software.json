@@ -165,6 +165,24 @@
             "append": ""
         },
         {
+            "key": "field_etos_software_menu_group",
+            "label": "Sekcja w mega menu",
+            "name": "etos_software_menu_group",
+            "type": "text",
+            "instructions": "Opcjonalny nagłówek grupy, np. Finanse i Księgowość. Produkty z tą samą nazwą sekcji powinny mieć kolejne wartości pola Kolejność.",
+            "required": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 120,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_etos_software_featured_on_home",
             "label": "Wyróżnij na stronie głównej",
             "name": "etos_software_featured_on_home",
@@ -318,5 +336,5 @@
     "active": true,
     "description": "Pola używane przez szablon pojedynczego programu, mega menu i stronę główną.",
     "show_in_rest": 0,
-    "modified": 1783938444
+    "modified": 1784116756
 }

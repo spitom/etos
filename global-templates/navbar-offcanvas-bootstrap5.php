@@ -56,7 +56,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					'menu_class'      => 'navbar-nav etos-navbar__menu justify-content-end flex-grow-1 pe-3',
 					'fallback_cb'     => false,
 					'menu_id'         => 'main-menu',
-					'depth'           => 1,
+					'depth'           => 2,
 					'walker'          => new ETOS_Nav_Walker(),
 				)
 			);

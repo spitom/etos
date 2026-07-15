@@ -439,3 +439,147 @@
         }
     }
 }
+
+// ==========================================================================
+// Standard WordPress dropdowns
+// ==========================================================================
+
+.etos-navbar {
+    .etos-standard-menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        .etos-nav-item--standard {
+            position: relative;
+        }
+
+        .etos-standard-menu {
+            top: calc(100% + .65rem);
+            right: auto;
+            left: 0;
+            min-width: 250px;
+            margin: 0;
+            padding: .65rem;
+            border: 1px solid rgba($etos-ink, .09);
+            border-radius: .95rem;
+            background: #fff;
+            box-shadow: 0 22px 55px rgba($etos-ink, .15);
+        }
+
+        .etos-standard-menu__item {
+            margin: 0;
+        }
+
+        .etos-standard-menu {
+            .dropdown-item {
+                padding: .65rem .75rem;
+                border-radius: .65rem;
+                color: rgba($etos-ink, .74);
+                font-size: .9rem;
+                font-weight: 650;
+                white-space: normal;
+
+                &:hover,
+                &:focus,
+                &.active,
+                &:active {
+                    color: $etos-ink;
+                    background: rgba($etos-accent, .13);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-standard-menu {
+            position: static;
+            width: 100%;
+            margin: 0;
+            padding: .4rem 0 .9rem .75rem;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .etos-standard-menu__item {
+            margin: 0;
+        }
+
+        .etos-standard-menu {
+            .dropdown-item {
+                display: block;
+                padding: .65rem .8rem;
+                border-left: 2px solid rgba($etos-accent, .72);
+                border-radius: 0 .55rem .55rem 0;
+                background: transparent;
+                color: rgba(#fff, .72);
+                font-size: .9rem;
+                font-weight: 600;
+                white-space: normal;
+
+                &:hover,
+                &:focus,
+                &.active,
+                &:active {
+                    color: #fff;
+                    background: rgba(#fff, .06);
+                }
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Software menu groups
+// ==========================================================================
+
+.etos-navbar {
+    .etos-mega-menu__group {
+        margin: .9rem .65rem .25rem;
+        color: var(--etos-vendor-accent);
+        font-size: .72rem;
+        font-weight: 800;
+        line-height: 1.35;
+        letter-spacing: .035em;
+        text-transform: uppercase;
+
+        &:first-of-type {
+            margin-top: .2rem;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-mega-menu__group {
+            margin: .85rem .25rem .2rem;
+            color: var(--etos-vendor-accent);
+            font-size: .7rem;
+        }
+    }
+}
+
+// ==========================================================================
+// Mega menu viewport containment
+// ==========================================================================
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        .etos-mega-menu {
+            max-height: calc(100vh - 5.5rem);
+            max-height: calc(100dvh - 5.5rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+    }
+}
