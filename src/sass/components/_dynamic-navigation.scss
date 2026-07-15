@@ -566,3 +566,20 @@
         }
     }
 }
+
+// ==========================================================================
+// Mega menu viewport containment
+// ==========================================================================
+
+@media (min-width: 1200px) {
+    .etos-navbar {
+        .etos-mega-menu {
+            max-height: calc(100vh - 5.5rem);
+            max-height: calc(100dvh - 5.5rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+    }
+}
