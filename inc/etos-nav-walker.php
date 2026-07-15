@@ -339,23 +339,58 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
 								</div>
 
 								<?php if ( $software ) : ?>
-									<ul class="etos-mega-menu__list">
-										<?php foreach ( $software as $software_item ) : ?>
-											<?php
-											$label = (string) get_post_meta(
-												$software_item->ID,
-												'etos_software_menu_label',
-												true
-											);
-											?>
-											<li>
-												<a href="<?php echo esc_url( get_permalink( $software_item ) ); ?>">
-													<?php echo esc_html( $label ?: get_the_title( $software_item ) ); ?>
-												</a>
-											</li>
-										<?php endforeach; ?>
-									</ul>
-								<?php else : ?>
+                                    <?php
+                                    $active_group = null;
+                                    $list_open   = false;
+                                    ?>
+
+                                    <?php foreach ( $software as $software_item ) : ?>
+                                        <?php
+                                        $label = (string) get_post_meta(
+                                            $software_item->ID,
+                                            'etos_software_menu_label',
+                                            true
+                                        );
+
+                                        $group = trim(
+                                            (string) get_post_meta(
+                                                $software_item->ID,
+                                                'etos_software_menu_group',
+                                                true
+                                            )
+                                        );
+
+                                        if ( $group !== $active_group ) {
+                                            if ( $list_open ) {
+                                                echo '</ul>';
+                                            }
+
+                                            if ( '' !== $group ) {
+                                                echo '<h3 class="etos-mega-menu__group">'
+                                                    . esc_html( $group )
+                                                    . '</h3>';
+                                            }
+
+                                            echo '<ul class="etos-mega-menu__list">';
+
+                                            $list_open   = true;
+                                            $active_group = $group;
+                                        }
+                                        ?>
+
+                                        <li>
+                                            <a href="<?php echo esc_url( get_permalink( $software_item ) ); ?>">
+                                                <?php echo esc_html( $label ?: get_the_title( $software_item ) ); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+
+                                    <?php
+                                    if ( $list_open ) {
+                                        echo '</ul>';
+                                    }
+                                    ?>
+                                <?php else : ?>
 									<p class="etos-mega-menu__empty">
 										<?php echo esc_html( "Produkty pojawi\u{0105} si\u{0119} po ich opublikowaniu." ); ?>
 									</p>

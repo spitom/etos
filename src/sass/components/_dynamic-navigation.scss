@@ -536,3 +536,33 @@
         }
     }
 }
+
+// ==========================================================================
+// Software menu groups
+// ==========================================================================
+
+.etos-navbar {
+    .etos-mega-menu__group {
+        margin: .9rem .65rem .25rem;
+        color: var(--etos-vendor-accent);
+        font-size: .72rem;
+        font-weight: 800;
+        line-height: 1.35;
+        letter-spacing: .035em;
+        text-transform: uppercase;
+
+        &:first-of-type {
+            margin-top: .2rem;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-mega-menu__group {
+            margin: .85rem .25rem .2rem;
+            color: var(--etos-vendor-accent);
+            font-size: .7rem;
+        }
+    }
+}
