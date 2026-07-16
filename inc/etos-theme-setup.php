@@ -16,6 +16,8 @@ function etos_theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'css/custom-editor-style.css' );
 	add_theme_support(
 		'html5',
 		array(

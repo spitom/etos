@@ -1,0 +1,238 @@
+// ==========================================================================
+// Single software
+// ==========================================================================
+
+.etos-software-single {
+    --etos-software-accent: #2457d6;
+    background: #fff;
+}
+
+.etos-software-hero {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: var(--etos-software-accent);
+    }
+
+    &__logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 52px;
+        margin-bottom: 1.2rem;
+        padding: .65rem .85rem;
+        border: 1px solid rgba($etos-ink, .08);
+        border-radius: .8rem;
+        background: #fff;
+        box-shadow: 0 12px 34px rgba($etos-ink, .07);
+    }
+
+    &__logo-image {
+        display: block;
+        width: auto;
+        max-width: 180px;
+        max-height: 42px;
+        object-fit: contain;
+    }
+
+    .etos-page-hero__title {
+        max-width: 14ch;
+    }
+
+    &__visual {
+        position: relative;
+        display: flex;
+        min-height: 420px;
+        overflow: hidden;
+        border: 1px solid rgba($etos-ink, .08);
+        border-radius: 1.35rem;
+        background:
+            radial-gradient(
+                circle at 80% 20%,
+                rgba($primary, .12),
+                transparent 20rem
+            ),
+            linear-gradient(145deg, #fff, #edf5fb);
+        box-shadow: 0 30px 80px rgba($etos-ink, .13);
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+    }
+
+    &__placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 420px;
+        padding: 2rem;
+        text-align: center;
+
+        span {
+            max-width: 12ch;
+            color: rgba($etos-ink, .12);
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-weight: 850;
+            line-height: .9;
+            letter-spacing: -.075em;
+        }
+    }
+}
+
+.etos-software-content {
+    padding: clamp(4rem, 7vw, 7rem) 0;
+
+    &__body {
+        max-width: 940px;
+        margin: 0 auto;
+        color: $etos-muted;
+        font-size: 1.05rem;
+        line-height: 1.8;
+
+        >:first-child {
+            margin-top: 0;
+        }
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+
+        p:empty {
+            display: none;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: $etos-ink;
+            scroll-margin-top: 7rem;
+        }
+
+        h2 {
+            margin: clamp(3.5rem, 6vw, 5.5rem) 0 1.25rem;
+            font-size: clamp(2rem, 3.6vw, 3.1rem);
+            font-weight: 730;
+            line-height: 1.08;
+            letter-spacing: -.045em;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 3rem;
+                height: 4px;
+                margin-bottom: 1rem;
+                border-radius: 999px;
+                background: var(--etos-software-accent);
+            }
+        }
+
+        h3 {
+            margin: 2.5rem 0 1rem;
+            font-size: clamp(1.35rem, 2vw, 1.8rem);
+            font-weight: 720;
+            line-height: 1.2;
+        }
+
+        p,
+        ul,
+        ol {
+            margin-bottom: 1.5rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.35rem;
+        }
+
+        li {
+            margin-bottom: .55rem;
+
+            &::marker {
+                color: var(--etos-software-accent);
+            }
+        }
+
+        a {
+            color: $primary;
+            text-underline-offset: .18em;
+        }
+
+        .wp-block-columns {
+            gap: clamp(1.25rem, 3vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .wp-block-group {
+            padding: clamp(1.25rem, 3vw, 2rem);
+            border: 1px solid rgba($etos-ink, .08);
+            border-radius: 1rem;
+            background: rgba($etos-ink, .025);
+        }
+
+        .wp-block-image {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+            img {
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .etos-software-hero {
+        &__visual,
+        &__image,
+        &__placeholder {
+            min-height: 320px;
+        }
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .etos-software-hero {
+        &__logo {
+            min-height: 46px;
+            margin-bottom: 1rem;
+        }
+
+        &__logo-image {
+            max-width: 150px;
+            max-height: 34px;
+        }
+
+        &__visual,
+        &__image,
+        &__placeholder {
+            min-height: 250px;
+        }
+
+        &__placeholder {
+            span {
+                font-size: clamp(2.8rem, 18vw, 5rem);
+            }
+        }
+    }
+
+    .etos-software-content {
+        &__body {
+            font-size: 1rem;
+        }
+    }
+
+}
