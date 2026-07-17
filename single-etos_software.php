@@ -242,9 +242,14 @@ while ( have_posts() ) :
             : '';
 
         if ( 'core/image' === $block_name ) {
+            $has_image_src = 1 === preg_match(
+                '/<img\b[^>]*\bsrc\s*=\s*["\'][^"\']+["\']/i',
+                $inner_html
+            );
+
             return ! empty( $attributes['id'] )
                 || ! empty( $attributes['url'] )
-                || 1 === preg_match( '/<img\b/i', $inner_html );
+                || $has_image_src;
         }
 
         if (
@@ -310,6 +315,21 @@ while ( have_posts() ) :
         $class_name = isset( $attributes['className'] )
             ? (string) $attributes['className']
             : '';
+
+        $block_name = isset( $block['blockName'] )
+            ? (string) $block['blockName']
+            : '';
+
+        $inner_html = isset( $block['innerHTML'] )
+            ? (string) $block['innerHTML']
+            : '';
+
+        if (
+            '' === $block_name
+            && '' === trim( $inner_html )
+        ) {
+            return false;
+        }
 
         if ( false !== strpos( $class_name, 'etos-software-section' ) ) {
             $inner_blocks = isset( $block['innerBlocks'] )
