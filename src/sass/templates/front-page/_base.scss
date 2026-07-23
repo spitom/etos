@@ -5,3 +5,13 @@
 .site-main--front {
     background: #fff;
 }
+// Front-page desktop gutter.
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .site-main--front {
+        .etos-container {
+            max-width: 100%;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+    }
+}

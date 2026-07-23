@@ -44,6 +44,7 @@
 
 @media (min-width: 1200px) {
     .etos-navbar {
+
         >.container,
         >.container-fluid {
             position: relative;
@@ -120,7 +121,7 @@
             display: flex;
             align-items: center;
             min-height: 42px;
-            margin-bottom: .7rem;
+            margin-bottom: 1.2rem;
             color: $etos-ink;
             font-weight: 800;
             text-decoration: none;

@@ -3,61 +3,154 @@
 // ==========================================================================
 
 .etos-hero {
-    padding: clamp(6rem, 10vw, 9rem) 0 clamp(4.5rem, 7vw, 7rem);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(5.75rem, 9vw, 8rem) 0 clamp(4.5rem, 7vw, 6.5rem);
+    border-bottom: 1px solid rgba($etos-ink, .07);
     background:
         radial-gradient(
             circle at 85% 15%,
-            rgba($primary, 0.13),
+            rgba($primary, .13),
             transparent 34rem
         ),
         linear-gradient(180deg, #f7fbfe 0%, #fff 100%);
-    border-bottom: 1px solid rgba($etos-ink, 0.07);
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 660px;
+
+        > .etos-kicker {
+            margin-bottom: 1.35rem;
+        }
+    }
 
     &__title {
-        max-width: 11ch;
-        margin-bottom: 1rem;
+        display: grid;
+        gap: .02em;
+        max-width: none;
+        margin: 0 0 1.35rem;
         color: $etos-ink;
-        font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+        font-size: clamp(2.65rem, 4.2vw, 4.05rem);
         font-weight: 720;
         line-height: 1.02;
-        letter-spacing: -0.055em;
+        letter-spacing: -.055em;
+    }
+
+    &__title-line {
+        display: block;
     }
 
     &__lead {
-        max-width: 660px;
-        margin-bottom: 2rem;
+        max-width: 590px;
+        margin: 0;
         color: #526174;
-        font-size: clamp(1.05rem, 1.3vw, 1.25rem);
-        line-height: 1.7;
+        font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+        line-height: 1.65;
     }
 
-    &__actions {
+    &__conversion {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        width: auto;
+        margin-top: clamp(1.25rem, 2vw, 1.6rem);
+
         .btn {
-            min-height: 54px;
-            padding-inline: 1.4rem;
+            flex: 0 0 auto;
+            min-height: 52px;
+            padding-inline: 1.55rem;
+            box-shadow: 0 12px 28px rgba(#ffb800, .18);
         }
+    }
 
-        .btn-outline-dark {
-            border-color: rgba($etos-ink, 0.12);
-            background: rgba(#fff, 0.72);
+    &__prompt {
+        margin: 0;
+        color: #334155;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
 
-            &:hover,
-            &:focus {
-                border-color: rgba($primary, 0.35);
-                background: #fff;
-            }
-        }
+    &__partners-wrap {
+        position: relative;
+        z-index: 1;
+        padding: 1rem 1.25rem 1.25rem 0;
     }
 
     &__pattern {
         position: absolute;
-        top: 6rem;
-        right: 3vw;
-        width: 220px;
-        height: 220px;
-        opacity: 0.45;
+        z-index: 0;
+        top: -3.25rem;
+        right: -4.75rem;
+        width: 245px;
+        height: 245px;
+        opacity: .22;
         background-image: radial-gradient($primary 1px, transparent 1px);
         background-size: 16px 16px;
         pointer-events: none;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-hero {
+        &__title {
+            font-size: clamp(2.6rem, 4.4vw, 3.65rem);
+        }
+
+        &__partners-wrap {
+            padding-right: .5rem;
+        }
+
+        &__pattern {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-hero {
+        &__content {
+            max-width: 760px;
+        }
+
+        &__title {
+            max-width: 12ch;
+        }
+
+        &__title-line {
+            display: inline;
+        }
+
+        &__partners-wrap {
+            max-width: 760px;
+            margin: 1.5rem auto 0;
+            padding-right: 1rem;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-hero {
+        &__title {
+            max-width: 100%;
+        }
+
+        &__conversion {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1rem;
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        &__prompt {
+            max-width: none;
+        }
     }
 }
