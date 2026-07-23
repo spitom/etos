@@ -213,6 +213,26 @@ while ( have_posts() ) :
         $post_id
     );
 
+    $structured_sections = function_exists(
+        'etos_get_software_structured_sections'
+    )
+        ? etos_get_software_structured_sections( $post_id )
+        : array(
+            'benefits' => array(),
+            'features' => array(),
+            'addons'   => array(),
+            'packages' => array(),
+        );
+
+    $has_structured_content = false;
+
+    foreach ( $structured_sections as $structured_section_rows ) {
+        if ( ! empty( $structured_section_rows ) ) {
+            $has_structured_content = true;
+            break;
+        }
+    }
+
     /**
      * Check whether a parsed block contains real editor content.
      *
@@ -306,7 +326,10 @@ while ( have_posts() ) :
      * @param array $block Parsed top-level block.
      * @return bool
      */
-    $software_block_should_render = static function ( $block ) use ( $block_has_content ) {
+    $software_block_should_render = static function ( $block ) use (
+        $block_has_content,
+        $structured_sections
+    ) {
         $attributes = isset( $block['attrs'] )
             && is_array( $block['attrs'] )
                 ? $block['attrs']
@@ -327,6 +350,46 @@ while ( have_posts() ) :
         if (
             '' === $block_name
             && '' === trim( $inner_html )
+        ) {
+            return false;
+        }
+
+        if (
+            ! empty( $structured_sections['benefits'] )
+            && false !== strpos(
+                $class_name,
+                'etos-software-section--benefits'
+            )
+        ) {
+            return false;
+        }
+
+        if (
+            ! empty( $structured_sections['features'] )
+            && false !== strpos(
+                $class_name,
+                'etos-software-split'
+            )
+        ) {
+            return false;
+        }
+
+        if (
+            ! empty( $structured_sections['addons'] )
+            && false !== strpos(
+                $class_name,
+                'etos-software-section--addons'
+            )
+        ) {
+            return false;
+        }
+
+        if (
+            ! empty( $structured_sections['packages'] )
+            && false !== strpos(
+                $class_name,
+                'etos-software-section--packages'
+            )
         ) {
             return false;
         }
@@ -377,7 +440,8 @@ while ( have_posts() ) :
     );
 
     $filtered_content = serialize_blocks( $filtered_blocks );
-    $has_content      = ! empty( $filtered_blocks );
+    $has_content      = $has_structured_content
+        || ! empty( $filtered_blocks );
 
     $hero_links = array(
         array(
@@ -535,24 +599,40 @@ while ( have_posts() ) :
 
                     <div class="container">
 
-                        <div class="etos-software-content__body entry-content">
-
-                            <?php
-                            echo apply_filters(
-                                'the_content',
-                                $filtered_content
-                            );
-
-                            wp_link_pages(
+                        <?php
+                        if ( $has_structured_content ) {
+                            get_template_part(
+                                'template-parts/software/structured-content',
+                                null,
                                 array(
-                                    'before' => '<div class="page-links">'
-                                        . esc_html__( 'Strony:', 'etos' ),
-                                    'after'  => '</div>',
+                                    'sections' => $structured_sections,
                                 )
                             );
-                            ?>
+                        }
+                        ?>
 
-                        </div>
+                        <?php if ( ! empty( $filtered_blocks ) ) : ?>
+
+                            <div class="etos-software-content__body entry-content">
+
+                                <?php
+                                echo apply_filters(
+                                    'the_content',
+                                    $filtered_content
+                                );
+
+                                wp_link_pages(
+                                    array(
+                                        'before' => '<div class="page-links">'
+                                            . esc_html__( 'Strony:', 'etos' ),
+                                        'after'  => '</div>',
+                                    )
+                                );
+                                ?>
+
+                            </div>
+
+                        <?php endif; ?>
 
                     </div>
 
