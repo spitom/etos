@@ -7,7 +7,8 @@ $cta = wp_parse_args(
         'eyebrow' => 'Rozpocznij rozmowę o wdrożeniu',
         'title'   => 'Sprawdź, jak uporządkować procesy w Twojej firmie.',
         'text'    => 'Porozmawiaj z konsultantem ETOS o systemach ERP, infrastrukturze IT, integracjach i wsparciu.',
-        'button'  => 'Umów konsultację',
+        'button'  => 'Porozmawiaj z doradcą',
+        'note'    => '',
         'url'     => '/kontakt/',
         'class'   => '',
     )
@@ -31,9 +32,26 @@ $cta = wp_parse_args(
         </div>
 
         <div class="col-lg-5 text-lg-end">
-            <a href="<?php echo esc_url( $cta['url'] ); ?>" class="btn etos-btn-primary">
-                <?php echo esc_html( $cta['button'] ); ?>
-            </a>
+
+            <div class="etos-cta-panel__action">
+
+                <a
+                    href="<?php echo esc_url( $cta['url'] ); ?>"
+                    class="btn etos-btn-primary"
+                >
+                    <?php echo esc_html( $cta['button'] ); ?>
+                </a>
+
+                <?php if ( ! empty( $cta['note'] ) ) : ?>
+
+                    <span class="etos-cta-panel__note">
+                        <?php echo esc_html( $cta['note'] ); ?>
+                    </span>
+
+                <?php endif; ?>
+
+            </div>
+
         </div>
     </div>
 </div>

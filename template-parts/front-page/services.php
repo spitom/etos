@@ -170,7 +170,7 @@ $service_posts = get_posts(
     array(
         'post_type'        => 'etos_service',
         'post_status'      => 'publish',
-        'posts_per_page'   => 6,
+        'posts_per_page'   => -1,
         'orderby'          => array(
             'menu_order' => 'ASC',
             'title'      => 'ASC',
@@ -192,7 +192,7 @@ if ( empty( $service_posts ) ) {
         array(
             'post_type'        => 'etos_service',
             'post_status'      => 'publish',
-            'posts_per_page'   => 6,
+            'posts_per_page'   => -1,
             'orderby'          => array(
                 'menu_order' => 'ASC',
                 'title'      => 'ASC',
@@ -216,10 +216,11 @@ foreach ( $service_posts as $service_post ) {
 
     $title_slug = sanitize_title( $title );
 
-    // These two offers are displayed as larger panels below the service grid.
+    // These offers are displayed elsewhere on the front page.
     if (
         false !== strpos( $title_slug, 'podpis' )
         || false !== strpos( $title_slug, 'fiskal' )
+        || false !== strpos( $title_slug, 'pomoc-zdal' )
     ) {
         continue;
     }
@@ -230,7 +231,29 @@ foreach ( $service_posts as $service_post ) {
     );
 
     if ( ! $text ) {
-        $text = get_the_excerpt( $service_post );
+        $raw_excerpt = (string) get_post_field(
+            'post_excerpt',
+            $service_post->ID
+        );
+
+        $raw_content = (string) get_post_field(
+            'post_content',
+            $service_post->ID
+        );
+
+        $source_text = '' !== trim( $raw_excerpt )
+            ? $raw_excerpt
+            : $raw_content;
+
+        $text = wp_trim_words(
+            trim(
+                wp_strip_all_tags(
+                    strip_shortcodes( $source_text )
+                )
+            ),
+            22,
+            '…'
+        );
     }
 
     $icon = $etos_get_service_value(
@@ -249,6 +272,10 @@ foreach ( $service_posts as $service_post ) {
         'icon_id'  => absint( $icon ),
         'icon_key' => $etos_get_service_icon_key( $title ),
     );
+
+    if ( 4 <= count( $services ) ) {
+        break;
+    }
 }
 
 if ( empty( $services ) ) {
@@ -281,17 +308,10 @@ if ( empty( $services ) ) {
             'icon_id'  => 0,
             'icon_key' => 'network',
         ),
-        array(
-            'title'    => 'Usługi programistyczne',
-            'text'     => 'Integracje, automatyzacje i rozwiązania rozwijane zgodnie z potrzebami organizacji.',
-            'url'      => home_url( '/uslugi/' ),
-            'icon_id'  => 0,
-            'icon_key' => 'code',
-        ),
+
     );
 }
 
-$service_count = count( $services );
 ?>
 
 <section class="etos-section etos-services">
@@ -330,22 +350,10 @@ $service_count = count( $services );
 
         <div class="etos-services__grid">
 
-            <?php foreach ( $services as $index => $service ) : ?>
-                <?php
-                $card_classes = array(
-                    'etos-service-card',
-                );
-
-                if (
-                    2 === $service_count % 3
-                    && $index === $service_count - 2
-                ) {
-                    $card_classes[] = 'etos-service-card--center-start';
-                }
-                ?>
+            <?php foreach ( $services as $service ) : ?>
 
                 <a
-                    class="<?php echo esc_attr( implode( ' ', $card_classes ) ); ?>"
+                    class="etos-service-card"
                     href="<?php echo esc_url( $service['url'] ); ?>"
                 >
 
@@ -396,12 +404,7 @@ $service_count = count( $services );
         <div class="etos-services__solutions">
 
             <header class="etos-services__solutions-header">
-
-                <span class="etos-services__solutions-kicker">
-                    <?php esc_html_e( 'Rozwiązania uzupełniające', 'etos' ); ?>
-                </span>
-
-                <h2>
+<h2>
                     <?php
                     esc_html_e(
                         'Podpis elektroniczny i urządzenia fiskalne.',

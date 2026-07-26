@@ -1,0 +1,110 @@
+{
+    "key": "group_etos_news_image",
+    "title": "Obraz aktualności na stronie głównej",
+    "fields": [
+        {
+            "key": "field_etos_news_image_fit",
+            "label": "Dopasowanie obrazu",
+            "name": "etos_news_image_fit",
+            "type": "select",
+            "instructions": "Wypełnij kadr przycina obraz do proporcji 15:10. Pokaż cały obraz zachowuje całą grafikę i może pozostawić wolne tło.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "cover": "Wypełnij kadr",
+                "contain": "Pokaż cały obraz"
+            },
+            "default_value": "cover",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_news_image_scale",
+            "label": "Powiększenie",
+            "name": "etos_news_image_scale",
+            "type": "range",
+            "instructions": "100 oznacza rozmiar domyślny. Większa wartość przybliża obraz.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 100,
+            "min": 100,
+            "max": 160,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_etos_news_image_x",
+            "label": "Pozycja pozioma",
+            "name": "etos_news_image_x",
+            "type": "range",
+            "instructions": "0 przesuwa kadr w lewo, 100 w prawo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_etos_news_image_y",
+            "label": "Pozycja pionowa",
+            "name": "etos_news_image_y",
+            "type": "range",
+            "instructions": "0 przesuwa kadr do góry, 100 do dołu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Sterowanie kadrem miniatury wyświetlanej w aktualnościach na stronie głównej.",
+    "show_in_rest": 0,
+    "modified": 1785067200
+}

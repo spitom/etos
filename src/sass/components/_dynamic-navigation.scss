@@ -584,3 +584,43 @@
         }
     }
 }
+
+// ETOS MOBILE DROPDOWN ACTIVE BACKGROUND START
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__offcanvas {
+        .etos-nav-item--dropdown,
+        .etos-nav-item--dropdown.current-menu-item,
+        .etos-nav-item--dropdown.current-menu-parent,
+        .etos-nav-item--dropdown.current-menu-ancestor {
+            background: transparent;
+        }
+
+        .etos-nav-parent__toggle {
+            &.active,
+            &.show,
+            &[aria-expanded='true'],
+            &:focus,
+            &:focus-visible {
+                background: transparent;
+                box-shadow: none;
+            }
+
+            &:focus-visible {
+                outline: 2px solid rgba(#fff, .55);
+                outline-offset: 3px;
+            }
+        }
+
+        .current-menu-item,
+        .current-menu-parent,
+        .current-menu-ancestor {
+            > .etos-nav-parent__toggle {
+                background: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+// ETOS MOBILE DROPDOWN ACTIVE BACKGROUND END

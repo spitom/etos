@@ -154,3 +154,55 @@
         }
     }
 }
+
+// ETOS HERO MOBILE HEIGHT START
+
+@media (max-width: 767.98px) {
+    .etos-hero {
+        min-height: 0;
+        height: auto;
+        padding:
+            4.25rem
+            0
+            3.75rem;
+
+        > .etos-container {
+            min-height: 0;
+        }
+
+        .row {
+            min-height: 0;
+            --bs-gutter-y: 0;
+        }
+
+        .row > .col-lg-6:last-child {
+            display: none;
+        }
+
+        &__content {
+            min-height: 0;
+        }
+
+        &__conversion {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        &__partners-wrap {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-hero {
+        padding:
+            3.75rem
+            0
+            3.25rem;
+    }
+}
+
+// ETOS HERO MOBILE HEIGHT END

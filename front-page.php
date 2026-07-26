@@ -16,8 +16,10 @@ get_header();
 		get_template_part( 'template-parts/front-page/hero' );
 		get_template_part( 'template-parts/front-page/support-areas' );
 		get_template_part( 'template-parts/front-page/erp-ecosystem' );
-		get_template_part( 'template-parts/front-page/workflow' );
+		// get_template_part( 'template-parts/front-page/workflow' );
 		get_template_part( 'template-parts/front-page/services' );
+		get_template_part( 'template-parts/front-page/home-cta' );
+		get_template_part( 'template-parts/front-page/news-carousel' );
 		?>
 	</main>
 </div>

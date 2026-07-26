@@ -1,0 +1,201 @@
+// ==========================================================================
+// Front-page consultation CTA
+// ==========================================================================
+
+.etos-home-cta {
+    position: relative;
+    padding: clamp(4.5rem, 6.5vw, 5.75rem) 0;
+    background: #f3f6f9;
+}
+
+.etos-cta-panel--home {
+    position: relative;
+    margin: 0;
+    padding: clamp(2.25rem, 4vw, 3.1rem);
+    overflow: hidden;
+    border: 1px solid rgba($primary, .13);
+    border-radius: 1.25rem;
+    background: #e9f2f7;
+    box-shadow: 0 16px 42px rgba($etos-ink, .075);
+
+    &::before,
+    &::after {
+        display: none;
+    }
+
+    > .row {
+        position: relative;
+        --bs-gutter-x: clamp(2.5rem, 6vw, 6rem);
+        --bs-gutter-y: 2rem;
+    }
+
+    .col-lg-7 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .col-lg-5 {
+        display: flex;
+        align-self: stretch;
+        justify-content: flex-end;
+    }
+
+    .etos-cta-panel__eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        min-height: 0;
+        align-items: center;
+        gap: .6rem;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        color: $primary;
+        font-size: .74rem;
+        font-weight: 850;
+        letter-spacing: .085em;
+
+        &::before {
+            content: '';
+            width: .48rem;
+            height: .48rem;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background: $etos-accent;
+            box-shadow: 0 0 0 5px rgba($etos-accent, .13);
+        }
+    }
+
+    h2 {
+        max-width: 680px;
+        margin: 1rem 0 .8rem;
+        color: $etos-ink;
+        font-size: clamp(1.9rem, 3.2vw, 2.65rem);
+        font-weight: 740;
+        line-height: 1.08;
+        letter-spacing: -.04em;
+    }
+
+    p {
+        max-width: 690px;
+        margin: 0;
+        color: #475569;
+        font-size: clamp(.98rem, 1.2vw, 1.05rem);
+        line-height: 1.7;
+    }
+
+    .etos-cta-panel__action {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: .8rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .etos-btn-primary {
+        width: 100%;
+        max-width: 305px;
+        min-height: 58px;
+        padding: .95rem 1.5rem;
+        border: 1px solid $etos-accent;
+        border-radius: .85rem;
+        background: $etos-accent;
+        color: $etos-ink;
+        font-size: .96rem;
+        font-weight: 820;
+        box-shadow: 0 12px 28px rgba($etos-accent, .18);
+        transition:
+            transform .2s ease,
+            box-shadow .2s ease,
+            background-color .2s ease;
+
+        &::after {
+            margin-left: auto;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: $etos-accent-soft;
+            background: $etos-accent-soft;
+            color: $etos-ink;
+            box-shadow: 0 16px 34px rgba($etos-accent, .22);
+            transform: translateY(-2px);
+        }
+    }
+
+    .etos-cta-panel__note {
+        display: block;
+        width: 100%;
+        max-width: 305px;
+        color: #64748b;
+        font-size: .8rem;
+        font-weight: 620;
+        line-height: 1.45;
+        text-align: left;
+    }
+}
+
+/*
+ * Aktualności pozostają ostatnią sekcją treści przed footerem.
+ */
+.site-main--front .etos-home-cta + .etos-news {
+    padding-top: clamp(4.75rem, 6.5vw, 6rem);
+    padding-bottom: clamp(5rem, 7vw, 6.5rem);
+}
+
+@media (max-width: 991.98px) {
+    .etos-cta-panel--home {
+        .col-lg-5 {
+            justify-content: flex-start;
+        }
+
+        .etos-cta-panel__action {
+            align-items: flex-start;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-home-cta {
+        padding: 4rem 0;
+    }
+
+    .etos-cta-panel--home {
+        padding: 1.8rem;
+        border-radius: 1.1rem;
+
+        h2 {
+            font-size: clamp(1.75rem, 8vw, 2.3rem);
+        }
+
+        .etos-btn-primary,
+        .etos-cta-panel__note {
+            width: 100%;
+            max-width: none;
+        }
+    }
+
+    .site-main--front .etos-home-cta + .etos-news {
+        padding-top: 4.25rem;
+        padding-bottom: 4.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-cta-panel--home {
+        padding: 1.45rem;
+
+        .etos-cta-panel__action {
+            gap: .7rem;
+        }
+
+        .etos-cta-panel__note {
+            text-align: center;
+        }
+    }
+}

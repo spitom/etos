@@ -5,6 +5,10 @@
 .etos-services {
     position: relative;
     overflow: hidden;
+    padding:
+        clamp(4.5rem, 6.5vw, 6rem)
+        0
+        clamp(3.75rem, 5vw, 4.75rem);
     background:
         radial-gradient(
             circle at 82% 5%,
@@ -42,7 +46,7 @@
         grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
         gap: clamp(2.5rem, 6vw, 6rem);
         align-items: end;
-        margin-bottom: clamp(3rem, 5vw, 4.5rem);
+        margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
 
         .etos-section__title {
             max-width: 750px;
@@ -61,37 +65,29 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 1.25rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
     }
 
     &__solutions {
-        margin-top: clamp(4.5rem, 8vw, 7rem);
-        padding-top: clamp(3rem, 5vw, 4.5rem);
-        border-top: 1px solid rgba(#fff, .1);
+        margin-top: clamp(2.75rem, 4vw, 3.5rem);
     }
 
     &__solutions-header {
-        max-width: 780px;
-        margin-bottom: clamp(2rem, 4vw, 3rem);
+        width: 100%;
+        max-width: none;
+        margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+        text-align: center;
 
         h2 {
-            max-width: 18ch;
-            margin: .65rem 0 0;
+            max-width: 24ch;
+            margin: 0 auto;
             color: #fff;
-            font-size: clamp(2rem, 3.7vw, 3.15rem);
+            font-size: clamp(1.65rem, 2.6vw, 2.35rem);
             font-weight: 720;
-            line-height: 1.08;
-            letter-spacing: -.04em;
+            line-height: 1.12;
+            letter-spacing: -.035em;
         }
-    }
-
-    &__solutions-kicker {
-        color: $etos-accent-soft;
-        font-size: .76rem;
-        font-weight: 850;
-        letter-spacing: .09em;
-        text-transform: uppercase;
     }
 
     &__highlight-grid {
@@ -104,9 +100,9 @@
 .etos-service-card {
     position: relative;
     display: flex;
-    grid-column: span 2;
+    grid-column: auto;
     min-width: 0;
-    min-height: 310px;
+    min-height: 270px;
     flex-direction: column;
     padding: clamp(1.5rem, 2.5vw, 2rem);
     overflow: hidden;
@@ -121,9 +117,6 @@
         background-color .22s ease,
         box-shadow .22s ease;
 
-    &--center-start {
-        grid-column: 2 / span 2;
-    }
 
     &::after {
         content: '';
@@ -232,7 +225,7 @@
     min-height: 100%;
     flex-direction: column;
     align-items: flex-start;
-    padding: clamp(2rem, 4vw, 3rem);
+    padding: clamp(1.75rem, 3vw, 2.4rem);
     overflow: hidden;
     border: 1px solid rgba(#fff, .13);
     border-radius: 1.4rem;
@@ -379,10 +372,6 @@
 
     .etos-service-card {
         grid-column: auto;
-
-        &--center-start {
-            grid-column: auto;
-        }
     }
 }
 
@@ -398,8 +387,7 @@
         }
 
         &__solutions {
-            margin-top: 4rem;
-            padding-top: 3rem;
+            margin-top: 2.5rem;
         }
     }
 
@@ -440,6 +428,25 @@
 
         &__button {
             width: 100%;
+        }
+    }
+}
+// Single-line services subheading.
+@media (min-width: 768px) {
+    .etos-services__solutions-header {
+        h2 {
+            max-width: none;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-services__solutions-header {
+        h2 {
+            max-width: 22ch;
+            white-space: normal;
         }
     }
 }
