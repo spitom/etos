@@ -208,3 +208,123 @@
         }
     }
 }
+// Light pre-footer CTA band.
+#wrapper-footer {
+    background: #f1f5f8;
+}
+
+.etos-footer {
+    padding-top: 0;
+}
+
+.etos-footer__cta-band {
+    padding:
+        0
+        0
+        clamp(3.5rem, 5vw, 4.75rem);
+    background: #f1f5f8;
+
+    > .container,
+    > .container-fluid {
+        position: relative;
+    }
+}
+
+.etos-footer__body {
+    background:
+        radial-gradient(
+            circle at 78% 0%,
+            rgba($primary, .07),
+            transparent 30rem
+        ),
+        radial-gradient(
+            circle at 10% 100%,
+            rgba($etos-accent, .055),
+            transparent 28rem
+        ),
+        $etos-graphite;
+    color: #fff;
+}
+
+.etos-footer__main {
+    padding-top: clamp(3rem, 5vw, 4rem);
+}
+// Unified soft background and wrapper reset.
+#wrapper-footer.wrapper {
+    margin: 0;
+    padding: 0;
+    background: #f3f6f9;
+}
+
+.etos-footer__cta-band {
+    background: #f3f6f9;
+}
+
+// ETOS FOOTER CTA RHYTHM START
+
+.etos-footer__cta-band {
+    padding:
+        clamp(2rem, 3.5vw, 2.75rem)
+        0
+        clamp(5rem, 7vw, 6.5rem);
+    background: #f3f6f9;
+}
+
+.etos-footer__body {
+    position: relative;
+}
+
+@media (max-width: 767.98px) {
+    .etos-footer__cta-band {
+        padding:
+            1.75rem
+            0
+            4rem;
+    }
+}
+
+// ETOS FOOTER CTA RHYTHM END
+
+// ETOS FOOTER CONTAINER WIDTH START
+
+.etos-footer__container {
+    width: 100%;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 767.98px) {
+    .etos-footer__container {
+        max-width: none;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .etos-footer__main {
+        > .row {
+            --bs-gutter-x: 1.25rem;
+            --bs-gutter-y: 2.75rem;
+        }
+    }
+
+    .etos-footer__bottom {
+        padding-right: .125rem;
+        padding-left: .125rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-footer__container {
+        padding-right: .875rem;
+        padding-left: .875rem;
+    }
+
+    .etos-footer__main {
+        > .row {
+            --bs-gutter-x: 1rem;
+        }
+    }
+}
+
+// ETOS FOOTER CONTAINER WIDTH END

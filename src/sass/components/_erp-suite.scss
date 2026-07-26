@@ -222,3 +222,77 @@
         white-space: normal;
     }
 }
+// ERP dynamic content refinement.
+.etos-erp {
+    --erp-suite-gap: clamp(4rem, 7vw, 6.5rem);
+
+    &__header {
+        margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+}
+
+.etos-erp-suite {
+    &__logo {
+        margin-bottom: 1.45rem;
+    }
+
+    &__title {
+        margin-bottom: .9rem;
+    }
+
+    &__lead {
+        max-width: 580px;
+        margin: 0;
+        color: $etos-muted;
+        font-size: clamp(.98rem, 1.2vw, 1.08rem);
+        line-height: 1.7;
+    }
+
+    &__modules {
+        margin-top: 1.45rem;
+    }
+
+    &__media {
+        img {
+            transition: none;
+        }
+
+        &:hover img {
+            transform: none;
+        }
+    }
+}
+// ERP mobile pills refinement.
+@media (max-width: 575.98px) {
+    .etos-erp-suite {
+        &__modules {
+            gap: .45rem;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 1.25rem;
+        }
+    }
+
+    .etos-erp-module {
+        min-height: 34px;
+        max-width: 100%;
+        padding: .46rem .66rem;
+        border-radius: .62rem;
+        font-size: .81rem;
+        line-height: 1.22;
+        white-space: normal;
+
+        &::before {
+            width: .3rem;
+            height: .3rem;
+            margin-right: .45rem;
+        }
+    }
+}
+
+@media (max-width: 374.98px) {
+    .etos-erp-module {
+        padding: .43rem .6rem;
+        font-size: .78rem;
+    }
+}

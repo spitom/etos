@@ -8,64 +8,153 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<section class="etos-hero position-relative overflow-hidden">
+<section class="etos-hero">
+
     <div class="container etos-container">
+
         <div class="row align-items-center g-4 g-lg-5">
+
             <div class="col-lg-6">
-                <span class="etos-kicker">Autoryzowany partner ERP & IT</span>
 
-                <h1 class="etos-hero__title">
-                    Łączymy procesy, ludzi i technologię.
-                </h1>
+                <div class="etos-hero__content">
 
-                <p class="etos-hero__lead">
-                    Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż,
-                    magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy.
-                </p>
+                    <span class="etos-kicker">
+                        <?php esc_html_e( 'Autoryzowany partner ERP & IT', 'etos' ); ?>
+                    </span>
 
-                <div class="etos-hero__actions d-flex flex-wrap gap-3">
-                    <a href="#contact" class="btn etos-btn-primary">
-                        Umów prezentację
-                    </a>
-                    <a href="#ecosystem" class="btn etos-btn-secondary">
-                        Zobacz rozwiązania ERP
-                    </a>
+                    <h1 class="etos-hero__title">
+
+                        <span class="etos-hero__title-line">
+                            <?php esc_html_e( 'Łączymy procesy,', 'etos' ); ?>
+                        </span>
+
+                        <span class="etos-hero__title-line">
+                            <?php esc_html_e( 'ludzi i technologię.', 'etos' ); ?>
+                        </span>
+
+                    </h1>
+
+                    <p class="etos-hero__lead">
+                        <?php
+                        esc_html_e(
+                            'Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż, magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy.',
+                            'etos'
+                        );
+                        ?>
+                    </p>
+
+                    <div class="etos-hero__conversion">
+
+                        <p class="etos-hero__prompt">
+                            <?php
+                            esc_html_e(
+                                'Szukasz kompleksowych rozwiązań?',
+                                'etos'
+                            );
+                            ?>
+                        </p>
+
+                        <a
+                            href="<?php echo esc_url( home_url( '/kontakt/' ) ); ?>"
+                            class="btn etos-btn-primary"
+                        >
+                            <?php esc_html_e( 'Umów spotkanie', 'etos' ); ?>
+                        </a>
+
+                    </div>
+
                 </div>
+
             </div>
 
             <div class="col-lg-6">
-                <div class="etos-command-center etos-command-center--partners" aria-label="Partnerzy technologiczni ETOS">
-                    <div class="etos-command-center__top">
-                        <span></span><span></span><span></span>
-                        <strong>Partnerzy ETOS</strong>
-                    </div>
 
-                    <div class="etos-partner-cloud">
-                        <a href="/oprogramowanie/symfonia-erp/" class="etos-partner-logo etos-partner-logo--symfonia" aria-label="Symfonia ERP">
-                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/symfonia.png' ); ?>" alt="Symfonia">
-                        </a>
+                <div class="etos-hero__partners-wrap">
 
-                        <a href="/oprogramowanie/insert/" class="etos-partner-logo etos-partner-logo--insert" aria-label="InsERT">
-                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/insert.png' ); ?>" alt="InsERT">
-                        </a>
+                    <div
+                        class="etos-hero__pattern"
+                        aria-hidden="true"
+                    ></div>
 
-                        <a href="/oprogramowanie/streamsoft-prestiz/" class="etos-partner-logo etos-partner-logo--streamsoft" aria-label="Streamsoft Prestiż">
-                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/streamsoft.webp' ); ?>" alt="Streamsoft">
-                        </a>
+                    <div
+                        class="etos-command-center etos-command-center--partners"
+                        aria-label="<?php esc_attr_e( 'Partnerzy ETOS', 'etos' ); ?>"
+                    >
 
-                        <a href="/urzadzenia-fiskalne/" class="etos-partner-logo etos-partner-logo--posnet" aria-label="POSNET">
-                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/posnet.png' ); ?>" alt="POSNET">
-                        </a>
+                        <div class="etos-command-center__top">
 
-                        <a href="/podpis-elektroniczny/" class="etos-partner-logo etos-partner-logo--certum" aria-label="Certum">
-                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/certum.png' ); ?>" alt="Certum">
-                        </a>
+                            <strong>
+                                <?php esc_html_e( 'Partnerzy ETOS', 'etos' ); ?>
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="etos-partner-cloud"
+                            role="list"
+                            aria-label="<?php esc_attr_e( 'Lista partnerów ETOS', 'etos' ); ?>"
+                        >
+
+                            <div
+                                class="etos-partner-logo etos-partner-logo--symfonia"
+                                role="listitem"
+                            >
+                                <img
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/symfonia.png' ); ?>"
+                                    alt="<?php esc_attr_e( 'Symfonia', 'etos' ); ?>"
+                                >
+                            </div>
+
+                            <div
+                                class="etos-partner-logo etos-partner-logo--insert"
+                                role="listitem"
+                            >
+                                <img
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/insert.png' ); ?>"
+                                    alt="<?php esc_attr_e( 'InsERT', 'etos' ); ?>"
+                                >
+                            </div>
+
+                            <div
+                                class="etos-partner-logo etos-partner-logo--streamsoft"
+                                role="listitem"
+                            >
+                                <img
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/streamsoft.webp' ); ?>"
+                                    alt="<?php esc_attr_e( 'Streamsoft', 'etos' ); ?>"
+                                >
+                            </div>
+
+                            <div
+                                class="etos-partner-logo etos-partner-logo--posnet"
+                                role="listitem"
+                            >
+                                <img
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/posnet.png' ); ?>"
+                                    alt="<?php esc_attr_e( 'POSNET', 'etos' ); ?>"
+                                >
+                            </div>
+
+                            <div
+                                class="etos-partner-logo etos-partner-logo--certum"
+                                role="listitem"
+                            >
+                                <img
+                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/certum.png' ); ?>"
+                                    alt="<?php esc_attr_e( 'Certum', 'etos' ); ?>"
+                                >
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
-    <div class="etos-hero__pattern" aria-hidden="true"></div>
 </section>
