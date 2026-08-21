@@ -73,6 +73,12 @@ while ( have_posts() ) :
         ? $contacts
         : array();
 
+    $main_email = trim(
+        (string) $get_contact_field(
+            'etos_contact_main_email'
+        )
+    );
+
     $company_nip = trim(
         (string) $get_contact_field(
             'etos_contact_nip'
@@ -466,22 +472,57 @@ while ( have_posts() ) :
 
                                 </address>
 
-                                <?php if ( '' !== $value ) : ?>
+                                <?php if (
+                                    '' !== $main_phone
+                                    || '' !== $main_email
+                                ) : ?>
 
-                                    <a
-                                        class="etos-contact-card__phone"
-                                        href="tel:<?php echo esc_attr(
-                                            preg_replace(
-                                                '/[^0-9+]/',
-                                                '',
-                                                $value
-                                            )
-                                        ); ?>"
-                                    >
-                                        <?php echo esc_html(
-                                            $value
-                                        ); ?>
-                                    </a>
+                                    <p class="etos-contact-office__phone">
+
+                                        <?php if ( '' !== $main_phone ) : ?>
+
+                                            <a href="tel:<?php echo esc_attr(
+                                                preg_replace(
+                                                    '/[^0-9+]/',
+                                                    '',
+                                                    $main_phone
+                                                )
+                                            ); ?>">
+                                                <?php echo esc_html(
+                                                    $main_phone
+                                                ); ?>
+                                            </a>
+
+                                        <?php endif; ?>
+
+                                        <?php if (
+                                            '' !== $main_phone
+                                            && '' !== $main_email
+                                        ) : ?>
+
+                                            <span aria-hidden="true">
+                                                &nbsp;&middot;&nbsp;
+                                            </span>
+
+                                        <?php endif; ?>
+
+                                        <?php if ( '' !== $main_email ) : ?>
+
+                                            <a href="mailto:<?php echo esc_attr(
+                                                antispambot(
+                                                    $main_email
+                                                )
+                                            ); ?>">
+                                                <?php echo esc_html(
+                                                    antispambot(
+                                                        $main_email
+                                                    )
+                                                ); ?>
+                                            </a>
+
+                                        <?php endif; ?>
+
+                                    </p>
 
                                 <?php endif; ?>
 

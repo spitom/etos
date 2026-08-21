@@ -1,149 +1,361 @@
 {
-    "key":  "group_etos_contact_company",
-    "title":  "Kontakt — oddział i dane firmy",
-    "fields":  [
-                   {
-                       "key":  "field_etos_contact_company_tab_branch",
-                       "label":  "Oddział w Ełku",
-                       "name":  "",
-                       "type":  "tab"
-                   },
-                   {
-                       "key":  "field_etos_contact_branch_title",
-                       "label":  "Nazwa oddziału",
-                       "name":  "etos_contact_branch_title",
-                       "type":  "text",
-                       "default_value":  "Oddział w Ełku"
-                   },
-                   {
-                       "key":  "field_etos_contact_branch_address",
-                       "label":  "Adres",
-                       "name":  "etos_contact_branch_address",
-                       "type":  "textarea",
-                       "rows":  3,
-                       "new_lines":  ""
-                   },
-                   {
-                       "key":  "field_etos_contact_branch_person",
-                       "label":  "Osoba kontaktowa",
-                       "name":  "etos_contact_branch_person",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "50"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_branch_phone",
-                       "label":  "Telefon",
-                       "name":  "etos_contact_branch_phone",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "50"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_branch_email",
-                       "label":  "E-mail",
-                       "name":  "etos_contact_branch_email",
-                       "type":  "email",
-                       "wrapper":  {
-                                       "width":  "50"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_company_tab_registry",
-                       "label":  "Dane firmy",
-                       "name":  "",
-                       "type":  "tab"
-                   },
-                   {
-                       "key":  "field_etos_contact_board",
-                       "label":  "Skład Zarządu",
-                       "name":  "etos_contact_board",
-                       "type":  "textarea",
-                       "rows":  4,
-                       "new_lines":  ""
-                   },
-                   {
-                       "key":  "field_etos_contact_krs",
-                       "label":  "KRS",
-                       "name":  "etos_contact_krs",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "33"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_nip",
-                       "label":  "NIP",
-                       "name":  "etos_contact_nip",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "33"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_regon",
-                       "label":  "REGON",
-                       "name":  "etos_contact_regon",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "34"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_main_phone",
-                       "label":  "Telefon centrali",
-                       "name":  "etos_contact_main_phone",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "50"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_bank_account",
-                       "label":  "Numer rachunku bankowego",
-                       "name":  "etos_contact_bank_account",
-                       "type":  "text",
-                       "wrapper":  {
-                                       "width":  "50"
-                                   }
-                   },
-                   {
-                       "key":  "field_etos_contact_court",
-                       "label":  "Sąd rejestrowy",
-                       "name":  "etos_contact_court",
-                       "type":  "textarea",
-                       "rows":  3,
-                       "new_lines":  ""
-                   },
-                   {
-                       "key":  "field_etos_contact_capital",
-                       "label":  "Kapitał zakładowy",
-                       "name":  "etos_contact_capital",
-                       "type":  "text"
-                   },
-                   {
-                       "key":  "field_etos_contact_krs_link",
-                       "label":  "Link — aktualny KRS",
-                       "name":  "etos_contact_krs_link",
-                       "type":  "url",
-                       "instructions":  "Pełny adres https:// do aktualnego odpisu KRS."
-                   }
-               ],
-    "location":  [
-                     [
-                         {
-                             "param":  "page_template",
-                             "operator":  "==",
-                             "value":  "page-templates/template-contact.php"
-                         }
-                     ]
-                 ],
-    "position":  "normal",
-    "style":  "default",
-    "label_placement":  "top",
-    "instruction_placement":  "label",
-    "active":  true,
-    "show_in_rest":  0
+    "key": "group_etos_contact_company",
+    "title": "Kontakt — oddział i dane firmy",
+    "fields": [
+        {
+            "key": "field_etos_contact_company_tab_registry",
+            "label": "Dane firmy",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_contact_board",
+            "label": "Skład Zarządu",
+            "name": "etos_contact_board",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_contact_krs",
+            "label": "KRS",
+            "name": "etos_contact_krs",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_nip",
+            "label": "NIP",
+            "name": "etos_contact_nip",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_regon",
+            "label": "REGON",
+            "name": "etos_contact_regon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_main_phone",
+            "label": "Telefon centrali",
+            "name": "etos_contact_main_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6a885e5133c9a",
+            "label": "Główny e-mail",
+            "name": "etos_contact_main_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_bank_account",
+            "label": "Numer rachunku bankowego",
+            "name": "etos_contact_bank_account",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_court",
+            "label": "Sąd rejestrowy",
+            "name": "etos_contact_court",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_contact_capital",
+            "label": "Kapitał zakładowy",
+            "name": "etos_contact_capital",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_krs_link",
+            "label": "Link — aktualny KRS",
+            "name": "etos_contact_krs_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Pełny adres https:\/\/ do aktualnego odpisu KRS.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_contact_company_tab_branch",
+            "label": "Oddział w Ełku",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_contact_branch_title",
+            "label": "Nazwa oddziału",
+            "name": "etos_contact_branch_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Oddział w Ełku",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_branch_address",
+            "label": "Adres",
+            "name": "etos_contact_branch_address",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_contact_branch_person",
+            "label": "Osoba kontaktowa",
+            "name": "etos_contact_branch_person",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_branch_phone",
+            "label": "Telefon",
+            "name": "etos_contact_branch_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_contact_branch_email",
+            "label": "E-mail",
+            "name": "etos_contact_branch_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/template-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1787322634
 }
