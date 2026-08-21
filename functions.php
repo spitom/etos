@@ -45,4 +45,6 @@ require_once get_stylesheet_directory() . '/inc/etos-content-types.php';
 require_once get_stylesheet_directory() . '/inc/etos-nav-walker.php';
 require_once get_stylesheet_directory() . '/inc/etos-acf.php';
 require_once get_stylesheet_directory() . '/inc/etos-erp-helpers.php';
+require_once get_stylesheet_directory() . '/inc/etos-contact-map.php';
+
 add_action( 'wp_enqueue_scripts', 'etos_enqueue_theme_assets' );

@@ -1,0 +1,255 @@
+// ==========================================================================
+// Contact page
+// ==========================================================================
+
+.etos-contact-page {
+    background: #fff;
+}
+
+.etos-contact-hero {
+    padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+    background: #f3f7fa;
+
+    &__inner {
+        max-width: 850px;
+    }
+
+    h1 {
+        max-width: 16ch;
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(3rem, 5vw, 4.8rem);
+        font-weight: 780;
+        line-height: 1;
+        letter-spacing: -0.055em;
+    }
+
+    p {
+        max-width: 700px;
+        margin: 1.25rem 0 0;
+        color: $etos-muted;
+        font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+        line-height: 1.7;
+    }
+}
+
+.etos-contact-channels {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+    }
+}
+
+.etos-contact-card {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    padding: clamp(1.75rem, 3vw, 2.4rem);
+    border: 1px solid rgba($etos-ink, 0.09);
+    border-radius: 1.1rem;
+    background: #fff;
+    box-shadow: 0 15px 40px rgba($etos-ink, 0.055);
+
+    h2 {
+        margin: 0 0 1rem;
+        color: $etos-ink;
+        font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+        font-weight: 750;
+    }
+
+    p {
+        margin: 0;
+        color: $etos-muted;
+        line-height: 1.65;
+    }
+
+    a,
+    strong {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        align-self: flex-start;
+        margin-top: auto;
+        padding-top: 1.5rem;
+        color: $primary;
+        font-weight: 740;
+        text-decoration: none;
+    }
+}
+
+.etos-contact-office {
+    padding: clamp(5rem, 8vw, 7rem) 0;
+    background: #f5f8fb;
+
+    &__content {
+        height: 100%;
+
+        h2 {
+            margin: 0 0 1.5rem;
+            color: $etos-ink;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 760;
+            letter-spacing: -0.045em;
+        }
+
+        address {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            margin: 0;
+            color: $etos-ink;
+            font-size: 1.05rem;
+            font-style: normal;
+            line-height: 1.7;
+
+            strong {
+                margin-bottom: 0.35rem;
+            }
+        }
+    }
+
+    &__text {
+        margin-top: 1.5rem;
+        color: $etos-muted;
+        line-height: 1.7;
+    }
+
+    &__map {
+        min-height: 390px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 1.2rem;
+        background: #e6eef4;
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 390px;
+            border: 0;
+        }
+    }
+
+    &__map-placeholder {
+        width: 100%;
+        height: 100%;
+        min-height: 390px;
+        background: linear-gradient(135deg, #e7f0f5, #dce8ef);
+    }
+}
+
+.etos-contact-form {
+    padding: clamp(5rem, 8vw, 7rem) 0;
+
+    &__intro {
+        max-width: 520px;
+
+        h2 {
+            margin: 0;
+            color: $etos-ink;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 760;
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        p {
+            margin: 1.25rem 0 0;
+            color: $etos-muted;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+    }
+
+    &__form {
+        padding: clamp(1.75rem, 3vw, 2.5rem);
+        border: 1px solid rgba($etos-ink, 0.09);
+        border-radius: 1.15rem;
+        background: #fff;
+        box-shadow: 0 20px 50px rgba($etos-ink, 0.07);
+    }
+}
+
+.etos-contact-map {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.etos-contact-office__map {
+    min-height: 320px;
+}
+
+.etos-contact-office__map .leaflet-container {
+    font-family: inherit;
+}
+
+.etos-contact__company-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: center;
+}
+
+.etos-contact-map {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    min-height: 320px;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(20, 35, 72, 0.08);
+    box-shadow: 0 18px 40px rgba(19, 31, 63, 0.08);
+    background: #dfeaf3;
+}
+
+.etos-contact-map .leaflet-container {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+@media (max-width: 991.98px) {
+    .etos-contact__company-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .etos-contact-map {
+        aspect-ratio: 16 / 10;
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-contact-channels {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-contact-hero {
+        padding: 3.75rem 0;
+
+        h1 {
+            font-size: clamp(2.75rem, 13vw, 4rem);
+        }
+    }
+
+    .etos-contact-card {
+        min-height: 0;
+    }
+
+    .etos-contact-office {
+        &__map,
+        &__map iframe,
+        &__map-placeholder {
+            min-height: 320px;
+        }
+    }
+}

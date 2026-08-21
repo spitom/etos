@@ -1,0 +1,271 @@
+{
+    "key":  "group_etos_contact_page",
+    "title":  "Kontakt — ETOS",
+    "fields":  [
+                   {
+                       "key":  "field_etos_contact_tab_hero",
+                       "label":  "Hero",
+                       "name":  "",
+                       "type":  "tab"
+                   },
+                   {
+                       "key":  "field_etos_contact_hero_eyebrow",
+                       "label":  "Nadtytuł",
+                       "name":  "etos_contact_hero_eyebrow",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_hero_title",
+                       "label":  "Tytuł",
+                       "name":  "etos_contact_hero_title",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_hero_text",
+                       "label":  "Wprowadzenie",
+                       "name":  "etos_contact_hero_text",
+                       "type":  "textarea",
+                       "rows":  4,
+                       "new_lines":  ""
+                   },
+                   {
+                       "key":  "field_etos_contact_tab_channels",
+                       "label":  "Dane kontaktowe",
+                       "name":  "",
+                       "type":  "tab"
+                   },
+                   {
+                       "key":  "field_etos_contact_channels",
+                       "label":  "Kanały kontaktu",
+                       "name":  "etos_contact_channels",
+                       "type":  "repeater",
+                       "layout":  "block",
+                       "min":  0,
+                       "max":  6,
+                       "button_label":  "Dodaj kontakt",
+                       "collapsed":  "field_etos_contact_channel_title",
+                       "sub_fields":  [
+                                          {
+                                              "key":  "field_etos_contact_channel_title",
+                                              "label":  "Tytuł",
+                                              "name":  "title",
+                                              "type":  "text",
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_text",
+                                              "label":  "Opis",
+                                              "name":  "text",
+                                              "type":  "textarea",
+                                              "rows":  3,
+                                              "new_lines":  "",
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_value",
+                                              "label":  "Telefon / e-mail",
+                                              "name":  "value",
+                                              "type":  "text",
+                                              "wrapper":  {
+                                                              "width":  "50"
+                                                          },
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_link",
+                                              "label":  "Link",
+                                              "name":  "link",
+                                              "type":  "text",
+                                              "instructions":  "Wpisz np. tel:+48895352309, mailto:info@etos.com.pl lub pełny adres https://...",
+                                              "wrapper":  {
+                                                              "width":  "50"
+                                                          },
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_action_type",
+                                              "label":  "Sposób kontaktu",
+                                              "name":  "action_type",
+                                              "type":  "select",
+                                              "choices":  {
+                                                              "form":  "Formularz kontaktowy",
+                                                              "direct":  "Kontakt bezpośredni"
+                                                          },
+                                              "default_value":  "form",
+                                              "return_format":  "value",
+                                              "wrapper":  {
+                                                              "width":  "33"
+                                                          },
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_department",
+                                              "label":  "Dział / temat formularza",
+                                              "name":  "department",
+                                              "type":  "select",
+                                              "choices":  {
+                                                              "wdrozenia":  "Wdrożenia",
+                                                              "serwery":  "Serwery i sieci",
+                                                              "fiskalizacja":  "Fiskalizacja",
+                                                              "podpis":  "Podpis elektroniczny",
+                                                              "inne":  "Inne usługi",
+                                                              "administracja":  "Administracja"
+                                                          },
+                                              "return_format":  "value",
+                                              "wrapper":  {
+                                                              "width":  "33"
+                                                          },
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          },
+                                          {
+                                              "key":  "field_etos_contact_channel_recipient_email",
+                                              "label":  "Adres odbiorcy formularza",
+                                              "name":  "recipient_email",
+                                              "type":  "email",
+                                              "instructions":  "Adres używany tylko po stronie serwera do routingu formularza. Nie będzie wyświetlany na stronie.",
+                                              "wrapper":  {
+                                                              "width":  "34"
+                                                          },
+                                              "parent_repeater":  "field_etos_contact_channels"
+                                          }
+                                      ]
+                   },
+                   {
+                       "key":  "field_etos_contact_tab_office",
+                       "label":  "Siedziba",
+                       "name":  "",
+                       "type":  "tab"
+                   },
+                   {
+                       "key":  "field_etos_contact_office_title",
+                       "label":  "Tytuł",
+                       "name":  "etos_contact_office_title",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_company",
+                       "label":  "Nazwa firmy",
+                       "name":  "etos_contact_company",
+                       "type":  "text",
+                       "wrapper":  {
+                                       "width":  "50"
+                                   }
+                   },
+                   {
+                       "key":  "field_etos_contact_address",
+                       "label":  "Adres",
+                       "name":  "etos_contact_address",
+                       "type":  "textarea",
+                       "rows":  3,
+                       "new_lines":  "",
+                       "wrapper":  {
+                                       "width":  "50"
+                                   }
+                   },
+                   {
+                       "key":  "field_etos_contact_office_text",
+                       "label":  "Dodatkowa informacja",
+                       "name":  "etos_contact_office_text",
+                       "type":  "textarea",
+                       "rows":  4
+                   },
+                   {
+                    "key": "field_etos_contact_map_lat",
+                    "label": "Szerokość geograficzna (lat)",
+                    "name": "etos_contact_map_lat",
+                    "type": "number",
+                    "step": "0.000001",
+                    "wrapper": {
+                        "width": "25"
+                    }
+                    },
+                    {
+                    "key": "field_etos_contact_map_lng",
+                    "label": "Długość geograficzna (lng)",
+                    "name": "etos_contact_map_lng",
+                    "type": "number",
+                    "step": "0.000001",
+                    "wrapper": {
+                        "width": "25"
+                    }
+                    },
+                    {
+                    "key": "field_etos_contact_map_zoom",
+                    "label": "Przybliżenie mapy",
+                    "name": "etos_contact_map_zoom",
+                    "type": "number",
+                    "default_value": 15,
+                    "wrapper": {
+                        "width": "25"
+                    }
+                    },
+                    {
+                    "key": "field_etos_contact_map_label",
+                    "label": "Etykieta pinezki",
+                    "name": "etos_contact_map_label",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "25"
+                    }
+                    },
+                   {
+                       "key":  "field_etos_contact_tab_form",
+                       "label":  "Formularz",
+                       "name":  "",
+                       "type":  "tab"
+                   },
+                   {
+                       "key":  "field_etos_contact_form_eyebrow",
+                       "label":  "Nadtytuł",
+                       "name":  "etos_contact_form_eyebrow",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_form_title",
+                       "label":  "Tytuł",
+                       "name":  "etos_contact_form_title",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_form_text",
+                       "label":  "Opis",
+                       "name":  "etos_contact_form_text",
+                       "type":  "textarea",
+                       "rows":  4,
+                       "new_lines":  ""
+                   },
+                   {
+                       "key":  "field_etos_contact_form_shortcode",
+                       "label":  "Shortcode formularza",
+                       "name":  "etos_contact_form_shortcode",
+                       "type":  "text"
+                   },
+                   {
+                       "key":  "field_etos_contact_form_marketing_consent",
+                       "label":  "Treść zgody marketingowej",
+                       "name":  "etos_contact_form_marketing_consent",
+                       "type":  "textarea",
+                       "instructions":  "Wklej treść zatwierdzoną przez klienta / osobę odpowiedzialną za RODO. Checkbox w formularzu będzie dobrowolny i domyślnie niezaznaczony.",
+                       "rows":  4,
+                       "new_lines":  ""
+                   }
+               ],
+    "location":  [
+                     [
+                         {
+                             "param":  "page_template",
+                             "operator":  "==",
+                             "value":  "page-templates/template-contact.php"
+                         }
+                     ]
+                 ],
+    "position":  "normal",
+    "style":  "default",
+    "label_placement":  "top",
+    "instruction_placement":  "label",
+    "hide_on_screen":  [
+                           "the_content"
+                       ],
+    "active":  true,
+    "show_in_rest":  0
+}
