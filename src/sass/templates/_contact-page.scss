@@ -51,6 +51,25 @@
     border: 1px solid rgba($etos-ink, 0.09);
     border-radius: 1.1rem;
     background: #fff;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        90deg,
+        rgba($primary, 0.045) 0,
+        rgba($primary, 0.015) 22%,
+        #fff 55%
+    );
+
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        background: $primary;
+        content: "";
+        opacity: 0.72;
+    }
     box-shadow: 0 15px 40px rgba($etos-ink, 0.055);
 
     h2 {
@@ -66,14 +85,27 @@
         line-height: 1.65;
     }
 
-    a,
-    strong {
+    &__phone {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-top: auto;
+        padding-top: 1.35rem;
+        color: $etos-ink;
+        font-size: 1rem;
+        font-weight: 760;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    &__action {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
         align-self: flex-start;
-        margin-top: auto;
-        padding-top: 1.5rem;
+        margin-top: 0.45rem;
         color: $primary;
         font-weight: 740;
         text-decoration: none;
@@ -211,6 +243,356 @@
     width: 100%;
     height: 100%;
     border-radius: inherit;
+}
+
+// --------------------------------------------------------------------------
+// Contact office — balanced company layout
+// --------------------------------------------------------------------------
+
+.etos-contact-office {
+    .row {
+        align-items: start;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2rem;
+
+        > .etos-kicker,
+        > h2,
+        > address,
+        > .etos-contact-office__phone,
+        > .etos-contact-company-details,
+        > .etos-contact-office__text {
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__registry,
+    &__branch {
+        margin-top: 1.75rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba($etos-ink, 0.1);
+    }
+
+    &__registry {
+        strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: $etos-ink;
+            font-size: 0.8rem;
+            font-weight: 750;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0;
+            color: $etos-muted;
+            line-height: 1.6;
+        }
+    }
+
+    &__branch {
+        h3 {
+            margin: 0 0 0.75rem;
+            color: $etos-ink;
+            font-size: 1.35rem;
+            font-weight: 750;
+            letter-spacing: -0.02em;
+        }
+
+        address {
+            font-size: 0.95rem;
+        }
+
+        p {
+            margin: 0.4rem 0 0;
+        }
+    }
+
+    &__map {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+.etos-contact-company-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 2rem;
+    margin: 1.75rem 0 0;
+
+    > div {
+        padding-top: 1rem;
+        border-top: 1px solid rgba($etos-ink, 0.1);
+    }
+
+    dt {
+        margin-bottom: 0.25rem;
+        color: $etos-muted;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    dd {
+        margin: 0;
+        color: $etos-ink;
+        font-weight: 650;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
+.etos-contact-map {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+@media (max-width: 991.98px) {
+    .etos-contact-office {
+        &__content {
+            grid-template-columns: 1fr;
+
+            > * {
+                grid-column: 1;
+            }
+        }
+    }
+
+    .etos-contact-company-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+// --------------------------------------------------------------------------
+// Contact office — unified typography
+// --------------------------------------------------------------------------
+
+.etos-contact-office {
+    color: $etos-ink;
+
+    h2,
+    h3,
+    address,
+    p,
+    strong,
+    dt,
+    dd,
+    &__phone,
+    &__registry,
+    &__branch {
+        color: $etos-ink;
+    }
+
+    &__registry p,
+    &__branch address,
+    &__branch p {
+        color: $etos-ink;
+    }
+
+    a {
+        color: $primary;
+    }
+}
+
+// --------------------------------------------------------------------------
+// Contact form — Forminator
+// --------------------------------------------------------------------------
+
+.etos-contact-form__form {
+    #forminator-module-518.forminator-ui {
+        margin: 0;
+        font-family: inherit;
+
+        .forminator-row {
+            margin-bottom: 1.15rem;
+        }
+
+        .forminator-field {
+            margin: 0;
+        }
+
+        .forminator-label {
+            margin-bottom: 0.45rem;
+            color: $etos-ink;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 720;
+            line-height: 1.35;
+        }
+
+        .forminator-input,
+        .forminator-textarea {
+            width: 100%;
+            border: 1px solid $etos-border;
+            border-radius: 0.75rem;
+            background: #fff;
+            color: $etos-ink;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.5;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .forminator-input {
+            min-height: 52px;
+            padding: 0.75rem 0.95rem;
+        }
+
+        .forminator-textarea {
+            min-height: 150px;
+            padding: 0.85rem 0.95rem;
+            resize: vertical;
+        }
+
+        .forminator-input:focus,
+        .forminator-textarea:focus {
+            border-color: $primary;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba($primary, 0.14);
+        }
+
+        .forminator-select2 + .forminator-select {
+            .selection .select2-selection--single {
+                min-height: 52px;
+                border: 1px solid $etos-border;
+                border-radius: 0.75rem;
+                background: #fff;
+            }
+
+            .selection .select2-selection__rendered {
+                padding: 0.75rem 2.75rem 0.75rem 0.95rem;
+                color: $etos-ink;
+                font-family: inherit;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .selection .select2-selection__arrow {
+                height: 52px;
+            }
+        }
+
+        .forminator-checkbox {
+            color: $etos-ink;
+            font-family: inherit;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .forminator-description,
+        .forminator-field p {
+            color: $etos-muted;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+
+        a {
+            color: $primary;
+        }
+
+        .forminator-button-submit {
+            min-height: 50px;
+            padding: 0.75rem 1.4rem;
+            border: 0;
+            border-radius: 0.72rem;
+            background: $etos-accent;
+            color: $etos-ink;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 760;
+            line-height: 1.4;
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+            &:hover {
+                background: $etos-accent-soft;
+            }
+
+            &:focus-visible {
+                outline: 3px solid rgba($primary, 0.35);
+                outline-offset: 3px;
+            }
+        }
+
+        .forminator-response-message {
+            margin-bottom: 1.5rem;
+            border-radius: 0.75rem;
+            font-family: inherit;
+        }
+
+        .forminator-select--field {
+            min-height: 52px;
+            padding: 0.75rem 2.75rem 0.75rem 0.95rem;
+            border: 1px solid $etos-border;
+            border-radius: 0.75rem;
+            background-color: #fff;
+            color: $etos-ink;
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.5;
+
+            &:focus {
+                border-color: $primary;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba($primary, 0.14);
+            }
+        }
+
+        .forminator-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+        }
+
+        .forminator-checkbox-label {
+            color: #6f7d91;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .forminator-checkbox-box {
+            flex: 0 0 auto;
+            margin-top: 0.15rem;
+        }
+
+        .forminator-field-html {
+            color: #6f7d91;
+            font-size: 0.92rem;
+            line-height: 1.65;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            strong {
+                color: $etos-ink;
+            }
+
+            a {
+                color: $primary;
+                text-underline-offset: 0.15em;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-contact-company-details {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 991.98px) {

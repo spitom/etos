@@ -370,14 +370,44 @@ while ( have_posts() ) :
 
                                     <?php endif; ?>
 
+                                    <?php if ( '' !== $value ) : ?>
+
+                                        <?php
+                                        if ( is_email( $value ) ) {
+                                            $contact_href = 'mailto:' . $value;
+                                        } else {
+                                            $contact_href = 'tel:' . preg_replace(
+                                                '/[^0-9+]/',
+                                                '',
+                                                $value
+                                            );
+                                        }
+                                        ?>
+
+                                        <a
+                                            class="etos-contact-card__phone"
+                                            href="<?php echo esc_url(
+                                                $contact_href
+                                            ); ?>"
+                                        >
+                                            <?php echo esc_html(
+                                                $value
+                                            ); ?>
+                                        </a>
+
+                                    <?php endif; ?>
+
                                     <?php if (
                                         'form' === $action_type
                                         && '' !== $form_link
                                     ) : ?>
 
-                                        <a href="<?php echo esc_url(
-                                            $form_link
-                                        ); ?>">
+                                        <a
+                                            class="etos-contact-card__action"
+                                            href="<?php echo esc_url(
+                                                $form_link
+                                            ); ?>"
+                                        >
                                             <?php esc_html_e(
                                                 'Skontaktuj się',
                                                 'etos'
@@ -386,30 +416,6 @@ while ( have_posts() ) :
                                                 →
                                             </span>
                                         </a>
-
-                                    <?php elseif (
-                                        '' !== $value
-                                        && '' !== $link
-                                    ) : ?>
-
-                                        <a href="<?php echo esc_url(
-                                            $link
-                                        ); ?>">
-                                            <?php echo esc_html(
-                                                $value
-                                            ); ?>
-                                            <span aria-hidden="true">
-                                                →
-                                            </span>
-                                        </a>
-
-                                    <?php elseif ( '' !== $value ) : ?>
-
-                                        <strong>
-                                            <?php echo esc_html(
-                                                $value
-                                            ); ?>
-                                        </strong>
 
                                     <?php endif; ?>
 
@@ -429,9 +435,9 @@ while ( have_posts() ) :
 
                 <div class="container etos-container">
 
-                    <div class="row g-5 align-items-stretch">
+                    <div class="row g-5 align-items-center">
 
-                        <div class="col-lg-5">
+                        <div class="col-lg-6">
 
                             <div class="etos-contact-office__content">
 
@@ -460,30 +466,22 @@ while ( have_posts() ) :
 
                                 </address>
 
-                                <?php if ( '' !== $main_phone ) : ?>
+                                <?php if ( '' !== $value ) : ?>
 
-                                    <p class="etos-contact-office__phone">
-
-                                        <strong>
-                                            <?php esc_html_e(
-                                                'Centrala:',
-                                                'etos'
-                                            ); ?>
-                                        </strong>
-
-                                        <a href="tel:<?php echo esc_attr(
+                                    <a
+                                        class="etos-contact-card__phone"
+                                        href="tel:<?php echo esc_attr(
                                             preg_replace(
                                                 '/[^0-9+]/',
                                                 '',
-                                                $main_phone
+                                                $value
                                             )
-                                        ); ?>">
-                                            <?php echo esc_html(
-                                                $main_phone
-                                            ); ?>
-                                        </a>
-
-                                    </p>
+                                        ); ?>"
+                                    >
+                                        <?php echo esc_html(
+                                            $value
+                                        ); ?>
+                                    </a>
 
                                 <?php endif; ?>
 
@@ -739,7 +737,7 @@ while ( have_posts() ) :
 
                         </div>
 
-                        <div class="col-lg-7">
+                        <div class="col-lg-6">
 
                             <div class="etos-contact-office__map">
 
