@@ -1,0 +1,406 @@
+// ==========================================================================
+// About page
+// ==========================================================================
+
+.etos-about-page {
+    background: #fff;
+}
+
+.etos-about-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.9rem;
+    color: $primary;
+    font-size: 0.78rem;
+    font-weight: 780;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        width: 1.75rem;
+        height: 3px;
+        border-radius: 999px;
+        background: currentColor;
+    }
+}
+
+.etos-about-hero {
+    padding: clamp(4.5rem, 7vw, 7rem) 0;
+
+    background:
+        radial-gradient(
+            circle at 88% 8%,
+            rgba($primary, 0.09),
+            transparent 30rem
+        ),
+        #f3f7fa;
+
+    &__headline {
+        max-width: 1050px;
+        margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    &__title {
+        max-width: 18ch;
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(3rem, 5.5vw, 5rem);
+        font-weight: 780;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+    }
+
+    &__content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: clamp(0rem, 3vw, 2rem);
+
+        h2 {
+            margin: 0 0 1rem;
+            color: $etos-ink;
+            font-size: clamp(1.7rem, 2.7vw, 2.5rem);
+            font-weight: 760;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    &__text {
+        color: $etos-muted;
+        font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+        line-height: 1.75;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    &__media {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-radius: 1.35rem;
+        background: #e5edf3;
+        box-shadow: 0 26px 60px rgba($etos-ink, 0.12);
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.etos-about-stats {
+    padding: clamp(3.5rem, 6vw, 5rem) 0;
+    color: #fff;
+    background: $primary;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(2rem, 4vw, 4rem);
+    }
+}
+
+.etos-about-stat {
+    text-align: center;
+
+    &__value {
+        display: block;
+        margin-bottom: 0.85rem;
+        font-size: clamp(3rem, 5vw, 4.6rem);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -0.05em;
+    }
+
+    &__label {
+        display: block;
+        max-width: 18rem;
+        margin: 0 auto;
+        font-weight: 650;
+        line-height: 1.45;
+    }
+}
+
+.etos-about-areas {
+    padding: clamp(5rem, 8vw, 8rem) 0;
+
+    background: #fff;
+
+    &__grid {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+
+        &--cols-1 {
+            max-width: 430px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+        }
+
+        &--cols-2 {
+            max-width: 880px;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &--cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        &--cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+}
+
+.etos-about-section-header {
+    max-width: 760px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+
+    h2 {
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        font-weight: 760;
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+    }
+
+    &__intro {
+        margin-top: 1rem;
+        color: $etos-muted;
+        line-height: 1.7;
+    }
+}
+
+.etos-about-area {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border: 1px solid rgba($etos-ink, 0.09);
+    border-radius: 1.15rem;
+    background: #fff;
+    box-shadow: 0 16px 45px rgba($etos-ink, 0.055);
+
+    &__icon {
+        display: flex;
+        width: 3.5rem;
+        height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        border-radius: 0.9rem;
+        background: rgba($primary, 0.09);
+
+        img {
+            width: 2.1rem;
+            height: 2.1rem;
+            object-fit: contain;
+        }
+    }
+
+    h3 {
+        margin: 0 0 0.85rem;
+        color: $etos-ink;
+        font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+        font-weight: 740;
+        line-height: 1.22;
+    }
+
+    &__text {
+        color: $etos-muted;
+        line-height: 1.65;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        color: $primary;
+        font-weight: 720;
+        text-decoration: none;
+    }
+}
+
+.etos-about-team {
+    padding: clamp(5rem, 8vw, 8rem) 0;
+    background: #f5f8fb;
+
+    &__content {
+        max-width: 620px;
+
+        h2 {
+            margin: 0 0 1.25rem;
+            color: $etos-ink;
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 760;
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+    }
+
+    &__text {
+        color: $etos-muted;
+        font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+        line-height: 1.75;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+
+        + .btn {
+            margin-top: 1.75rem;
+        }
+    }
+
+    &__media {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 1.35rem;
+        background: #e5edf3;
+        box-shadow: 0 24px 55px rgba($etos-ink, 0.1);
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-about-areas {
+        &__grid--cols-4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-about-stats {
+        &__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .etos-about-areas {
+        &__grid--cols-3 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-about-hero {
+        padding: 3.75rem 0;
+
+        &__title {
+            font-size: clamp(2.75rem, 13vw, 4rem);
+        }
+
+        &__media {
+            aspect-ratio: 4 / 3;
+        }
+    }
+
+    .etos-about-stats {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .etos-about-areas {
+        &__grid--cols-1,
+        &__grid--cols-2,
+        &__grid--cols-3,
+        &__grid--cols-4 {
+            max-width: none;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// ETOS ABOUT AREAS POLISH START
+
+.etos-about-areas {
+    .etos-about-area {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.75rem, 2.5vw, 2.25rem);
+        transition:
+            transform 180ms ease,
+            box-shadow 180ms ease,
+            border-color 180ms ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 4px;
+            background: $primary;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 180ms ease;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            border-color: rgba($primary, 0.2);
+            box-shadow: 0 22px 50px rgba($etos-ink, 0.09);
+
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: clamp(1.25rem, 1.55vw, 1.5rem);
+            line-height: 1.18;
+        }
+
+        &__text {
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        &__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding-top: 1.5rem;
+
+            &::after {
+                content: '→';
+                transition: transform 180ms ease;
+            }
+
+            &:hover::after {
+                transform: translateX(3px);
+            }
+        }
+    }
+}
+
+// ETOS ABOUT AREAS POLISH END

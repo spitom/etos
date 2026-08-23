@@ -1,0 +1,492 @@
+{
+    "key": "group_etos_service_template",
+    "title": "Usługa — wariant i sekcje",
+    "fields": [
+        {
+            "key": "field_etos_service_template_variant",
+            "label": "Wariant szablonu",
+            "name": "etos_service_template_variant",
+            "type": "select",
+            "instructions": "Solution: wdrożenia, serwery i podobne usługi. Care: opieka serwisowa.",
+            "required": 1,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solution": "Usługa rozwiązaniowa",
+                "care": "Opieka serwisowa"
+            },
+            "default_value": "solution",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_service_tab_image_crop",
+            "label": "Kadrowanie grafiki hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_hero_image_fit",
+            "label": "Dopasowanie obrazu",
+            "name": "etos_service_hero_image_fit",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "cover": "Wypełnij kadr",
+                "contain": "Pokaż cały obraz"
+            },
+            "default_value": "cover",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_service_hero_image_scale",
+            "label": "Powiększenie",
+            "name": "etos_service_hero_image_scale",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 100,
+            "min": 100,
+            "max": 160,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_etos_service_hero_image_x",
+            "label": "Pozycja pozioma",
+            "name": "etos_service_hero_image_x",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_etos_service_hero_image_y",
+            "label": "Pozycja pionowa",
+            "name": "etos_service_hero_image_y",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "prepend": "",
+            "append": "%"
+        },
+        {
+            "key": "field_etos_service_tab_reasons",
+            "label": "Dlaczego warto",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_reasons_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_reasons_heading",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Dlaczego warto wybrać nasze usługi?",
+            "maxlength": 160,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_etos_service_reasons",
+            "label": "Argumenty",
+            "name": "etos_service_reasons",
+            "type": "repeater",
+            "instructions": "Najlepiej użyć czterech kart.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_etos_service_reason_title",
+            "button_label": "Dodaj argument",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_reason_icon",
+                    "label": "Ikona",
+                    "name": "etos_service_reason_icon",
+                    "type": "image",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_etos_service_reasons"
+                },
+                {
+                    "key": "field_etos_service_reason_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_reason_title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_service_reasons"
+                },
+                {
+                    "key": "field_etos_service_reason_text",
+                    "label": "Opis",
+                    "name": "etos_service_reason_text",
+                    "type": "textarea",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 280,
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_reasons"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_tab_access",
+            "label": "Sposób współpracy",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_access_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_access_heading",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Jesteśmy blisko Twojej firmy.",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_access",
+            "label": "Formy współpracy",
+            "name": "etos_service_access",
+            "type": "repeater",
+            "instructions": "Najlepiej użyć trzech kart.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 3,
+            "collapsed": "field_etos_service_access_title",
+            "button_label": "Dodaj formę współpracy",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_access_icon",
+                    "label": "Ikona",
+                    "name": "etos_service_access_icon",
+                    "type": "image",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_etos_service_access"
+                },
+                {
+                    "key": "field_etos_service_access_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_access_title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_service_access"
+                },
+                {
+                    "key": "field_etos_service_access_text",
+                    "label": "Opis",
+                    "name": "etos_service_access_text",
+                    "type": "textarea",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 240,
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_access"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_tab_benefits",
+            "label": "Korzyści",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_benefits_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_benefits_heading",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Co zyskuje Twoja firma?",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_benefits",
+            "label": "Korzyści",
+            "name": "etos_service_benefits",
+            "type": "repeater",
+            "instructions": "Najlepiej użyć trzech różnych, konkretnych rezultatów.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 3,
+            "collapsed": "field_etos_service_benefit_title",
+            "button_label": "Dodaj korzyść",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_benefit_icon",
+                    "label": "Ikona",
+                    "name": "etos_service_benefit_icon",
+                    "type": "image",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_etos_service_benefits"
+                },
+                {
+                    "key": "field_etos_service_benefit_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_benefit_title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_service_benefits"
+                },
+                {
+                    "key": "field_etos_service_benefit_text",
+                    "label": "Opis",
+                    "name": "etos_service_benefit_text",
+                    "type": "textarea",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 260,
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_benefits"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "etos_service"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Wariant szablonu oraz sekcje wspólne dla usług wdrożeniowych i infrastrukturalnych.",
+    "show_in_rest": 0,
+    "modified": 1785070000
+}

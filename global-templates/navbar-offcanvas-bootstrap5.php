@@ -14,6 +14,40 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 
+        <button
+            class="etos-navbar__search-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#etosSearchBar"
+            aria-controls="etosSearchBar"
+            aria-expanded="false"
+            aria-label="<?php esc_attr_e( 'Otwórz wyszukiwarkę', 'etos' ); ?>"
+        >
+            <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <circle
+                    cx="11"
+                    cy="11"
+                    r="6.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                />
+                <path
+                    d="M16 16L21 21"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </button>
+
 		<button
 			class="navbar-toggler etos-navbar__toggle"
 			type="button"
@@ -65,3 +99,49 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 	</div>
 </nav>
+
+<div
+    class="collapse etos-search-bar"
+    id="etosSearchBar"
+>
+    <div class="container etos-container">
+
+        <div class="etos-search-bar__inner">
+
+            <div class="etos-search-bar__label">
+                <?php esc_html_e( 'Wyszukiwarka', 'etos' ); ?>
+            </div>
+
+            <div class="etos-search-bar__form">
+                <?php get_search_form(); ?>
+            </div>
+
+            <button
+                class="etos-search-bar__close"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#etosSearchBar"
+                aria-controls="etosSearchBar"
+                aria-label="<?php esc_attr_e( 'Zamknij wyszukiwarkę', 'etos' ); ?>"
+            >
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path
+                        d="M6 6L18 18M18 6L6 18"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </button>
+
+        </div>
+
+    </div>
+</div>

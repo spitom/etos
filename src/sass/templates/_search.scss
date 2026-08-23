@@ -1,0 +1,533 @@
+// ==========================================================================
+// Search
+// ==========================================================================
+
+body.search {
+    .site-main {
+        background: #fff;
+
+        > header {
+            padding: clamp(4.5rem, 7vw, 6.5rem) 0 !important;
+            background: #f3f7fa !important;
+
+            h1 {
+                max-width: 16ch;
+                margin: 0;
+                color: $etos-ink;
+                font-size: clamp(3rem, 5vw, 4.8rem);
+                font-weight: 780;
+                line-height: 1;
+                letter-spacing: -0.055em;
+            }
+
+            .lead {
+                max-width: 700px;
+                margin: 1.25rem 0 0;
+                color: $etos-muted;
+                font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+                line-height: 1.7;
+            }
+
+            .etos-search-form {
+                max-width: 760px;
+                margin-top: 2rem;
+            }
+        }
+
+        > section {
+            padding: clamp(4rem, 7vw, 7rem) 0 !important;
+
+            > .container > .mb-4.text-muted {
+                margin-bottom: 2rem !important;
+                font-weight: 650;
+            }
+        }
+
+        .row.g-4 {
+            --bs-gutter-x: clamp(1.25rem, 2.5vw, 2rem);
+            --bs-gutter-y: clamp(1.25rem, 2.5vw, 2rem);
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            padding: clamp(1.5rem, 2.5vw, 2rem) !important;
+            border-color: rgba($etos-ink, 0.09) !important;
+            border-radius: 1.15rem !important;
+            background: #fff;
+            box-shadow: 0 15px 40px rgba($etos-ink, 0.055);
+            transition:
+                transform 180ms ease,
+                border-color 180ms ease,
+                box-shadow 180ms ease;
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: rgba($primary, 0.22) !important;
+                box-shadow: 0 22px 50px rgba($etos-ink, 0.09);
+            }
+
+            .small {
+                margin-bottom: 0.75rem !important;
+                color: $etos-muted !important;
+                font-size: 0.78rem;
+                font-weight: 650;
+            }
+
+            h2 {
+                margin: 0 0 1rem !important;
+                font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+                font-weight: 740;
+                line-height: 1.2;
+
+                a {
+                    color: $etos-ink;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+
+            > p:not(.small) {
+                margin-bottom: 0 !important;
+                color: $etos-muted !important;
+                line-height: 1.65;
+            }
+
+            > a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                align-self: flex-start;
+                margin-top: auto;
+                padding-top: 1.5rem;
+                color: $primary;
+                font-weight: 720;
+                text-decoration: none;
+
+                &:hover {
+                    color: darken($primary, 7%);
+                }
+            }
+        }
+    }
+
+    .etos-search-form {
+        .input-group {
+            overflow: hidden;
+            border: 1px solid rgba($etos-ink, 0.14);
+            border-radius: 0.8rem;
+            background: #fff;
+
+            &:focus-within {
+                border-color: $primary;
+                box-shadow: 0 0 0 3px rgba($primary, 0.12);
+            }
+        }
+
+        .form-control {
+            min-height: 3.5rem;
+            padding: 0.85rem 1.1rem;
+            border: 0;
+            box-shadow: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .btn {
+            min-width: 7rem;
+            border: 0;
+            font-weight: 760;
+        }
+    }
+
+    .navigation.pagination {
+        justify-content: center;
+        margin-top: clamp(3rem, 5vw, 4.5rem);
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .page-numbers {
+            display: inline-flex;
+            width: 2.8rem;
+            height: 2.8rem;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba($etos-ink, 0.12);
+            border-radius: 0.7rem;
+            color: $etos-ink;
+            background: #fff;
+            font-weight: 700;
+            text-decoration: none;
+
+            &.current {
+                border-color: $primary;
+                color: #fff;
+                background: $primary;
+            }
+
+            &:not(.current):hover {
+                border-color: $primary;
+                color: $primary;
+            }
+
+            &.prev,
+            &.next {
+                width: auto;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    body.search {
+        .site-main {
+            > header {
+                padding: 3.75rem 0 !important;
+
+                h1 {
+                    font-size: clamp(2.75rem, 13vw, 4rem);
+                }
+            }
+        }
+
+        .etos-search-form {
+            .input-group {
+                display: grid;
+                gap: 0.65rem;
+                overflow: visible;
+                border: 0;
+                background: transparent;
+
+                &:focus-within {
+                    border: 0;
+                    box-shadow: none;
+                }
+            }
+
+            .form-control,
+            .btn {
+                width: 100%;
+                border-radius: 0.75rem !important;
+            }
+
+            .form-control {
+                border: 1px solid rgba($etos-ink, 0.14);
+
+                &:focus {
+                    border-color: $primary;
+                    box-shadow: 0 0 0 3px rgba($primary, 0.12);
+                }
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Header search bar
+// ==========================================================================
+
+.etos-navbar__search-toggle {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba($etos-ink, .08);
+    border-radius: .8rem;
+    color: $etos-ink;
+    background: #fff;
+    transition:
+        color .18s ease,
+        border-color .18s ease,
+        background-color .18s ease;
+
+    &:hover,
+    &[aria-expanded="true"] {
+        color: $primary;
+        border-color: rgba($primary, .25);
+        background: $etos-cyan-soft;
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba($primary, .25);
+        outline-offset: 2px;
+    }
+}
+
+.etos-search-bar {
+    border-top: 1px solid rgba($etos-ink, .07);
+    border-bottom: 1px solid rgba($etos-ink, .07);
+    background: #f3f7fa;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 1.25rem;
+        align-items: center;
+        padding: 1.25rem 0;
+    }
+
+    &__label {
+        color: $etos-ink;
+        font-size: .85rem;
+        font-weight: 760;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    &__close {
+        display: inline-flex;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        border-radius: .7rem;
+        color: $etos-ink;
+        background: transparent;
+
+        &:hover {
+            color: $primary;
+            background: rgba($primary, .07);
+        }
+
+        &:focus-visible {
+            outline: 3px solid rgba($primary, .22);
+            outline-offset: 2px;
+        }
+    }
+
+    .etos-search-form {
+        .input-group {
+            overflow: hidden;
+            border: 1px solid rgba($etos-ink, .14);
+            border-radius: .8rem;
+            background: #fff;
+
+            &:focus-within {
+                border-color: $primary;
+                box-shadow: 0 0 0 3px rgba($primary, .1);
+            }
+        }
+
+        .form-control {
+            min-height: 3.25rem;
+            padding: .75rem 1rem;
+            border: 0;
+            box-shadow: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .btn {
+            min-width: 7rem;
+            border: 0;
+            font-weight: 760;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .etos-navbar__offcanvas {
+        order: 2;
+    }
+
+    .etos-navbar__search-toggle {
+        order: 3;
+        margin-left: .55rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-navbar__search-toggle {
+        margin-left: auto;
+    }
+
+    .etos-navbar .navbar-toggler {
+        margin-left: .5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-search-bar {
+        &__inner {
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: .75rem;
+            padding: 1rem 0;
+        }
+
+        &__label {
+            display: none;
+        }
+
+        &__form {
+            max-width: none;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-search-bar {
+        .etos-search-form {
+            .input-group {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+            }
+
+            .btn {
+                min-width: auto;
+                padding-right: 1rem;
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Search bar layout refinements
+// ==========================================================================
+
+.etos-search-bar {
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__label {
+        display: none;
+    }
+
+    &__form {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    &__close {
+        flex: 0 0 auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-search-bar {
+        &__inner {
+            gap: .75rem;
+            padding: .9rem 0;
+        }
+
+        &__close {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .etos-search-bar {
+        .etos-search-form {
+            .input-group {
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: .5rem;
+            }
+        }
+    }
+}
+
+// ==========================================================================
+// Search bar desktop refinement
+// ==========================================================================
+
+.etos-search-bar {
+    &__inner {
+        position: relative;
+        justify-content: center;
+        min-height: 88px;
+        padding-right: 4rem;
+    }
+
+    &__form {
+        flex: 0 1 1040px;
+        max-width: 1040px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .etos-search-bar {
+        &__form {
+            flex-basis: 960px;
+            max-width: 960px;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-search-bar {
+        &__inner {
+            min-height: 0;
+            padding-right: 0;
+        }
+
+        &__form {
+            flex: 1 1 auto;
+            max-width: none;
+        }
+
+        &__close {
+            position: static;
+            transform: none;
+        }
+    }
+}
+
+// ==========================================================================
+// Search bar form vertical alignment
+// ==========================================================================
+
+.etos-search-bar {
+    &__form {
+        display: flex;
+        align-items: center;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .etos-search-form {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        .input-group {
+            margin: 0;
+        }
+    }
+}

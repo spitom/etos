@@ -6,12 +6,89 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+/* ETOS FRONT NEWS SETTINGS */
+
+$front_page_id = get_queried_object_id();
+
+$get_front_news_field = static function (
+    $name,
+    $default = ''
+) use ( $front_page_id ) {
+    $value = null;
+
+    if ( function_exists( 'get_field' ) ) {
+        $value = get_field(
+            $name,
+            $front_page_id
+        );
+    } elseif ( $front_page_id ) {
+        $value = get_post_meta(
+            $front_page_id,
+            $name,
+            true
+        );
+    }
+
+    if (
+        null === $value
+        || false === $value
+        || '' === $value
+    ) {
+        return $default;
+    }
+
+    return $value;
+};
+
+$news_kicker = trim(
+    (string) $get_front_news_field(
+        'etos_front_news_kicker',
+        'Aktualności ETOS'
+    )
+);
+
+$news_title = trim(
+    (string) $get_front_news_field(
+        'etos_front_news_title',
+        'Aktualności i praktyczne informacje.'
+    )
+);
+
+$news_count = absint(
+    $get_front_news_field(
+        'etos_front_news_count',
+        5
+    )
+);
+
+$news_count = min(
+    8,
+    max( 3, $news_count )
+);
+
+$news_autoplay = (bool) $get_front_news_field(
+    'etos_front_news_autoplay',
+    true
+);
+
+$news_interval = absint(
+    $get_front_news_field(
+        'etos_front_news_interval',
+        6500
+    )
+);
+
+$news_interval = min(
+    15000,
+    max( 3000, $news_interval )
+);
+
 
 $news_posts = get_posts(
     array(
         'post_type'           => 'post',
         'post_status'         => 'publish',
-        'posts_per_page'      => 5,
+        'posts_per_page'      => $news_count,
         'orderby'             => 'date',
         'order'               => 'DESC',
         'ignore_sticky_posts' => true,
@@ -73,7 +150,7 @@ $get_image_setting = static function ( $name, $post_id, $default ) {
             <div class="etos-news__heading">
 
                 <span class="etos-kicker">
-                    <?php esc_html_e( 'Aktualności ETOS', 'etos' ); ?>
+                    <?php echo esc_html( $news_kicker ); ?>
                 </span>
 
                 <h2 id="etos-news-title">
@@ -150,7 +227,15 @@ $get_image_setting = static function ( $name, $post_id, $default ) {
         <div
             id="<?php echo esc_attr( $carousel_id ); ?>"
             class="carousel slide etos-news-carousel"
-            data-bs-interval="false"
+            data-bs-interval="<?php echo esc_attr(
+                $news_autoplay && 1 < $slide_count
+                    ? (string) $news_interval
+                    : 'false'
+            ); ?>"
+            <?php if ( $news_autoplay && 1 < $slide_count ) : ?>
+                data-bs-ride="carousel"
+                data-bs-pause="hover"
+            <?php endif; ?>
             data-bs-touch="true"
             aria-roledescription="<?php esc_attr_e(
                 'Karuzela aktualności',
@@ -160,7 +245,9 @@ $get_image_setting = static function ( $name, $post_id, $default ) {
 
             <div
                 class="carousel-inner"
-                aria-live="polite"
+                aria-live="<?php echo esc_attr(
+                    $news_autoplay ? 'off' : 'polite'
+                ); ?>"
             >
 
                 <?php foreach ( $news_posts as $index => $news_post ) : ?>

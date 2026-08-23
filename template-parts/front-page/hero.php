@@ -6,6 +6,208 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$front_page_id = get_queried_object_id();
+
+/**
+ * Read front-page Hero field.
+ *
+ * ACF is preferred, with post meta fallback.
+ *
+ * @param string $name    Field name.
+ * @param mixed  $default Default value.
+ * @return mixed
+ */
+$get_hero_field = static function (
+    $name,
+    $default = ''
+) use ( $front_page_id ) {
+    $value = null;
+
+    if ( function_exists( 'get_field' ) ) {
+        $value = get_field(
+            $name,
+            $front_page_id
+        );
+    } elseif ( $front_page_id ) {
+        $value = get_post_meta(
+            $front_page_id,
+            $name,
+            true
+        );
+    }
+
+    if (
+        null === $value
+        || false === $value
+        || '' === $value
+    ) {
+        return $default;
+    }
+
+    return $value;
+};
+
+$eyebrow = trim(
+    (string) $get_hero_field(
+        'etos_front_hero_eyebrow',
+        'Autoryzowany partner ERP & IT'
+    )
+);
+
+$title_1 = trim(
+    (string) $get_hero_field(
+        'etos_front_hero_title_1',
+        'Łączymy procesy,'
+    )
+);
+
+$title_2 = trim(
+    (string) $get_hero_field(
+        'etos_front_hero_title_2',
+        'ludzi i technologię.'
+    )
+);
+
+$lead = trim(
+    (string) $get_hero_field(
+        'etos_front_hero_lead',
+        'Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż, magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy.'
+    )
+);
+
+$prompt = trim(
+    (string) $get_hero_field(
+        'etos_front_hero_prompt',
+        'Szukasz kompleksowych rozwiązań?'
+    )
+);
+
+$cta = $get_hero_field(
+    'etos_front_hero_cta',
+    array()
+);
+
+$cta = is_array( $cta )
+    ? $cta
+    : array();
+
+$cta_url = trim(
+    (string) (
+        $cta['url']
+        ?? home_url( '/kontakt/' )
+    )
+);
+
+$cta_title = trim(
+    (string) (
+        $cta['title']
+        ?? 'Umów spotkanie'
+    )
+);
+
+$cta_target = '_blank' === (
+    $cta['target']
+    ?? ''
+)
+    ? '_blank'
+    : '';
+
+$hero_image_id = (int) $get_hero_field(
+    'etos_front_hero_image',
+    0
+);
+
+$image_fit = (string) $get_hero_field(
+    'etos_front_hero_image_fit',
+    'cover'
+);
+
+if (
+    ! in_array(
+        $image_fit,
+        array( 'cover', 'contain' ),
+        true
+    )
+) {
+    $image_fit = 'cover';
+}
+
+$image_scale = (int) $get_hero_field(
+    'etos_front_hero_image_scale',
+    100
+);
+
+$image_x = (int) $get_hero_field(
+    'etos_front_hero_image_x',
+    50
+);
+
+$image_y = (int) $get_hero_field(
+    'etos_front_hero_image_y',
+    50
+);
+
+$image_scale = min(
+    150,
+    max( 100, $image_scale )
+);
+
+$image_x = min(
+    100,
+    max( 0, $image_x )
+);
+
+$image_y = min(
+    100,
+    max( 0, $image_y )
+);
+
+$image_scale_css = number_format(
+    $image_scale / 100,
+    2,
+    '.',
+    ''
+);
+
+$image_style = sprintf(
+    '--etos-hero-image-fit:%1$s;'
+    . '--etos-hero-image-scale:%2$s;'
+    . '--etos-hero-image-x:%3$d%%;'
+    . '--etos-hero-image-y:%4$d%%;',
+    $image_fit,
+    $image_scale_css,
+    $image_x,
+    $image_y
+);
+
+$partners = array(
+    array(
+        'class' => 'symfonia',
+        'file'  => 'symfonia.png',
+        'alt'   => 'Symfonia',
+    ),
+    array(
+        'class' => 'insert',
+        'file'  => 'insert.png',
+        'alt'   => 'InsERT',
+    ),
+    array(
+        'class' => 'streamsoft',
+        'file'  => 'streamsoft.webp',
+        'alt'   => 'Streamsoft',
+    ),
+    array(
+        'class' => 'posnet',
+        'file'  => 'posnet.png',
+        'alt'   => 'POSNET',
+    ),
+    array(
+        'class' => 'certum',
+        'file'  => 'certum.png',
+        'alt'   => 'Certum',
+    ),
+);
 ?>
 
 <section class="etos-hero">
@@ -18,48 +220,81 @@ defined( 'ABSPATH' ) || exit;
 
                 <div class="etos-hero__content">
 
-                    <span class="etos-kicker">
-                        <?php esc_html_e( 'Autoryzowany partner ERP & IT', 'etos' ); ?>
-                    </span>
+                    <?php if ( '' !== $eyebrow ) : ?>
+
+                        <span class="etos-kicker">
+                            <?php echo esc_html( $eyebrow ); ?>
+                        </span>
+
+                    <?php endif; ?>
 
                     <h1 class="etos-hero__title">
 
-                        <span class="etos-hero__title-line">
-                            <?php esc_html_e( 'Łączymy procesy,', 'etos' ); ?>
-                        </span>
+                        <?php if ( '' !== $title_1 ) : ?>
 
-                        <span class="etos-hero__title-line">
-                            <?php esc_html_e( 'ludzi i technologię.', 'etos' ); ?>
-                        </span>
+                            <span class="etos-hero__title-line">
+                                <?php echo esc_html(
+                                    $title_1
+                                ); ?>
+                            </span>
+
+                        <?php endif; ?>
+
+                        <?php if ( '' !== $title_2 ) : ?>
+
+                            <span class="etos-hero__title-line">
+                                <?php echo esc_html(
+                                    $title_2
+                                ); ?>
+                            </span>
+
+                        <?php endif; ?>
 
                     </h1>
 
-                    <p class="etos-hero__lead">
-                        <?php
-                        esc_html_e(
-                            'Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż, magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy.',
-                            'etos'
-                        );
-                        ?>
-                    </p>
+                    <?php if ( '' !== $lead ) : ?>
+
+                        <p class="etos-hero__lead">
+                            <?php echo esc_html(
+                                $lead
+                            ); ?>
+                        </p>
+
+                    <?php endif; ?>
 
                     <div class="etos-hero__conversion">
 
-                        <p class="etos-hero__prompt">
-                            <?php
-                            esc_html_e(
-                                'Szukasz kompleksowych rozwiązań?',
-                                'etos'
-                            );
-                            ?>
-                        </p>
+                        <?php if ( '' !== $prompt ) : ?>
 
-                        <a
-                            href="<?php echo esc_url( home_url( '/kontakt/' ) ); ?>"
-                            class="btn etos-btn-primary"
-                        >
-                            <?php esc_html_e( 'Umów spotkanie', 'etos' ); ?>
-                        </a>
+                            <p class="etos-hero__prompt">
+                                <?php echo esc_html(
+                                    $prompt
+                                ); ?>
+                            </p>
+
+                        <?php endif; ?>
+
+                        <?php if (
+                            '' !== $cta_url
+                            && '' !== $cta_title
+                        ) : ?>
+
+                            <a
+                                href="<?php echo esc_url(
+                                    $cta_url
+                                ); ?>"
+                                class="btn etos-btn-primary"
+                                <?php if ( $cta_target ) : ?>
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                <?php endif; ?>
+                            >
+                                <?php echo esc_html(
+                                    $cta_title
+                                ); ?>
+                            </a>
+
+                        <?php endif; ?>
 
                     </div>
 
@@ -69,89 +304,88 @@ defined( 'ABSPATH' ) || exit;
 
             <div class="col-lg-6">
 
-                <div class="etos-hero__partners-wrap">
+                <div class="etos-hero__media-wrap">
 
                     <div
                         class="etos-hero__pattern"
                         aria-hidden="true"
                     ></div>
 
-                    <div
-                        class="etos-command-center etos-command-center--partners"
-                        aria-label="<?php esc_attr_e( 'Partnerzy ETOS', 'etos' ); ?>"
+                    <figure
+                        class="<?php echo esc_attr(
+                            $hero_image_id
+                                ? 'etos-hero__media'
+                                : 'etos-hero__media is-placeholder'
+                        ); ?>"
                     >
 
-                        <div class="etos-command-center__top">
+                        <?php if ( $hero_image_id ) : ?>
 
-                            <strong>
-                                <?php esc_html_e( 'Partnerzy ETOS', 'etos' ); ?>
-                            </strong>
+                            <?php
+                            echo wp_get_attachment_image(
+                                $hero_image_id,
+                                'large',
+                                false,
+                                array(
+                                    'class'         => 'etos-hero__image',
+                                    'loading'       => 'eager',
+                                    'decoding'      => 'async',
+                                    'fetchpriority' => 'high',
+                                    'style'         => $image_style,
+                                )
+                            );
+                            ?>
 
-                        </div>
+                        <?php else : ?>
 
-                        <div
-                            class="etos-partner-cloud"
-                            role="list"
-                            aria-label="<?php esc_attr_e( 'Lista partnerów ETOS', 'etos' ); ?>"
-                        >
+                            <span
+                                class="etos-hero__media-placeholder"
+                                aria-hidden="true"
+                            ></span>
 
-                            <div
-                                class="etos-partner-logo etos-partner-logo--symfonia"
-                                role="listitem"
-                            >
-                                <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/symfonia.png' ); ?>"
-                                    alt="<?php esc_attr_e( 'Symfonia', 'etos' ); ?>"
-                                >
-                            </div>
+                        <?php endif; ?>
 
-                            <div
-                                class="etos-partner-logo etos-partner-logo--insert"
-                                role="listitem"
-                            >
-                                <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/insert.png' ); ?>"
-                                    alt="<?php esc_attr_e( 'InsERT', 'etos' ); ?>"
-                                >
-                            </div>
-
-                            <div
-                                class="etos-partner-logo etos-partner-logo--streamsoft"
-                                role="listitem"
-                            >
-                                <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/streamsoft.webp' ); ?>"
-                                    alt="<?php esc_attr_e( 'Streamsoft', 'etos' ); ?>"
-                                >
-                            </div>
-
-                            <div
-                                class="etos-partner-logo etos-partner-logo--posnet"
-                                role="listitem"
-                            >
-                                <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/posnet.png' ); ?>"
-                                    alt="<?php esc_attr_e( 'POSNET', 'etos' ); ?>"
-                                >
-                            </div>
-
-                            <div
-                                class="etos-partner-logo etos-partner-logo--certum"
-                                role="listitem"
-                            >
-                                <img
-                                    src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/partners/certum.png' ); ?>"
-                                    alt="<?php esc_attr_e( 'Certum', 'etos' ); ?>"
-                                >
-                            </div>
-
-                        </div>
-
-                    </div>
+                    </figure>
 
                 </div>
 
             </div>
+
+        </div>
+
+        <div
+            class="etos-hero__partners"
+            role="list"
+            aria-label="<?php esc_attr_e(
+                'Partnerzy ETOS',
+                'etos'
+            ); ?>"
+        >
+
+            <?php foreach ( $partners as $partner ) : ?>
+
+                <div
+                    class="etos-hero-partner etos-hero-partner--<?php echo esc_attr(
+                        $partner['class']
+                    ); ?>"
+                    role="listitem"
+                >
+
+                    <img
+                        src="<?php echo esc_url(
+                            get_stylesheet_directory_uri()
+                            . '/assets/images/partners/'
+                            . $partner['file']
+                        ); ?>"
+                        alt="<?php echo esc_attr(
+                            $partner['alt']
+                        ); ?>"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            <?php endforeach; ?>
 
         </div>
 

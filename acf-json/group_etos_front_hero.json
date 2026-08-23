@@ -1,0 +1,139 @@
+{
+    "key": "group_etos_front_hero",
+    "title": "Strona główna — Hero",
+    "fields": [
+        {
+            "key": "field_etos_front_hero_tab_content",
+            "label": "Treść",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_hero_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_front_hero_eyebrow",
+            "type": "text",
+            "default_value": "Autoryzowany partner ERP & IT"
+        },
+        {
+            "key": "field_etos_front_hero_title_1",
+            "label": "Tytuł — pierwsza linia",
+            "name": "etos_front_hero_title_1",
+            "type": "text",
+            "default_value": "Łączymy procesy,"
+        },
+        {
+            "key": "field_etos_front_hero_title_2",
+            "label": "Tytuł — druga linia",
+            "name": "etos_front_hero_title_2",
+            "type": "text",
+            "default_value": "ludzi i technologię."
+        },
+        {
+            "key": "field_etos_front_hero_lead",
+            "label": "Opis",
+            "name": "etos_front_hero_lead",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "",
+            "default_value": "Wdrażamy i utrzymujemy środowiska ERP, które wspierają sprzedaż, magazyn, finanse, KSeF, kadry i codzienną pracę Twojej firmy."
+        },
+        {
+            "key": "field_etos_front_hero_prompt",
+            "label": "Tekst przy przycisku",
+            "name": "etos_front_hero_prompt",
+            "type": "text",
+            "default_value": "Szukasz kompleksowych rozwiązań?"
+        },
+        {
+            "key": "field_etos_front_hero_cta",
+            "label": "Przycisk",
+            "name": "etos_front_hero_cta",
+            "type": "link",
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_front_hero_tab_media",
+            "label": "Zdjęcie",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_hero_image",
+            "label": "Zdjęcie Hero",
+            "name": "etos_front_hero_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_etos_front_hero_image_fit",
+            "label": "Dopasowanie zdjęcia",
+            "name": "etos_front_hero_image_fit",
+            "type": "select",
+            "choices": {
+                "cover": "Wypełnij kadr",
+                "contain": "Pokaż całe zdjęcie"
+            },
+            "default_value": "cover",
+            "return_format": "value",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_hero_image_scale",
+            "label": "Skala zdjęcia (%)",
+            "name": "etos_front_hero_image_scale",
+            "type": "range",
+            "default_value": 100,
+            "min": 100,
+            "max": 150,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_hero_image_x",
+            "label": "Pozycja pozioma (%)",
+            "name": "etos_front_hero_image_x",
+            "type": "range",
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_hero_image_y",
+            "label": "Pozycja pionowa (%)",
+            "name": "etos_front_hero_image_y",
+            "type": "range",
+            "default_value": 50,
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "wrapper": {
+                "width": "25"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

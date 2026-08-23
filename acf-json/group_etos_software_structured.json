@@ -1,0 +1,667 @@
+{
+    "key": "group_etos_software_structured",
+    "title": "Oprogramowanie — sekcje produktu",
+    "fields": [
+        {
+            "key": "field_etos_software_tab_benefits",
+            "label": "Korzyści",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_software_benefits",
+            "label": "Najważniejsze korzyści",
+            "name": "etos_software_benefits",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Dodaj najważniejsze efekty i korzyści dla firmy.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_etos_software_benefit_title",
+            "button_label": "Dodaj korzyść",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_software_benefit_icon",
+                    "label": "Ikona",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "parent_repeater": "field_etos_software_benefits",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_etos_software_benefit_title",
+                    "label": "Tytuł",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_software_benefits",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_benefit_text",
+                    "label": "Opis",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 420,
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_software_benefits",
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_etos_software_tab_features",
+            "label": "Funkcjonalności",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_software_features",
+            "label": "Obszary funkcjonalne",
+            "name": "etos_software_features",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Każdy wiersz tworzy osobną sekcję tekstowo-graficzną.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 10,
+            "collapsed": "field_etos_software_feature_title",
+            "button_label": "Dodaj funkcjonalność",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_software_feature_eyebrow",
+                    "label": "Nadtytuł",
+                    "name": "eyebrow",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 100,
+                    "parent_repeater": "field_etos_software_features",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_feature_title",
+                    "label": "Tytuł",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 180,
+                    "parent_repeater": "field_etos_software_features",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_feature_text",
+                    "label": "Opis",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 7,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_software_features",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_etos_software_feature_points",
+                    "label": "Najważniejsze elementy",
+                    "name": "points",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Dodaj krótkie punkty wyświetlane pod opisem.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 10,
+                    "collapsed": "field_etos_software_feature_point_text",
+                    "button_label": "Dodaj punkt",
+                    "parent_repeater": "field_etos_software_features",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_etos_software_feature_point_text",
+                            "label": "Treść",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "maxlength": 180,
+                            "parent_repeater": "field_etos_software_feature_points",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_etos_software_feature_image",
+                    "label": "Grafika",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_etos_software_features",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_etos_software_feature_image_position",
+                    "label": "Pozycja grafiki",
+                    "name": "image_position",
+                    "aria-label": "",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "left": "Po lewej",
+                        "right": "Po prawej"
+                    },
+                    "default_value": "right",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "layout": "horizontal",
+                    "parent_repeater": "field_etos_software_features"
+                },
+                {
+                    "key": "field_etos_software_feature_link",
+                    "label": "Przycisk",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_etos_software_features"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_software_tab_addons",
+            "label": "Rozwiązania dodatkowe",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_software_addons",
+            "label": "Rozwiązania dodatkowe",
+            "name": "etos_software_addons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Moduły, integracje i produkty rozszerzające możliwości programu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 8,
+            "collapsed": "field_etos_software_addon_title",
+            "button_label": "Dodaj rozwiązanie",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_software_addon_image",
+                    "label": "Grafika",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_etos_software_addons",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_etos_software_addon_title",
+                    "label": "Tytuł",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 140,
+                    "parent_repeater": "field_etos_software_addons",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_addon_text",
+                    "label": "Opis",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 420,
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_software_addons",
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_etos_software_addon_link",
+                    "label": "Przycisk",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_etos_software_addons"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_software_tab_packages",
+            "label": "Pakiety",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_etos_software_packages",
+            "label": "Pakiety programu",
+            "name": "etos_software_packages",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Dodaj dostępne warianty lub pakiety programu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 6,
+            "collapsed": "field_etos_software_package_title",
+            "button_label": "Dodaj pakiet",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_etos_software_package_title",
+                    "label": "Nazwa pakietu",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_software_packages",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_package_badge",
+                    "label": "Wyróżnik",
+                    "name": "badge",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Np. Najczęściej wybierany.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "maxlength": 80,
+                    "parent_repeater": "field_etos_software_packages",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_etos_software_package_featured",
+                    "label": "Wyróżnij pakiet",
+                    "name": "featured",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Tak",
+                    "ui_off_text": "Nie",
+                    "parent_repeater": "field_etos_software_packages",
+                    "message": ""
+                },
+                {
+                    "key": "field_etos_software_package_text",
+                    "label": "Opis",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_software_packages",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_etos_software_package_features",
+                    "label": "Elementy pakietu",
+                    "name": "features",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 15,
+                    "collapsed": "field_etos_software_package_feature_text",
+                    "button_label": "Dodaj element",
+                    "parent_repeater": "field_etos_software_packages",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_etos_software_package_feature_text",
+                            "label": "Treść",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "maxlength": 180,
+                            "parent_repeater": "field_etos_software_package_features",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_etos_software_package_link",
+                    "label": "Przycisk",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_etos_software_packages"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "etos_software"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Strukturalne sekcje produktu obsługiwane przez ACF Pro.",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1786700189
+}

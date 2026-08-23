@@ -1,0 +1,57 @@
+{
+    "key": "group_etos_vendor_landing",
+    "title": "Producent — landing",
+    "fields": [
+        {
+            "key": "field_etos_vendor_landing_kicker",
+            "label": "Nadtytuł",
+            "name": "etos_vendor_landing_kicker",
+            "type": "text",
+            "default_value": "Systemy ERP"
+        },
+        {
+            "key": "field_etos_vendor_landing_title",
+            "label": "Tytuł",
+            "name": "etos_vendor_landing_title",
+            "type": "text"
+        },
+        {
+            "key": "field_etos_vendor_landing_lead",
+            "label": "Lead",
+            "name": "etos_vendor_landing_lead",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_etos_vendor_landing_description",
+            "label": "Opis",
+            "name": "etos_vendor_landing_description",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_etos_vendor_landing_cta",
+            "label": "Przycisk CTA",
+            "name": "etos_vendor_landing_cta",
+            "type": "link",
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "etos_vendor"
+            }
+        ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

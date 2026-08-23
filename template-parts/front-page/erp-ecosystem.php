@@ -6,6 +6,30 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+/* ETOS FRONT ERP SETTINGS START */
+
+$front_page_id = (int) get_option( 'page_on_front' );
+
+if ( ! $front_page_id ) {
+    $front_page_id = get_queried_object_id();
+}
+
+$erp_kicker = function_exists( 'get_field' )
+    ? get_field( 'etos_front_erp_kicker', $front_page_id )
+    : '';
+
+$erp_title = function_exists( 'get_field' )
+    ? get_field( 'etos_front_erp_title', $front_page_id )
+    : '';
+
+$erp_kicker = $erp_kicker
+    ?: 'Systemy ERP dopasowane do procesów';
+
+$erp_title = $erp_title
+    ?: 'Dobieramy oprogramowanie do sposobu pracy Twojej firmy.';
+
+/* ETOS FRONT ERP SETTINGS END */
 ?>
 
 <section
@@ -17,22 +41,14 @@ defined( 'ABSPATH' ) || exit;
 
         <header class="etos-erp__header">
 
-            <span class="etos-kicker">
-                <?php
-                esc_html_e(
-                    'Systemy ERP dopasowane do procesów',
-                    'etos'
-                );
-                ?>
-            </span>
+            <?php if ( $erp_kicker ) : ?>
+                <span class="etos-kicker">
+                    <?php echo esc_html( $erp_kicker ); ?>
+                </span>
+            <?php endif; ?>
 
             <h2 class="etos-section__title">
-                <?php
-                esc_html_e(
-                    'Dobieramy oprogramowanie do sposobu pracy Twojej firmy.',
-                    'etos'
-                );
-                ?>
+                <?php echo esc_html( $erp_title ); ?>
             </h2>
 
         </header>
@@ -77,6 +93,29 @@ defined( 'ABSPATH' ) || exit;
         );
 
         foreach ( $erp_defaults as $vendor_name => $fallback ) {
+
+            /* ETOS ERP VENDOR LANDING START */
+
+            $vendor_term = get_term_by(
+                'slug',
+                $vendor_name,
+                'etos_vendor'
+            );
+
+            $vendor_url = '';
+
+            if (
+                $vendor_term
+                && ! is_wp_error( $vendor_term )
+            ) {
+                $vendor_url = get_term_link( $vendor_term );
+
+                if ( is_wp_error( $vendor_url ) ) {
+                    $vendor_url = '';
+                }
+            }
+
+            /* ETOS ERP VENDOR LANDING END */
             $logo_value = function_exists( 'get_field' )
                 ? get_field( "{$vendor_name}_logo" )
                 : null;
@@ -154,7 +193,14 @@ defined( 'ABSPATH' ) || exit;
             }
 
             $suite = array(
-                'name'      => $vendor_name,
+                'name'        => $vendor_name,
+                'vendor_name' => (
+                    $vendor_term
+                    && ! is_wp_error( $vendor_term )
+                )
+                    ? $vendor_term->name
+                    : ucfirst( $vendor_name ),
+                'vendor_url'  => $vendor_url,
                 'logo'      => etos_get_image_url(
                     $logo_value,
                     $fallback['logo']

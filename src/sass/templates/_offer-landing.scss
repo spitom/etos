@@ -1,0 +1,1009 @@
+// ==========================================================================
+// Shared offer landing
+// ==========================================================================
+
+.etos-offer-page {
+    background: #fff;
+}
+
+.etos-offer-hero {
+    padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 88% 8%,
+            rgba($primary, 0.09),
+            transparent 28rem
+        ),
+        #f3f7fa;
+
+    &__content {
+        max-width: 620px;
+    }
+
+    &__logo {
+        margin-bottom: 1.5rem;
+    }
+
+    &__logo-image {
+        display: block;
+        width: auto;
+        max-width: min(240px, 72vw);
+        max-height: 62px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    &__title {
+        max-width: 13ch;
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(3.25rem, 5.5vw, 5rem);
+        font-weight: 780;
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+    }
+
+    &__lead {
+        max-width: 590px;
+        margin-top: 1.5rem;
+        color: $etos-muted;
+        font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+        line-height: 1.75;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem 1.75rem;
+        margin-top: 2rem;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    &__partner {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+    }
+
+    &__partner-image {
+        display: block;
+        width: auto;
+        max-width: 190px;
+        max-height: 52px;
+        object-fit: contain;
+    }
+
+    &__media {
+        position: relative;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border: 1px solid rgba($etos-ink, 0.07);
+        border-radius: 1.35rem;
+        background: #e7eef4;
+        box-shadow: 0 28px 65px rgba($etos-ink, 0.14);
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: var(--etos-offer-image-fit, cover);
+        object-position:
+            var(--etos-offer-image-x, 50%)
+            var(--etos-offer-image-y, 50%);
+        transform: scale(
+            var(--etos-offer-image-scale, 1)
+        );
+        transform-origin: center;
+    }
+
+    &__placeholder {
+        width: 100%;
+        height: 100%;
+        background:
+            radial-gradient(
+                circle at 75% 20%,
+                rgba($primary, 0.13),
+                transparent 18rem
+            ),
+            #e9f1f6;
+    }
+}
+
+.etos-offer-action {
+    padding: clamp(3rem, 5vw, 4.5rem) 0 0;
+
+    &__panel {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+        gap: 2rem 4rem;
+        align-items: center;
+        padding: clamp(2rem, 4vw, 3.25rem);
+        border-left: 5px solid $primary;
+        border-radius: 1.2rem;
+        background: #eaf4f9;
+        box-shadow: 0 18px 48px rgba($etos-ink, 0.07);
+    }
+
+    &__content {
+        max-width: 760px;
+    }
+
+    &__logo {
+        margin-bottom: 1.25rem;
+    }
+
+    &__logo-image {
+        display: block;
+        width: auto;
+        max-width: 220px;
+        max-height: 56px;
+        object-fit: contain;
+    }
+
+    &__title {
+        max-width: 22ch;
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(1.8rem, 3vw, 2.7rem);
+        font-weight: 760;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+    }
+
+    &__text {
+        max-width: 650px;
+        margin-top: 1rem;
+        color: $etos-muted;
+        line-height: 1.7;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.etos-offer-section {
+    padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+
+    &--secondary {
+        background: #f5f8fb;
+    }
+
+    &__header {
+        max-width: 780px;
+        margin: 0 auto clamp(2.25rem, 4vw, 3.5rem);
+        text-align: center;
+    }
+
+    &__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-bottom: 0.85rem;
+        color: $primary;
+        font-size: 0.78rem;
+        font-weight: 780;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        &::before {
+            content: '';
+            width: 1.75rem;
+            height: 3px;
+            border-radius: 999px;
+            background: currentColor;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(2rem, 4vw, 3.35rem);
+        font-weight: 760;
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+    }
+
+    &__intro {
+        max-width: 690px;
+        margin: 1.1rem auto 0;
+        color: $etos-muted;
+        line-height: 1.7;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.etos-offer-grid {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    align-items: stretch;
+
+    &--cols-1 {
+        max-width: 430px;
+        margin-right: auto;
+        margin-left: auto;
+        grid-template-columns: 1fr;
+    }
+
+    &--cols-2 {
+        max-width: 880px;
+        margin-right: auto;
+        margin-left: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &--cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &--cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.etos-offer-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border: 1px solid rgba($etos-ink, 0.09);
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 16px 45px rgba($etos-ink, 0.055);
+
+    &.is-featured {
+        border-color: $primary;
+        box-shadow:
+            0 0 0 3px rgba($primary, 0.09),
+            0 20px 55px rgba($etos-ink, 0.09);
+    }
+
+    &__marker {
+        display: flex;
+        width: 3.3rem;
+        height: 3.3rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        border-radius: 0.9rem;
+        color: $primary;
+        background: rgba($primary, 0.09);
+        font-weight: 800;
+    }
+
+    &__icon {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+    }
+
+    &__title {
+        margin: 0 0 0.8rem;
+        color: $etos-ink;
+        font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+        font-weight: 740;
+        line-height: 1.22;
+    }
+
+    &__text {
+        color: $etos-muted;
+        line-height: 1.7;
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        color: $primary;
+        font-weight: 720;
+        text-decoration: none;
+
+        &::after {
+            content: '→';
+            margin-left: 0.4rem;
+        }
+    }
+
+    &--steps {
+        text-align: left;
+
+        .etos-offer-card__marker {
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-offer-grid {
+        &--cols-4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-hero {
+        padding: 4.5rem 0;
+
+        &__media {
+            aspect-ratio: 16 / 10;
+        }
+    }
+
+    .etos-offer-action {
+        &__panel {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .etos-offer-grid {
+        &--cols-3 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-offer-hero {
+        padding: 3.75rem 0;
+
+        &__title {
+            font-size: clamp(2.75rem, 14vw, 4rem);
+        }
+
+        &__actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &__media {
+            aspect-ratio: 4 / 3;
+            border-radius: 1.1rem;
+        }
+    }
+
+    .etos-offer-action {
+        &__panel {
+            padding: 2rem 1.5rem;
+        }
+    }
+
+    .etos-offer-grid {
+        &--cols-1,
+        &--cols-2,
+        &--cols-3,
+        &--cols-4 {
+            max-width: none;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// ETOS OFFER BENEFITS AND CTA START
+
+// --------------------------------------------------------------------------
+// Benefits — visually different from the service catalogue
+// --------------------------------------------------------------------------
+
+.etos-offer-section--secondary.etos-offer-section--cards {
+    background: #eaf4f9;
+
+    .etos-offer-section__header {
+        margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .etos-offer-grid {
+        gap: clamp(2rem, 4vw, 4rem);
+    }
+
+    .etos-offer-card {
+        min-height: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
+        &__marker {
+            width: 4.5rem;
+            height: 4.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba($etos-ink, 0.07);
+            font-size: 1rem;
+        }
+
+        &__icon {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        &__title {
+            margin-bottom: 0.85rem;
+            font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+        }
+
+        &__text {
+            max-width: 34rem;
+        }
+
+        &__link {
+            margin-top: 1rem;
+            padding-top: 0;
+        }
+
+        &.is-featured {
+            border: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// Footer CTA — same visual language as service pages
+// --------------------------------------------------------------------------
+
+.etos-cta-panel.etos-cta-panel--offer {
+    padding: clamp(2rem, 4vw, 3rem);
+    border: 0;
+    border-left: 5px solid $primary;
+    border-radius: 1.1rem;
+    background: #eaf4f9;
+    box-shadow: none;
+
+    &::before,
+    &::after {
+        content: none;
+    }
+
+    h2 {
+        max-width: 22ch;
+        margin-bottom: 0.85rem;
+    }
+
+    p {
+        max-width: 720px;
+        margin-bottom: 0;
+    }
+
+    .etos-cta-panel__action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .etos-cta-panel__note {
+        display: none;
+    }
+
+    .etos-btn-primary {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-section--secondary.etos-offer-section--cards {
+        .etos-offer-card {
+            text-align: left;
+        }
+    }
+
+    .etos-cta-panel.etos-cta-panel--offer {
+        .etos-cta-panel__action {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-offer-section--secondary.etos-offer-section--cards {
+        .etos-offer-grid {
+            gap: 2.5rem;
+        }
+
+        .etos-offer-card {
+            &__marker {
+                width: 4rem;
+                height: 4rem;
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+
+    .etos-cta-panel.etos-cta-panel--offer {
+        padding: 2rem 1.5rem;
+    }
+}
+
+// ETOS OFFER BENEFITS AND CTA END
+
+// ETOS OFFER BENEFITS LAYOUT START
+
+.etos-offer-section--secondary.etos-offer-section--cards {
+    padding: clamp(4rem, 6vw, 5.5rem) 0;
+    background: #eaf4f9;
+
+    .etos-container {
+        display: grid;
+        grid-template-columns:
+            minmax(220px, 0.8fr)
+            minmax(0, 2.2fr);
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: start;
+    }
+
+    .etos-offer-section__header {
+        max-width: 320px;
+        margin: 0;
+        text-align: left;
+    }
+
+    .etos-offer-section__eyebrow {
+        justify-content: flex-start;
+    }
+
+    .etos-offer-section__title {
+        max-width: 9ch;
+    }
+
+    .etos-offer-section__intro {
+        margin: 1rem 0 0;
+    }
+
+    .etos-offer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .etos-offer-card {
+        position: relative;
+        display: block;
+        min-height: 0;
+        padding: 0 clamp(1.75rem, 3vw, 3rem);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:not(:first-child) {
+            border-left: 1px solid rgba($etos-ink, 0.13);
+        }
+
+        &__marker {
+            display: flex;
+            width: auto;
+            height: auto;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0 0 1rem;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            color: $primary;
+
+            span {
+                display: flex;
+                width: 2rem;
+                height: 2rem;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #fff;
+                font-size: 0;
+                box-shadow: 0 8px 20px rgba($etos-ink, 0.06);
+
+                &::before {
+                    content: '✓';
+                    font-size: 0.85rem;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        &__title {
+            max-width: 14ch;
+            margin-bottom: 0.8rem;
+            font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+            line-height: 1.2;
+        }
+
+        &__text {
+            max-width: 30rem;
+            line-height: 1.65;
+        }
+
+        &.is-featured {
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-section--secondary.etos-offer-section--cards {
+        .etos-container {
+            grid-template-columns: 1fr;
+            gap: 2.75rem;
+        }
+
+        .etos-offer-section__header {
+            max-width: 650px;
+        }
+
+        .etos-offer-section__title {
+            max-width: none;
+        }
+
+        .etos-offer-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-offer-section--secondary.etos-offer-section--cards {
+        .etos-offer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .etos-offer-card {
+            padding: 1.75rem 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:not(:first-child) {
+                border-top: 1px solid rgba($etos-ink, 0.13);
+                border-left: 0;
+            }
+
+            &__title {
+                max-width: none;
+            }
+        }
+    }
+}
+
+// ETOS OFFER BENEFITS LAYOUT END
+
+// ETOS OFFER BOOKING STRIP START
+
+.etos-offer-action {
+    padding: 0;
+    background: #fff;
+
+    &__panel {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+        gap: 2rem 4rem;
+        align-items: center;
+
+        padding: clamp(2.25rem, 4vw, 3.25rem) 0;
+
+        border-top: 1px solid rgba($etos-ink, 0.1);
+        border-bottom: 1px solid rgba($etos-ink, 0.1);
+        border-left: 0;
+        border-radius: 0;
+
+        background: transparent;
+        box-shadow: none;
+    }
+
+    &__content {
+        max-width: 760px;
+    }
+
+    &__title {
+        max-width: 24ch;
+        font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+    }
+
+    &__text {
+        max-width: 680px;
+        margin-top: 0.75rem;
+    }
+
+    &__button {
+        align-self: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-action {
+        &__panel {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        &__button {
+            justify-self: start;
+        }
+    }
+}
+
+// ETOS OFFER BOOKING STRIP END
+
+// ETOS REMOTE SUPPORT DOWNLOAD CARDS START
+
+.etos-offer-page--support {
+    .etos-offer-section--primary {
+        .etos-offer-grid {
+            max-width: 1120px;
+            margin-right: auto;
+            margin-left: auto;
+            gap: clamp(1.5rem, 3vw, 2.25rem);
+        }
+
+        .etos-offer-card {
+            align-items: center;
+            padding: clamp(2rem, 3vw, 2.75rem);
+            text-align: center;
+            transition:
+                transform 180ms ease,
+                border-color 180ms ease,
+                box-shadow 180ms ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                border-color: rgba($primary, 0.3);
+                box-shadow: 0 24px 55px rgba($etos-ink, 0.1);
+            }
+
+            &:focus-within {
+                border-color: $primary;
+                box-shadow:
+                    0 0 0 3px rgba($primary, 0.12),
+                    0 24px 55px rgba($etos-ink, 0.1);
+            }
+
+            &__marker {
+                width: clamp(7rem, 10vw, 9rem);
+                height: clamp(7rem, 10vw, 9rem);
+                margin-bottom: 1.75rem;
+                border-radius: 0;
+                background: transparent;
+                box-shadow: none;
+            }
+
+            &__icon {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &__title {
+                max-width: 18ch;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+            }
+
+            &__text {
+                max-width: 30rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            &__link {
+                position: static;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                margin-top: auto;
+                padding-top: 1.4rem;
+                color: $primary;
+                font-weight: 750;
+                text-decoration: none;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 1;
+                    inset: 0;
+                }
+
+                &::after {
+                    content: '↓';
+                    margin-left: 0;
+                    font-size: 1rem;
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-offer-page--support {
+        .etos-offer-section--primary {
+            .etos-offer-card {
+                padding: 2rem 1.5rem;
+
+                &__marker {
+                    width: 7rem;
+                    height: 7rem;
+                }
+            }
+        }
+    }
+}
+
+// ETOS REMOTE SUPPORT DOWNLOAD CARDS END
+
+// ETOS REMOTE SUPPORT STEPS START
+
+.etos-offer-page--support {
+    .etos-offer-section--secondary.etos-offer-section--steps {
+        padding: clamp(4rem, 6vw, 5.5rem) 0;
+        background: #eaf4f9;
+
+        .etos-container {
+            display: grid;
+            grid-template-columns:
+                minmax(270px, 0.85fr)
+                minmax(0, 2.15fr);
+            gap: clamp(3rem, 6vw, 6rem);
+            align-items: start;
+        }
+
+        .etos-offer-section__header {
+            max-width: 360px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .etos-offer-section__eyebrow {
+            justify-content: flex-start;
+        }
+
+        .etos-offer-section__title {
+            max-width: 13ch;
+        }
+
+        .etos-offer-section__intro {
+            margin: 1rem 0 0;
+        }
+
+        .etos-offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+        }
+
+        .etos-offer-card--steps {
+            display: block;
+            min-height: 0;
+            padding: 0 clamp(1.75rem, 3vw, 3rem);
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:not(:first-child) {
+                border-left: 1px solid rgba($etos-ink, 0.13);
+            }
+
+            .etos-offer-card__marker {
+                display: flex;
+                width: 2.5rem;
+                height: 2.5rem;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.25rem;
+                border-radius: 50%;
+                background: #fff;
+                color: $primary;
+                box-shadow: 0 8px 20px rgba($etos-ink, 0.06);
+                font-size: 0.8rem;
+                font-weight: 800;
+            }
+
+            .etos-offer-card__title {
+                max-width: 15ch;
+                margin-bottom: 0.75rem;
+                font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+            }
+
+            .etos-offer-card__text {
+                line-height: 1.65;
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-page--support {
+        .etos-offer-section--secondary.etos-offer-section--steps {
+            .etos-container {
+                grid-template-columns: 1fr;
+                gap: 2.75rem;
+            }
+
+            .etos-offer-section__header {
+                max-width: 680px;
+            }
+
+            .etos-offer-section__title {
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-offer-page--support {
+        .etos-offer-section--secondary.etos-offer-section--steps {
+            .etos-offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etos-offer-card--steps {
+                padding: 1.75rem 0;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                &:not(:first-child) {
+                    border-top: 1px solid rgba($etos-ink, 0.13);
+                    border-left: 0;
+                }
+
+                .etos-offer-card__title {
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+
+// ETOS REMOTE SUPPORT STEPS END

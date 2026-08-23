@@ -1,0 +1,560 @@
+{
+    "key": "group_etos_service_care",
+    "title": "Usługa — opieka serwisowa",
+    "fields": [
+        {
+            "key": "field_etos_service_care_tab_modes",
+            "label": "Formy współpracy",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_care_modes_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_care_modes_heading",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "default_value": "Wybierz formę współpracy.",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_care_modes_intro",
+            "label": "Wprowadzenie",
+            "name": "etos_service_care_modes_intro",
+            "type": "textarea",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "maxlength": 420,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_care_modes",
+            "label": "Formy współpracy",
+            "name": "etos_service_care_modes",
+            "type": "repeater",
+            "instructions": "Dodaj dwie pozycje: opiekę incydentalną i stałą umowę serwisową.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "layout": "block",
+            "min": 0,
+            "max": 2,
+            "collapsed": "field_etos_service_care_mode_title",
+            "button_label": "Dodaj formę współpracy",
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_care_mode_icon",
+                    "label": "Ikona",
+                    "name": "etos_service_care_mode_icon",
+                    "type": "image",
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_eyebrow",
+                    "label": "Nadtytuł",
+                    "name": "etos_service_care_mode_eyebrow",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "30"
+                    },
+                    "maxlength": 80,
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_care_mode_title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "maxlength": 120,
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_text",
+                    "label": "Opis",
+                    "name": "etos_service_care_mode_text",
+                    "type": "textarea",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "maxlength": 360,
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_best_for",
+                    "label": "Najlepsza dla",
+                    "name": "etos_service_care_mode_best_for",
+                    "type": "textarea",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "maxlength": 240,
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_points",
+                    "label": "Najważniejsze cechy",
+                    "name": "etos_service_care_mode_points",
+                    "type": "textarea",
+                    "instructions": "Każdą cechę wpisz w osobnym wierszu.",
+                    "wrapper": {
+                        "width": "75"
+                    },
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_highlighted",
+                    "label": "Wyróżnij kartę",
+                    "name": "etos_service_care_mode_highlighted",
+                    "type": "true_false",
+                    "wrapper": {
+                        "width": "25"
+                    },
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Tak",
+                    "ui_off_text": "Nie",
+                    "parent_repeater": "field_etos_service_care_modes"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_care_tab_comparison",
+            "label": "Porównanie",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_care_comparison_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_care_comparison_heading",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "default_value": "Porównaj dostępne formy opieki.",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_care_comparison_intro",
+            "label": "Wprowadzenie",
+            "name": "etos_service_care_comparison_intro",
+            "type": "textarea",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "maxlength": 420,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_care_comparison",
+            "label": "Wiersze porównania",
+            "name": "etos_service_care_comparison",
+            "type": "repeater",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 12,
+            "collapsed": "field_etos_service_care_comparison_area",
+            "button_label": "Dodaj obszar porównania",
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_care_comparison_area",
+                    "label": "Obszar",
+                    "name": "etos_service_care_comparison_area",
+                    "type": "text",
+                    "required": 1,
+                    "parent_repeater": "field_etos_service_care_comparison"
+                },
+                {
+                    "key": "field_etos_service_care_comparison_incident",
+                    "label": "Opieka incydentalna",
+                    "name": "etos_service_care_comparison_incident",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_comparison"
+                },
+                {
+                    "key": "field_etos_service_care_comparison_contract",
+                    "label": "Stała umowa",
+                    "name": "etos_service_care_comparison_contract",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_comparison"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_care_tab_recommendations",
+            "label": "Pomoc w wyborze",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_care_recommendations_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_care_recommendations_heading",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "default_value": "Nadal nie wiesz, która opcja będzie najlepsza?",
+            "maxlength": 180
+        },
+        {
+            "key": "field_etos_service_care_recommendations",
+            "label": "Rekomendacje",
+            "name": "etos_service_care_recommendations",
+            "type": "repeater",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "layout": "block",
+            "min": 0,
+            "max": 2,
+            "collapsed": "field_etos_service_care_recommendation_title",
+            "button_label": "Dodaj rekomendację",
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_care_recommendation_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_care_recommendation_title",
+                    "type": "text",
+                    "required": 1,
+                    "parent_repeater": "field_etos_service_care_recommendations"
+                },
+                {
+                    "key": "field_etos_service_care_recommendation_text",
+                    "label": "Opis",
+                    "name": "etos_service_care_recommendation_text",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_recommendations"
+                },
+                {
+                    "key": "field_etos_service_care_recommendation_points",
+                    "label": "Argumenty",
+                    "name": "etos_service_care_recommendation_points",
+                    "type": "textarea",
+                    "instructions": "Każdy argument wpisz w osobnym wierszu.",
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_recommendations"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_care_tab_stats",
+            "label": "Dlaczego ETOS",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_care_stats_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_care_stats_heading",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "default_value": "Dlaczego ETOS?",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_care_stats",
+            "label": "Argumenty i liczby",
+            "name": "etos_service_care_stats",
+            "type": "repeater",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "layout": "table",
+            "min": 0,
+            "max": 8,
+            "collapsed": "field_etos_service_care_stat_label",
+            "button_label": "Dodaj argument",
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_care_stat_value",
+                    "label": "Wartość",
+                    "name": "etos_service_care_stat_value",
+                    "type": "text",
+                    "instructions": "Np. 35+ albo 1000+.",
+                    "parent_repeater": "field_etos_service_care_stats"
+                },
+                {
+                    "key": "field_etos_service_care_stat_label",
+                    "label": "Opis",
+                    "name": "etos_service_care_stat_label",
+                    "type": "text",
+                    "required": 1,
+                    "parent_repeater": "field_etos_service_care_stats"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_service_care_tab_paths",
+            "label": "Rozpoczęcie współpracy",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_care_paths_heading",
+            "label": "Nagłówek sekcji",
+            "name": "etos_service_care_paths_heading",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "default_value": "Jak rozpocząć współpracę?",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_care_paths_intro",
+            "label": "Wprowadzenie",
+            "name": "etos_service_care_paths_intro",
+            "type": "textarea",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "maxlength": 420,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_care_paths",
+            "label": "Ścieżki współpracy",
+            "name": "etos_service_care_paths",
+            "type": "repeater",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "care"
+                    }
+                ]
+            ],
+            "layout": "block",
+            "min": 0,
+            "max": 2,
+            "collapsed": "field_etos_service_care_path_title",
+            "button_label": "Dodaj ścieżkę",
+            "sub_fields": [
+                {
+                    "key": "field_etos_service_care_path_eyebrow",
+                    "label": "Nadtytuł",
+                    "name": "etos_service_care_path_eyebrow",
+                    "type": "text",
+                    "parent_repeater": "field_etos_service_care_paths"
+                },
+                {
+                    "key": "field_etos_service_care_path_title",
+                    "label": "Tytuł",
+                    "name": "etos_service_care_path_title",
+                    "type": "text",
+                    "required": 1,
+                    "parent_repeater": "field_etos_service_care_paths"
+                },
+                {
+                    "key": "field_etos_service_care_path_text",
+                    "label": "Opis",
+                    "name": "etos_service_care_path_text",
+                    "type": "textarea",
+                    "rows": 4,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_paths"
+                },
+                {
+                    "key": "field_etos_service_care_path_steps",
+                    "label": "Kroki",
+                    "name": "etos_service_care_path_steps",
+                    "type": "textarea",
+                    "instructions": "Każdy krok wpisz w osobnym wierszu.",
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_service_care_paths"
+                },
+                {
+                    "key": "field_etos_service_care_path_link",
+                    "label": "Przycisk",
+                    "name": "etos_service_care_path_link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_etos_service_care_paths"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "etos_service"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola używane wyłącznie przez wariant opieki serwisowej.",
+    "show_in_rest": 0,
+    "modified": 1785480000
+}

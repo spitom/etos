@@ -1,0 +1,324 @@
+{
+    "key": "group_etos_about_page",
+    "title": "O nas — ETOS",
+    "fields": [
+        {
+            "key": "field_etos_about_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_about_hero_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_about_hero_eyebrow",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_hero_title",
+            "label": "Główne hasło",
+            "name": "etos_about_hero_title",
+            "type": "text",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_etos_about_intro_title",
+            "label": "Tytuł opisu",
+            "name": "etos_about_intro_title",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_intro_text",
+            "label": "Opis",
+            "name": "etos_about_intro_text",
+            "type": "textarea",
+            "wrapper": {
+                "width": "70"
+            },
+            "rows": 7,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_about_hero_image",
+            "label": "Zdjęcie",
+            "name": "etos_about_hero_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_etos_about_primary_cta",
+            "label": "Pierwszy przycisk",
+            "name": "etos_about_primary_cta",
+            "type": "link",
+            "wrapper": {
+                "width": "50"
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_about_secondary_cta",
+            "label": "Drugi przycisk",
+            "name": "etos_about_secondary_cta",
+            "type": "link",
+            "wrapper": {
+                "width": "50"
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_about_tab_stats",
+            "label": "Liczby",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_about_stats",
+            "label": "Statystyki",
+            "name": "etos_about_stats",
+            "type": "repeater",
+            "layout": "table",
+            "min": 0,
+            "max": 4,
+            "button_label": "Dodaj liczbę",
+            "sub_fields": [
+                {
+                    "key": "field_etos_about_stat_value",
+                    "label": "Liczba",
+                    "name": "value",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "25"
+                    },
+                    "parent_repeater": "field_etos_about_stats"
+                },
+                {
+                    "key": "field_etos_about_stat_label",
+                    "label": "Opis",
+                    "name": "label",
+                    "type": "textarea",
+                    "wrapper": {
+                        "width": "75"
+                    },
+                    "rows": 3,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_about_stats"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_about_tab_areas",
+            "label": "Czym się zajmujemy",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_about_areas_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_about_areas_eyebrow",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_areas_title",
+            "label": "Tytuł",
+            "name": "etos_about_areas_title",
+            "type": "text",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_etos_about_areas_intro",
+            "label": "Wprowadzenie",
+            "name": "etos_about_areas_intro",
+            "type": "textarea",
+            "wrapper": {
+                "width": "35"
+            },
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_about_areas",
+            "label": "Obszary",
+            "name": "etos_about_areas",
+            "type": "repeater",
+            "layout": "block",
+            "min": 0,
+            "max": 8,
+            "button_label": "Dodaj obszar",
+            "collapsed": "field_etos_about_area_title",
+            "sub_fields": [
+                {
+                    "key": "field_etos_about_area_icon",
+                    "label": "Ikona",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "parent_repeater": "field_etos_about_areas"
+                },
+                {
+                    "key": "field_etos_about_area_title",
+                    "label": "Tytuł",
+                    "name": "title",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "30"
+                    },
+                    "parent_repeater": "field_etos_about_areas"
+                },
+                {
+                    "key": "field_etos_about_area_text",
+                    "label": "Opis",
+                    "name": "text",
+                    "type": "textarea",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "rows": 5,
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_about_areas"
+                },
+                {
+                    "key": "field_etos_about_area_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "parent_repeater": "field_etos_about_areas"
+                }
+            ]
+        },
+        {
+            "key": "field_etos_about_tab_team",
+            "label": "Nasz zespół",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_about_team_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_about_team_eyebrow",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_team_title",
+            "label": "Tytuł",
+            "name": "etos_about_team_title",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_team_text",
+            "label": "Opis",
+            "name": "etos_about_team_text",
+            "type": "textarea",
+            "wrapper": {
+                "width": "40"
+            },
+            "rows": 8,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_about_team_image",
+            "label": "Zdjęcie zespołu",
+            "name": "etos_about_team_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_etos_about_team_link",
+            "label": "Przycisk",
+            "name": "etos_about_team_link",
+            "type": "link",
+            "return_format": "array",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_etos_about_tab_cta",
+            "label": "CTA",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_about_cta_eyebrow",
+            "label": "Nadtytuł CTA",
+            "name": "etos_about_cta_eyebrow",
+            "type": "text",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_etos_about_cta_title",
+            "label": "Tytuł CTA",
+            "name": "etos_about_cta_title",
+            "type": "text",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_etos_about_cta_text",
+            "label": "Opis CTA",
+            "name": "etos_about_cta_text",
+            "type": "textarea",
+            "wrapper": {
+                "width": "35"
+            },
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_about_cta_link",
+            "label": "Przycisk CTA",
+            "name": "etos_about_cta_link",
+            "type": "link",
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates/template-about.php"
+            }
+        ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "show_in_rest": 0
+}

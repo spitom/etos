@@ -1,0 +1,1050 @@
+// ==========================================================================
+// Single service
+// ==========================================================================
+
+.etos-service-single {
+    background: #f3f6f9;
+}
+
+.etos-service-hero {
+    padding: clamp(5rem, 8vw, 7rem) 0 clamp(4.5rem, 7vw, 6rem);
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba($primary, 0.08),
+            transparent 28rem
+        ),
+        #f3f6f9;
+
+    &__grid {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 0.9fr)
+            minmax(0, 1.1fr);
+        align-items: center;
+        gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    &__content {
+        max-width: 650px;
+
+        > .etos-kicker {
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    &__title {
+        max-width: 14ch;
+        margin: 0 0 1.3rem;
+        color: $etos-ink;
+        font-size: clamp(2.6rem, 5vw, 4.5rem);
+        font-weight: 740;
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+    }
+
+    &__lead {
+        max-width: 620px;
+        margin: 0;
+        color: #526174;
+        font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+        line-height: 1.7;
+    }
+
+    &__button {
+        min-height: 54px;
+        margin-top: 1.75rem;
+        padding-inline: 1.6rem;
+    }
+
+    &__visual {
+        position: relative;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border: 1px solid rgba($etos-ink, 0.09);
+        border-radius: 1.4rem;
+        background: #e9f2f7;
+        box-shadow: 0 28px 70px rgba($etos-ink, 0.12);
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        object-fit: var(--etos-service-image-fit, cover);
+        object-position: var(--etos-service-image-x, 50%)
+            var(--etos-service-image-y, 50%);
+        transform: scale(var(--etos-service-image-scale, 1));
+        transform-origin: var(--etos-service-image-x, 50%)
+            var(--etos-service-image-y, 50%);
+    }
+
+    &__placeholder {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: end;
+        gap: 1rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, #edf5f9, #dfeaf2);
+
+        span {
+            display: block;
+            border: 1px solid rgba($primary, 0.12);
+            border-radius: 0.8rem;
+            background: rgba(#fff, 0.34);
+
+            &:nth-child(1) {
+                height: 38%;
+            }
+
+            &:nth-child(2) {
+                height: 66%;
+            }
+
+            &:nth-child(3) {
+                height: 50%;
+            }
+        }
+    }
+}
+
+.etos-service-single .etos-service-section {
+    padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+
+    &__header {
+        max-width: 760px;
+        margin: 0 auto clamp(2.25rem, 4vw, 3.25rem);
+        text-align: center;
+
+        .etos-kicker {
+            justify-content: center;
+        }
+
+        h2 {
+            margin: 0.85rem 0 0;
+            color: $etos-ink;
+            font-size: clamp(2rem, 3.8vw, 3.15rem);
+            font-weight: 730;
+            line-height: 1.08;
+            letter-spacing: -0.045em;
+        }
+    }
+
+    &--reasons,
+    &--benefits {
+        background: #fff;
+    }
+
+    &--access {
+        background: #f3f6f9;
+    }
+}
+
+.etos-service-single .etos-service-grid {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.5rem);
+
+    &--reasons {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    &--access,
+    &--benefits {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.etos-service-single .etos-service-card {
+    position: relative;
+    min-width: 0;
+    padding: clamp(1.4rem, 2.5vw, 2rem);
+    border: 1px solid rgba($etos-ink, 0.09);
+    border-radius: 1.1rem;
+    background: #fff;
+
+    &__icon {
+        display: inline-flex;
+        width: 2.75rem;
+        height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.15rem;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        background: rgba($primary, 0.08);
+
+        img {
+            display: block;
+            width: 1.45rem;
+            height: 1.45rem;
+            object-fit: contain;
+        }
+
+        span {
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: 50%;
+            background: $primary;
+            box-shadow: 0 0 0 6px rgba($primary, 0.11);
+        }
+    }
+
+    h3 {
+        margin: 0 0 0.7rem;
+        color: $etos-ink;
+        font-size: 1.15rem;
+        font-weight: 760;
+        line-height: 1.25;
+    }
+
+    p {
+        margin: 0;
+        color: $etos-muted;
+        font-size: 0.94rem;
+        line-height: 1.65;
+    }
+
+    &--reason {
+        min-height: 100%;
+        box-shadow: 0 16px 40px rgba($etos-ink, 0.055);
+    }
+
+    &--access {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: start;
+        gap: 1rem;
+        background: rgba(#fff, 0.7);
+
+        .etos-service-single .etos-service-card__icon {
+            margin-bottom: 0;
+        }
+    }
+
+    &--benefit {
+        min-height: 100%;
+        border-top: 3px solid $primary;
+        background: #f9fbfc;
+    }
+}
+
+.etos-service-single .etos-service-editor-content {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    background: #fff;
+
+    &__inner {
+        max-width: 940px;
+        margin: 0 auto;
+        color: $etos-muted;
+        font-size: 1.05rem;
+        line-height: 1.8;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: $etos-ink;
+        }
+
+        h2 {
+            margin: 3.5rem 0 1.25rem;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+        }
+
+        a {
+            color: $primary;
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .etos-service-single .etos-service-grid {
+        &--reasons {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-service-hero {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__content {
+            max-width: 760px;
+        }
+
+        &__title {
+            max-width: 16ch;
+        }
+
+        &__visual {
+            max-width: 760px;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-service-hero {
+        padding: 4rem 0;
+
+        &__grid {
+            gap: 2.5rem;
+        }
+
+        &__title {
+            max-width: none;
+            font-size: clamp(2.45rem, 12vw, 3.4rem);
+        }
+    }
+
+    .etos-service-single .etos-service-section {
+        padding: 4rem 0;
+    }
+
+    .etos-service-single .etos-service-grid {
+        &--reasons,
+        &--access,
+        &--benefits {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .etos-service-single .etos-service-card {
+        &--access {
+            grid-template-columns: auto minmax(0, 1fr);
+        }
+    }
+
+    .etos-service-single .etos-service-editor-content {
+        padding: 4rem 0;
+
+        &__inner {
+            font-size: 1rem;
+        }
+    }
+}
+
+// ETOS SERVICE WRAPPER AND CTA START
+
+/*
+ * Usuwa domyślny pionowy padding wrappera Understrapa,
+ * dzięki czemu hero zaczyna się bezpośrednio pod headerem.
+ */
+.wrapper.etos-service-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*
+ * CTA pojedynczej usługi.
+ */
+.single-etos_service {
+    .etos-footer__cta-band {
+        padding: clamp(4rem, 6vw, 5.5rem) 0;
+        background: #f3f6f9;
+    }
+
+    .etos-cta-panel--service {
+        position: relative;
+        max-width: 1180px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid rgba($primary, 0.16);
+        border-radius: 1.25rem;
+        background: #eaf4f9;
+        box-shadow:
+            0 20px 50px rgba($etos-ink, 0.08),
+            0 1px 0 rgba(#fff, 0.9) inset;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 5px;
+            background: $primary;
+        }
+
+        > .row {
+            min-height: 230px;
+            align-items: center !important;
+            --bs-gutter-x: 0;
+            --bs-gutter-y: 0;
+        }
+
+        .col-lg-7 {
+            padding: clamp(2.25rem, 4vw, 3.35rem) clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .col-lg-5 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: clamp(2rem, 4vw, 3rem) clamp(2.25rem, 4vw, 3.5rem)
+                clamp(2rem, 4vw, 3rem) 0;
+        }
+
+        .etos-cta-panel__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0;
+            background: transparent;
+            color: $primary;
+            font-size: 0.74rem;
+            font-weight: 850;
+            letter-spacing: 0.085em;
+
+            &::before {
+                content: "";
+                width: 0.48rem;
+                height: 0.48rem;
+                flex: 0 0 auto;
+                border-radius: 50%;
+                background: $etos-accent;
+                box-shadow: 0 0 0 5px rgba($etos-accent, 0.14);
+            }
+        }
+
+        h2 {
+            max-width: 680px;
+            margin: 1rem 0 0.85rem;
+            color: $etos-ink;
+            font-size: clamp(1.9rem, 3vw, 2.65rem);
+            font-weight: 740;
+            line-height: 1.08;
+            letter-spacing: -0.04em;
+        }
+
+        p {
+            max-width: 700px;
+            margin: 0;
+            color: #475569;
+            font-size: clamp(0.98rem, 1.2vw, 1.05rem);
+            line-height: 1.7;
+        }
+
+        .etos-cta-panel__action {
+            display: flex;
+            width: 100%;
+            max-width: 340px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.85rem;
+            padding: 0;
+            background: transparent;
+            border: 0;
+        }
+
+        .etos-btn-primary {
+            display: inline-flex;
+            width: 100%;
+            max-width: 340px;
+            min-height: 58px;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.95rem 1.55rem;
+            border: 1px solid $etos-accent;
+            border-radius: 0.85rem;
+            background: $etos-accent;
+            color: $etos-ink;
+            font-size: 0.97rem;
+            font-weight: 830;
+            box-shadow: 0 14px 30px rgba($etos-accent, 0.22);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+
+            &::after {
+                content: "→";
+                font-size: 1.05rem;
+                line-height: 1;
+                transition: transform 0.2s ease;
+            }
+
+            &:hover,
+            &:focus-visible {
+                border-color: $etos-accent-soft;
+                background: $etos-accent-soft;
+                color: $etos-ink;
+                box-shadow: 0 18px 36px rgba($etos-accent, 0.26);
+                transform: translateY(-2px);
+
+                &::after {
+                    transform: translateX(0.2rem);
+                }
+            }
+        }
+
+        .etos-cta-panel__note {
+            max-width: 320px;
+            margin: 0;
+            color: #64748b;
+            font-size: 0.8rem;
+            font-weight: 650;
+            line-height: 1.45;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .single-etos_service {
+        .etos-cta-panel--service {
+            > .row {
+                min-height: 0;
+            }
+
+            .col-lg-7 {
+                padding-bottom: 1.25rem;
+            }
+
+            .col-lg-5 {
+                justify-content: flex-start;
+                padding: 0 clamp(2.5rem, 5vw, 4rem) clamp(2.25rem, 4vw, 3rem);
+            }
+
+            .etos-cta-panel__action {
+                max-width: none;
+            }
+
+            .etos-btn-primary {
+                max-width: 340px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .single-etos_service {
+        .etos-footer__cta-band {
+            padding: 3.5rem 0;
+        }
+
+        .etos-cta-panel--service {
+            border-radius: 1.05rem;
+
+            .col-lg-7 {
+                padding: 1.8rem 1.8rem 1rem;
+            }
+
+            .col-lg-5 {
+                padding: 0 1.8rem 1.8rem;
+            }
+
+            .etos-btn-primary {
+                width: 100%;
+                max-width: none;
+            }
+
+            .etos-cta-panel__note {
+                max-width: none;
+            }
+        }
+    }
+}
+
+// ETOS SERVICE WRAPPER AND CTA END
+
+// ETOS SERVICE CARE START
+
+.etos-service-single--care {
+    .etos-care-section {
+        padding: clamp(4.75rem, 7vw, 6.75rem) 0;
+
+        &__header {
+            max-width: 820px;
+            margin: 0 auto clamp(2.4rem, 4vw, 3.4rem);
+            text-align: center;
+
+            .etos-kicker {
+                justify-content: center;
+            }
+
+            h2 {
+                margin: 0.9rem 0 0;
+                color: $etos-ink;
+                font-size: clamp(2rem, 3.8vw, 3.15rem);
+                font-weight: 730;
+                line-height: 1.08;
+                letter-spacing: -0.045em;
+            }
+
+            p {
+                max-width: 700px;
+                margin: 1rem auto 0;
+                color: $etos-muted;
+                font-size: 1.02rem;
+                line-height: 1.7;
+            }
+        }
+
+        &--modes,
+        &--recommendations {
+            background: #fff;
+        }
+
+        &--comparison,
+        &--paths {
+            background: #f3f6f9;
+        }
+    }
+
+    .etos-care-modes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.25rem, 3vw, 2rem);
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    .etos-care-mode {
+        position: relative;
+        padding: clamp(1.8rem, 3vw, 2.6rem);
+        overflow: hidden;
+        border: 1px solid rgba($etos-ink, 0.1);
+        border-radius: 1.25rem;
+        background: #fff;
+        box-shadow: 0 18px 48px rgba($etos-ink, 0.065);
+
+        &.is-highlighted {
+            border-color: rgba($primary, 0.28);
+            background: #eaf4f9;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 4px;
+                background: $primary;
+            }
+        }
+
+        &__icon {
+            display: inline-flex;
+            width: 3rem;
+            height: 3rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border-radius: 0.8rem;
+            background: rgba($primary, 0.08);
+
+            img {
+                width: 1.55rem;
+                height: 1.55rem;
+                object-fit: contain;
+            }
+
+            span {
+                width: 0.7rem;
+                height: 0.7rem;
+                border-radius: 50%;
+                background: $primary;
+                box-shadow: 0 0 0 6px rgba($primary, 0.11);
+            }
+        }
+
+        &__eyebrow {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: $primary;
+            font-size: 0.73rem;
+            font-weight: 850;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin: 0 0 0.85rem;
+            color: $etos-ink;
+            font-size: clamp(1.55rem, 2.4vw, 2rem);
+            font-weight: 740;
+            line-height: 1.15;
+        }
+
+        > p {
+            margin: 0;
+            color: $etos-muted;
+            line-height: 1.7;
+        }
+
+        &__best-for {
+            margin-top: 1.5rem;
+            padding: 1.1rem 1.2rem;
+            border-radius: 0.85rem;
+            background: rgba($etos-ink, 0.035);
+
+            strong,
+            span {
+                display: block;
+            }
+
+            strong {
+                margin-bottom: 0.4rem;
+                color: $etos-ink;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+            }
+
+            span {
+                color: $etos-muted;
+                line-height: 1.55;
+            }
+        }
+
+        ul {
+            margin: 1.4rem 0 0;
+            padding-left: 1.25rem;
+            color: $etos-muted;
+
+            li {
+                margin-bottom: 0.55rem;
+
+                &::marker {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .etos-care-comparison__desktop {
+        display: block;
+        overflow: hidden;
+        border: 1px solid rgba($etos-ink, 0.1);
+        border-radius: 1.2rem;
+        background: #fff;
+        box-shadow: 0 18px 48px rgba($etos-ink, 0.055);
+    }
+
+    .etos-care-comparison {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 1.25rem 1.4rem;
+            border-right: 1px solid rgba($etos-ink, 0.08);
+            border-bottom: 1px solid rgba($etos-ink, 0.08);
+            vertical-align: top;
+            text-align: left;
+            line-height: 1.55;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+
+        thead th {
+            background: $etos-ink;
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 760;
+
+            &:nth-child(1) {
+                width: 22%;
+            }
+        }
+
+        tbody th {
+            color: $etos-ink;
+            font-size: 0.92rem;
+            font-weight: 760;
+            background: rgba($etos-ink, 0.025);
+        }
+
+        tbody td {
+            color: $etos-muted;
+            font-size: 0.91rem;
+
+            &:last-child {
+                background: rgba($primary, 0.035);
+            }
+        }
+
+        tbody tr:last-child {
+            th,
+            td {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .etos-care-comparison__mobile {
+        display: none;
+    }
+
+    .etos-care-recommendations {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.25rem, 3vw, 2rem);
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+
+    .etos-care-recommendation {
+        padding: clamp(1.6rem, 3vw, 2.3rem);
+        border: 1px solid rgba($etos-ink, 0.1);
+        border-radius: 1.1rem;
+        background: #f9fbfc;
+
+        h3 {
+            margin: 0 0 0.8rem;
+            color: $etos-ink;
+            font-size: 1.35rem;
+            font-weight: 740;
+        }
+
+        p {
+            color: $etos-muted;
+            line-height: 1.65;
+        }
+
+        ul {
+            margin: 1.2rem 0 0;
+            padding-left: 1.2rem;
+            color: $etos-muted;
+
+            li {
+                margin-bottom: 0.55rem;
+
+                &::marker {
+                    color: $etos-accent;
+                }
+            }
+        }
+    }
+
+    .etos-care-proof {
+        padding: clamp(4.75rem, 7vw, 6.5rem) 0;
+        background: $etos-ink;
+
+        &__header {
+            max-width: 760px;
+            margin: 0 auto clamp(2.25rem, 4vw, 3rem);
+            text-align: center;
+
+            .etos-kicker {
+                justify-content: center;
+            }
+
+            h2 {
+                margin: 0.85rem 0 0;
+                color: #fff;
+                font-size: clamp(2rem, 3.8vw, 3rem);
+                font-weight: 730;
+                line-height: 1.08;
+                letter-spacing: -0.045em;
+            }
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+    }
+
+    .etos-care-stat {
+        min-height: 145px;
+        padding: 1.5rem;
+        border: 1px solid rgba(#fff, 0.1);
+        border-radius: 1rem;
+        background: rgba(#fff, 0.035);
+
+        strong,
+        span {
+            display: block;
+        }
+
+        strong {
+            margin-bottom: 0.6rem;
+            color: $etos-accent;
+            font-size: clamp(1.6rem, 3vw, 2.35rem);
+            font-weight: 780;
+            line-height: 1;
+        }
+
+        span {
+            color: rgba(#fff, 0.74);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+    }
+
+    .etos-care-paths {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1.25rem, 3vw, 2rem);
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    .etos-care-path {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: clamp(1.8rem, 3vw, 2.5rem);
+        border: 1px solid rgba($etos-ink, 0.1);
+        border-radius: 1.2rem;
+        background: #fff;
+
+        &__eyebrow {
+            margin-bottom: 0.7rem;
+            color: $primary;
+            font-size: 0.73rem;
+            font-weight: 850;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin: 0 0 0.8rem;
+            color: $etos-ink;
+            font-size: clamp(1.45rem, 2.3vw, 1.85rem);
+            font-weight: 740;
+        }
+
+        p {
+            color: $etos-muted;
+            line-height: 1.65;
+        }
+
+        ol {
+            width: 100%;
+            margin: 1.25rem 0 1.75rem;
+            padding-left: 1.35rem;
+            color: $etos-muted;
+
+            li {
+                margin-bottom: 0.65rem;
+
+                &::marker {
+                    color: $primary;
+                    font-weight: 750;
+                }
+            }
+        }
+
+        .etos-btn-primary {
+            margin-top: auto;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-service-single--care {
+        .etos-care-proof__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-service-single--care {
+        .etos-care-section {
+            padding: 4rem 0;
+        }
+
+        .etos-care-modes,
+        .etos-care-recommendations,
+        .etos-care-paths {
+            grid-template-columns: 1fr;
+        }
+
+        .etos-care-comparison__desktop {
+            display: none;
+        }
+
+        .etos-care-comparison__mobile {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .etos-care-comparison-card {
+            overflow: hidden;
+            border: 1px solid rgba($etos-ink, 0.1);
+            border-radius: 1rem;
+            background: #fff;
+
+            h3 {
+                margin: 0;
+                padding: 1rem 1.15rem;
+                background: $etos-ink;
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            > div {
+                padding: 1rem 1.15rem;
+                border-bottom: 1px solid rgba($etos-ink, 0.08);
+
+                &:last-child {
+                    border-bottom: 0;
+                    background: rgba($primary, 0.035);
+                }
+
+                strong {
+                    display: block;
+                    margin-bottom: 0.4rem;
+                    color: $etos-ink;
+                    font-size: 0.85rem;
+                }
+
+                p {
+                    margin: 0;
+                    color: $etos-muted;
+                    font-size: 0.91rem;
+                    line-height: 1.55;
+                }
+            }
+        }
+
+        .etos-care-proof__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .etos-care-stat {
+            min-height: 0;
+        }
+    }
+}
+
+// ETOS SERVICE CARE END
+
+// ETOS BENEFITS HOVER FIX START
+
+.etos-service-single {
+    .etos-service-section--benefits {
+        .etos-service-card {
+            &::after {
+                content: none;
+                display: none;
+            }
+        }
+    }
+}
+
+// ETOS BENEFITS HOVER FIX END

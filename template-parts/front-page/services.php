@@ -450,7 +450,7 @@ if ( empty( $services ) ) {
                         class="etos-service-highlight__button"
                         href="<?php echo esc_url( home_url( '/podpis-elektroniczny/' ) ); ?>"
                     >
-                        <?php esc_html_e( 'Zarezerwuj termin', 'etos' ); ?>
+                        <?php esc_html_e( 'Poznaj szczegóły', 'etos' ); ?> <span aria-hidden="true">→</span>
                     </a>
 
                 </article>
@@ -488,7 +488,7 @@ if ( empty( $services ) ) {
                         class="etos-service-highlight__button"
                         href="<?php echo esc_url( home_url( '/urzadzenia-fiskalne/' ) ); ?>"
                     >
-                        <?php esc_html_e( 'Umów spotkanie', 'etos' ); ?>
+                        <?php esc_html_e( 'Poznaj szczegóły', 'etos' ); ?> <span aria-hidden="true">→</span>
                     </a>
 
                 </article>

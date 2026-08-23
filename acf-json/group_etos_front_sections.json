@@ -1,0 +1,403 @@
+{
+    "key": "group_etos_front_sections",
+    "title": "Strona główna — Sekcje",
+    "fields": [
+        {
+            "key": "field_etos_front_tab_erp",
+            "label": "ERP",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_erp_kicker",
+            "label": "Nadtytuł sekcji",
+            "name": "etos_front_erp_kicker",
+            "type": "text",
+            "default_value": "Systemy ERP dopasowane do procesów"
+        },
+        {
+            "key": "field_etos_front_erp_title",
+            "label": "Tytuł sekcji",
+            "name": "etos_front_erp_title",
+            "type": "text",
+            "default_value": "Dobieramy oprogramowanie do sposobu pracy Twojej firmy."
+        },
+
+        {
+            "key": "field_etos_front_symfonia_message",
+            "label": "Symfonia",
+            "name": "",
+            "type": "message",
+            "message": "Treści prezentacji producenta Symfonia na stronie głównej."
+        },
+        {
+            "key": "field_etos_front_symfonia_logo",
+            "label": "Logo",
+            "name": "symfonia_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_symfonia_image",
+            "label": "Zdjęcie",
+            "name": "symfonia_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_symfonia_accent",
+            "label": "Kolor",
+            "name": "symfonia_accent",
+            "type": "color_picker",
+            "default_value": "#13B84A",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_symfonia_title",
+            "label": "Tytuł",
+            "name": "symfonia_title",
+            "type": "text"
+        },
+        {
+            "key": "field_etos_front_symfonia_lead",
+            "label": "Opis",
+            "name": "symfonia_lead",
+            "type": "textarea",
+            "rows": 3
+        },
+
+        {
+            "key": "field_etos_front_insert_message",
+            "label": "InsERT",
+            "name": "",
+            "type": "message",
+            "message": "Treści prezentacji producenta InsERT na stronie głównej."
+        },
+        {
+            "key": "field_etos_front_insert_logo",
+            "label": "Logo",
+            "name": "insert_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_insert_image",
+            "label": "Zdjęcie",
+            "name": "insert_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_insert_accent",
+            "label": "Kolor",
+            "name": "insert_accent",
+            "type": "color_picker",
+            "default_value": "#0077C8",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_insert_title",
+            "label": "Tytuł",
+            "name": "insert_title",
+            "type": "text"
+        },
+        {
+            "key": "field_etos_front_insert_lead",
+            "label": "Opis",
+            "name": "insert_lead",
+            "type": "textarea",
+            "rows": 3
+        },
+
+        {
+            "key": "field_etos_front_streamsoft_message",
+            "label": "Streamsoft",
+            "name": "",
+            "type": "message",
+            "message": "Treści prezentacji producenta Streamsoft na stronie głównej."
+        },
+        {
+            "key": "field_etos_front_streamsoft_logo",
+            "label": "Logo",
+            "name": "streamsoft_logo",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_streamsoft_image",
+            "label": "Zdjęcie",
+            "name": "streamsoft_image",
+            "type": "image",
+            "return_format": "id",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_streamsoft_accent",
+            "label": "Kolor",
+            "name": "streamsoft_accent",
+            "type": "color_picker",
+            "default_value": "#2457D6",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_etos_front_streamsoft_title",
+            "label": "Tytuł",
+            "name": "streamsoft_title",
+            "type": "text"
+        },
+        {
+            "key": "field_etos_front_streamsoft_lead",
+            "label": "Opis",
+            "name": "streamsoft_lead",
+            "type": "textarea",
+            "rows": 3
+        },
+
+        {
+            "key": "field_etos_front_tab_services",
+            "label": "Usługi",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_services_kicker",
+            "label": "Nadtytuł",
+            "name": "etos_front_services_kicker",
+            "type": "text",
+            "default_value": "Usługi ETOS"
+        },
+        {
+            "key": "field_etos_front_services_title",
+            "label": "Tytuł",
+            "name": "etos_front_services_title",
+            "type": "text",
+            "default_value": "Profesjonalne usługi wspierające rozwój Twojej firmy."
+        },
+        {
+            "key": "field_etos_front_services_lead",
+            "label": "Opis",
+            "name": "etos_front_services_lead",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Od analizy i wdrożenia oprogramowania, przez szkolenia i opiekę serwisową, po infrastrukturę oraz rozwiązania tworzone na zamówienie."
+        },
+
+        {
+            "key": "field_etos_front_tab_special",
+            "label": "Podpis i fiskalizacja",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_special_title",
+            "label": "Tytuł sekcji",
+            "name": "etos_front_special_title",
+            "type": "text",
+            "default_value": "Podpis elektroniczny i urządzenia fiskalne."
+        },
+
+        {
+            "key": "field_etos_front_signature_eyebrow",
+            "label": "Podpis — nadtytuł",
+            "name": "etos_front_signature_eyebrow",
+            "type": "text",
+            "default_value": "Podpis i certyfikaty"
+        },
+        {
+            "key": "field_etos_front_signature_title",
+            "label": "Podpis — tytuł",
+            "name": "etos_front_signature_title",
+            "type": "text",
+            "default_value": "Podpis elektroniczny"
+        },
+        {
+            "key": "field_etos_front_signature_text",
+            "label": "Podpis — opis",
+            "name": "etos_front_signature_text",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Wydajemy i odnawiamy certyfikaty kwalifikowane, pomagamy w konfiguracji oraz zapewniamy wsparcie użytkowników."
+        },
+        {
+            "key": "field_etos_front_signature_link",
+            "label": "Podpis — link",
+            "name": "etos_front_signature_link",
+            "type": "link",
+            "return_format": "array"
+        },
+
+        {
+            "key": "field_etos_front_fiscal_eyebrow",
+            "label": "Fiskalizacja — nadtytuł",
+            "name": "etos_front_fiscal_eyebrow",
+            "type": "text",
+            "default_value": "Sprzedaż i fiskalizacja"
+        },
+        {
+            "key": "field_etos_front_fiscal_title",
+            "label": "Fiskalizacja — tytuł",
+            "name": "etos_front_fiscal_title",
+            "type": "text",
+            "default_value": "Urządzenia fiskalne"
+        },
+        {
+            "key": "field_etos_front_fiscal_text",
+            "label": "Fiskalizacja — opis",
+            "name": "etos_front_fiscal_text",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Dobieramy kasy i drukarki fiskalne, konfigurujemy urządzenia oraz zapewniamy przeglądy i obsługę serwisową."
+        },
+        {
+            "key": "field_etos_front_fiscal_link",
+            "label": "Fiskalizacja — link",
+            "name": "etos_front_fiscal_link",
+            "type": "link",
+            "return_format": "array"
+        },
+
+        {
+            "key": "field_etos_front_tab_cta",
+            "label": "CTA",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_cta_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_front_cta_eyebrow",
+            "type": "text",
+            "default_value": "Następny krok"
+        },
+        {
+            "key": "field_etos_front_cta_title",
+            "label": "Tytuł",
+            "name": "etos_front_cta_title",
+            "type": "text",
+            "default_value": "Porozmawiajmy o tym, co dziś spowalnia Twoją firmę."
+        },
+        {
+            "key": "field_etos_front_cta_text",
+            "label": "Opis",
+            "name": "etos_front_cta_text",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_etos_front_cta_note",
+            "label": "Dopisek",
+            "name": "etos_front_cta_note",
+            "type": "text",
+            "default_value": "Bez zobowiązań. Z konkretną rekomendacją kolejnego kroku."
+        },
+        {
+            "key": "field_etos_front_cta_link",
+            "label": "Przycisk",
+            "name": "etos_front_cta_link",
+            "type": "link",
+            "return_format": "array"
+        },
+
+        {
+            "key": "field_etos_front_tab_news",
+            "label": "Aktualności",
+            "name": "",
+            "type": "tab"
+        },
+        {
+            "key": "field_etos_front_news_kicker",
+            "label": "Nadtytuł",
+            "name": "etos_front_news_kicker",
+            "type": "text",
+            "default_value": "Aktualności ETOS"
+        },
+        {
+            "key": "field_etos_front_news_title",
+            "label": "Tytuł",
+            "name": "etos_front_news_title",
+            "type": "text",
+            "default_value": "Aktualności i praktyczne informacje."
+        },
+        {
+            "key": "field_etos_front_news_count",
+            "label": "Liczba aktualności",
+            "name": "etos_front_news_count",
+            "type": "number",
+            "default_value": 5,
+            "min": 3,
+            "max": 8,
+            "step": 1,
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_etos_front_news_autoplay",
+            "label": "Automatyczne przewijanie",
+            "name": "etos_front_news_autoplay",
+            "type": "true_false",
+            "default_value": 1,
+            "ui": 1,
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_etos_front_news_interval",
+            "label": "Czas slajdu (ms)",
+            "name": "etos_front_news_interval",
+            "type": "number",
+            "default_value": 6500,
+            "min": 3000,
+            "max": 15000,
+            "step": 500,
+            "wrapper": {
+                "width": "33"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0
+}

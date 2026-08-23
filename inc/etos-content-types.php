@@ -53,11 +53,8 @@ function etos_register_content_types() {
 			),
 			'menu_position'       => 20,
 			'menu_icon'           => 'dashicons-laptop',
-			'template'            => etos_get_software_block_template(),
-			'template_lock'       => false,
 			'supports'            => array(
 				'title',
-				'editor',
 				'excerpt',
 				'thumbnail',
 				'page-attributes',
@@ -149,3 +146,48 @@ function etos_register_content_types() {
 	);
 }
 add_action( 'init', 'etos_register_content_types' );
+
+
+/**
+ * Prioritize software vendor taxonomy rewrites.
+ *
+ * WordPress generates a broad attachment rule for the software CPT:
+ *
+ * oprogramowanie/[^/]+/([^/]+)/?$
+ *
+ * which would otherwise capture:
+ *
+ * oprogramowanie/producent/symfonia/
+ *
+ * before the etos_vendor taxonomy rule.
+ *
+ * @param array $rules Generated rewrite rules.
+ * @return array
+ */
+function etos_prioritize_vendor_rewrite_rules( $rules ) {
+
+    $vendor_rules = array();
+    $other_rules  = array();
+
+    foreach ( $rules as $regex => $query ) {
+
+        if (
+            false !== strpos(
+                $query,
+                'etos_vendor='
+            )
+        ) {
+            $vendor_rules[ $regex ] = $query;
+            continue;
+        }
+
+        $other_rules[ $regex ] = $query;
+    }
+
+    return $vendor_rules + $other_rules;
+}
+add_filter(
+    'rewrite_rules_array',
+    'etos_prioritize_vendor_rewrite_rules',
+    20
+);

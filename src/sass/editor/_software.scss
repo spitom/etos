@@ -1,0 +1,215 @@
+// ==========================================================================
+// Gutenberg editor — software entries
+// ==========================================================================
+
+// ----------------------------------------------------------------------
+// Main editable sections
+// ----------------------------------------------------------------------
+
+.etos-software-section,
+.etos-software-split {
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 3.25rem 1.75rem 1.75rem;
+    border: 1px solid rgba($etos-ink, .13);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba($etos-ink, .045);
+
+    &::before {
+        position: absolute;
+        top: .85rem;
+        left: 1rem;
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: .25rem .65rem;
+        border-radius: 999px;
+        background: rgba($primary, .09);
+        color: $primary;
+        font-size: .72rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+}
+
+.etos-software-section--benefits::before {
+    content: '01 — Najważniejsze korzyści';
+}
+
+.etos-software-split--media-right::before {
+    content: '02 — Funkcjonalność: tekst + obraz';
+}
+
+.etos-software-split--media-left::before {
+    content: '03 — Funkcjonalność: obraz + tekst';
+}
+
+.etos-software-section--addons::before {
+    content: '04 — Rozwiązania dodatkowe';
+}
+
+.etos-software-section--packages::before {
+    content: '05 — Pakiety';
+}
+
+// ----------------------------------------------------------------------
+// Section headings and introductory text
+// ----------------------------------------------------------------------
+
+.etos-software-section {
+    > h2,
+    > .wp-block-group__inner-container > h2 {
+        margin-top: 0;
+        margin-bottom: .75rem;
+        color: $etos-ink;
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    > p,
+    > .wp-block-group__inner-container > p {
+        max-width: 760px;
+        margin-bottom: 1.75rem;
+        color: $etos-muted;
+    }
+}
+
+// ----------------------------------------------------------------------
+// Card grids
+// ----------------------------------------------------------------------
+
+.etos-software-grid {
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+
+    > .wp-block-column {
+        min-width: 0;
+    }
+}
+
+.etos-software-card {
+    height: 100%;
+    min-height: 180px;
+    padding: 1.25rem;
+    border: 1px solid rgba($etos-ink, .11);
+    border-radius: .85rem;
+    background: #f8fafc;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: .65rem;
+        color: $etos-ink;
+        font-size: 1.2rem;
+        line-height: 1.25;
+    }
+
+    p {
+        margin-bottom: .75rem;
+        color: $etos-muted;
+        font-size: .94rem;
+        line-height: 1.55;
+    }
+}
+
+// ----------------------------------------------------------------------
+// Small icon/image placeholders inside cards
+// ----------------------------------------------------------------------
+
+.etos-software-card__icon {
+    width: 76px;
+    max-width: 76px;
+    margin: 0 0 1rem;
+
+    .components-placeholder,
+    .block-editor-media-placeholder {
+        min-height: 76px;
+        padding: .35rem;
+        border-radius: .65rem;
+    }
+
+    .components-placeholder__label,
+    .components-placeholder__instructions {
+        display: none;
+    }
+
+    .components-button {
+        min-width: auto;
+        height: auto;
+        padding: .35rem;
+        font-size: .72rem;
+    }
+
+    img {
+        display: block;
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+    }
+}
+
+// ----------------------------------------------------------------------
+// Text and image sections
+// ----------------------------------------------------------------------
+
+.etos-software-split {
+    overflow: hidden;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    .wp-block-media-text__media {
+        min-height: 300px;
+        margin: 0 1.5rem 1.5rem;
+        overflow: hidden;
+        border: 1px dashed rgba($etos-ink, .18);
+        border-radius: .85rem;
+        background: #eef5fa;
+
+        .components-placeholder {
+            min-height: 300px;
+            border: 0;
+            background: transparent;
+        }
+
+        img {
+            width: 100%;
+            min-height: 300px;
+            object-fit: cover;
+        }
+    }
+
+    .wp-block-media-text__content {
+        padding: 1.5rem 2rem 2rem;
+
+        h2 {
+            margin-top: 0;
+            color: $etos-ink;
+            font-size: 2rem;
+            line-height: 1.15;
+        }
+
+        p,
+        li {
+            color: $etos-muted;
+            line-height: 1.6;
+        }
+    }
+}
+
+// ----------------------------------------------------------------------
+// Buttons inside addon and package cards
+// ----------------------------------------------------------------------
+
+.etos-software-card__actions {
+    margin-top: 1rem;
+
+    .wp-block-button__link {
+        padding: .55rem .9rem;
+        border-radius: .55rem;
+        font-size: .85rem;
+    }
+}

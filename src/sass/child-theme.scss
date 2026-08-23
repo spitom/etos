@@ -26,12 +26,22 @@
 @import "components/process-flow";
 
 @import "templates/front-page";
+@import "templates/single-software";
+@import "templates/software-structured";
+@import "templates/single-service";
 @import "templates/about";
 @import "templates/services";
 @import "templates/fiscal";
 @import "templates/signature";
 @import "templates/contact";
+@import "templates/vendor-archive";
 
-@import "templates/contact-page";
+@import "templates/offer-landing";
 
 @import "helpers/mixins";
+@import "templates/about-page";
+@import "templates/news-archive";
+@import "templates/single-news";
+@import "templates/contact-page";
+
+@import "templates/search";

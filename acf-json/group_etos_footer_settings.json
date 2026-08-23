@@ -1,0 +1,211 @@
+{
+    "key": "group_etos_footer_settings",
+    "title": "Stopka — ustawienia globalne",
+    "fields": [
+        {
+            "key": "field_etos_footer_tab_brand",
+            "label": "Firma",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_etos_footer_description",
+            "label": "Opis firmy",
+            "name": "etos_footer_description",
+            "type": "textarea",
+            "instructions": "Krótki opis wyświetlany pod logo w stopce.",
+            "required": 0,
+            "default_value": "Autoryzowany partner i integrator systemów ERP. Wspieramy firmy we wdrażaniu oprogramowania oraz utrzymaniu stabilnego środowiska IT.",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_footer_trust",
+            "label": "Tagi specjalizacji",
+            "name": "etos_footer_trust",
+            "type": "repeater",
+            "instructions": "Małe oznaczenia wyświetlane pod opisem firmy, np. ERP, IT, KSeF.",
+            "required": 0,
+            "layout": "table",
+            "button_label": "Dodaj tag",
+            "sub_fields": [
+                {
+                    "key": "field_etos_footer_trust_label",
+                    "label": "Nazwa",
+                    "name": "label",
+                    "type": "text",
+                    "required": 0
+                }
+            ]
+        },
+        {
+            "key": "field_etos_footer_tab_contact",
+            "label": "Kontakt",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_etos_footer_company",
+            "label": "Nazwa firmy",
+            "name": "etos_footer_company",
+            "type": "text",
+            "required": 0,
+            "default_value": "ETOS Sp. z o.o."
+        },
+        {
+            "key": "field_etos_footer_address_1",
+            "label": "Adres — linia 1",
+            "name": "etos_footer_address_1",
+            "type": "text",
+            "required": 0,
+            "default_value": "ul. Mochnackiego 10"
+        },
+        {
+            "key": "field_etos_footer_address_2",
+            "label": "Adres — linia 2",
+            "name": "etos_footer_address_2",
+            "type": "text",
+            "required": 0,
+            "default_value": "10-037 Olsztyn"
+        },
+        {
+            "key": "field_etos_footer_phone_1",
+            "label": "Telefon 1",
+            "name": "etos_footer_phone_1",
+            "type": "text",
+            "required": 0,
+            "default_value": "+48 89 535 08 08"
+        },
+        {
+            "key": "field_etos_footer_phone_1_label",
+            "label": "Opis telefonu 1",
+            "name": "etos_footer_phone_1_label",
+            "type": "text",
+            "required": 0,
+            "default_value": "sklep, serwis"
+        },
+        {
+            "key": "field_etos_footer_phone_2",
+            "label": "Telefon 2",
+            "name": "etos_footer_phone_2",
+            "type": "text",
+            "required": 0,
+            "default_value": "+48 89 535 23 09"
+        },
+        {
+            "key": "field_etos_footer_phone_2_label",
+            "label": "Opis telefonu 2",
+            "name": "etos_footer_phone_2_label",
+            "type": "text",
+            "required": 0,
+            "default_value": "wdrożenia"
+        },
+        {
+            "key": "field_etos_footer_email",
+            "label": "E-mail",
+            "name": "etos_footer_email",
+            "type": "email",
+            "required": 0,
+            "default_value": "info@etos.com.pl"
+        },
+        {
+            "key": "field_etos_footer_tab_legal",
+            "label": "Linki prawne",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_etos_footer_privacy",
+            "label": "Polityka prywatności",
+            "name": "etos_footer_privacy",
+            "type": "link",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_footer_cookies",
+            "label": "Polityka cookies",
+            "name": "etos_footer_cookies",
+            "type": "link",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_etos_footer_tab_cta",
+            "label": "CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_etos_footer_cta_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_footer_cta_eyebrow",
+            "type": "text",
+            "required": 0,
+            "default_value": "Zacznij od krótkiej rozmowy"
+        },
+        {
+            "key": "field_etos_footer_cta_title",
+            "label": "Tytuł",
+            "name": "etos_footer_cta_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Dobierzmy rozwiązanie do procesów Twojej firmy."
+        },
+        {
+            "key": "field_etos_footer_cta_text",
+            "label": "Treść",
+            "name": "etos_footer_cta_text",
+            "type": "textarea",
+            "required": 0,
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_footer_cta_button",
+            "label": "Tekst przycisku",
+            "name": "etos_footer_cta_button",
+            "type": "text",
+            "required": 0,
+            "default_value": "Porozmawiaj z doradcą"
+        },
+        {
+            "key": "field_etos_footer_cta_note",
+            "label": "Notatka pod CTA",
+            "name": "etos_footer_cta_note",
+            "type": "text",
+            "required": 0,
+            "default_value": "Wspólnie ustalimy najlepszy kolejny krok."
+        },
+        {
+            "key": "field_etos_footer_cta_link",
+            "label": "Link CTA",
+            "name": "etos_footer_cta_link",
+            "type": "link",
+            "required": 0,
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "etos-footer-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Globalne ustawienia stopki ETOS.",
+    "show_in_rest": 0
+}
