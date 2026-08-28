@@ -81,6 +81,163 @@ while ( have_posts() ) :
         );
     };
 
+    // ETOS ABOUT AREA ICONS START
+
+    /**
+     * Resolve the built-in icon for an About area.
+     *
+     * @param string $title Area title.
+     * @return string
+     */
+    $get_about_area_icon_key = static function ( $title ) {
+        $slug = sanitize_title(
+            (string) $title
+        );
+
+        if (
+            false !== strpos( $slug, 'erp' )
+            || false !== strpos( $slug, 'oprogramowanie' )
+        ) {
+            return 'erp';
+        }
+
+        if (
+            false !== strpos( $slug, 'wdro' )
+            || false !== strpos( $slug, 'integrac' )
+        ) {
+            return 'implementation';
+        }
+
+        if (
+            false !== strpos( $slug, 'serwer' )
+            || false !== strpos( $slug, 'sieci' )
+        ) {
+            return 'network';
+        }
+
+        if (
+            false !== strpos( $slug, 'opieka' )
+            || false !== strpos( $slug, 'serwis' )
+        ) {
+            return 'support';
+        }
+
+        if (
+            false !== strpos( $slug, 'programist' )
+            || false !== strpos( $slug, 'kod' )
+        ) {
+            return 'code';
+        }
+
+        if ( false !== strpos( $slug, 'fiskal' ) ) {
+            return 'fiscal';
+        }
+
+        if (
+            false !== strpos( $slug, 'podpis' )
+            || false !== strpos( $slug, 'certyfikat' )
+        ) {
+            return 'signature';
+        }
+
+        if (
+            false !== strpos( $slug, 'zdaln' )
+            || false !== strpos( $slug, 'remote' )
+        ) {
+            return 'remote';
+        }
+
+        return 'erp';
+    };
+
+    /**
+     * Return a trusted built-in line SVG.
+     *
+     * SVG uses currentColor and is styled in SCSS.
+     *
+     * @param string $key Icon key.
+     * @return string
+     */
+    $get_about_area_icon = static function ( $key ) {
+        $icons = array(
+            'erp' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <rect x="7" y="8" width="21" height="18" rx="4"></rect>
+                    <rect x="36" y="8" width="21" height="18" rx="4"></rect>
+                    <rect x="7" y="38" width="21" height="18" rx="4"></rect>
+                    <rect x="36" y="38" width="21" height="18" rx="4"></rect>
+                    <path d="M28 17h8M28 47h8M17.5 26v12M46.5 26v12"></path>
+                </svg>
+            ',
+            'implementation' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <rect x="6" y="10" width="38" height="30" rx="4"></rect>
+                    <path d="M17 52h16M25 40v12"></path>
+                    <circle cx="48" cy="21" r="8"></circle>
+                    <path d="M48 9v4M48 29v4M36 21h4M56 21h4"></path>
+                    <path d="M40 13l3 3M53 26l3 3M56 13l-3 3M43 26l-3 3"></path>
+                </svg>
+            ',
+            'network' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <rect x="9" y="7" width="46" height="13" rx="3"></rect>
+                    <rect x="9" y="26" width="46" height="13" rx="3"></rect>
+                    <rect x="9" y="45" width="46" height="13" rx="3"></rect>
+                    <circle cx="17" cy="13.5" r="2"></circle>
+                    <circle cx="17" cy="32.5" r="2"></circle>
+                    <circle cx="17" cy="51.5" r="2"></circle>
+                    <path d="M24 14h23M24 33h23M24 52h23"></path>
+                </svg>
+            ',
+            'support' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <path d="M12 34v-5c0-12 8-21 20-21s20 9 20 21v5"></path>
+                    <rect x="7" y="30" width="10" height="18" rx="4"></rect>
+                    <rect x="47" y="30" width="10" height="18" rx="4"></rect>
+                    <path d="M52 48c0 6-5 9-12 9h-4"></path>
+                    <circle cx="32" cy="57" r="3"></circle>
+                </svg>
+            ',
+            'code' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <rect x="6" y="9" width="52" height="46" rx="5"></rect>
+                    <path d="M6 20h52"></path>
+                    <circle cx="13" cy="15" r="1.5"></circle>
+                    <circle cx="19" cy="15" r="1.5"></circle>
+                    <circle cx="25" cy="15" r="1.5"></circle>
+                    <path d="M25 31l-7 6 7 6M39 31l7 6-7 6M35 27l-6 20"></path>
+                </svg>
+            ',
+            'fiscal' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <path d="M17 7h30v16H17z"></path>
+                    <rect x="8" y="22" width="48" height="27" rx="5"></rect>
+                    <path d="M17 43h30v14H17zM18 30h12M18 36h8"></path>
+                    <circle cx="47" cy="31" r="2"></circle>
+                    <circle cx="40" cy="31" r="2"></circle>
+                </svg>
+            ',
+            'signature' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <path d="M14 6h25l11 11v39H14z"></path>
+                    <path d="M39 6v12h11M22 27h20M22 34h13"></path>
+                    <path d="M23 49c8-12 13-9 10-4 5-5 7-3 5 1 4-3 7-2 9 1"></path>
+                </svg>
+            ',
+            'remote' => '
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <rect x="6" y="8" width="52" height="36" rx="5"></rect>
+                    <path d="M20 56h24M32 44v12"></path>
+                    <path d="M37 20l14 7-6 2 4 8-5 2-4-8-5 5z"></path>
+                </svg>
+            ',
+        );
+
+        return $icons[ $key ]
+            ?? $icons['erp'];
+    };
+
+    // ETOS ABOUT AREA ICONS END
     $hero_title = trim(
         (string) $get_about_field(
             'etos_about_hero_title',
@@ -431,9 +588,24 @@ while ( have_posts() ) :
 
                                 <div class="etos-about-stat">
 
-                                    <strong class="etos-about-stat__value">
+                                    <?php
+                                    $stat_value = trim(
+                                        (string) (
+                                            $stat['value']
+                                            ?? ''
+                                        )
+                                    );
+                                    ?>
+
+                                    <strong
+                                        class="etos-about-stat__value"
+                                        data-etos-counter
+                                        data-counter-value="<?php echo esc_attr(
+                                            $stat_value
+                                        ); ?>"
+                                    >
                                         <?php echo esc_html(
-                                            $stat['value'] ?? ''
+                                            $stat_value
                                         ); ?>
                                     </strong>
 
@@ -516,6 +688,14 @@ while ( have_posts() ) :
                                         $area['icon'] ?? 0
                                     );
 
+                                    $area_icon_key = $get_about_area_icon_key(
+                                        $area['title'] ?? ''
+                                    );
+
+                                    $area_icon = $get_about_area_icon(
+                                        $area_icon_key
+                                    );
+
                                     $link = $normalize_link(
                                         $area['link'] ?? array()
                                     );
@@ -523,9 +703,12 @@ while ( have_posts() ) :
 
                                     <article class="etos-about-area">
 
-                                        <?php if ( $icon_id ) : ?>
+                                        <div
+                                            class="etos-about-area__icon"
+                                            aria-hidden="true"
+                                        >
 
-                                            <div class="etos-about-area__icon">
+                                            <?php if ( $icon_id ) : ?>
 
                                                 <?php
                                                 echo wp_get_attachment_image(
@@ -538,9 +721,16 @@ while ( have_posts() ) :
                                                 );
                                                 ?>
 
-                                            </div>
+                                            <?php else : ?>
 
-                                        <?php endif; ?>
+                                                <?php
+                                                // Trusted inline SVG defined above.
+                                                echo $area_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                                ?>
+
+                                            <?php endif; ?>
+
+                                        </div>
 
                                         <h3>
                                             <?php echo esc_html(
@@ -668,25 +858,221 @@ while ( have_posts() ) :
 
                             <div class="col-lg-6">
 
+                                <?php if ( $team_image_id ) : ?>
+
                                 <div class="etos-about-team__media">
 
-                                    <?php if ( $team_image_id ) : ?>
-
-                                        <?php
-                                        echo wp_get_attachment_image(
-                                            $team_image_id,
-                                            'large',
-                                            false,
-                                            array(
-                                                'class'   => 'etos-about-team__image',
-                                                'loading' => 'lazy',
-                                            )
-                                        );
-                                        ?>
-
-                                    <?php endif; ?>
+                                    <?php
+                                    echo wp_get_attachment_image(
+                                        $team_image_id,
+                                        'large',
+                                        false,
+                                        array(
+                                            'class'   => 'etos-about-team__image',
+                                            'loading' => 'lazy',
+                                        )
+                                    );
+                                    ?>
 
                                 </div>
+
+                            <?php else : ?>
+
+                                <div class="etos-about-team__panel">
+
+                                    <div class="etos-about-team__point">
+
+                                        <span
+                                            class="etos-about-team__point-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <svg
+                                                viewBox="0 0 64 64"
+                                                focusable="false"
+                                            >
+                                                <rect
+                                                    x="9"
+                                                    y="7"
+                                                    width="46"
+                                                    height="13"
+                                                    rx="3"
+                                                ></rect>
+                                                <rect
+                                                    x="9"
+                                                    y="26"
+                                                    width="46"
+                                                    height="13"
+                                                    rx="3"
+                                                ></rect>
+                                                <rect
+                                                    x="9"
+                                                    y="45"
+                                                    width="46"
+                                                    height="13"
+                                                    rx="3"
+                                                ></rect>
+                                                <circle
+                                                    cx="17"
+                                                    cy="13.5"
+                                                    r="2"
+                                                ></circle>
+                                                <circle
+                                                    cx="17"
+                                                    cy="32.5"
+                                                    r="2"
+                                                ></circle>
+                                                <circle
+                                                    cx="17"
+                                                    cy="51.5"
+                                                    r="2"
+                                                ></circle>
+                                                <path
+                                                    d="M24 14h23M24 33h23M24 52h23"
+                                                ></path>
+                                            </svg>
+                                        </span>
+
+                                        <div class="etos-about-team__point-copy">
+                                            <h3>
+                                                <?php esc_html_e(
+                                                    'Wiedza techniczna',
+                                                    'etos'
+                                                ); ?>
+                                            </h3>
+                                            <p>
+                                                <?php esc_html_e(
+                                                    'Projektujemy rozwiązania z uwzględnieniem realnego środowiska IT i procesów klienta.',
+                                                    'etos'
+                                                ); ?>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="etos-about-team__point">
+
+                                        <span
+                                            class="etos-about-team__point-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <svg
+                                                viewBox="0 0 64 64"
+                                                focusable="false"
+                                            >
+                                                <rect
+                                                    x="6"
+                                                    y="10"
+                                                    width="38"
+                                                    height="30"
+                                                    rx="4"
+                                                ></rect>
+                                                <path
+                                                    d="M17 52h16M25 40v12"
+                                                ></path>
+                                                <circle
+                                                    cx="48"
+                                                    cy="21"
+                                                    r="8"
+                                                ></circle>
+                                                <path
+                                                    d="M48 9v4M48 29v4M36 21h4M56 21h4"
+                                                ></path>
+                                                <path
+                                                    d="M40 13l3 3M53 26l3 3M56 13l-3 3M43 26l-3 3"
+                                                ></path>
+                                            </svg>
+                                        </span>
+
+                                        <div class="etos-about-team__point-copy">
+                                            <h3>
+                                                <?php esc_html_e(
+                                                    'Doświadczenie wdrożeniowe',
+                                                    'etos'
+                                                ); ?>
+                                            </h3>
+                                            <p>
+                                                <?php esc_html_e(
+                                                    'Łączymy znajomość systemów z praktyką zdobywaną podczas wdrożeń i integracji.',
+                                                    'etos'
+                                                ); ?>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="etos-about-team__point">
+
+                                        <span
+                                            class="etos-about-team__point-icon"
+                                            aria-hidden="true"
+                                        >
+                                            <svg
+                                                viewBox="0 0 64 64"
+                                                focusable="false"
+                                            >
+                                                <rect
+                                                    x="7"
+                                                    y="8"
+                                                    width="21"
+                                                    height="18"
+                                                    rx="4"
+                                                ></rect>
+                                                <rect
+                                                    x="36"
+                                                    y="8"
+                                                    width="21"
+                                                    height="18"
+                                                    rx="4"
+                                                ></rect>
+                                                <rect
+                                                    x="7"
+                                                    y="38"
+                                                    width="21"
+                                                    height="18"
+                                                    rx="4"
+                                                ></rect>
+                                                <rect
+                                                    x="36"
+                                                    y="38"
+                                                    width="21"
+                                                    height="18"
+                                                    rx="4"
+                                                ></rect>
+                                                <path
+                                                    d="M28 17h8M28 47h8M17.5 26v12M46.5 26v12"
+                                                ></path>
+                                            </svg>
+                                        </span>
+
+                                        <div class="etos-about-team__point-copy">
+                                            <h3>
+                                                <?php esc_html_e(
+                                                    'Blisko biznesu',
+                                                    'etos'
+                                                ); ?>
+                                            </h3>
+                                            <p>
+                                                <?php esc_html_e(
+                                                    'Rozumiemy, że technologia ma wspierać codzienną pracę, a nie ją komplikować.',
+                                                    'etos'
+                                                ); ?>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <p class="etos-about-team__statement">
+                                        <?php
+                                        esc_html_e(
+                                            'Rozmawiasz ze specjalistami, którzy później realnie pracują przy Twoim rozwiązaniu.',
+                                            'etos'
+                                        );
+                                        ?>
+                                    </p>
+
+                                </div>
+
+                            <?php endif; ?>
 
                             </div>
 

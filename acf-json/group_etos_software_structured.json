@@ -21,6 +21,42 @@
             "selected": 0
         },
         {
+            "key": "field_etos_software_benefits_eyebrow",
+            "label": "Kicker sekcji",
+            "name": "etos_software_benefits_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_software_benefits_title",
+            "label": "Tytuł sekcji",
+            "name": "etos_software_benefits_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_etos_software_benefits",
             "label": "Najważniejsze korzyści",
             "name": "etos_software_benefits",
@@ -52,7 +88,7 @@
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "20",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     },
@@ -69,6 +105,50 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_etos_software_benefit_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "system_icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Automatycznie analizuje tytuł i opis. Wybierz konkretną ikonę, aby ręcznie nadpisać dopasowanie.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "auto": "Automatycznie",
+                        "orders": "Zamówienia",
+                        "warehouse": "Magazyn",
+                        "sales": "Sprzedaż",
+                        "multichannel": "Sprzedaż wielokanałowa",
+                        "finance": "Finanse",
+                        "accounting": "Księgowość",
+                        "payments": "Płatności / rozrachunki",
+                        "documents": "Dokumenty",
+                        "tax": "VAT / JPK / KSeF",
+                        "customers": "Klienci / kontrahenci",
+                        "analytics": "Raporty / analityka",
+                        "hr": "Kadry / pracownicy",
+                        "production": "Produkcja",
+                        "logistics": "Logistyka / transport",
+                        "integration": "Integracja",
+                        "automation": "Automatyzacja",
+                        "shield": "Bezpieczeństwo",
+                        "service": "Ogólna"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_etos_software_benefits"
+                },
+                {
                     "key": "field_etos_software_benefit_title",
                     "label": "Tytuł",
                     "name": "title",
@@ -78,7 +158,7 @@
                     "required": 1,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "30",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -99,7 +179,7 @@
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "50",
+                        "width": "40",
                         "class": "",
                         "id": ""
                     },
@@ -347,6 +427,42 @@
             "selected": 0
         },
         {
+            "key": "field_etos_software_addons_eyebrow",
+            "label": "Kicker sekcji",
+            "name": "etos_software_addons_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_software_addons_title",
+            "label": "Tytuł sekcji",
+            "name": "etos_software_addons_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_etos_software_addons",
             "label": "Rozwiązania dodatkowe",
             "name": "etos_software_addons",
@@ -471,6 +587,42 @@
             "placement": "top",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_etos_software_packages_eyebrow",
+            "label": "Kicker sekcji",
+            "name": "etos_software_packages_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_etos_software_packages_title",
+            "label": "Tytuł sekcji",
+            "name": "etos_software_packages_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Pozostaw puste, aby użyć domyślnego tekstu szablonu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_software_packages",
@@ -663,5 +815,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1786700189
+    "modified": 1787483565
 }

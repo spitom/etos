@@ -531,3 +531,31 @@ body.search {
         }
     }
 }
+
+
+// ETOS HEADER SEARCH POLISH START
+
+.etos-search-bar {
+    .etos-search-form {
+        .btn {
+            color: #fff;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-search-bar {
+        &__inner {
+            padding-top: .65rem;
+            padding-bottom: .65rem;
+        }
+    }
+}
+
+// ETOS HEADER SEARCH POLISH END

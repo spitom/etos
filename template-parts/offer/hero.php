@@ -12,7 +12,14 @@ $hero = isset( $args['hero'] )
         ? $args['hero']
         : array();
 
-$logo_id = (int) ( $hero['logo_id'] ?? 0 );
+$manufacturers = isset( $hero['manufacturers'] )
+    && is_array( $hero['manufacturers'] )
+        ? array_values( $hero['manufacturers'] )
+        : array();
+
+$logo_id = ! empty( $manufacturers )
+    ? 0
+    : (int) ( $hero['logo_id'] ?? 0 );
 
 $partner_logo_id = (int) (
     $hero['partner_logo_id'] ?? 0
@@ -208,6 +215,63 @@ $links = array(
             </div>
 
         </div>
+
+        <?php if ( ! empty( $manufacturers ) ) : ?>
+
+            <div
+                class="etos-offer-hero__manufacturers"
+                role="list"
+                aria-label="<?php esc_attr_e(
+                    'Producenci urządzeń fiskalnych',
+                    'etos'
+                ); ?>"
+            >
+
+                <?php foreach ( $manufacturers as $manufacturer ) : ?>
+
+                    <?php
+                    $manufacturer_logo_id = absint(
+                        $manufacturer['logo_id'] ?? 0
+                    );
+
+                    if ( ! $manufacturer_logo_id ) {
+                        continue;
+                    }
+
+                    $manufacturer_name = trim(
+                        (string) (
+                            $manufacturer['name']
+                            ?? ''
+                        )
+                    );
+                    ?>
+
+                    <div
+                        class="etos-offer-hero__manufacturer"
+                        role="listitem"
+                    >
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $manufacturer_logo_id,
+                            'medium',
+                            false,
+                            array(
+                                'class'    => 'etos-offer-hero__manufacturer-image',
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                                'alt'      => $manufacturer_name,
+                            )
+                        );
+                        ?>
+
+                    </div>
+
+                <?php endforeach; ?>
+
+            </div>
+
+        <?php endif; ?>
 
     </div>
 

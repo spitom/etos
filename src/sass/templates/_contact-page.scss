@@ -635,3 +635,14 @@
         }
     }
 }
+
+
+// ETOS CONTACT MAP MOBILE WRAPPER FIX START
+
+@media (max-width: 991.98px) {
+    .etos-contact-office__map {
+        min-height: 0;
+    }
+}
+
+// ETOS CONTACT MAP MOBILE WRAPPER FIX END

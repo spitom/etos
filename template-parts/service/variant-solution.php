@@ -46,6 +46,42 @@ $get_row_value = static function (
 };
 
 /**
+ * Resolve a system icon selected in ACF.
+ *
+ * "auto" and an empty value fall back to title matching.
+ *
+ * @param array  $row       Repeater row.
+ * @param string $field_key System icon field.
+ * @param string $title     Card title.
+ * @return string
+ */
+$resolve_system_icon_key = static function (
+    $row,
+    $field_key,
+    $title,
+    $text = ''
+) use ( $get_row_value ) {
+    $selected = sanitize_key(
+        (string) $get_row_value(
+            $row,
+            $field_key
+        )
+    );
+
+    if (
+        '' !== $selected
+        && 'auto' !== $selected
+    ) {
+        return $selected;
+    }
+
+    return etos_get_service_icon_key_for_content(
+        $title,
+        $text
+    );
+};
+
+/**
  * Check whether a repeater row contains visible content.
  *
  * @param array  $row        Repeater row.
@@ -181,26 +217,23 @@ $has_editor_content = ''
 
                     <article class="etos-service-card etos-service-card--reason">
 
-                        <div
-                            class="etos-service-card__icon"
-                            aria-hidden="true"
-                        >
-                            <?php
-                            if ( $icon_id ) {
-                                echo wp_get_attachment_image(
-                                    $icon_id,
-                                    'thumbnail',
-                                    false,
-                                    array(
-                                        'alt'     => '',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                            } else {
-                                echo '<span></span>';
-                            }
-                            ?>
-                        </div>
+                        <?php
+                        $icon_key = $resolve_system_icon_key(
+                            $row,
+                            'etos_service_reason_system_icon',
+                            $title,
+                            $text
+                        );
+
+                        echo etos_get_icon_badge(
+                            $icon_key,
+                            array(
+                                'image_id' => $icon_id,
+                                'size'     => 'sm',
+                                'class'    => 'etos-service-card__icon',
+                            )
+                        ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        ?>
 
                         <?php if ( $title ) : ?>
 
@@ -281,26 +314,23 @@ $has_editor_content = ''
 
                     <article class="etos-service-card etos-service-card--access">
 
-                        <div
-                            class="etos-service-card__icon"
-                            aria-hidden="true"
-                        >
-                            <?php
-                            if ( $icon_id ) {
-                                echo wp_get_attachment_image(
-                                    $icon_id,
-                                    'thumbnail',
-                                    false,
-                                    array(
-                                        'alt'     => '',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                            } else {
-                                echo '<span></span>';
-                            }
-                            ?>
-                        </div>
+                        <?php
+                        $icon_key = $resolve_system_icon_key(
+                            $row,
+                            'etos_service_access_system_icon',
+                            $title,
+                            $text
+                        );
+
+                        echo etos_get_icon_badge(
+                            $icon_key,
+                            array(
+                                'image_id' => $icon_id,
+                                'size'     => 'sm',
+                                'class'    => 'etos-service-card__icon',
+                            )
+                        ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        ?>
 
                         <div>
 
@@ -385,26 +415,23 @@ $has_editor_content = ''
 
                     <article class="etos-service-card etos-service-card--benefit">
 
-                        <div
-                            class="etos-service-card__icon"
-                            aria-hidden="true"
-                        >
-                            <?php
-                            if ( $icon_id ) {
-                                echo wp_get_attachment_image(
-                                    $icon_id,
-                                    'thumbnail',
-                                    false,
-                                    array(
-                                        'alt'     => '',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                            } else {
-                                echo '<span></span>';
-                            }
-                            ?>
-                        </div>
+                        <?php
+                        $icon_key = $resolve_system_icon_key(
+                            $row,
+                            'etos_service_benefit_system_icon',
+                            $title,
+                            $text
+                        );
+
+                        echo etos_get_icon_badge(
+                            $icon_key,
+                            array(
+                                'image_id' => $icon_id,
+                                'size'     => 'sm',
+                                'class'    => 'etos-service-card__icon',
+                            )
+                        ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        ?>
 
                         <?php if ( $title ) : ?>
 

@@ -81,11 +81,38 @@
                     "name": "etos_service_care_mode_icon",
                     "type": "image",
                     "wrapper": {
-                        "width": "20"
+                        "width": "15"
                     },
                     "return_format": "id",
                     "preview_size": "thumbnail",
                     "library": "all",
+                    "parent_repeater": "field_etos_service_care_modes"
+                },
+                {
+                    "key": "field_etos_service_care_mode_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "etos_service_care_mode_system_icon",
+                    "type": "select",
+                    "instructions": "Automatycznie dobiera ikonę z treści. Wybierz konkretną pozycję, aby ją wymusić.",
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "choices": {
+                        "auto": "Automatycznie",
+                        "incident": "Pomoc incydentalna",
+                        "contract": "Stała umowa",
+                        "support": "Wsparcie / helpdesk",
+                        "monitoring": "Monitoring",
+                        "shield": "Bezpieczeństwo",
+                        "uptime": "Ciągłość działania",
+                        "service": "Ogólna usługa"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
                     "parent_repeater": "field_etos_service_care_modes"
                 },
                 {
@@ -94,7 +121,7 @@
                     "name": "etos_service_care_mode_eyebrow",
                     "type": "text",
                     "wrapper": {
-                        "width": "30"
+                        "width": "25"
                     },
                     "maxlength": 80,
                     "parent_repeater": "field_etos_service_care_modes"
@@ -106,7 +133,7 @@
                     "type": "text",
                     "required": 1,
                     "wrapper": {
-                        "width": "50"
+                        "width": "40"
                     },
                     "maxlength": 120,
                     "parent_repeater": "field_etos_service_care_modes"
@@ -556,5 +583,5 @@
     "active": true,
     "description": "Pola używane wyłącznie przez wariant opieki serwisowej.",
     "show_in_rest": 0,
-    "modified": 1785480000
+    "modified": 1787475815
 }

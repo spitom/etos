@@ -251,6 +251,39 @@ while ( have_posts() ) :
         __( 'Zapytaj o szczegóły', 'etos' )
     );
 
+    $service_action = array(
+        'show'    => (bool) $get_service_field(
+            'etos_service_action_show',
+            false
+        ),
+        'eyebrow' => trim(
+            (string) $get_service_field(
+                'etos_service_action_eyebrow',
+                __( 'Szybka pomoc online', 'etos' )
+            )
+        ),
+        'title'   => trim(
+            (string) $get_service_field(
+                'etos_service_action_title',
+                __( 'Potrzebujesz pomocy już dziś?', 'etos' )
+            )
+        ),
+        'text'    => trim(
+            (string) $get_service_field(
+                'etos_service_action_text',
+                __(
+                    'Zarezerwuj dogodny termin i opłać usługę online.',
+                    'etos'
+                )
+            )
+        ),
+        'logo_id' => 0,
+        'link'    => $normalize_link(
+            $get_service_field(
+                'etos_service_action_link'
+            )
+        ),
+    );
     $cta_title = trim(
         (string) $get_service_field(
             'etos_service_cta_title',
@@ -434,6 +467,18 @@ $GLOBALS['etos_footer_cta'] = array(
                     'primary_cta'   => $primary_cta,
                 )
             );
+            if (
+                'solution' === $variant
+                && $service_action['show']
+            ) {
+                get_template_part(
+                    'template-parts/offer/action-panel',
+                    null,
+                    array(
+                        'action' => $service_action,
+                    )
+                );
+            }
             if ( 'solution' === $variant ) {
                 get_template_part(
                     'template-parts/service/variant',

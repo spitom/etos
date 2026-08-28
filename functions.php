@@ -46,6 +46,7 @@ require_once get_stylesheet_directory() . '/inc/etos-nav-walker.php';
 require_once get_stylesheet_directory() . '/inc/etos-acf.php';
 require_once get_stylesheet_directory() . '/inc/etos-software-content.php';
 require_once get_stylesheet_directory() . '/inc/etos-erp-helpers.php';
+require_once get_stylesheet_directory() . '/inc/etos-inline-icons.php';
 require_once get_stylesheet_directory() . '/inc/etos-contact-map.php';
 require_once get_stylesheet_directory() . '/inc/etos-search.php';
 

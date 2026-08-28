@@ -221,9 +221,9 @@ body.admin-bar {
         .nav-link:not(.dropdown-toggle)::after {
             content: '';
             position: absolute;
-            right: .72rem;
+            right: calc(.72rem - 2px);
             bottom: .34rem;
-            left: .72rem;
+            left: calc(.72rem - 2px);
             height: 2px;
             border-radius: 999px;
             background: $etos-accent;

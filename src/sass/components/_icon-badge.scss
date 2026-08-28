@@ -1,0 +1,63 @@
+// ==========================================================================
+// ETOS icon badge
+// ==========================================================================
+
+.etos-icon-badge {
+    --etos-icon-accent: #{$primary};
+    --etos-icon-border: #{rgba($primary, 0.22)};
+    --etos-icon-bg: #{rgba($primary, 0.055)};
+
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--etos-icon-border);
+    border-radius: 0.9rem;
+    color: var(--etos-icon-accent);
+    background: var(--etos-icon-bg);
+
+    svg {
+        display: block;
+        width: 56%;
+        height: 56%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    img {
+        display: block;
+        width: 56%;
+        height: 56%;
+        object-fit: contain;
+    }
+
+    &--sm {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.75rem;
+    }
+
+    &--md {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    &--lg {
+        width: 4.25rem;
+        height: 4.25rem;
+        border-radius: 1rem;
+    }
+}
+
+// Inverted variant for stronger visual accents.
+.etos-icon-badge--inverted {
+    border-color: var(--etos-icon-accent);
+    color: #fff;
+    background: var(--etos-icon-accent);
+    box-shadow:
+        0 8px 20px rgba($primary, 0.18);
+}

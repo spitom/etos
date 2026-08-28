@@ -405,7 +405,8 @@ while ( have_posts() ) :
      */
     $software_block_should_render = static function ( $block ) use (
         $block_has_content,
-        $structured_sections
+        $structured_sections,
+        $has_structured_content
     ) {
         $attributes = isset( $block['attrs'] )
             && is_array( $block['attrs'] )
@@ -423,6 +424,44 @@ while ( have_posts() ) :
         $inner_html = isset( $block['innerHTML'] )
             ? (string) $block['innerHTML']
             : '';
+
+        // ETOS SOFTWARE LEGACY HEADING FILTER
+        if (
+            $has_structured_content
+            && 'core/heading' === $block_name
+        ) {
+            $legacy_heading = sanitize_title(
+                trim(
+                    wp_strip_all_tags(
+                        strip_shortcodes(
+                            $inner_html
+                        )
+                    )
+                )
+            );
+
+            $legacy_headings = array(
+                'co-zyskujesz',
+                'co-zyskuje-twoja-firma',
+                'korzysci',
+                'najwazniejsze-korzysci',
+                'funkcjonalnosci',
+                'funkcjonalnosci-programu',
+                'rozwiazania-dodatkowe',
+                'pakiety',
+                'pakiety-programu',
+            );
+
+            if (
+                in_array(
+                    $legacy_heading,
+                    $legacy_headings,
+                    true
+                )
+            ) {
+                return false;
+            }
+        }
 
         if (
             '' === $block_name
@@ -740,7 +779,7 @@ while ( have_posts() ) :
                     id="oprogramowanie-tresc"
                 >
 
-                    <div class="container">
+                    <div class="container etos-container">
 
                         <?php
                         if ( $has_structured_content ) {
@@ -749,6 +788,7 @@ while ( have_posts() ) :
                                 null,
                                 array(
                                     'sections' => $structured_sections,
+                                    'accent'   => $accent,
                                 )
                             );
                         }

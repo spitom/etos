@@ -493,3 +493,22 @@ body.single-etos_software {
 }
 
 // ETOS SOFTWARE CTA UNIFICATION END
+
+// ETOS SOFTWARE FOOTER CTA SPACING START
+
+body.single-etos_software {
+    .etos-footer__cta-band {
+        padding-top: clamp(2.75rem, 4vw, 3.25rem);
+        padding-bottom: clamp(3rem, 4vw, 3.75rem);
+    }
+}
+
+@media (max-width: 767.98px) {
+    body.single-etos_software {
+        .etos-footer__cta-band {
+            padding-bottom: 2.75rem;
+        }
+    }
+}
+
+// ETOS SOFTWARE FOOTER CTA SPACING END

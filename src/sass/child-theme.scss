@@ -24,6 +24,7 @@
 @import "components/erp-suite";
 @import "components/software-module";
 @import "components/process-flow";
+@import "components/icon-badge";
 
 @import "templates/front-page";
 @import "templates/single-software";
@@ -45,3 +46,15 @@
 @import "templates/contact-page";
 
 @import "templates/search";
+
+
+// ETOS MOBILE CONTAINER GUTTER START
+
+@media (max-width: 575.98px) {
+    .etos-container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+// ETOS MOBILE CONTAINER GUTTER END

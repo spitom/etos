@@ -184,6 +184,49 @@ while ( have_posts() ) :
         true
     );
 
+    $manufacturer_rows = $get_offer_field(
+        'etos_offer_hero_manufacturers',
+        array()
+    );
+
+    $manufacturer_logos = array();
+
+    if (
+        'fiscal' === $variant
+        && is_array( $manufacturer_rows )
+    ) {
+        foreach ( $manufacturer_rows as $manufacturer_row ) {
+            if ( ! is_array( $manufacturer_row ) ) {
+                continue;
+            }
+
+            $manufacturer_logo_id = absint(
+                $manufacturer_row['logo'] ?? 0
+            );
+
+            if ( ! $manufacturer_logo_id ) {
+                continue;
+            }
+
+            $manufacturer_name = trim(
+                (string) (
+                    $manufacturer_row['name']
+                    ?? ''
+                )
+            );
+
+            if ( '' === $manufacturer_name ) {
+                $manufacturer_name = get_the_title(
+                    $manufacturer_logo_id
+                );
+            }
+
+            $manufacturer_logos[] = array(
+                'logo_id' => $manufacturer_logo_id,
+                'name'    => $manufacturer_name,
+            );
+        }
+    }
     $hero = array(
         'logo_id'         => (int) $get_offer_field(
             'etos_offer_hero_logo',
@@ -193,6 +236,7 @@ while ( have_posts() ) :
             'etos_offer_hero_partner_logo',
             0
         ),
+        'manufacturers'   => $manufacturer_logos,
         'lead'            => trim(
             (string) $get_offer_field(
                 'etos_offer_hero_lead',

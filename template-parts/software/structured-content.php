@@ -42,6 +42,10 @@ $sections = isset( $args['sections'] )
         ? $args['sections']
         : array();
 
+$software_accent = etos_normalize_icon_hex_color(
+    $args['accent'] ?? ''
+);
+
 $benefits = isset( $sections['benefits'] )
     && is_array( $sections['benefits'] )
         ? $sections['benefits']
@@ -150,6 +154,54 @@ if ( $feature_fallback_enabled ) {
 }
 $post_id = get_the_ID();
 
+$benefits_section_eyebrow = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_benefits_eyebrow',
+        __( 'Najważniejsze korzyści', 'etos' )
+    )
+);
+
+$benefits_section_title = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_benefits_title',
+        __( 'Co zyskuje Twoja firma', 'etos' )
+    )
+);
+
+$addons_section_eyebrow = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_addons_eyebrow',
+        __( 'Rozszerz możliwości programu', 'etos' )
+    )
+);
+
+$addons_section_title = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_addons_title',
+        __( 'Rozwiązania dodatkowe', 'etos' )
+    )
+);
+
+$packages_section_eyebrow = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_packages_eyebrow',
+        __( 'Wybierz odpowiedni wariant', 'etos' )
+    )
+);
+
+$packages_section_title = trim(
+    (string) etos_get_software_field(
+        $post_id,
+        'etos_software_packages_title',
+        __( 'Pakiety dopasowane do Twojej firmy', 'etos' )
+    )
+);
+
 /**
  * Normalize a repeater containing rows with a "text" subfield.
  *
@@ -232,14 +284,14 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
             <div class="etos-product-section__header">
 
                 <span class="etos-product-section__eyebrow">
-                    <?php esc_html_e( 'Najważniejsze korzyści', 'etos' ); ?>
+                    <?php echo esc_html( $benefits_section_eyebrow ); ?>
                 </span>
 
                 <h2
                     class="etos-product-section__title"
                     id="software-benefits-<?php echo esc_attr( $post_id ); ?>"
                 >
-                    <?php esc_html_e( 'Co zyskuje Twoja firma', 'etos' ); ?>
+                    <?php echo esc_html( $benefits_section_title ); ?>
                 </h2>
 
             </div>
@@ -262,6 +314,24 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                         $benefit['icon'] ?? 0
                     );
 
+                    $system_icon = sanitize_key(
+                        (string) (
+                            $benefit['system_icon']
+                            ?? 'auto'
+                        )
+                    );
+
+                    $icon_key = (
+                        ''
+                        !== $system_icon
+                        && 'auto' !== $system_icon
+                    )
+                        ? $system_icon
+                        : etos_get_business_icon_key_for_content(
+                            $title,
+                            $text
+                        );
+
                     if (
                         '' === $title
                         && '' === $text
@@ -273,43 +343,17 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
 
                     <article class="etos-product-card etos-product-card--benefit">
 
-                        <div class="etos-product-card__icon">
-
-                            <?php if ( $icon_id ) : ?>
-
-                                <?php
-                                echo wp_get_attachment_image(
-                                    $icon_id,
-                                    'thumbnail',
-                                    false,
-                                    array(
-                                        'class'   => 'etos-product-card__icon-image',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                                ?>
-
-                            <?php else : ?>
-
-                                <span
-                                    class="etos-product-card__number"
-                                    aria-hidden="true"
-                                >
-                                    <?php
-                                    echo esc_html(
-                                        str_pad(
-                                            (string) ( $index + 1 ),
-                                            2,
-                                            '0',
-                                            STR_PAD_LEFT
-                                        )
-                                    );
-                                    ?>
-                                </span>
-
-                            <?php endif; ?>
-
-                        </div>
+                        <?php
+                        echo etos_get_icon_badge(
+                            $icon_key,
+                            array(
+                                'image_id' => $icon_id,
+                                'size'     => 'lg',
+                                'class'    => 'etos-product-card__icon',
+                                'accent'   => $software_accent,
+                            )
+                        ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        ?>
 
                         <?php if ( $title ) : ?>
                             <h3 class="etos-product-card__title">
@@ -547,14 +591,14 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
             <div class="etos-product-section__header">
 
                 <span class="etos-product-section__eyebrow">
-                    <?php esc_html_e( 'Rozszerz możliwości programu', 'etos' ); ?>
+                    <?php echo esc_html( $addons_section_eyebrow ); ?>
                 </span>
 
                 <h2
                     class="etos-product-section__title"
                     id="software-addons-<?php echo esc_attr( $post_id ); ?>"
                 >
-                    <?php esc_html_e( 'Rozwiązania dodatkowe', 'etos' ); ?>
+                    <?php echo esc_html( $addons_section_title ); ?>
                 </h2>
 
             </div>
@@ -654,14 +698,14 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
             <div class="etos-product-section__header">
 
                 <span class="etos-product-section__eyebrow">
-                    <?php esc_html_e( 'Wybierz odpowiedni wariant', 'etos' ); ?>
+                    <?php echo esc_html( $packages_section_eyebrow ); ?>
                 </span>
 
                 <h2
                     class="etos-product-section__title"
                     id="software-packages-<?php echo esc_attr( $post_id ); ?>"
                 >
-                    <?php esc_html_e( 'Pakiety dopasowane do Twojej firmy', 'etos' ); ?>
+                    <?php echo esc_html( $packages_section_title ); ?>
                 </h2>
 
             </div>

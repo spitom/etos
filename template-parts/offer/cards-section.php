@@ -148,6 +148,36 @@ if ( $count <= 4 ) {
                         )
                     );
 
+                    // ETOS OFFER SYSTEM ICON START
+                    $system_icon_key = sanitize_key(
+                        (string) (
+                            $card['system_icon'] ?? ''
+                        )
+                    );
+
+                    if (
+                        '' === $system_icon_key
+                        && 'primary' === $modifier
+                        && function_exists(
+                            'etos_get_offer_icon_key_for_content'
+                        )
+                    ) {
+                        $system_icon_key = sanitize_key(
+                            (string) etos_get_offer_icon_key_for_content(
+                                $card_title,
+                                $card_text
+                            )
+                        );
+                    }
+
+                    $has_system_icon =
+                        ! $icon_id
+                        && 'primary' === $modifier
+                        && '' !== $system_icon_key
+                        && function_exists(
+                            'etos_get_icon_badge'
+                        );
+                    // ETOS OFFER SYSTEM ICON END
                     $link = isset( $card['link'] )
                         && is_array( $card['link'] )
                             ? $card['link']
@@ -173,7 +203,13 @@ if ( $count <= 4 ) {
                         ); ?>"
                     >
 
-                        <div class="etos-offer-card__marker">
+                        <div
+                            class="<?php echo esc_attr(
+                                $has_system_icon
+                                    ? 'etos-offer-card__marker etos-offer-card__marker--system-icon'
+                                    : 'etos-offer-card__marker'
+                            ); ?>"
+                        >
 
                             <?php if ( $icon_id ) : ?>
 
@@ -189,6 +225,16 @@ if ( $count <= 4 ) {
                                 );
                                 ?>
 
+                            <?php elseif ( $has_system_icon ) : ?>
+
+                                <?php
+                                echo etos_get_icon_badge(
+                                    $system_icon_key,
+                                    array(
+                                        'size' => 'sm',
+                                    )
+                                );
+                                ?>
                             <?php else : ?>
 
                                 <span aria-hidden="true">

@@ -61,6 +61,61 @@
             "library": "all"
         },
         {
+            "key": "field_etos_offer_hero_manufacturers",
+            "label": "Logotypy producentów",
+            "name": "etos_offer_hero_manufacturers",
+            "type": "repeater",
+            "instructions": "Logotypy producentów wyświetlane w pasku pod hero. Dla urządzeń fiskalnych zastępują pojedyncze logo nad tytułem.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_offer_variant",
+                        "operator": "==",
+                        "value": "fiscal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100"
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_etos_offer_hero_manufacturer_name",
+            "button_label": "Dodaj producenta",
+            "rows_per_page": 10,
+            "sub_fields": [
+                {
+                    "key": "field_etos_offer_hero_manufacturer_name",
+                    "label": "Nazwa producenta",
+                    "name": "name",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "35"
+                    },
+                    "maxlength": 80,
+                    "parent_repeater": "field_etos_offer_hero_manufacturers"
+                },
+                {
+                    "key": "field_etos_offer_hero_manufacturer_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "65"
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_etos_offer_hero_manufacturers"
+                }
+            ]
+        },
+        {
             "key": "field_etos_offer_hero_lead",
             "label": "Lead",
             "name": "etos_offer_hero_lead",
@@ -298,6 +353,60 @@
                     "return_format": "id",
                     "preview_size": "thumbnail",
                     "library": "all",
+                    "parent_repeater": "field_etos_offer_primary_cards"
+                },
+                {
+                    "key": "field_etos_offer_primary_card_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "system_icon",
+                    "type": "select",
+                    "instructions": "Automatycznie dobiera ikonę z tytułu i opisu. Wybierz pozycję, aby wymusić konkretną ikonę ETOS.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "choices": {
+                        "signature": "Podpis elektroniczny",
+                        "document-sign": "Dokument z podpisem",
+                        "mail-shield": "e-Doręczenia / uwierzytelnianie",
+                        "shield-certificate": "Certyfikat / bezpieczeństwo",
+                        "office-badge": "Punkt partnerski",
+                        "car-route": "Dojazd do klienta",
+                        "dual-location": "Dwie lokalizacje",
+                        "cash-register": "Kasa fiskalna",
+                        "receipt-printer": "Drukarka fiskalna",
+                        "online-terminal": "Urządzenie fiskalne online",
+                        "clipboard-choice": "Dobór rozwiązania",
+                        "gear-wrench": "Uruchomienie / konfiguracja",
+                        "plug-flow": "Integracja ze sprzedażą",
+                        "headset-tools": "Serwis / wsparcie",
+                        "workflow": "Proces / workflow",
+                        "documents": "Dokumenty",
+                        "shield": "Bezpieczeństwo",
+                        "locations": "Lokalizacje",
+                        "onsite": "Dojazd / na miejscu",
+                        "fiscal": "Urządzenia fiskalne",
+                        "payments": "Płatności",
+                        "sales": "Sprzedaż",
+                        "service": "Usługa",
+                        "support": "Wsparcie",
+                        "remote": "Pomoc zdalna",
+                        "integration": "Integracja",
+                        "automation": "Automatyzacja",
+                        "network": "Sieć / infrastruktura",
+                        "audit": "Audyt",
+                        "monitoring": "Monitoring",
+                        "code": "Programowanie",
+                        "training": "Szkolenia",
+                        "customers": "Klienci"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "Automatycznie",
                     "parent_repeater": "field_etos_offer_primary_cards"
                 },
                 {

@@ -84,6 +84,35 @@
         object-fit: contain;
     }
 
+    &__manufacturers {
+        display: grid;
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+        gap: 1px;
+        margin-top: clamp(2.75rem, 4vw, 3.5rem);
+        background: rgba($etos-ink, 0.1);
+    }
+
+    &__manufacturer {
+        display: flex;
+        min-width: 0;
+        min-height: 86px;
+        align-items: center;
+        justify-content: center;
+        padding: 1.1rem 2rem;
+        background: #f3f7fa;
+    }
+
+    &__manufacturer-image {
+        display: block;
+        width: auto;
+        max-width: min(180px, 100%);
+        max-height: 48px;
+        object-fit: contain;
+    }
     &__media {
         position: relative;
         aspect-ratio: 3 / 2;
@@ -350,7 +379,36 @@
     .etos-offer-hero {
         padding: 4.5rem 0;
 
-        &__media {
+        &__manufacturers {
+        display: grid;
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+        gap: 1px;
+        margin-top: clamp(2.75rem, 4vw, 3.5rem);
+        background: rgba($etos-ink, 0.1);
+    }
+
+    &__manufacturer {
+        display: flex;
+        min-width: 0;
+        min-height: 86px;
+        align-items: center;
+        justify-content: center;
+        padding: 1.1rem 2rem;
+        background: #f3f7fa;
+    }
+
+    &__manufacturer-image {
+        display: block;
+        width: auto;
+        max-width: min(180px, 100%);
+        max-height: 48px;
+        object-fit: contain;
+    }
+    &__media {
             aspect-ratio: 16 / 10;
         }
     }
@@ -372,6 +430,24 @@
     .etos-offer-hero {
         padding: 3.75rem 0;
 
+        &__manufacturers {
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(100px, 1fr)
+                );
+            margin-top: 2.5rem;
+        }
+
+        &__manufacturer {
+            min-height: 72px;
+            padding: 0.9rem 0.65rem;
+        }
+
+        &__manufacturer-image {
+            max-height: 38px;
+        }
+
         &__title {
             font-size: clamp(2.75rem, 14vw, 4rem);
         }
@@ -381,7 +457,36 @@
             flex-direction: column;
         }
 
-        &__media {
+        &__manufacturers {
+        display: grid;
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+        gap: 1px;
+        margin-top: clamp(2.75rem, 4vw, 3.5rem);
+        background: rgba($etos-ink, 0.1);
+    }
+
+    &__manufacturer {
+        display: flex;
+        min-width: 0;
+        min-height: 86px;
+        align-items: center;
+        justify-content: center;
+        padding: 1.1rem 2rem;
+        background: #f3f7fa;
+    }
+
+    &__manufacturer-image {
+        display: block;
+        width: auto;
+        max-width: min(180px, 100%);
+        max-height: 48px;
+        object-fit: contain;
+    }
+    &__media {
             aspect-ratio: 4 / 3;
             border-radius: 1.1rem;
         }
@@ -722,8 +827,6 @@
 
         padding: clamp(2.25rem, 4vw, 3.25rem) 0;
 
-        border-top: 1px solid rgba($etos-ink, 0.1);
-        border-bottom: 1px solid rgba($etos-ink, 0.1);
         border-left: 0;
         border-radius: 0;
 
@@ -1007,3 +1110,66 @@
 }
 
 // ETOS REMOTE SUPPORT STEPS END
+
+// ETOS OFFER ACTION SEPARATOR START
+
+.etos-offer-action {
+    &__panel {
+        border-bottom: 1px solid rgba($etos-ink, 0.10);
+    }
+}
+
+// ETOS OFFER ACTION SEPARATOR END
+
+// ETOS OFFER SYSTEM ICON START
+
+.etos-offer-section {
+    .etos-offer-card__marker.etos-offer-card__marker--system-icon {
+        width: auto;
+        height: auto;
+        min-width: 0;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .etos-offer-card__marker--system-icon {
+        .etos-icon-badge {
+            margin: 0;
+        }
+    }
+}
+
+// ETOS OFFER SYSTEM ICON END
+
+
+// ETOS FISCAL MANUFACTURERS MOBILE CENTER START
+
+@media (max-width: 767.98px) {
+    .etos-offer-page--fiscal {
+        .etos-offer-hero__manufacturer:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: 50%;
+            border-left: 0;
+        }
+    }
+}
+
+// ETOS FISCAL MANUFACTURERS MOBILE CENTER END
+
+
+// ETOS FISCAL MANUFACTURERS MOBILE ROW FIX START
+
+@media (max-width: 767.98px) {
+    .etos-offer-page--fiscal {
+        .etos-offer-hero__manufacturer:last-child:nth-child(odd) {
+            width: 100%;
+            justify-self: stretch;
+            justify-content: center;
+        }
+    }
+}
+
+// ETOS FISCAL MANUFACTURERS MOBILE ROW FIX END

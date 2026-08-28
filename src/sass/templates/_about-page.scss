@@ -404,3 +404,342 @@
 }
 
 // ETOS ABOUT AREAS POLISH END
+
+// ETOS ABOUT HERO NO IMAGE START
+
+.etos-about-hero {
+    padding:
+        clamp(5rem, 7vw, 7rem)
+        0
+        clamp(3.75rem, 5vw, 5rem);
+
+    &__headline {
+        max-width: 1120px;
+        margin-bottom: clamp(3.5rem, 5vw, 4.75rem);
+    }
+
+    &__title {
+        max-width: 17ch;
+    }
+
+    > .etos-container > .row {
+        display: block;
+        margin-right: 0;
+        margin-left: 0;
+
+        > .col-lg-6:first-child {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        > .col-lg-6:last-child {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: grid;
+        width: 100%;
+        max-width: 1080px;
+        height: auto;
+        grid-template-columns:
+            minmax(280px, 0.85fr)
+            minmax(0, 1.35fr);
+        gap: 1rem clamp(3rem, 7vw, 7rem);
+        align-items: start;
+        justify-content: initial;
+        padding-right: 0;
+
+        h2 {
+            max-width: 16ch;
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            margin: 0;
+        }
+    }
+
+    &__text {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    &__actions {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 1.25rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-about-hero {
+        &__content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+
+            h2 {
+                max-width: 18ch;
+                grid-column: 1;
+                grid-row: auto;
+            }
+        }
+
+        &__text,
+        &__actions {
+            grid-column: 1;
+            grid-row: auto;
+        }
+
+        &__actions {
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-about-hero {
+        padding:
+            3.75rem
+            0
+            3.5rem;
+
+        &__headline {
+            margin-bottom: 2.75rem;
+        }
+    }
+}
+
+// ETOS ABOUT HERO NO IMAGE END
+
+// ETOS ABOUT STATS POLISH START
+
+.etos-about-stat {
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+
+    &__value {
+        position: relative;
+        display: inline-flex;
+        min-width: 2ch;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        padding-bottom: 0.85rem;
+        font-size: clamp(3.4rem, 5vw, 4.9rem);
+        font-weight: 650;
+        font-variant-numeric: tabular-nums;
+        line-height: 0.92;
+        letter-spacing: -0.065em;
+        text-shadow:
+            0 8px 24px rgba($etos-ink, 0.14);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 2rem;
+            height: 3px;
+            border-radius: 999px;
+            background: $etos-accent;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__label {
+        color: rgba(#fff, 0.92);
+        font-weight: 650;
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-about-stat {
+        &__value {
+            font-size: clamp(3.25rem, 15vw, 4.5rem);
+        }
+    }
+}
+
+// ETOS ABOUT STATS POLISH END
+
+// ETOS ABOUT AREA ICONS START
+
+.etos-about-areas {
+    .etos-about-area {
+        &__icon {
+            display: inline-flex;
+            width: 3.5rem;
+            height: 3.5rem;
+            flex: 0 0 3.5rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.55rem;
+            border: 1px solid rgba($primary, 0.22);
+            border-radius: 0.9rem;
+            color: $primary;
+            background: rgba($primary, 0.055);
+            transition:
+                color 180ms ease,
+                background-color 180ms ease,
+                border-color 180ms ease,
+                transform 180ms ease;
+
+            svg {
+                display: block;
+                width: 1.9rem;
+                height: 1.9rem;
+                fill: none;
+                stroke: currentColor;
+                stroke-width: 1.8;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            img {
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                object-fit: contain;
+            }
+        }
+
+        &:hover {
+            .etos-about-area__icon {
+                border-color: $primary;
+                color: #fff;
+                background: $primary;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .etos-about-areas {
+        .etos-about-area__icon {
+            transition: none;
+        }
+
+        .etos-about-area:hover {
+            .etos-about-area__icon {
+                transform: none;
+            }
+        }
+    }
+}
+
+// ETOS ABOUT AREA ICONS END
+
+// ETOS ABOUT TEAM PANEL START
+
+.etos-about-team {
+    &__panel {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.75rem, 3vw, 2.5rem);
+        border: 1px solid rgba($etos-ink, 0.08);
+        border-radius: 1.35rem;
+
+        background:
+            radial-gradient(
+                circle at 100% 0,
+                rgba($primary, 0.11),
+                transparent 18rem
+            ),
+            #fff;
+
+        box-shadow:
+            0 24px 55px rgba($etos-ink, 0.075);
+    }
+
+    &__point {
+        display: grid;
+        grid-template-columns: 3.25rem minmax(0, 1fr);
+        gap: 1.1rem;
+        align-items: start;
+        padding: 1.35rem 0;
+        border-bottom: 1px solid rgba($etos-ink, 0.08);
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    &__point-icon {
+        display: flex;
+        width: 3.25rem;
+        height: 3.25rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba($primary, 0.22);
+        border-radius: 0.9rem;
+        color: $primary;
+        background: rgba($primary, 0.055);
+
+        svg {
+            display: block;
+            width: 1.85rem;
+            height: 1.85rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    &__point-copy {
+        h3 {
+            margin: 0 0 0.45rem;
+            color: $etos-ink;
+            font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+            font-weight: 740;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            margin: 0;
+            color: $etos-muted;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+    }
+
+    &__statement {
+        margin: 1.5rem 0 0;
+        padding: 1.2rem 1.35rem;
+        border-left: 3px solid $primary;
+        border-radius: 0 0.85rem 0.85rem 0;
+        color: $etos-ink;
+        background: rgba($primary, 0.065);
+        font-size: 1rem;
+        font-weight: 720;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-about-team {
+        &__panel {
+            padding: 1.4rem;
+        }
+
+        &__point {
+            grid-template-columns: 2.85rem minmax(0, 1fr);
+            gap: 0.9rem;
+        }
+
+        &__point-icon {
+            width: 2.85rem;
+            height: 2.85rem;
+
+            svg {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+    }
+}
+
+// ETOS ABOUT TEAM PANEL END

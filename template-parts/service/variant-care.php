@@ -266,6 +266,25 @@ $has_editor_content = ''
                         )
                     );
 
+                    $system_icon = sanitize_key(
+                        (string) $get_value(
+                            $mode,
+                            'etos_service_care_mode_system_icon',
+                            'auto'
+                        )
+                    );
+
+                    $icon_key = (
+                        ''
+                        !== $system_icon
+                        && 'auto' !== $system_icon
+                    )
+                        ? $system_icon
+                        : etos_get_care_icon_key_for_content(
+                            $title,
+                            $text
+                        );
+
                     $best_for = trim(
                         (string) $get_value(
                             $mode,
@@ -298,26 +317,22 @@ $has_editor_content = ''
                         implode( ' ', $classes )
                     ); ?>">
 
-                        <div
-                            class="etos-care-mode__icon"
-                            aria-hidden="true"
-                        >
-                            <?php
-                            if ( $icon_id ) {
-                                echo wp_get_attachment_image(
-                                    $icon_id,
-                                    'thumbnail',
-                                    false,
-                                    array(
-                                        'alt' => '',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                            } else {
-                                echo '<span></span>';
-                            }
-                            ?>
-                        </div>
+                        <?php
+                        $icon_classes = 'etos-care-mode__icon';
+
+                        if ( ! $icon_id ) {
+                            $icon_classes .= ' etos-icon-badge--inverted';
+                        }
+
+                        echo etos_get_icon_badge(
+                            $icon_key,
+                            array(
+                                'image_id' => $icon_id,
+                                'size'     => 'md',
+                                'class'    => $icon_classes,
+                            )
+                        ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        ?>
 
                         <?php if ( $eyebrow ) : ?>
 

@@ -27,6 +27,163 @@
             "placeholder": ""
         },
         {
+            "key": "field_etos_service_tab_action",
+            "label": "Szybka pomoc",
+            "name": "",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_etos_service_action_show",
+            "label": "Pokaż sekcję szybkiej pomocy",
+            "name": "etos_service_action_show",
+            "type": "true_false",
+            "instructions": "Włącz tylko dla usług, które mają prowadzić do rezerwacji terminu i płatności online.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Włączona",
+            "ui_off_text": "Wyłączona"
+        },
+        {
+            "key": "field_etos_service_action_eyebrow",
+            "label": "Nadtytuł",
+            "name": "etos_service_action_eyebrow",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    },
+                    {
+                        "field": "field_etos_service_action_show",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Szybka pomoc online",
+            "maxlength": 120
+        },
+        {
+            "key": "field_etos_service_action_title",
+            "label": "Tytuł",
+            "name": "etos_service_action_title",
+            "type": "text",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    },
+                    {
+                        "field": "field_etos_service_action_show",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Potrzebujesz pomocy już dziś?",
+            "maxlength": 160
+        },
+        {
+            "key": "field_etos_service_action_text",
+            "label": "Opis",
+            "name": "etos_service_action_text",
+            "type": "textarea",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    },
+                    {
+                        "field": "field_etos_service_action_show",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Zarezerwuj dogodny termin i opłać usługę online.",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_etos_service_action_link",
+            "label": "Przycisk rezerwacji i płatności",
+            "name": "etos_service_action_link",
+            "type": "link",
+            "instructions": "Link do strony przygotowanej przez Klienta z kalendarzem i płatnością.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_service_template_variant",
+                        "operator": "==",
+                        "value": "solution"
+                    },
+                    {
+                        "field": "field_etos_service_action_show",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_etos_service_tab_image_crop",
             "label": "Kadrowanie grafiki hero",
             "name": "",
@@ -194,7 +351,7 @@
                     "type": "image",
                     "required": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     },
@@ -204,13 +361,64 @@
                     "parent_repeater": "field_etos_service_reasons"
                 },
                 {
+                    "key": "field_etos_service_reason_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "etos_service_reason_system_icon",
+                    "type": "select",
+                    "instructions": "Automatycznie dobiera ikonę z tytułu. Wybierz konkretną pozycję, aby wymusić ikonę bez zmiany kodu.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "auto": "Automatycznie",
+                        "erp": "ERP / moduły",
+                        "implementation": "Wdrożenie",
+                        "integration": "Integracja",
+                        "network": "Serwer / infrastruktura",
+                        "support": "Wsparcie / serwis",
+                        "code": "Programowanie",
+                        "remote": "Pomoc zdalna",
+                        "onsite": "Praca w siedzibie",
+                        "locations": "Lokalizacje",
+                        "automation": "Automatyzacja",
+                        "shield": "Bezpieczeństwo / tarcza",
+                        "growth": "Rozwój",
+                        "audit": "Audyt",
+                        "monitoring": "Monitoring",
+                        "uptime": "Stabilność / ciągłość działania",
+                        "fiscal": "Urządzenia fiskalne",
+                        "signature": "Podpis / certyfikat",
+                        "analytics": "Raporty / analityka",
+                        "documents": "Dokumenty",
+                        "database": "Baza danych",
+                        "data-transfer": "Import / eksport danych",
+                        "workflow": "Workflow / obieg procesów",
+                        "training": "Szkolenie / program",
+                        "examples": "Praktyczne przykłady",
+                        "trainer": "Trener / specjalista",
+                        "efficiency": "Efektywność wykorzystania",
+                        "service": "Ogólna usługa"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_etos_service_reasons"
+                },
+                {
                     "key": "field_etos_service_reason_title",
                     "label": "Tytuł",
                     "name": "etos_service_reason_title",
                     "type": "text",
                     "required": 1,
                     "wrapper": {
-                        "width": "40",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -311,7 +519,7 @@
                     "type": "image",
                     "required": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     },
@@ -321,13 +529,64 @@
                     "parent_repeater": "field_etos_service_access"
                 },
                 {
+                    "key": "field_etos_service_access_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "etos_service_access_system_icon",
+                    "type": "select",
+                    "instructions": "Automatycznie dobiera ikonę z tytułu. Wybierz konkretną pozycję, aby wymusić ikonę bez zmiany kodu.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "auto": "Automatycznie",
+                        "erp": "ERP / moduły",
+                        "implementation": "Wdrożenie",
+                        "integration": "Integracja",
+                        "network": "Serwer / infrastruktura",
+                        "support": "Wsparcie / serwis",
+                        "code": "Programowanie",
+                        "remote": "Pomoc zdalna",
+                        "onsite": "Praca w siedzibie",
+                        "locations": "Lokalizacje",
+                        "automation": "Automatyzacja",
+                        "shield": "Bezpieczeństwo / tarcza",
+                        "growth": "Rozwój",
+                        "audit": "Audyt",
+                        "monitoring": "Monitoring",
+                        "uptime": "Stabilność / ciągłość działania",
+                        "fiscal": "Urządzenia fiskalne",
+                        "signature": "Podpis / certyfikat",
+                        "analytics": "Raporty / analityka",
+                        "documents": "Dokumenty",
+                        "database": "Baza danych",
+                        "data-transfer": "Import / eksport danych",
+                        "workflow": "Workflow / obieg procesów",
+                        "training": "Szkolenie / program",
+                        "examples": "Praktyczne przykłady",
+                        "trainer": "Trener / specjalista",
+                        "efficiency": "Efektywność wykorzystania",
+                        "service": "Ogólna usługa"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_etos_service_access"
+                },
+                {
                     "key": "field_etos_service_access_title",
                     "label": "Tytuł",
                     "name": "etos_service_access_title",
                     "type": "text",
                     "required": 1,
                     "wrapper": {
-                        "width": "40",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -428,7 +687,7 @@
                     "type": "image",
                     "required": 0,
                     "wrapper": {
-                        "width": "20",
+                        "width": "15",
                         "class": "",
                         "id": ""
                     },
@@ -438,13 +697,64 @@
                     "parent_repeater": "field_etos_service_benefits"
                 },
                 {
+                    "key": "field_etos_service_benefit_system_icon",
+                    "label": "Ikona ETOS",
+                    "name": "etos_service_benefit_system_icon",
+                    "type": "select",
+                    "instructions": "Automatycznie dobiera ikonę z tytułu. Wybierz konkretną pozycję, aby wymusić ikonę bez zmiany kodu.",
+                    "required": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "auto": "Automatycznie",
+                        "erp": "ERP / moduły",
+                        "implementation": "Wdrożenie",
+                        "integration": "Integracja",
+                        "network": "Serwer / infrastruktura",
+                        "support": "Wsparcie / serwis",
+                        "code": "Programowanie",
+                        "remote": "Pomoc zdalna",
+                        "onsite": "Praca w siedzibie",
+                        "locations": "Lokalizacje",
+                        "automation": "Automatyzacja",
+                        "shield": "Bezpieczeństwo / tarcza",
+                        "growth": "Rozwój",
+                        "audit": "Audyt",
+                        "monitoring": "Monitoring",
+                        "uptime": "Stabilność / ciągłość działania",
+                        "fiscal": "Urządzenia fiskalne",
+                        "signature": "Podpis / certyfikat",
+                        "analytics": "Raporty / analityka",
+                        "documents": "Dokumenty",
+                        "database": "Baza danych",
+                        "data-transfer": "Import / eksport danych",
+                        "workflow": "Workflow / obieg procesów",
+                        "training": "Szkolenie / program",
+                        "examples": "Praktyczne przykłady",
+                        "trainer": "Trener / specjalista",
+                        "efficiency": "Efektywność wykorzystania",
+                        "service": "Ogólna usługa"
+                    },
+                    "default_value": "auto",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_etos_service_benefits"
+                },
+                {
                     "key": "field_etos_service_benefit_title",
                     "label": "Tytuł",
                     "name": "etos_service_benefit_title",
                     "type": "text",
                     "required": 1,
                     "wrapper": {
-                        "width": "40",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -488,5 +798,5 @@
     "active": true,
     "description": "Wariant szablonu oraz sekcje wspólne dla usług wdrożeniowych i infrastrukturalnych.",
     "show_in_rest": 0,
-    "modified": 1785070000
+    "modified": 1787482563
 }
