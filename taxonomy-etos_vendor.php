@@ -84,6 +84,50 @@ if ( is_array( $image_id ) ) {
 
 $image_id = absint( $image_id );
 
+$promo_enabled = 'insert' === $term->slug;
+
+if (
+    metadata_exists(
+        'term',
+        $term_id,
+        'etos_vendor_promo_enabled'
+    )
+) {
+    $promo_enabled = (bool) get_term_meta(
+        $term_id,
+        'etos_vendor_promo_enabled',
+        true
+    );
+}
+
+$promo_desktop_url = trim(
+    (string) $get_vendor_field(
+        'etos_vendor_promo_desktop_url',
+        'insert' === $term->slug
+            ? 'https://bannery.insert.com.pl/aktualna_promocja_doublebill'
+            : ''
+    )
+);
+
+$promo_mobile_url = trim(
+    (string) $get_vendor_field(
+        'etos_vendor_promo_mobile_url',
+        'insert' === $term->slug
+            ? 'https://bannery.insert.com.pl/aktualna_promocja_rectangle'
+            : ''
+    )
+);
+
+$show_vendor_promo = (
+    $promo_enabled
+    && '' !== $promo_desktop_url
+    && '' !== $promo_mobile_url
+);
+
+$promo_label = sprintf(
+    'Aktualna promocja %s',
+    $term_name
+);
 $kicker = trim(
     (string) $get_vendor_field(
         'etos_vendor_landing_kicker',
@@ -259,36 +303,32 @@ $GLOBALS['etos_footer_cta_hide'] = true;
         </section>
 
     <?php endif; ?>
-    <?php if ( 'insert' === $term->slug ) : ?>
+    <?php if ( $show_vendor_promo ) : ?>
 
         <section
             class="etos-vendor-promo"
-            aria-label="Aktualna promocja InsERT"
+            aria-label="<?php echo esc_attr( $promo_label ); ?>"
         >
             <div class="container etos-container">
                 <div class="etos-vendor-promo__inner">
                     <iframe
                         class="etos-vendor-promo__frame etos-vendor-promo__frame--desktop"
-                        id="insert_aktualna_promocja_doublebill"
-                        name="insert_aktualna_promocja_doublebill"
-                        data-src="https://bannery.insert.com.pl/aktualna_promocja_doublebill"
+                        data-src="<?php echo esc_url( $promo_desktop_url ); ?>"
                         width="750"
                         height="200"
                         scrolling="no"
                         loading="lazy"
-                        title="Aktualna promocja InsERT"
+                        title="<?php echo esc_attr( $promo_label ); ?>"
                     ></iframe>
 
                     <iframe
                         class="etos-vendor-promo__frame etos-vendor-promo__frame--mobile"
-                        id="insert_aktualna_promocja_rectangle"
-                        name="insert_aktualna_promocja_rectangle"
-                        data-src="https://bannery.insert.com.pl/aktualna_promocja_rectangle"
+                        data-src="<?php echo esc_url( $promo_mobile_url ); ?>"
                         width="300"
                         height="250"
                         scrolling="no"
                         loading="lazy"
-                        title="Aktualna promocja InsERT"
+                        title="<?php echo esc_attr( $promo_label ); ?>"
                     ></iframe>
                 </div>
             </div>

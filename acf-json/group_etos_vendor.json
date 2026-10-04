@@ -135,6 +135,76 @@
             "rows": 4,
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_etos_vendor_promo_enabled",
+            "label": "Baner promocyjny",
+            "name": "etos_vendor_promo_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Włącza zewnętrzny baner promocyjny na stronie producenta.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Włączony",
+            "ui_off_text": "Wyłączony",
+            "ui": 1
+        },
+        {
+            "key": "field_etos_vendor_promo_desktop_url",
+            "label": "URL banera — desktop",
+            "name": "etos_vendor_promo_desktop_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Pełny adres https:// źródła iframe dla wersji desktopowej. Obecny format banera: 750 × 200 px.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_vendor_promo_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://"
+        },
+        {
+            "key": "field_etos_vendor_promo_mobile_url",
+            "label": "URL banera — mobile",
+            "name": "etos_vendor_promo_mobile_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Pełny adres https:// źródła iframe dla wersji mobilnej. Obecny format banera: 300 × 250 px.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_etos_vendor_promo_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://"
         }
     ],
     "location": [
@@ -158,5 +228,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1789904877
+    "modified": 1791111690
 }
