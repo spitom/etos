@@ -386,3 +386,53 @@ document.addEventListener('DOMContentLoaded', function () {
         mediaQuery.addListener(updatePromoFrame);
     }
 });
+
+// ETOS typography: prevent Polish one-letter orphans.
+document.addEventListener('DOMContentLoaded', function () {
+    const root = document.body;
+
+    if (!root) {
+        return;
+    }
+
+    const pattern =
+        /(^|[^0-9A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż])([AIOUWZaiouwz])([ \t\r\n\f]+)/g;
+
+    const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode: function (node) {
+                const parent = node.parentElement;
+
+                if (!parent || !node.nodeValue.trim()) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                if (
+                    parent.closest(
+                        'script, style, code, pre, textarea, input, select, option, [contenteditable="true"], [data-etos-no-orphans]'
+                    )
+                ) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                return NodeFilter.FILTER_ACCEPT;
+            },
+        }
+    );
+
+    const textNodes = [];
+    let node;
+
+    while ((node = walker.nextNode())) {
+        textNodes.push(node);
+    }
+
+    textNodes.forEach(function (textNode) {
+        textNode.nodeValue = textNode.nodeValue.replace(
+            pattern,
+            '$1$2\u00A0'
+        );
+    });
+});
