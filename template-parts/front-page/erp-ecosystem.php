@@ -92,6 +92,64 @@ $erp_title = $erp_title
             ),
         );
 
+        $featured_software_by_vendor = array();
+
+        $featured_software_posts = get_posts(
+            array(
+                'post_type'        => 'etos_software',
+                'post_status'      => 'publish',
+                'posts_per_page'   => -1,
+                'orderby'          => array(
+                    'menu_order' => 'ASC',
+                    'title'      => 'ASC',
+                ),
+                'suppress_filters' => false,
+                'meta_query'        => array(
+                    array(
+                        'key'     => 'etos_software_featured_on_home',
+                        'value'   => '1',
+                        'compare' => '=',
+                    ),
+                ),
+                'tax_query'         => array(
+                    array(
+                        'taxonomy'         => 'etos_vendor',
+                        'field'            => 'slug',
+                        'terms'            => array_keys( $erp_defaults ),
+                        'include_children' => false,
+                    ),
+                ),
+            )
+        );
+
+        foreach ( $featured_software_posts as $featured_software_post ) {
+            $featured_vendor_terms = get_the_terms(
+                $featured_software_post->ID,
+                'etos_vendor'
+            );
+
+            if (
+                empty( $featured_vendor_terms )
+                || is_wp_error( $featured_vendor_terms )
+            ) {
+                continue;
+            }
+
+            foreach ( $featured_vendor_terms as $featured_vendor_term ) {
+                $vendor_slug = (string) $featured_vendor_term->slug;
+
+                if ( ! isset( $erp_defaults[ $vendor_slug ] ) ) {
+                    continue;
+                }
+
+                if ( ! isset( $featured_software_by_vendor[ $vendor_slug ] ) ) {
+                    $featured_software_by_vendor[ $vendor_slug ] = array();
+                }
+
+                $featured_software_by_vendor[ $vendor_slug ][] = $featured_software_post;
+            }
+        }
+
         foreach ( $erp_defaults as $vendor_name => $fallback ) {
 
             /* ETOS ERP VENDOR LANDING START */
@@ -117,52 +175,26 @@ $erp_title = $erp_title
 
             /* ETOS ERP VENDOR LANDING END */
             $logo_value = function_exists( 'get_field' )
-                ? get_field( "{$vendor_name}_logo" )
+                ? get_field( "{$vendor_name}_logo", $front_page_id )
                 : null;
 
             $image_value = function_exists( 'get_field' )
-                ? get_field( "{$vendor_name}_image" )
+                ? get_field( "{$vendor_name}_image", $front_page_id )
                 : null;
 
             $title = function_exists( 'get_field' )
-                ? get_field( "{$vendor_name}_title" )
+                ? get_field( "{$vendor_name}_title", $front_page_id )
                 : '';
 
             $lead = function_exists( 'get_field' )
-                ? get_field( "{$vendor_name}_lead" )
+                ? get_field( "{$vendor_name}_lead", $front_page_id )
                 : '';
 
             $accent = function_exists( 'get_field' )
-                ? get_field( "{$vendor_name}_accent" )
+                ? get_field( "{$vendor_name}_accent", $front_page_id )
                 : '';
 
-            $software_posts = get_posts(
-                array(
-                    'post_type'        => 'etos_software',
-                    'post_status'      => 'publish',
-                    'posts_per_page'   => -1,
-                    'orderby'          => array(
-                        'menu_order' => 'ASC',
-                        'title'      => 'ASC',
-                    ),
-                    'suppress_filters' => false,
-                    'meta_query'        => array(
-                        array(
-                            'key'     => 'etos_software_featured_on_home',
-                            'value'   => '1',
-                            'compare' => '=',
-                        ),
-                    ),
-                    'tax_query'         => array(
-                        array(
-                            'taxonomy'         => 'etos_vendor',
-                            'field'            => 'slug',
-                            'terms'            => $vendor_name,
-                            'include_children' => false,
-                        ),
-                    ),
-                )
-            );
+            $software_posts = $featured_software_by_vendor[ $vendor_name ] ?? array();
 
             $products = array();
 

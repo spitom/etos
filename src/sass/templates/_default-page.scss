@@ -1,0 +1,200 @@
+// ETOS DEFAULT PAGE START
+
+.etos-default-page {
+    color: $etos-ink;
+    background: #fff;
+
+    &__hero {
+        padding: clamp(3.75rem, 7vw, 6rem) 0;
+        border-bottom: 1px solid rgba($etos-ink, 0.08);
+        background: #f5f8fc;
+    }
+
+    &__hero-inner {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        max-width: 18ch;
+        margin: 0;
+        color: $etos-ink;
+        font-size: clamp(2.5rem, 5vw, 4.4rem);
+        font-weight: 650;
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+    }
+
+    &__lead {
+        max-width: 760px;
+        margin: 1.5rem 0 0;
+        color: rgba($etos-ink, 0.72);
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+        line-height: 1.65;
+    }
+
+    &__body {
+        padding: clamp(3.5rem, 6vw, 6rem) 0;
+    }
+
+    &__content,
+    &__comments {
+        width: 100%;
+        max-width: 920px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__content {
+        color: rgba($etos-ink, 0.86);
+        font-size: 1.0625rem;
+        line-height: 1.75;
+
+        > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+
+        p,
+        ul,
+        ol,
+        table,
+        blockquote,
+        figure,
+        .wp-block-group {
+            margin-bottom: 1.5rem;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $etos-ink;
+            font-weight: 650;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            margin-top: clamp(2.75rem, 5vw, 4rem);
+            margin-bottom: 1.15rem;
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+        }
+
+        h3 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: clamp(1.4rem, 2.3vw, 1.75rem);
+        }
+
+        h4 {
+            margin-top: 2rem;
+            margin-bottom: 0.85rem;
+            font-size: 1.25rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.4rem;
+
+            li {
+                margin-bottom: 0.55rem;
+                padding-left: 0.25rem;
+            }
+        }
+
+        a:not(.btn) {
+            color: $primary;
+            font-weight: 650;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.16em;
+
+            &:hover,
+            &:focus-visible {
+                text-decoration-thickness: 2px;
+            }
+        }
+
+        strong {
+            color: $etos-ink;
+            font-weight: 700;
+        }
+
+        blockquote {
+            margin-right: 0;
+            margin-left: 0;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid $etos-accent;
+            background: #f5f8fc;
+            color: rgba($etos-ink, 0.78);
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                padding: 0.9rem 1rem;
+                border: 1px solid rgba($etos-ink, 0.12);
+                vertical-align: top;
+            }
+
+            th {
+                color: $etos-ink;
+                background: #f5f8fc;
+                font-weight: 700;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+        }
+
+        hr,
+        .wp-block-separator {
+            margin: clamp(2.5rem, 5vw, 4rem) 0;
+            border-color: rgba($etos-ink, 0.12);
+            opacity: 1;
+        }
+    }
+
+    &__comments {
+        margin-top: clamp(3rem, 5vw, 5rem);
+        padding-top: 2rem;
+        border-top: 1px solid rgba($etos-ink, 0.1);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .etos-default-page {
+        &__hero {
+            padding: 3rem 0;
+        }
+
+        &__body {
+            padding: 3rem 0;
+        }
+
+        &__content {
+            font-size: 1rem;
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    }
+}
+
+// ETOS DEFAULT PAGE END

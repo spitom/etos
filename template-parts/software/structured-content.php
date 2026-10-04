@@ -19,7 +19,6 @@
  * - link
  *
  * Addons:
- * - image
  * - title
  * - text
  * - link
@@ -617,16 +616,11 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                         (string) ( $addon['text'] ?? '' )
                     );
 
-                    $image_id = etos_get_software_image_id(
-                        $addon['image'] ?? 0
-                    );
-
                     $link = $addon['link'] ?? array();
 
                     if (
                         '' === $title
                         && '' === $text
-                        && ! $image_id
                         && ! etos_software_value_has_content( $link )
                     ) {
                         continue;
@@ -634,26 +628,6 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                     ?>
 
                     <article class="etos-product-card etos-product-card--addon">
-
-                        <?php if ( $image_id ) : ?>
-
-                            <div class="etos-product-card__media">
-
-                                <?php
-                                echo wp_get_attachment_image(
-                                    $image_id,
-                                    'medium',
-                                    false,
-                                    array(
-                                        'class'   => 'etos-product-card__image',
-                                        'loading' => 'lazy',
-                                    )
-                                );
-                                ?>
-
-                            </div>
-
-                        <?php endif; ?>
 
                         <div class="etos-product-card__body">
 
@@ -728,6 +702,10 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                         (string) ( $package['text'] ?? '' )
                     );
 
+                    $price = trim(
+                        (string) ( $package['price'] ?? '' )
+                    );
+
                     $items = $normalize_list(
                         $package['features'] ?? array()
                     );
@@ -742,6 +720,7 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                         '' === $title
                         && '' === $badge
                         && '' === $text
+                        && '' === $price
                         && empty( $items )
                         && ! etos_software_value_has_content( $link )
                     ) {
@@ -772,6 +751,14 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                             </h3>
                         <?php endif; ?>
 
+                        <?php if ( $price ) : ?>
+
+                            <p class="etos-product-card__price">
+                                <?php echo esc_html( $price ); ?>
+                            </p>
+
+                        <?php endif; ?>
+
                         <?php if ( $text ) : ?>
                             <div class="etos-product-card__text">
                                 <?php echo wp_kses_post( wpautop( $text ) ); ?>
@@ -790,6 +777,7 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
 
                         <?php endif; ?>
 
+                        <div class="etos-product-card__actions">
                         <?php
                         $render_link(
                             $link,
@@ -798,6 +786,7 @@ $render_link = static function ( $value, $class = 'btn btn-outline-primary' ) {
                                 : 'btn btn-outline-primary'
                         );
                         ?>
+                        </div>
 
                     </article>
 

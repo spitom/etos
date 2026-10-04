@@ -36,7 +36,9 @@
             },
             "maxlength": 100,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_benefits_title",
@@ -54,7 +56,9 @@
             },
             "maxlength": 180,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_benefits",
@@ -126,14 +130,14 @@
                         "multichannel": "Sprzedaż wielokanałowa",
                         "finance": "Finanse",
                         "accounting": "Księgowość",
-                        "payments": "Płatności / rozrachunki",
+                        "payments": "Płatności \/ rozrachunki",
                         "documents": "Dokumenty",
-                        "tax": "VAT / JPK / KSeF",
-                        "customers": "Klienci / kontrahenci",
-                        "analytics": "Raporty / analityka",
-                        "hr": "Kadry / pracownicy",
+                        "tax": "VAT \/ JPK \/ KSeF",
+                        "customers": "Klienci \/ kontrahenci",
+                        "analytics": "Raporty \/ analityka",
+                        "hr": "Kadry \/ pracownicy",
                         "production": "Produkcja",
-                        "logistics": "Logistyka / transport",
+                        "logistics": "Logistyka \/ transport",
                         "integration": "Integracja",
                         "automation": "Automatyzacja",
                         "shield": "Bezpieczeństwo",
@@ -146,7 +150,9 @@
                     "ui": 1,
                     "ajax": 0,
                     "placeholder": "",
-                    "parent_repeater": "field_etos_software_benefits"
+                    "parent_repeater": "field_etos_software_benefits",
+                    "create_options": 0,
+                    "save_options": 0
                 },
                 {
                     "key": "field_etos_software_benefit_title",
@@ -442,7 +448,9 @@
             },
             "maxlength": 100,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_addons_title",
@@ -460,7 +468,9 @@
             },
             "maxlength": 180,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_addons",
@@ -469,46 +479,21 @@
             "aria-label": "",
             "type": "repeater",
             "instructions": "Moduły, integracje i produkty rozszerzające możliwości programu.",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "layout": "block",
+            "pagination": 0,
             "min": 0,
-            "max": 8,
+            "max": 12,
             "collapsed": "field_etos_software_addon_title",
             "button_label": "Dodaj rozwiązanie",
             "rows_per_page": 20,
             "sub_fields": [
-                {
-                    "key": "field_etos_software_addon_image",
-                    "label": "Grafika",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "parent_repeater": "field_etos_software_addons",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0,
-                    "mime_types": ""
-                },
                 {
                     "key": "field_etos_software_addon_title",
                     "label": "Tytuł",
@@ -517,18 +502,19 @@
                     "type": "text",
                     "instructions": "",
                     "required": 1,
-                    "conditional_logic": false,
+                    "conditional_logic": 0,
                     "wrapper": {
-                        "width": "35",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "maxlength": 140,
-                    "parent_repeater": "field_etos_software_addons",
                     "default_value": "",
+                    "maxlength": 140,
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "prepend": "",
-                    "append": ""
+                    "append": "",
+                    "parent_repeater": "field_etos_software_addons"
                 },
                 {
                     "key": "field_etos_software_addon_text",
@@ -537,19 +523,20 @@
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
+                    "required": 0,
+                    "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "maxlength": 420,
-                    "rows": 5,
-                    "new_lines": "",
-                    "parent_repeater": "field_etos_software_addons",
                     "default_value": "",
-                    "placeholder": ""
+                    "maxlength": 420,
+                    "allow_in_bindings": 1,
+                    "rows": 5,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_etos_software_addons"
                 },
                 {
                     "key": "field_etos_software_addon_link",
@@ -604,7 +591,9 @@
             },
             "maxlength": 100,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_packages_title",
@@ -622,7 +611,9 @@
             },
             "maxlength": 180,
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_software_packages",
@@ -709,25 +700,48 @@
                     "message": ""
                 },
                 {
+                    "key": "field_6ab2c67af33f5",
+                    "label": "Cena",
+                    "name": "price",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Np. 299 zł netto \/ mies. lub od 1490 zł",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_etos_software_packages"
+                },
+                {
                     "key": "field_etos_software_package_text",
                     "label": "Opis",
                     "name": "text",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
+                    "required": 0,
+                    "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "60",
                         "class": "",
                         "id": ""
                     },
-                    "rows": 5,
-                    "new_lines": "",
-                    "parent_repeater": "field_etos_software_packages",
                     "default_value": "",
-                    "maxlength": "",
-                    "placeholder": ""
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1,
+                    "parent_repeater": "field_etos_software_packages"
                 },
                 {
                     "key": "field_etos_software_package_features",
@@ -815,5 +829,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1787483565
+    "modified": 1790101451
 }

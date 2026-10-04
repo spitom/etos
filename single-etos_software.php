@@ -14,57 +14,6 @@ while ( have_posts() ) :
 
     $post_id = get_the_ID();
 
-    /**
-     * Read an ACF value with a post-meta fallback.
-     *
-     * @param string $field_name Field name.
-     * @return mixed
-     */
-    $get_software_field = static function ( $field_name ) use ( $post_id ) {
-        if ( function_exists( 'get_field' ) ) {
-            return get_field( $field_name, $post_id );
-        }
-
-        return get_post_meta( $post_id, $field_name, true );
-    };
-
-    /**
-     * Normalize an ACF link field.
-     *
-     * @param mixed  $link           Link field value.
-     * @param string $fallback_url   Fallback URL.
-     * @param string $fallback_title Fallback label.
-     * @return array
-     */
-    $normalize_link = static function ( $link, $fallback_url = '', $fallback_title = '' ) {
-        $link = is_array( $link ) ? $link : array();
-
-        $url = isset( $link['url'] )
-            ? trim( (string) $link['url'] )
-            : '';
-
-        $title = isset( $link['title'] )
-            ? trim( (string) $link['title'] )
-            : '';
-
-        $target = isset( $link['target'] ) && '_blank' === $link['target']
-            ? '_blank'
-            : '';
-
-        if ( '' === $url ) {
-            $url = $fallback_url;
-        }
-
-        if ( '' === $title ) {
-            $title = $fallback_title;
-        }
-
-        return array(
-            'url'    => $url,
-            'title'  => $title,
-            'target' => $target,
-        );
-    };
 
     $vendors = get_the_terms( $post_id, 'etos_vendor' );
     $vendor  = ! is_wp_error( $vendors ) && ! empty( $vendors )
@@ -98,7 +47,7 @@ while ( have_posts() ) :
         $accent = '#2457D6';
     }
 
-    $product_logo_id = (int) $get_software_field(
+    $product_logo_id = (int) etos_get_software_field( $post_id,
         'etos_software_logo'
     );
 
@@ -112,12 +61,12 @@ while ( have_posts() ) :
 
     $logo_id = $product_logo_id ?: $vendor_logo_id;
 
-    $partner_logo_id = (int) $get_software_field(
+    $partner_logo_id = (int) etos_get_software_field( $post_id,
         'etos_software_partner_logo'
     );
 
     $hero_image_fit = trim(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_hero_image_fit'
         )
     );
@@ -133,7 +82,7 @@ while ( have_posts() ) :
     }
 
     $hero_media_style = sanitize_key(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_hero_media_style'
         )
     );
@@ -151,7 +100,7 @@ while ( have_posts() ) :
     if ( 'packshot' === $hero_media_style ) {
         $hero_image_fit = 'contain';
     }
-    $hero_image_scale = (int) $get_software_field(
+    $hero_image_scale = (int) etos_get_software_field( $post_id,
         'etos_software_hero_image_scale'
     );
 
@@ -160,7 +109,7 @@ while ( have_posts() ) :
         min( 150, $hero_image_scale ?: 100 )
     );
 
-    $hero_image_x = (int) $get_software_field(
+    $hero_image_x = (int) etos_get_software_field( $post_id,
         'etos_software_hero_image_x'
     );
 
@@ -169,7 +118,7 @@ while ( have_posts() ) :
         min( 100, $hero_image_x ?: 50 )
     );
 
-    $hero_image_y = (int) $get_software_field(
+    $hero_image_y = (int) etos_get_software_field( $post_id,
         'etos_software_hero_image_y'
     );
 
@@ -178,7 +127,7 @@ while ( have_posts() ) :
         min( 100, $hero_image_y ?: 50 )
     );
 
-    $hero_image_id = (int) $get_software_field(
+    $hero_image_id = (int) etos_get_software_field( $post_id,
         'etos_software_hero_image'
     );
 
@@ -195,7 +144,7 @@ while ( have_posts() ) :
     }
 
     $kicker = trim(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_kicker'
         )
     );
@@ -205,7 +154,7 @@ while ( have_posts() ) :
     }
 
     $lead = trim(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_lead'
         )
     );
@@ -230,22 +179,47 @@ while ( have_posts() ) :
         ? get_permalink( $contact_page )
         : home_url( '/kontakt/' );
 
-    $primary_cta = $normalize_link(
-        $get_software_field(
+    $primary_cta = etos_normalize_software_link(
+        etos_get_software_field( $post_id,
             'etos_software_primary_cta'
         ),
         $contact_url,
         __( 'Umów konsultację', 'etos' )
     );
 
-    $secondary_cta = $normalize_link(
-        $get_software_field(
+    $secondary_cta = etos_normalize_software_link(
+        etos_get_software_field( $post_id,
             'etos_software_secondary_cta'
         )
     );
 
+    $gt_version_id = absint(
+        etos_get_software_field(
+            $post_id,
+            'etos_software_gt_version'
+        )
+    );
+
+    $gt_version_title = '';
+    $gt_version_url   = '';
+
+    if (
+        $gt_version_id
+        && $gt_version_id !== $post_id
+        && 'etos_software' === get_post_type( $gt_version_id )
+        && 'publish' === get_post_status( $gt_version_id )
+    ) {
+        $gt_version_title = trim(
+            (string) get_the_title( $gt_version_id )
+        );
+
+        $gt_version_url = (string) get_permalink(
+            $gt_version_id
+        );
+    }
+
     $cta_title = trim(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_cta_title'
         )
     );
@@ -255,7 +229,7 @@ while ( have_posts() ) :
     }
 
     $cta_text = trim(
-        (string) $get_software_field(
+        (string) etos_get_software_field( $post_id,
             'etos_software_cta_text'
         )
     );
@@ -267,8 +241,8 @@ while ( have_posts() ) :
         );
     }
 
-    $cta_link = $normalize_link(
-        $get_software_field(
+    $cta_link = etos_normalize_software_link(
+        etos_get_software_field( $post_id,
             'etos_software_cta_link'
         ),
         $contact_url,
@@ -675,6 +649,39 @@ while ( have_posts() ) :
                                                 </a>
 
                                             <?php endforeach; ?>
+
+                                            <?php if (
+                                                '' !== $gt_version_title
+                                                && '' !== $gt_version_url
+                                            ) : ?>
+
+                                                <p class="etos-software-hero__related-version">
+
+                                                    <span>
+                                                        <?php esc_html_e(
+                                                            'Korzystasz z linii GT?',
+                                                            'etos'
+                                                        ); ?>
+                                                    </span>
+
+                                                    <a href="<?php echo esc_url(
+                                                        $gt_version_url
+                                                    ); ?>">
+                                                        <?php
+                                                        echo esc_html(
+                                                            sprintf(
+                                                                /* translators: %s: related GT software title. */
+                                                                __( 'Poznaj %s', 'etos' ),
+                                                                $gt_version_title
+                                                            )
+                                                        );
+                                                        ?>
+                                                        <span aria-hidden="true">→</span>
+                                                    </a>
+
+                                                </p>
+
+                                            <?php endif; ?>
 
                                         </div>
 

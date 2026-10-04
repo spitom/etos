@@ -34,138 +34,160 @@ $etos_get_service_value = static function ( $post_id, $field_name ) {
     );
 };
 
-/**
- * Return a service icon key based on the service title.
- *
- * @param string $title Service title.
- * @return string
- */
-$etos_get_service_icon_key = static function ( $title ) {
-    $slug = sanitize_title( $title );
+$front_page_id = get_queried_object_id();
 
-    if (
-        false !== strpos( $slug, 'wdraz' )
-        || false !== strpos( $slug, 'implement' )
-    ) {
-        return 'implementation';
-    }
-
-    if ( false !== strpos( $slug, 'szkol' ) ) {
-        return 'training';
-    }
-
-    if (
-        false !== strpos( $slug, 'serwis' )
-        || false !== strpos( $slug, 'opieka' )
-        || false !== strpos( $slug, 'wsparcie' )
-    ) {
-        return 'support';
-    }
-
-    if (
-        false !== strpos( $slug, 'serwer' )
-        || false !== strpos( $slug, 'sieci' )
-        || false !== strpos( $slug, 'infrastruktur' )
-    ) {
-        return 'network';
-    }
-
-    if (
-        false !== strpos( $slug, 'programist' )
-        || false !== strpos( $slug, 'integrac' )
-    ) {
-        return 'code';
-    }
-
-    return 'service';
-};
-
-/**
- * Return one of the built-in line icons.
- *
- * Icons use currentColor, so their color is controlled entirely by CSS.
- *
- * @param string $key Icon key.
- * @return string
- */
-$etos_get_service_icon = static function ( $key ) {
-    $icons = array(
-        'implementation' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <rect x="6" y="10" width="38" height="30" rx="4"></rect>
-                <path d="M17 52h16M25 40v12"></path>
-                <circle cx="48" cy="21" r="8"></circle>
-                <path d="M48 9v4M48 29v4M36 21h4M56 21h4"></path>
-                <path d="M40 13l3 3M53 26l3 3M56 13l-3 3M43 26l-3 3"></path>
-            </svg>
-        ',
-        'training' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <rect x="7" y="8" width="50" height="34" rx="4"></rect>
-                <path d="M21 54h22M32 42v12"></path>
-                <circle cx="25" cy="22" r="5"></circle>
-                <path d="M16 35c1-6 5-9 9-9s8 3 9 9"></path>
-                <path d="M40 18h10M40 25h10M40 32h7"></path>
-            </svg>
-        ',
-        'support' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <path d="M12 34v-5c0-12 8-21 20-21s20 9 20 21v5"></path>
-                <rect x="7" y="30" width="10" height="18" rx="4"></rect>
-                <rect x="47" y="30" width="10" height="18" rx="4"></rect>
-                <path d="M52 48c0 6-5 9-12 9h-4"></path>
-                <circle cx="32" cy="57" r="3"></circle>
-            </svg>
-        ',
-        'network' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <rect x="9" y="7" width="46" height="13" rx="3"></rect>
-                <rect x="9" y="26" width="46" height="13" rx="3"></rect>
-                <rect x="9" y="45" width="46" height="13" rx="3"></rect>
-                <circle cx="17" cy="13.5" r="2"></circle>
-                <circle cx="17" cy="32.5" r="2"></circle>
-                <circle cx="17" cy="51.5" r="2"></circle>
-                <path d="M24 14h23M24 33h23M24 52h23"></path>
-            </svg>
-        ',
-        'code' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <rect x="6" y="9" width="52" height="46" rx="5"></rect>
-                <path d="M6 20h52"></path>
-                <circle cx="13" cy="15" r="1.5"></circle>
-                <circle cx="19" cy="15" r="1.5"></circle>
-                <circle cx="25" cy="15" r="1.5"></circle>
-                <path d="M25 31l-7 6 7 6M39 31l7 6-7 6M35 27l-6 20"></path>
-            </svg>
-        ',
-        'signature' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <path d="M14 6h25l11 11v39H14z"></path>
-                <path d="M39 6v12h11M22 27h20M22 34h13"></path>
-                <path d="M23 49c8-12 13-9 10-4 5-5 7-3 5 1 4-3 7-2 9 1"></path>
-            </svg>
-        ',
-        'fiscal' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <path d="M17 7h30v16H17z"></path>
-                <rect x="8" y="22" width="48" height="27" rx="5"></rect>
-                <path d="M17 43h30v14H17zM18 30h12M18 36h8"></path>
-                <circle cx="47" cy="31" r="2"></circle>
-                <circle cx="40" cy="31" r="2"></circle>
-            </svg>
-        ',
-        'service' => '
-            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-                <circle cx="32" cy="32" r="11"></circle>
-                <path d="M32 6v9M32 49v9M6 32h9M49 32h9"></path>
-                <path d="M14 14l7 7M43 43l7 7M50 14l-7 7M21 43l-7 7"></path>
-            </svg>
-        ',
+$get_front_services_field = static function (
+    $name,
+    $default = ''
+) use (
+    $front_page_id,
+    $etos_get_service_value
+) {
+    $value = $etos_get_service_value(
+        $front_page_id,
+        $name
     );
 
-    return $icons[ $key ] ?? $icons['service'];
+    if (
+        null === $value
+        || false === $value
+        || '' === $value
+    ) {
+        return $default;
+    }
+
+    return $value;
 };
 
+$front_services_kicker = trim(
+    (string) $get_front_services_field(
+        'etos_front_services_kicker',
+        'Usługi ETOS'
+    )
+);
+
+$front_services_title = trim(
+    (string) $get_front_services_field(
+        'etos_front_services_title',
+        'Profesjonalne usługi wspierające rozwój Twojej firmy.'
+    )
+);
+
+$front_services_lead = trim(
+    (string) $get_front_services_field(
+        'etos_front_services_lead',
+        'Od analizy i wdrożenia oprogramowania, przez szkolenia i opiekę serwisową, po infrastrukturę oraz rozwiązania tworzone na zamówienie.'
+    )
+);
+
+$front_special_title = trim(
+    (string) $get_front_services_field(
+        'etos_front_special_title',
+        'Podpis elektroniczny i urządzenia fiskalne.'
+    )
+);
+
+$front_signature_eyebrow = trim(
+    (string) $get_front_services_field(
+        'etos_front_signature_eyebrow',
+        'Podpis i certyfikaty'
+    )
+);
+
+$front_signature_title = trim(
+    (string) $get_front_services_field(
+        'etos_front_signature_title',
+        'Podpis elektroniczny'
+    )
+);
+
+$front_signature_text = trim(
+    (string) $get_front_services_field(
+        'etos_front_signature_text',
+        'Wydajemy i odnawiamy certyfikaty kwalifikowane, pomagamy w konfiguracji oraz zapewniamy wsparcie użytkowników.'
+    )
+);
+
+$front_signature_link = $get_front_services_field(
+    'etos_front_signature_link',
+    array()
+);
+
+$front_signature_link = is_array( $front_signature_link )
+    ? $front_signature_link
+    : array();
+
+$front_signature_url = trim(
+    (string) (
+        $front_signature_link['url']
+        ?? home_url( '/podpis-elektroniczny/' )
+    )
+);
+
+$front_signature_link_title = trim(
+    (string) (
+        $front_signature_link['title']
+        ?? 'Poznaj szczegóły'
+    )
+);
+
+$front_signature_target = '_blank' === (
+    $front_signature_link['target']
+    ?? ''
+)
+    ? '_blank'
+    : '';
+
+$front_fiscal_eyebrow = trim(
+    (string) $get_front_services_field(
+        'etos_front_fiscal_eyebrow',
+        'Sprzedaż i fiskalizacja'
+    )
+);
+
+$front_fiscal_title = trim(
+    (string) $get_front_services_field(
+        'etos_front_fiscal_title',
+        'Urządzenia fiskalne'
+    )
+);
+
+$front_fiscal_text = trim(
+    (string) $get_front_services_field(
+        'etos_front_fiscal_text',
+        'Dobieramy kasy i drukarki fiskalne, konfigurujemy urządzenia oraz zapewniamy przeglądy i obsługę serwisową.'
+    )
+);
+
+$front_fiscal_link = $get_front_services_field(
+    'etos_front_fiscal_link',
+    array()
+);
+
+$front_fiscal_link = is_array( $front_fiscal_link )
+    ? $front_fiscal_link
+    : array();
+
+$front_fiscal_url = trim(
+    (string) (
+        $front_fiscal_link['url']
+        ?? home_url( '/urzadzenia-fiskalne/' )
+    )
+);
+
+$front_fiscal_link_title = trim(
+    (string) (
+        $front_fiscal_link['title']
+        ?? 'Poznaj szczegóły'
+    )
+);
+
+$front_fiscal_target = '_blank' === (
+    $front_fiscal_link['target']
+    ?? ''
+)
+    ? '_blank'
+    : '';
 $service_posts = get_posts(
     array(
         'post_type'        => 'etos_service',
@@ -270,7 +292,7 @@ foreach ( $service_posts as $service_post ) {
         'text'     => trim( wp_strip_all_tags( (string) $text ) ),
         'url'      => get_permalink( $service_post ),
         'icon_id'  => absint( $icon ),
-        'icon_key' => $etos_get_service_icon_key( $title ),
+        'icon_key' => etos_get_service_icon_key_for_content( $title, $text ),
     );
 
     if ( 4 <= count( $services ) ) {
@@ -292,7 +314,7 @@ if ( empty( $services ) ) {
             'text'     => 'Praktyczne szkolenia użytkowników dopasowane do wykorzystywanych systemów i procesów.',
             'url'      => home_url( '/uslugi/' ),
             'icon_id'  => 0,
-            'icon_key' => 'training',
+            'icon_key' => 'training-user',
         ),
         array(
             'title'    => 'Opieka serwisowa',
@@ -323,15 +345,12 @@ if ( empty( $services ) ) {
             <div>
 
                 <span class="etos-kicker etos-kicker--light">
-                    <?php esc_html_e( 'Usługi ETOS', 'etos' ); ?>
+                    <?php echo esc_html( $front_services_kicker ); ?>
                 </span>
 
                 <h2 class="etos-section__title">
                     <?php
-                    esc_html_e(
-                        'Profesjonalne usługi wspierające rozwój Twojej firmy.',
-                        'etos'
-                    );
+                    echo esc_html( $front_services_title );
                     ?>
                 </h2>
 
@@ -339,10 +358,7 @@ if ( empty( $services ) ) {
 
             <p class="etos-services__lead">
                 <?php
-                esc_html_e(
-                    'Od analizy i wdrożenia oprogramowania, przez szkolenia i opiekę serwisową, po infrastrukturę oraz rozwiązania tworzone na zamówienie.',
-                    'etos'
-                );
+                echo esc_html( $front_services_lead );
                 ?>
             </p>
 
@@ -377,7 +393,7 @@ if ( empty( $services ) ) {
 
                             <?php
                             // Static, trusted SVG markup defined in this template.
-                            echo $etos_get_service_icon( $service['icon_key'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo etos_get_inline_icon_svg( $service['icon_key'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             ?>
 
                         <?php endif; ?>
@@ -406,10 +422,7 @@ if ( empty( $services ) ) {
             <header class="etos-services__solutions-header">
 <h2>
                     <?php
-                    esc_html_e(
-                        'Podpis elektroniczny i urządzenia fiskalne.',
-                        'etos'
-                    );
+                    echo esc_html( $front_special_title );
                     ?>
                 </h2>
 
@@ -421,22 +434,19 @@ if ( empty( $services ) ) {
 
                     <span class="etos-service-highlight__icon">
                         <?php
-                        echo $etos_get_service_icon( 'signature' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo etos_get_inline_icon_svg( 'signature' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         ?>
                     </span>
 
                     <span class="etos-service-highlight__eyebrow">
-                        <?php esc_html_e( 'Podpis i certyfikaty', 'etos' ); ?>
+                        <?php echo esc_html( $front_signature_eyebrow ); ?>
                     </span>
 
-                    <h3><?php esc_html_e( 'Podpis elektroniczny', 'etos' ); ?></h3>
+                    <h3><?php echo esc_html( $front_signature_title ); ?></h3>
 
                     <p>
                         <?php
-                        esc_html_e(
-                            'Wydajemy i odnawiamy certyfikaty kwalifikowane, pomagamy w konfiguracji oraz zapewniamy wsparcie użytkowników.',
-                            'etos'
-                        );
+                        echo esc_html( $front_signature_text );
                         ?>
                     </p>
 
@@ -448,9 +458,13 @@ if ( empty( $services ) ) {
 
                     <a
                         class="etos-service-highlight__button"
-                        href="<?php echo esc_url( home_url( '/podpis-elektroniczny/' ) ); ?>"
+                        href="<?php echo esc_url( $front_signature_url ); ?>"
+                        <?php if ( $front_signature_target ) : ?>
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        <?php endif; ?>
                     >
-                        <?php esc_html_e( 'Poznaj szczegóły', 'etos' ); ?> <span aria-hidden="true">→</span>
+                        <?php echo esc_html( $front_signature_link_title ); ?> <span aria-hidden="true">→</span>
                     </a>
 
                 </article>
@@ -459,22 +473,19 @@ if ( empty( $services ) ) {
 
                     <span class="etos-service-highlight__icon">
                         <?php
-                        echo $etos_get_service_icon( 'fiscal' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo etos_get_inline_icon_svg( 'fiscal' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         ?>
                     </span>
 
                     <span class="etos-service-highlight__eyebrow">
-                        <?php esc_html_e( 'Sprzedaż i fiskalizacja', 'etos' ); ?>
+                        <?php echo esc_html( $front_fiscal_eyebrow ); ?>
                     </span>
 
-                    <h3><?php esc_html_e( 'Urządzenia fiskalne', 'etos' ); ?></h3>
+                    <h3><?php echo esc_html( $front_fiscal_title ); ?></h3>
 
                     <p>
                         <?php
-                        esc_html_e(
-                            'Dobieramy kasy i drukarki fiskalne, konfigurujemy urządzenia oraz zapewniamy przeglądy i obsługę serwisową.',
-                            'etos'
-                        );
+                        echo esc_html( $front_fiscal_text );
                         ?>
                     </p>
 
@@ -486,9 +497,13 @@ if ( empty( $services ) ) {
 
                     <a
                         class="etos-service-highlight__button"
-                        href="<?php echo esc_url( home_url( '/urzadzenia-fiskalne/' ) ); ?>"
+                        href="<?php echo esc_url( $front_fiscal_url ); ?>"
+                        <?php if ( $front_fiscal_target ) : ?>
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        <?php endif; ?>
                     >
-                        <?php esc_html_e( 'Poznaj szczegóły', 'etos' ); ?> <span aria-hidden="true">→</span>
+                        <?php echo esc_html( $front_fiscal_link_title ); ?> <span aria-hidden="true">→</span>
                     </a>
 
                 </article>

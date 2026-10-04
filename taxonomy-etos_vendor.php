@@ -259,6 +259,42 @@ $GLOBALS['etos_footer_cta_hide'] = true;
         </section>
 
     <?php endif; ?>
+    <?php if ( 'insert' === $term->slug ) : ?>
+
+        <section
+            class="etos-vendor-promo"
+            aria-label="Aktualna promocja InsERT"
+        >
+            <div class="container etos-container">
+                <div class="etos-vendor-promo__inner">
+                    <iframe
+                        class="etos-vendor-promo__frame etos-vendor-promo__frame--desktop"
+                        id="insert_aktualna_promocja_doublebill"
+                        name="insert_aktualna_promocja_doublebill"
+                        data-src="https://bannery.insert.com.pl/aktualna_promocja_doublebill"
+                        width="750"
+                        height="200"
+                        scrolling="no"
+                        loading="lazy"
+                        title="Aktualna promocja InsERT"
+                    ></iframe>
+
+                    <iframe
+                        class="etos-vendor-promo__frame etos-vendor-promo__frame--mobile"
+                        id="insert_aktualna_promocja_rectangle"
+                        name="insert_aktualna_promocja_rectangle"
+                        data-src="https://bannery.insert.com.pl/aktualna_promocja_rectangle"
+                        width="300"
+                        height="250"
+                        scrolling="no"
+                        loading="lazy"
+                        title="Aktualna promocja InsERT"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+
+    <?php endif; ?>
 
     <section
         class="etos-vendor-products"
@@ -274,7 +310,7 @@ $GLOBALS['etos_footer_cta_hide'] = true;
                     class="etos-section__title"
                     id="etos-vendor-products-title"
                 >
-                    Nasze rozwiązania
+                    Rozwiązania <?php echo esc_html( $term_name ); ?>
                 </h2>
 
             </header>
@@ -306,11 +342,40 @@ $GLOBALS['etos_footer_cta_hide'] = true;
 
                         $logo = absint( $logo );
 
+                        $excerpt = function_exists( 'get_field' )
+                            ? get_field(
+                                'etos_software_lead',
+                                $product_id
+                            )
+                            : get_post_meta(
+                                $product_id,
+                                'etos_software_lead',
+                                true
+                            );
+
                         $excerpt = trim(
                             wp_strip_all_tags(
-                                get_the_excerpt( $product_id )
+                                (string) $excerpt
                             )
                         );
+
+                        if ( '' === $excerpt ) {
+                            $excerpt = trim(
+                                preg_replace(
+                                    '/\s+/',
+                                    ' ',
+                                    wp_strip_all_tags(
+                                        strip_shortcodes(
+                                            (string) get_post_field(
+                                                'post_content',
+                                                $product_id,
+                                                'raw'
+                                            )
+                                        )
+                                    )
+                                )
+                            );
+                        }
                         ?>
 
                         <article class="etos-vendor-product">

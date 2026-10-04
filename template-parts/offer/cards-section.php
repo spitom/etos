@@ -148,6 +148,12 @@ if ( $count <= 4 ) {
                         )
                     );
 
+                    $step_image_id = 'steps' === $style
+                        ? absint(
+                            $card['step_image'] ?? 0
+                        )
+                        : 0;
+
                     // ETOS OFFER SYSTEM ICON START
                     $system_icon_key = sanitize_key(
                         (string) (
@@ -274,6 +280,27 @@ if ( $count <= 4 ) {
                                 );
                                 ?>
                             </div>
+
+                        <?php endif; ?>
+
+                        <?php if ( $step_image_id ) : ?>
+
+                            <figure class="etos-offer-card__step-media">
+
+                                <?php
+                                echo wp_get_attachment_image(
+                                    $step_image_id,
+                                    'medium_large',
+                                    false,
+                                    array(
+                                        'class'   => 'etos-offer-card__step-image',
+                                        'loading' => 'lazy',
+                                        'decoding' => 'async',
+                                    )
+                                );
+                                ?>
+
+                            </figure>
 
                         <?php endif; ?>
 

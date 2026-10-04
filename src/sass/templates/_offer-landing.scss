@@ -51,7 +51,7 @@
         font-size: clamp(1.05rem, 1.4vw, 1.22rem);
         line-height: 1.75;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
@@ -86,11 +86,7 @@
 
     &__manufacturers {
         display: grid;
-        grid-template-columns:
-            repeat(
-                auto-fit,
-                minmax(150px, 1fr)
-            );
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1px;
         margin-top: clamp(2.75rem, 4vw, 3.5rem);
         background: rgba($etos-ink, 0.1);
@@ -128,12 +124,9 @@
         width: 100%;
         height: 100%;
         object-fit: var(--etos-offer-image-fit, cover);
-        object-position:
-            var(--etos-offer-image-x, 50%)
+        object-position: var(--etos-offer-image-x, 50%)
             var(--etos-offer-image-y, 50%);
-        transform: scale(
-            var(--etos-offer-image-scale, 1)
-        );
+        transform: scale(var(--etos-offer-image-scale, 1));
         transform-origin: center;
     }
 
@@ -199,7 +192,7 @@
         color: $etos-muted;
         line-height: 1.7;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
@@ -230,7 +223,7 @@
         text-transform: uppercase;
 
         &::before {
-            content: '';
+            content: "";
             width: 1.75rem;
             height: 3px;
             border-radius: 999px;
@@ -253,7 +246,7 @@
         color: $etos-muted;
         line-height: 1.7;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
@@ -339,7 +332,7 @@
         color: $etos-muted;
         line-height: 1.7;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
@@ -352,7 +345,7 @@
         text-decoration: none;
 
         &::after {
-            content: '→';
+            content: "→";
             margin-left: 0.4rem;
         }
     }
@@ -380,35 +373,31 @@
         padding: 4.5rem 0;
 
         &__manufacturers {
-        display: grid;
-        grid-template-columns:
-            repeat(
-                auto-fit,
-                minmax(150px, 1fr)
-            );
-        gap: 1px;
-        margin-top: clamp(2.75rem, 4vw, 3.5rem);
-        background: rgba($etos-ink, 0.1);
-    }
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1px;
+            margin-top: clamp(2.75rem, 4vw, 3.5rem);
+            background: rgba($etos-ink, 0.1);
+        }
 
-    &__manufacturer {
-        display: flex;
-        min-width: 0;
-        min-height: 86px;
-        align-items: center;
-        justify-content: center;
-        padding: 1.1rem 2rem;
-        background: #f3f7fa;
-    }
+        &__manufacturer {
+            display: flex;
+            min-width: 0;
+            min-height: 86px;
+            align-items: center;
+            justify-content: center;
+            padding: 1.1rem 2rem;
+            background: #f3f7fa;
+        }
 
-    &__manufacturer-image {
-        display: block;
-        width: auto;
-        max-width: min(180px, 100%);
-        max-height: 48px;
-        object-fit: contain;
-    }
-    &__media {
+        &__manufacturer-image {
+            display: block;
+            width: auto;
+            max-width: min(180px, 100%);
+            max-height: 48px;
+            object-fit: contain;
+        }
+        &__media {
             aspect-ratio: 16 / 10;
         }
     }
@@ -431,11 +420,7 @@
         padding: 3.75rem 0;
 
         &__manufacturers {
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(100px, 1fr)
-                );
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             margin-top: 2.5rem;
         }
 
@@ -458,35 +443,31 @@
         }
 
         &__manufacturers {
-        display: grid;
-        grid-template-columns:
-            repeat(
-                auto-fit,
-                minmax(150px, 1fr)
-            );
-        gap: 1px;
-        margin-top: clamp(2.75rem, 4vw, 3.5rem);
-        background: rgba($etos-ink, 0.1);
-    }
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1px;
+            margin-top: clamp(2.75rem, 4vw, 3.5rem);
+            background: rgba($etos-ink, 0.1);
+        }
 
-    &__manufacturer {
-        display: flex;
-        min-width: 0;
-        min-height: 86px;
-        align-items: center;
-        justify-content: center;
-        padding: 1.1rem 2rem;
-        background: #f3f7fa;
-    }
+        &__manufacturer {
+            display: flex;
+            min-width: 0;
+            min-height: 86px;
+            align-items: center;
+            justify-content: center;
+            padding: 1.1rem 2rem;
+            background: #f3f7fa;
+        }
 
-    &__manufacturer-image {
-        display: block;
-        width: auto;
-        max-width: min(180px, 100%);
-        max-height: 48px;
-        object-fit: contain;
-    }
-    &__media {
+        &__manufacturer-image {
+            display: block;
+            width: auto;
+            max-width: min(180px, 100%);
+            max-height: 48px;
+            object-fit: contain;
+        }
+        &__media {
             aspect-ratio: 4 / 3;
             border-radius: 1.1rem;
         }
@@ -737,7 +718,7 @@
                 box-shadow: 0 8px 20px rgba($etos-ink, 0.06);
 
                 &::before {
-                    content: '✓';
+                    content: "✓";
                     font-size: 0.85rem;
                     font-weight: 800;
                 }
@@ -873,15 +854,15 @@
 .etos-offer-page--support {
     .etos-offer-section--primary {
         .etos-offer-grid {
-            max-width: 1120px;
+            max-width: 1280px;
             margin-right: auto;
             margin-left: auto;
-            gap: clamp(1.5rem, 3vw, 2.25rem);
+            gap: clamp(1rem, 2vw, 1.5rem);
         }
 
         .etos-offer-card {
             align-items: center;
-            padding: clamp(2rem, 3vw, 2.75rem);
+            padding: clamp(1.5rem, 2vw, 2rem);
             text-align: center;
             transition:
                 transform 180ms ease,
@@ -902,9 +883,9 @@
             }
 
             &__marker {
-                width: clamp(7rem, 10vw, 9rem);
-                height: clamp(7rem, 10vw, 9rem);
-                margin-bottom: 1.75rem;
+                width: clamp(5.25rem, 7vw, 6.5rem);
+                height: clamp(5.25rem, 7vw, 6.5rem);
+                margin-bottom: 1.35rem;
                 border-radius: 0;
                 background: transparent;
                 box-shadow: none;
@@ -917,16 +898,20 @@
             }
 
             &__title {
-                max-width: 18ch;
+                max-width: 13ch;
                 margin-right: auto;
+                margin-bottom: 0.9rem;
                 margin-left: auto;
-                font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+                font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+                line-height: 1.25;
             }
 
             &__text {
-                max-width: 30rem;
+                max-width: 24rem;
                 margin-right: auto;
                 margin-left: auto;
+                font-size: 1rem;
+                line-height: 1.65;
             }
 
             &__link {
@@ -935,23 +920,44 @@
                 align-items: center;
                 gap: 0.45rem;
                 margin-top: auto;
-                padding-top: 1.4rem;
+                padding-top: 1rem;
                 color: $primary;
+                font-size: 1rem;
                 font-weight: 750;
                 text-decoration: none;
 
                 &::before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     z-index: 1;
                     inset: 0;
                 }
 
                 &::after {
-                    content: '↓';
+                    content: "↓";
                     margin-left: 0;
-                    font-size: 1rem;
+                    font-size: 0.95rem;
                     font-weight: 800;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .etos-offer-page--support {
+        .etos-offer-section--primary {
+            .etos-offer-card {
+                padding: 1.75rem 1.35rem;
+
+                &__marker {
+                    width: 5.5rem;
+                    height: 5.5rem;
+                    margin-bottom: 1.1rem;
+                }
+
+                &__title {
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -965,8 +971,8 @@
                 padding: 2rem 1.5rem;
 
                 &__marker {
-                    width: 7rem;
-                    height: 7rem;
+                    width: 6rem;
+                    height: 6rem;
                 }
             }
         }
@@ -985,14 +991,14 @@
         .etos-container {
             display: grid;
             grid-template-columns:
-                minmax(270px, 0.85fr)
-                minmax(0, 2.15fr);
-            gap: clamp(3rem, 6vw, 6rem);
+                minmax(250px, 0.72fr)
+                minmax(0, 2.28fr);
+            gap: clamp(2.5rem, 5vw, 5rem);
             align-items: start;
         }
 
         .etos-offer-section__header {
-            max-width: 360px;
+            max-width: 340px;
             margin: 0;
             text-align: left;
         }
@@ -1012,58 +1018,91 @@
         .etos-offer-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0;
+            gap: clamp(1rem, 1.8vw, 1.5rem);
             width: 100%;
             max-width: none;
             margin: 0;
+            padding-top: 1.4rem;
         }
 
         .etos-offer-card--steps {
-            display: block;
-            min-height: 0;
-            padding: 0 clamp(1.75rem, 3vw, 3rem);
-            border: 0;
-            border-radius: 0;
-            background: transparent;
-            box-shadow: none;
-
-            &:first-child {
-                padding-left: 0;
-            }
-
-            &:not(:first-child) {
-                border-left: 1px solid rgba($etos-ink, 0.13);
-            }
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 100%;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 2.75rem clamp(1.1rem, 1.8vw, 1.5rem) 1.25rem;
+            border: 1px solid rgba($etos-ink, 0.1);
+            border-radius: 1.15rem;
+            background: #fff;
+            box-shadow: 0 14px 36px rgba($etos-ink, 0.06);
 
             .etos-offer-card__marker {
+                position: absolute;
+                top: 0;
+                left: 50%;
                 display: flex;
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 3rem;
+                height: 3rem;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 1.25rem;
+                margin: 0;
+                transform: translate(-50%, -50%);
+                border: 0;
                 border-radius: 50%;
-                background: #fff;
-                color: $primary;
-                box-shadow: 0 8px 20px rgba($etos-ink, 0.06);
-                font-size: 0.8rem;
+                background: $primary;
+                color: #fff;
+                box-shadow: 0 8px 20px rgba($etos-ink, 0.14);
+                font-size: 0.9rem;
                 font-weight: 800;
+                line-height: 1;
             }
 
             .etos-offer-card__title {
-                max-width: 15ch;
-                margin-bottom: 0.75rem;
-                font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+                max-width: 18ch;
+                margin: 0 auto 0.85rem;
+                color: $primary;
+                font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+                line-height: 1.25;
+                text-align: center;
             }
 
             .etos-offer-card__text {
-                line-height: 1.65;
+                margin-bottom: 1.25rem;
+                color: rgba($etos-ink, 0.76);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                text-align: center;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .etos-offer-card__step-media {
+                margin: auto 0 0;
+                padding-top: 0.35rem;
+            }
+
+            .etos-offer-card__step-image {
+                display: block;
+                width: 100%;
+                height: auto;
+                border: 1px solid rgba($etos-ink, 0.1);
+                border-radius: 0.7rem;
+                background: #fff;
+                box-shadow: 0 8px 24px rgba($etos-ink, 0.05);
+            }
+
+            .etos-offer-card__link {
+                margin-top: 1rem;
             }
         }
     }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .etos-offer-page--support {
         .etos-offer-section--secondary.etos-offer-section--steps {
             .etos-container {
@@ -1087,19 +1126,12 @@
         .etos-offer-section--secondary.etos-offer-section--steps {
             .etos-offer-grid {
                 grid-template-columns: 1fr;
+                gap: 2.75rem;
+                padding-top: 1.5rem;
             }
 
             .etos-offer-card--steps {
-                padding: 1.75rem 0;
-
-                &:first-child {
-                    padding-top: 0;
-                }
-
-                &:not(:first-child) {
-                    border-top: 1px solid rgba($etos-ink, 0.13);
-                    border-left: 0;
-                }
+                padding: 2.75rem 1.5rem 1.5rem;
 
                 .etos-offer-card__title {
                     max-width: none;
@@ -1115,7 +1147,7 @@
 
 .etos-offer-action {
     &__panel {
-        border-bottom: 1px solid rgba($etos-ink, 0.10);
+        border-bottom: 1px solid rgba($etos-ink, 0.1);
     }
 }
 
@@ -1143,7 +1175,6 @@
 
 // ETOS OFFER SYSTEM ICON END
 
-
 // ETOS FISCAL MANUFACTURERS MOBILE CENTER START
 
 @media (max-width: 767.98px) {
@@ -1158,7 +1189,6 @@
 }
 
 // ETOS FISCAL MANUFACTURERS MOBILE CENTER END
-
 
 // ETOS FISCAL MANUFACTURERS MOBILE ROW FIX START
 

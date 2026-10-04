@@ -291,31 +291,7 @@ $footer_cta = $GLOBALS['etos_footer_cta'] ?? array(
 
                                     <ul>
                                         <?php
-                                        $footer_services = get_posts(
-                                            array(
-                                                'post_type'        => 'etos_service',
-                                                'post_status'      => 'publish',
-                                                'posts_per_page'   => -1,
-                                                'orderby'          => array(
-                                                    'menu_order' => 'ASC',
-                                                    'title'      => 'ASC',
-                                                ),
-                                                'suppress_filters' => false,
-                                            )
-                                        );
-
-                                        $footer_services = array_values(
-                                            array_filter(
-                                                $footer_services,
-                                                static function ( $service ) {
-                                                    return '0' !== (string) get_post_meta(
-                                                        $service->ID,
-                                                        'etos_service_show_in_menu',
-                                                        true
-                                                    );
-                                                }
-                                            )
-                                        );
+                                        $footer_services = etos_get_navigation_services();
 
                                         foreach ( $footer_services as $footer_service ) :
 
@@ -421,7 +397,7 @@ $footer_cta = $GLOBALS['etos_footer_cta'] ?? array(
                 <div class="etos-footer__bottom">
 
                     <p>
-                        &copy; <?php echo esc_html( date( 'Y' ) ); ?> ETOS
+                        &copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> ETOS
                     </p>
 
                     <nav aria-label="Linki prawne">
@@ -437,6 +413,9 @@ $footer_cta = $GLOBALS['etos_footer_cta'] ?? array(
                                 href="<?php echo esc_url( $footer_privacy['url'] ); ?>"
                                 <?php if ( ! empty( $footer_privacy['target'] ) ) : ?>
                                     target="<?php echo esc_attr( $footer_privacy['target'] ); ?>"
+                                <?php endif; ?>
+                                <?php if ( '_blank' === ( $footer_privacy['target'] ?? '' ) ) : ?>
+                                    rel="noopener noreferrer"
                                 <?php endif; ?>
                             >
                                 <?php
@@ -460,6 +439,9 @@ $footer_cta = $GLOBALS['etos_footer_cta'] ?? array(
                                 href="<?php echo esc_url( $footer_cookies['url'] ); ?>"
                                 <?php if ( ! empty( $footer_cookies['target'] ) ) : ?>
                                     target="<?php echo esc_attr( $footer_cookies['target'] ); ?>"
+                                <?php endif; ?>
+                                <?php if ( '_blank' === ( $footer_cookies['target'] ?? '' ) ) : ?>
+                                    rel="noopener noreferrer"
                                 <?php endif; ?>
                             >
                                 <?php

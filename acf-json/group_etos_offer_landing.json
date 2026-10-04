@@ -6,16 +6,34 @@
             "key": "field_etos_offer_tab_setup",
             "label": "Ustawienia",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_variant",
             "label": "Wariant strony",
             "name": "etos_offer_variant",
+            "aria-label": "",
             "type": "button_group",
+            "instructions": "",
             "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "signature": "Podpis elektroniczny",
                 "fiscal": "Urządzenia fiskalne",
@@ -30,123 +48,128 @@
             "key": "field_etos_offer_tab_hero",
             "label": "Hero",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_hero_logo",
             "label": "Logo główne",
             "name": "etos_offer_hero_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "Np. logo Certum lub producenta urządzeń.",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_etos_offer_hero_partner_logo",
             "label": "Logo partnera ETOS",
             "name": "etos_offer_hero_partner_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "Opcjonalne logo statusu partnerskiego.",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
-        },
-        {
-            "key": "field_etos_offer_hero_manufacturers",
-            "label": "Logotypy producentów",
-            "name": "etos_offer_hero_manufacturers",
-            "type": "repeater",
-            "instructions": "Logotypy producentów wyświetlane w pasku pod hero. Dla urządzeń fiskalnych zastępują pojedyncze logo nad tytułem.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_etos_offer_variant",
-                        "operator": "==",
-                        "value": "fiscal"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "100"
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 4,
-            "collapsed": "field_etos_offer_hero_manufacturer_name",
-            "button_label": "Dodaj producenta",
-            "rows_per_page": 10,
-            "sub_fields": [
-                {
-                    "key": "field_etos_offer_hero_manufacturer_name",
-                    "label": "Nazwa producenta",
-                    "name": "name",
-                    "type": "text",
-                    "required": 1,
-                    "wrapper": {
-                        "width": "35"
-                    },
-                    "maxlength": 80,
-                    "parent_repeater": "field_etos_offer_hero_manufacturers"
-                },
-                {
-                    "key": "field_etos_offer_hero_manufacturer_logo",
-                    "label": "Logo",
-                    "name": "logo",
-                    "type": "image",
-                    "required": 1,
-                    "wrapper": {
-                        "width": "65"
-                    },
-                    "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "parent_repeater": "field_etos_offer_hero_manufacturers"
-                }
-            ]
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_etos_offer_hero_lead",
             "label": "Lead",
             "name": "etos_offer_hero_lead",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Krótki opis usługi lub oferty.",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "maxlength": 650,
             "rows": 7,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_offer_hero_image",
             "label": "Grafika hero",
             "name": "etos_offer_hero_image",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_etos_offer_hero_image_fit",
             "label": "Dopasowanie grafiki",
             "name": "etos_offer_hero_image_fit",
+            "aria-label": "",
             "type": "button_group",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "25"
+                "width": "25",
+                "class": "",
+                "id": ""
             },
             "choices": {
                 "cover": "Wypełnij kadr",
@@ -161,51 +184,78 @@
             "key": "field_etos_offer_hero_image_scale",
             "label": "Powiększenie",
             "name": "etos_offer_hero_image_scale",
+            "aria-label": "",
             "type": "range",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "25"
+                "width": "25",
+                "class": "",
+                "id": ""
             },
             "default_value": 100,
             "min": 100,
             "max": 150,
             "step": 1,
-            "append": "%"
+            "append": "%",
+            "prepend": ""
         },
         {
             "key": "field_etos_offer_hero_image_x",
             "label": "Pozycja pozioma",
             "name": "etos_offer_hero_image_x",
+            "aria-label": "",
             "type": "range",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "25"
+                "width": "25",
+                "class": "",
+                "id": ""
             },
             "default_value": 50,
             "min": 0,
             "max": 100,
             "step": 1,
-            "append": "%"
+            "append": "%",
+            "prepend": ""
         },
         {
             "key": "field_etos_offer_hero_image_y",
             "label": "Pozycja pionowa",
             "name": "etos_offer_hero_image_y",
+            "aria-label": "",
             "type": "range",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "25"
+                "width": "25",
+                "class": "",
+                "id": ""
             },
             "default_value": 50,
             "min": 0,
             "max": 100,
             "step": 1,
-            "append": "%"
+            "append": "%",
+            "prepend": ""
         },
         {
             "key": "field_etos_offer_primary_cta",
             "label": "Główny przycisk",
             "name": "etos_offer_primary_cta",
+            "aria-label": "",
             "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "return_format": "array"
         },
@@ -213,9 +263,15 @@
             "key": "field_etos_offer_secondary_cta",
             "label": "Drugi przycisk",
             "name": "etos_offer_secondary_cta",
+            "aria-label": "",
             "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "50"
+                "width": "50",
+                "class": "",
+                "id": ""
             },
             "return_format": "array"
         },
@@ -223,71 +279,138 @@
             "key": "field_etos_offer_tab_action",
             "label": "Panel pod hero",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_action_show",
             "label": "Pokaż panel",
             "name": "etos_offer_action_show",
+            "aria-label": "",
             "type": "true_false",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "Tak",
-            "ui_off_text": "Nie"
+            "ui_off_text": "Nie",
+            "message": ""
         },
         {
             "key": "field_etos_offer_action_logo",
             "label": "Logo lub grafika",
             "name": "etos_offer_action_logo",
+            "aria-label": "",
             "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_etos_offer_action_eyebrow",
             "label": "Nadtytuł",
             "name": "etos_offer_action_eyebrow",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 100
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_action_title",
             "label": "Tytuł",
             "name": "etos_offer_action_title",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "40"
+                "width": "40",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 180
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_action_text",
             "label": "Opis",
             "name": "etos_offer_action_text",
+            "aria-label": "",
             "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "60"
+                "width": "60",
+                "class": "",
+                "id": ""
             },
             "maxlength": 600,
             "rows": 6,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_offer_action_link",
             "label": "Przycisk",
             "name": "etos_offer_action_link",
+            "aria-label": "",
             "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "40"
+                "width": "40",
+                "class": "",
+                "id": ""
             },
             "return_format": "array"
         },
@@ -295,65 +418,126 @@
             "key": "field_etos_offer_tab_primary",
             "label": "Sekcja główna",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_primary_eyebrow",
             "label": "Nadtytuł",
             "name": "etos_offer_primary_eyebrow",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 100
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_primary_title",
             "label": "Tytuł sekcji",
             "name": "etos_offer_primary_title",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "40"
+                "width": "40",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 180
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_primary_intro",
             "label": "Wprowadzenie",
             "name": "etos_offer_primary_intro",
+            "aria-label": "",
             "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
             "maxlength": 500,
             "rows": 5,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_offer_primary_cards",
             "label": "Karty",
             "name": "etos_offer_primary_cards",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "min": 0,
             "max": 8,
             "collapsed": "field_etos_offer_primary_card_title",
             "button_label": "Dodaj kartę",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_etos_offer_primary_card_icon",
                     "label": "Ikona",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "20"
+                        "width": "20",
+                        "class": "",
+                        "id": ""
                     },
                     "return_format": "id",
                     "preview_size": "thumbnail",
                     "library": "all",
-                    "parent_repeater": "field_etos_offer_primary_cards"
+                    "parent_repeater": "field_etos_offer_primary_cards",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_etos_offer_primary_card_system_icon",
@@ -413,34 +597,57 @@
                     "key": "field_etos_offer_primary_card_title",
                     "label": "Tytuł",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
+                    "instructions": "",
                     "required": 1,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "30"
+                        "width": "30",
+                        "class": "",
+                        "id": ""
                     },
                     "maxlength": 140,
-                    "parent_repeater": "field_etos_offer_primary_cards"
+                    "parent_repeater": "field_etos_offer_primary_cards",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_etos_offer_primary_card_text",
                     "label": "Opis",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "50"
+                        "width": "50",
+                        "class": "",
+                        "id": ""
                     },
                     "maxlength": 500,
                     "rows": 5,
                     "new_lines": "",
-                    "parent_repeater": "field_etos_offer_primary_cards"
+                    "parent_repeater": "field_etos_offer_primary_cards",
+                    "default_value": "",
+                    "placeholder": ""
                 },
                 {
                     "key": "field_etos_offer_primary_card_link",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "link",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "70"
+                        "width": "70",
+                        "class": "",
+                        "id": ""
                     },
                     "return_format": "array",
                     "parent_repeater": "field_etos_offer_primary_cards"
@@ -449,15 +656,22 @@
                     "key": "field_etos_offer_primary_card_featured",
                     "label": "Wyróżnij",
                     "name": "featured",
+                    "aria-label": "",
                     "type": "true_false",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "30"
+                        "width": "30",
+                        "class": "",
+                        "id": ""
                     },
                     "default_value": 0,
                     "ui": 1,
                     "ui_on_text": "Tak",
                     "ui_off_text": "Nie",
-                    "parent_repeater": "field_etos_offer_primary_cards"
+                    "parent_repeater": "field_etos_offer_primary_cards",
+                    "message": ""
                 }
             ]
         },
@@ -465,15 +679,34 @@
             "key": "field_etos_offer_tab_secondary",
             "label": "Druga sekcja",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_secondary_style",
             "label": "Sposób prezentacji",
             "name": "etos_offer_secondary_style",
+            "aria-label": "",
             "type": "button_group",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "cards": "Karty",
                 "steps": "Kroki"
@@ -487,99 +720,186 @@
             "key": "field_etos_offer_secondary_eyebrow",
             "label": "Nadtytuł",
             "name": "etos_offer_secondary_eyebrow",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 100
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_secondary_title",
             "label": "Tytuł sekcji",
             "name": "etos_offer_secondary_title",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "40"
+                "width": "40",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 180
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_secondary_intro",
             "label": "Wprowadzenie",
             "name": "etos_offer_secondary_intro",
+            "aria-label": "",
             "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
             "maxlength": 500,
             "rows": 5,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_offer_secondary_cards",
             "label": "Karty lub kroki",
             "name": "etos_offer_secondary_cards",
+            "aria-label": "",
             "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layout": "block",
             "min": 0,
             "max": 8,
             "collapsed": "field_etos_offer_secondary_card_title",
             "button_label": "Dodaj element",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_etos_offer_secondary_card_icon",
                     "label": "Ikona",
                     "name": "icon",
+                    "aria-label": "",
                     "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "20"
+                        "width": "20",
+                        "class": "",
+                        "id": ""
                     },
                     "return_format": "id",
                     "preview_size": "thumbnail",
                     "library": "all",
-                    "parent_repeater": "field_etos_offer_secondary_cards"
+                    "parent_repeater": "field_etos_offer_secondary_cards",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_etos_offer_secondary_card_number",
                     "label": "Numer lub symbol",
                     "name": "number",
+                    "aria-label": "",
                     "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "15"
+                        "width": "15",
+                        "class": "",
+                        "id": ""
                     },
                     "maxlength": 20,
-                    "parent_repeater": "field_etos_offer_secondary_cards"
+                    "parent_repeater": "field_etos_offer_secondary_cards",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_etos_offer_secondary_card_title",
                     "label": "Tytuł",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
+                    "instructions": "",
                     "required": 1,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "25"
+                        "width": "25",
+                        "class": "",
+                        "id": ""
                     },
                     "maxlength": 140,
-                    "parent_repeater": "field_etos_offer_secondary_cards"
+                    "parent_repeater": "field_etos_offer_secondary_cards",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_etos_offer_secondary_card_text",
                     "label": "Opis",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
                     "wrapper": {
-                        "width": "40"
+                        "width": "40",
+                        "class": "",
+                        "id": ""
                     },
                     "maxlength": 500,
                     "rows": 5,
                     "new_lines": "",
-                    "parent_repeater": "field_etos_offer_secondary_cards"
+                    "parent_repeater": "field_etos_offer_secondary_cards",
+                    "default_value": "",
+                    "placeholder": ""
                 },
                 {
                     "key": "field_etos_offer_secondary_card_link",
                     "label": "Link",
                     "name": "link",
+                    "aria-label": "",
                     "type": "link",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "return_format": "array",
                     "parent_repeater": "field_etos_offer_secondary_cards"
                 },
@@ -587,11 +907,48 @@
                     "key": "field_etos_offer_secondary_card_featured",
                     "label": "Wyróżnij",
                     "name": "featured",
+                    "aria-label": "",
                     "type": "true_false",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": 0,
                     "ui": 1,
                     "ui_on_text": "Tak",
                     "ui_off_text": "Nie",
+                    "parent_repeater": "field_etos_offer_secondary_cards",
+                    "message": ""
+                },
+                {
+                    "key": "field_6aac27de6e015",
+                    "label": "Zrzut ekranu kroku",
+                    "name": "step_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Opcjonalny zrzut ekranu ilustrujący dany krok.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium_large",
                     "parent_repeater": "field_etos_offer_secondary_cards"
                 }
             ]
@@ -600,47 +957,94 @@
             "key": "field_etos_offer_tab_cta",
             "label": "CTA",
             "name": "",
+            "aria-label": "",
             "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_etos_offer_cta_eyebrow",
             "label": "Nadtytuł CTA",
             "name": "etos_offer_cta_eyebrow",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "30"
+                "width": "30",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 100
+            "maxlength": 100,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_cta_title",
             "label": "Tytuł CTA",
             "name": "etos_offer_cta_title",
+            "aria-label": "",
             "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "35"
+                "width": "35",
+                "class": "",
+                "id": ""
             },
-            "maxlength": 180
+            "maxlength": 180,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_etos_offer_cta_text",
             "label": "Opis CTA",
             "name": "etos_offer_cta_text",
+            "aria-label": "",
             "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
-                "width": "35"
+                "width": "35",
+                "class": "",
+                "id": ""
             },
             "maxlength": 400,
             "rows": 5,
-            "new_lines": ""
+            "new_lines": "",
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_etos_offer_cta_link",
             "label": "Przycisk CTA",
             "name": "etos_offer_cta_link",
+            "aria-label": "",
             "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array"
         }
     ],
@@ -649,7 +1053,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates/template-offer-landing.php"
+                "value": "page-templates\/template-offer-landing.php"
             }
         ]
     ],
@@ -664,5 +1068,8 @@
     "active": true,
     "description": "Wspólny szablon dla podpisu elektronicznego, urządzeń fiskalnych i pomocy zdalnej.",
     "show_in_rest": 0,
-    "modified": 1785670000
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1789667373
 }

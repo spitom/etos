@@ -11,6 +11,7 @@ $cta = wp_parse_args(
         'note'    => '',
         'url'     => '/kontakt/',
         'class'   => '',
+        'target'  => '',
     )
 );
 ?>
@@ -38,6 +39,10 @@ $cta = wp_parse_args(
                 <a
                     href="<?php echo esc_url( $cta['url'] ); ?>"
                     class="btn etos-btn-primary"
+                    <?php if ( '_blank' === $cta['target'] ) : ?>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    <?php endif; ?>
                 >
                     <?php echo esc_html( $cta['button'] ); ?>
                 </a>

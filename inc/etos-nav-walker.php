@@ -82,6 +82,24 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
             && ! $has_children
             && in_array( 'etos-menu-cta', $classes, true );
 
+        $is_dynamic_current = 0 === $depth
+            && (
+                (
+                    $is_software
+                    && (
+                        is_singular( 'etos_software' )
+                        || is_post_type_archive( 'etos_software' )
+                    )
+                )
+                || (
+                    $is_services
+                    && (
+                        is_singular( 'etos_service' )
+                        || is_post_type_archive( 'etos_service' )
+                    )
+                )
+            );
+
         if ( $is_child ) {
             $classes[] = 'etos-standard-menu__item';
         } else {
@@ -99,6 +117,10 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
 
         if ( $is_cta ) {
             $classes[] = 'etos-nav-item--cta';
+        }
+
+        if ( $is_dynamic_current ) {
+            $classes[] = 'etos-nav-item--current-dynamic';
         }
 
         $classes = array_filter(
@@ -256,6 +278,8 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
 			}
 		);
 
+		$software_by_vendor = etos_get_navigation_software_by_vendor();
+
 		ob_start();
 		?>
 		<div class="dropdown-menu etos-mega-menu" id="<?php echo esc_attr( $panel_id ); ?>">
@@ -280,63 +304,50 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
 								true
 							);
 
-							$software = get_posts(
-								array(
-									'post_type'        => 'etos_software',
-									'post_status'      => 'publish',
-									'posts_per_page'   => -1,
-									'orderby'          => array(
-										'menu_order' => 'ASC',
-										'title'      => 'ASC',
-									),
-									'tax_query'        => array(
-										array(
-											'taxonomy' => 'etos_vendor',
-											'field'    => 'term_id',
-											'terms'    => $vendor->term_id,
-										),
-									),
-									'suppress_filters' => false,
-								)
-							);
+							$software = $software_by_vendor[ $vendor->term_id ] ?? array();
 
-							$software = array_values(
-								array_filter(
-									$software,
-									static function ( $software_item ) {
-										return '0' !== (string) get_post_meta(
-											$software_item->ID,
-											'etos_software_show_in_mega_menu',
-											true
-										);
-									}
-								)
-							);
+                                                    $vendor_url = get_term_link(
+                                                            $vendor
+                                                    );
 
+                                                    if ( is_wp_error( $vendor_url ) ) {
+                                                            $vendor_url = '';
+                                                    }
 							?>
 							<section
 								class="etos-mega-menu__column"
 								style="--etos-vendor-accent: <?php echo esc_attr( $accent ); ?>;"
 							>
-								<div class="etos-mega-menu__vendor">
-									<?php
-									if ( $logo_id ) {
-										echo wp_get_attachment_image(
-											$logo_id,
-											'medium',
-											false,
-											array(
-												'class' => 'etos-mega-menu__logo',
-												'alt'   => '',
-											)
-										);
-									} else {
-										echo '<span class="etos-mega-menu__vendor-name">'
-											. esc_html( $vendor->name )
-											. '</span>';
-									}
-									?>
-								</div>
+								<a
+                                                                    class="etos-mega-menu__vendor"
+                                                                    href="<?php echo esc_url( $vendor_url ); ?>"
+                                                                    aria-label="<?php
+                                                                    echo esc_attr(
+                                                                            sprintf(
+                                                                                    'Zobacz rozwiązania producenta %s',
+                                                                                    $vendor->name
+                                                                            )
+                                                                    );
+                                                                    ?>"
+                                                            >
+                                                                    <?php
+                                                                    if ( $logo_id ) {
+                                                                            echo wp_get_attachment_image(
+                                                                                    $logo_id,
+                                                                                    'medium',
+                                                                                    false,
+                                                                                    array(
+                                                                                            'class' => 'etos-mega-menu__logo',
+                                                                                            'alt'   => '',
+                                                                                    )
+                                                                            );
+                                                                    } else {
+                                                                            echo '<span class="etos-mega-menu__vendor-name">'
+                                                                                    . esc_html( $vendor->name )
+                                                                                    . '</span>';
+                                                                    }
+                                                                    ?>
+                                                            </a>
 
 								<?php if ( $software ) : ?>
                                     <?php
@@ -417,31 +428,7 @@ class ETOS_Nav_Walker extends Walker_Nav_Menu {
 	 * @return string
 	 */
 	private function get_services_menu( $panel_id ) {
-		$services = get_posts(
-			array(
-				'post_type'        => 'etos_service',
-				'post_status'      => 'publish',
-				'posts_per_page'   => -1,
-				'orderby'          => array(
-					'menu_order' => 'ASC',
-					'title'      => 'ASC',
-				),
-				'suppress_filters' => false,
-			)
-		);
-
-		$services = array_values(
-			array_filter(
-				$services,
-				static function ( $service ) {
-					return '0' !== (string) get_post_meta(
-						$service->ID,
-						'etos_service_show_in_menu',
-						true
-					);
-				}
-			)
-		);
+		$services = etos_get_navigation_services();
 
 		ob_start();
 		?>

@@ -1,3 +1,5 @@
+import Carousel from 'bootstrap/js/dist/carousel';
+
 // Add your custom JS here.
 
 // Search bar: move focus to the field after opening.
@@ -166,4 +168,221 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach(function (counter) {
         observer.observe(counter);
     });
+});
+
+// News carousel: accessible autoplay pause/resume control.
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector(
+        '[data-etos-news-autoplay-toggle]'
+    );
+
+    if (!toggle) {
+        return;
+    }
+
+    const carouselId = toggle.getAttribute('aria-controls');
+
+    if (!carouselId) {
+        return;
+    }
+
+    const carouselElement = document.getElementById(carouselId);
+
+    if (!carouselElement) {
+        return;
+    }
+
+    const liveRegion = carouselElement.querySelector(
+        '.carousel-inner'
+    );
+
+    const icon = toggle.querySelector(
+        'span[aria-hidden="true"]'
+    );
+
+    const pauseLabel = toggle.dataset.labelPause || '';
+    const resumeLabel = toggle.dataset.labelResume || '';
+
+    const carousel = Carousel.getOrCreateInstance(
+        carouselElement
+    );
+
+    let userPaused = false;
+
+    const updateState = function () {
+        if (userPaused) {
+            carousel.pause();
+
+            if (resumeLabel) {
+                toggle.setAttribute(
+                    'aria-label',
+                    resumeLabel
+                );
+            }
+
+            if (icon) {
+                icon.textContent = '▶';
+            }
+
+            if (liveRegion) {
+                liveRegion.setAttribute(
+                    'aria-live',
+                    'polite'
+                );
+            }
+
+            return;
+        }
+
+        carousel.cycle();
+
+        if (pauseLabel) {
+            toggle.setAttribute(
+                'aria-label',
+                pauseLabel
+            );
+        }
+
+        if (icon) {
+            icon.textContent = '❚❚';
+        }
+
+        if (liveRegion) {
+            liveRegion.setAttribute(
+                'aria-live',
+                'off'
+            );
+        }
+    };
+
+    toggle.addEventListener('click', function () {
+        userPaused = !userPaused;
+        updateState();
+    });
+
+    /*
+     * Bootstrap resumes a hover-paused carousel on mouseleave.
+     * Preserve an explicit user pause after that event.
+     */
+    carouselElement.addEventListener(
+        'mouseleave',
+        function () {
+            if (userPaused) {
+                carousel.pause();
+            }
+        }
+    );
+});
+
+// ETOS contact form: preselect department from ?dzial=.
+document.addEventListener('DOMContentLoaded', function () {
+    const formSection = document.getElementById(
+        'kontakt-formularz'
+    );
+
+    if (!formSection) {
+        return;
+    }
+
+    const department = new URLSearchParams(
+        window.location.search
+    ).get('dzial');
+
+    if (!department) {
+        return;
+    }
+
+    const select = formSection.querySelector(
+        'select[name="select-1"]'
+    );
+
+    if (!select) {
+        return;
+    }
+
+    const hasOption = Array.from(select.options).some(
+        function (option) {
+            return option.value === department;
+        }
+    );
+
+    if (!hasOption) {
+        return;
+    }
+
+    select.value = department;
+
+    select.dispatchEvent(
+        new Event('change', {
+            bubbles: true,
+        })
+    );
+});
+
+// ETOS vendor promo: responsive InsERT banner.
+document.addEventListener('DOMContentLoaded', function () {
+    const promo = document.querySelector(
+        '.etos-vendor-promo'
+    );
+
+    if (!promo) {
+        return;
+    }
+
+    const desktopFrame = promo.querySelector(
+        '.etos-vendor-promo__frame--desktop'
+    );
+
+    const mobileFrame = promo.querySelector(
+        '.etos-vendor-promo__frame--mobile'
+    );
+
+    if (!desktopFrame || !mobileFrame) {
+        return;
+    }
+
+    const mediaQuery = window.matchMedia(
+        '(max-width: 767.98px)'
+    );
+
+    const loadFrame = function (frame) {
+        const src = frame.dataset.src;
+
+        if (
+            src &&
+            frame.getAttribute('src') !== src
+        ) {
+            frame.setAttribute('src', src);
+        }
+    };
+
+    const unloadFrame = function (frame) {
+        if (frame.hasAttribute('src')) {
+            frame.removeAttribute('src');
+        }
+    };
+
+    const updatePromoFrame = function () {
+        if (mediaQuery.matches) {
+            unloadFrame(desktopFrame);
+            loadFrame(mobileFrame);
+            return;
+        }
+
+        unloadFrame(mobileFrame);
+        loadFrame(desktopFrame);
+    };
+
+    updatePromoFrame();
+
+    if (
+        typeof mediaQuery.addEventListener === 'function'
+    ) {
+        mediaQuery.addEventListener(
+            'change',
+            updatePromoFrame
+        );
+    } else {
+        mediaQuery.addListener(updatePromoFrame);
+    }
 });

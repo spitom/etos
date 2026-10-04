@@ -82,7 +82,7 @@ function etos_enqueue_theme_assets() {
 		wp_enqueue_script(
 			'etos-scripts',
 			$script['url'],
-			array( 'jquery' ),
+			array(),
 			$script['version'],
 			true
 		);

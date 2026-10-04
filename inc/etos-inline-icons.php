@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
  * @return string
  */
 function etos_get_inline_icon_svg( $key ) {
-    $icons = array(
+    static $icons = array(
         'erp' => '
             <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
                 <rect x="7" y="8" width="21" height="18" rx="4"></rect>
@@ -449,6 +449,15 @@ function etos_get_inline_icon_svg( $key ) {
                 <path d="M19 20h26M19 29h17"></path>
                 <path d="M22 56h20M32 49v7"></path>
                 <path d="M42 37l5 5 9-11"></path>
+            </svg>
+        ',
+        'training-user' => '
+            <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <rect x="7" y="8" width="50" height="34" rx="4"></rect>
+                <path d="M21 54h22M32 42v12"></path>
+                <circle cx="25" cy="22" r="5"></circle>
+                <path d="M16 35c1-6 5-9 9-9s8 3 9 9"></path>
+                <path d="M40 18h10M40 25h10M40 32h7"></path>
             </svg>
         ',
         'examples' => '

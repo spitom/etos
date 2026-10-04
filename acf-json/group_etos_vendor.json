@@ -6,9 +6,11 @@
             "key": "field_etos_vendor_logo",
             "label": "Logo producenta",
             "name": "etos_vendor_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "Logo używane na stronie Oprogramowanie i w mega menu.",
             "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -29,9 +31,11 @@
             "key": "field_etos_vendor_image",
             "label": "Grafika producenta",
             "name": "etos_vendor_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "Opcjonalna grafika używana na stronie zbiorczej.",
             "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -52,9 +56,11 @@
             "key": "field_etos_vendor_accent",
             "label": "Kolor akcentu",
             "name": "etos_vendor_accent",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "Kolor identyfikujący producenta w kartach i detalach.",
             "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -62,15 +68,20 @@
             },
             "default_value": "#2457D6",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_etos_vendor_menu_order",
             "label": "Kolejność",
             "name": "etos_vendor_menu_order",
+            "aria-label": "",
             "type": "number",
             "instructions": "Mniejsza liczba oznacza wcześniejszą kolumnę.",
             "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -88,9 +99,11 @@
             "key": "field_etos_vendor_show_in_mega_menu",
             "label": "Pokaż w mega menu",
             "name": "etos_vendor_show_in_mega_menu",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "34",
                 "class": "",
@@ -106,16 +119,19 @@
             "key": "field_etos_vendor_intro",
             "label": "Krótki opis",
             "name": "etos_vendor_intro",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Zwięzły opis producenta wykorzystywany na stronie zbiorczej.",
             "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "100",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 320,
+            "maxlength": 360,
+            "allow_in_bindings": 1,
             "rows": 4,
             "placeholder": "",
             "new_lines": ""
@@ -139,5 +155,8 @@
     "active": true,
     "description": "Dane producenta wykorzystywane w mega menu i na stronach oprogramowania.",
     "show_in_rest": 0,
-    "modified": 1783938444
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1789904877
 }

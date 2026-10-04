@@ -52,7 +52,7 @@ function etos_software_value_has_content( $value ) {
     }
 
     if ( is_int( $value ) || is_float( $value ) ) {
-        return 0 !== (int) $value;
+        return 0.0 !== (float) $value;
     }
 
     return '' !== trim(

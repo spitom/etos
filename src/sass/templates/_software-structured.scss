@@ -18,17 +18,17 @@
     &__eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: .65rem;
-        margin-bottom: .9rem;
+        gap: 0.65rem;
+        margin-bottom: 0.9rem;
         color: var(--etos-software-accent);
-        font-size: .82rem;
+        font-size: 0.82rem;
         font-weight: 750;
         line-height: 1.2;
-        letter-spacing: .08em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
 
         &::before {
-            content: '';
+            content: "";
             width: 2rem;
             height: 3px;
             border-radius: 999px;
@@ -43,7 +43,7 @@
         font-size: clamp(2rem, 4vw, 3.35rem);
         font-weight: 760;
         line-height: 1.06;
-        letter-spacing: -.045em;
+        letter-spacing: -0.045em;
     }
 
     &--benefits {
@@ -70,7 +70,7 @@
     &--addons {
         padding: clamp(3rem, 6vw, 5rem);
         border-radius: 1.5rem;
-        background: rgba($etos-ink, .035);
+        background: rgba($etos-ink, 0.035);
     }
 
     &--packages {
@@ -111,11 +111,7 @@
         overflow: hidden;
         border-radius: 1.1rem;
         color: var(--etos-software-accent);
-        background: color-mix(
-            in srgb,
-            var(--etos-software-accent) 11%,
-            #fff
-        );
+        background: color-mix(in srgb, var(--etos-software-accent) 11%, #fff);
     }
 
     &__icon-image {
@@ -128,23 +124,23 @@
     &__number {
         font-size: 1rem;
         font-weight: 800;
-        letter-spacing: .06em;
+        letter-spacing: 0.06em;
     }
 
     &__title {
-        margin: 0 0 .85rem;
+        margin: 0 0 0.85rem;
         color: $etos-ink;
         font-size: clamp(1.25rem, 2vw, 1.55rem);
         font-weight: 740;
         line-height: 1.2;
-        letter-spacing: -.025em;
+        letter-spacing: -0.025em;
     }
 
     &__text {
-        font-size: .98rem;
+        font-size: 0.98rem;
         line-height: 1.7;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
@@ -154,7 +150,7 @@
         aspect-ratio: 16 / 10;
         overflow: hidden;
         border-radius: 1rem;
-        background: rgba($etos-ink, .04);
+        background: rgba($etos-ink, 0.04);
     }
 
     &__image {
@@ -162,7 +158,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform .35s ease;
+        transition: transform 0.35s ease;
     }
 
     &__body {
@@ -181,15 +177,15 @@
         text-decoration: none;
 
         &::after {
-            content: '→';
-            margin-left: .45rem;
-            transition: transform .2s ease;
+            content: "→";
+            margin-left: 0.45rem;
+            transition: transform 0.2s ease;
         }
 
         &:hover::after,
         &:focus-visible::after {
             display: inline-block;
-            transform: translateX(.25rem);
+            transform: translateX(0.25rem);
         }
     }
 
@@ -197,23 +193,19 @@
         display: inline-flex;
         align-self: flex-start;
         margin-bottom: 1.25rem;
-        padding: .42rem .75rem;
+        padding: 0.42rem 0.75rem;
         border-radius: 999px;
         color: var(--etos-software-accent);
-        background: color-mix(
-            in srgb,
-            var(--etos-software-accent) 11%,
-            #fff
-        );
-        font-size: .75rem;
+        background: color-mix(in srgb, var(--etos-software-accent) 11%, #fff);
+        font-size: 0.75rem;
         font-weight: 780;
-        letter-spacing: .055em;
+        letter-spacing: 0.055em;
         text-transform: uppercase;
     }
 
     &__list {
         display: grid;
-        gap: .75rem;
+        gap: 0.75rem;
         margin: 1.5rem 0 2rem;
         padding: 0;
         list-style: none;
@@ -224,7 +216,7 @@
             line-height: 1.55;
 
             &::before {
-                content: '✓';
+                content: "✓";
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -237,20 +229,20 @@
     &--benefit {
         min-height: 100%;
         padding: clamp(1.5rem, 3vw, 2.25rem);
-        border: 1px solid rgba($etos-ink, .08);
+        border: 1px solid rgba($etos-ink, 0.08);
         border-radius: 1.25rem;
         background: #fff;
-        box-shadow: 0 18px 50px rgba($etos-ink, .065);
+        box-shadow: 0 18px 50px rgba($etos-ink, 0.065);
     }
 
     &--addon {
         display: flex;
         min-height: 100%;
         overflow: hidden;
-        border: 1px solid rgba($etos-ink, .08);
+        border: 1px solid rgba($etos-ink, 0.08);
         border-radius: 1.2rem;
         background: #fff;
-        box-shadow: 0 16px 45px rgba($etos-ink, .055);
+        box-shadow: 0 16px 45px rgba($etos-ink, 0.055);
 
         &:hover {
             .etos-product-card__image {
@@ -265,33 +257,48 @@
         flex-direction: column;
         align-items: flex-start;
         padding: clamp(1.75rem, 3vw, 2.4rem);
-        border: 1px solid rgba($etos-ink, .1);
+        border: 1px solid rgba($etos-ink, 0.1);
         border-radius: 1.25rem;
         background: #fff;
-        box-shadow: 0 18px 55px rgba($etos-ink, .055);
+        box-shadow: 0 18px 55px rgba($etos-ink, 0.055);
+
+        .etos-product-card__price {
+            margin: 0.4rem 0 0.9rem;
+            color: $etos-ink;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .etos-product-card__actions {
+            width: 100%;
+            margin-top: auto;
+            padding-top: clamp(1.5rem, 2.5vw, 2rem);
+        }
 
         .btn {
             width: 100%;
-            margin-top: auto;
+            margin-top: 0;
         }
 
         &.is-featured {
             border-color: var(--etos-software-accent);
             box-shadow:
-                0 0 0 3px color-mix(
-                    in srgb,
-                    var(--etos-software-accent) 13%,
-                    transparent
-                ),
-                0 24px 65px rgba($etos-ink, .11);
-            transform: translateY(-.75rem);
+                0 0 0 3px
+                    color-mix(
+                        in srgb,
+                        var(--etos-software-accent) 13%,
+                        transparent
+                    ),
+                0 24px 65px rgba($etos-ink, 0.11);
+            transform: translateY(-0.75rem);
         }
     }
 }
 
 .etos-product-feature {
     display: grid;
-    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
     gap: clamp(3rem, 7vw, 7rem);
     align-items: center;
     min-height: 440px;
@@ -306,7 +313,7 @@
         font-size: clamp(2rem, 4vw, 3.25rem);
         font-weight: 760;
         line-height: 1.07;
-        letter-spacing: -.045em;
+        letter-spacing: -0.045em;
     }
 
     &__text {
@@ -314,14 +321,14 @@
         font-size: clamp(1rem, 1.4vw, 1.1rem);
         line-height: 1.8;
 
-        >:last-child {
+        > :last-child {
             margin-bottom: 0;
         }
     }
 
     &__list {
         display: grid;
-        gap: .9rem;
+        gap: 0.9rem;
         margin: 1.75rem 0 2rem;
         padding: 0;
         color: $etos-ink;
@@ -333,12 +340,12 @@
             line-height: 1.55;
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
-                top: .48em;
+                top: 0.48em;
                 left: 0;
-                width: .7rem;
-                height: .7rem;
+                width: 0.7rem;
+                height: 0.7rem;
                 border: 2px solid var(--etos-software-accent);
                 border-radius: 50%;
             }
@@ -361,7 +368,7 @@
                 transparent 18rem
             ),
             #f3f7fb;
-        box-shadow: 0 28px 75px rgba($etos-ink, .105);
+        box-shadow: 0 28px 75px rgba($etos-ink, 0.105);
     }
 
     &__image {
@@ -439,8 +446,8 @@
 
     .etos-product-section {
         &--addons {
-            margin-right: -.75rem;
-            margin-left: -.75rem;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
             padding: 2rem 1.25rem;
             border-radius: 1.1rem;
         }
@@ -543,6 +550,13 @@
     }
 }
 
+.etos-product-grid--addons.etos-product-grid--cols-2,
+.etos-product-grid--packages.etos-product-grid--cols-2 {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 @media (max-width: 1199.98px) {
     .etos-product-grid {
         &.etos-product-grid--cols-4 {
@@ -585,7 +599,7 @@
 .etos-feature-overview {
     display: grid;
     grid-template-columns:
-        minmax(0, .72fr)
+        minmax(0, 0.72fr)
         minmax(0, 1.28fr);
     gap: clamp(3.5rem, 7vw, 7rem);
     align-items: start;
@@ -601,7 +615,7 @@
         font-size: clamp(2.15rem, 4vw, 3.4rem);
         font-weight: 760;
         line-height: 1.04;
-        letter-spacing: -.05em;
+        letter-spacing: -0.05em;
     }
 
     &__lead {
@@ -613,28 +627,28 @@
     }
 
     &__list {
-        border-top: 1px solid rgba($etos-ink, .12);
+        border-top: 1px solid rgba($etos-ink, 0.12);
     }
 
     &__item {
         display: grid;
         grid-template-columns:
             3.5rem
-            minmax(180px, .75fr)
+            minmax(180px, 0.75fr)
             minmax(0, 1.25fr);
         gap: clamp(1rem, 2.5vw, 2rem);
         align-items: start;
         padding: clamp(1.35rem, 2.5vw, 1.8rem) 0;
-        border-bottom: 1px solid rgba($etos-ink, .12);
+        border-bottom: 1px solid rgba($etos-ink, 0.12);
     }
 
     &__number {
-        padding-top: .15rem;
+        padding-top: 0.15rem;
         color: var(--etos-software-accent);
-        font-size: .8rem;
+        font-size: 0.8rem;
         font-weight: 800;
         line-height: 1.4;
-        letter-spacing: .08em;
+        letter-spacing: 0.08em;
     }
 
     &__item-title {
@@ -643,19 +657,18 @@
         font-size: clamp(1.05rem, 1.5vw, 1.25rem);
         font-weight: 740;
         line-height: 1.3;
-        letter-spacing: -.02em;
+        letter-spacing: -0.02em;
     }
 
     &__text {
         margin: 0;
         color: $etos-muted;
-        font-size: .96rem;
+        font-size: 0.96rem;
         line-height: 1.7;
     }
 }
 
 @media (max-width: 991.98px) {
-
     .etos-feature-overview {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -671,14 +684,12 @@
 }
 
 @media (max-width: 767.98px) {
-
     .etos-feature-overview {
-
         &__item {
             grid-template-columns:
                 2.5rem
                 minmax(0, 1fr);
-            gap: .5rem 1rem;
+            gap: 0.5rem 1rem;
         }
 
         &__text {
@@ -696,28 +707,18 @@
 // ==========================================================================
 
 .etos-product-section--benefits {
-    padding:
-        clamp(3rem, 5vw, 4.5rem)
-        clamp(1.5rem, 4vw, 3.5rem);
+    padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
     border-radius: 1.6rem;
 
     background:
         radial-gradient(
             circle at 88% 8%,
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 13%,
-                transparent
-            ),
+            color-mix(in srgb, var(--etos-software-accent) 13%, transparent),
             transparent 18rem
         ),
         linear-gradient(
             145deg,
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 5%,
-                #fff
-            ),
+            color-mix(in srgb, var(--etos-software-accent) 5%, #fff),
             #fff 70%
         );
 
@@ -726,15 +727,10 @@
     }
 
     .etos-product-section__eyebrow {
-        padding: .45rem .8rem;
+        padding: 0.45rem 0.8rem;
         border-radius: 999px;
 
-        background:
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 10%,
-                #fff
-            );
+        background: color-mix(in srgb, var(--etos-software-accent) 10%, #fff);
     }
 }
 
@@ -747,61 +743,51 @@
     overflow: hidden;
     padding: clamp(1.5rem, 2.5vw, 2rem);
 
-    border:
-        1px solid
+    border: 1px solid
         color-mix(
             in srgb,
             var(--etos-software-accent) 14%,
-            rgba($etos-ink, .07)
+            rgba($etos-ink, 0.07)
         );
 
     border-radius: 1.2rem;
 
-    background:
-        linear-gradient(
-            160deg,
-            #fff 0%,
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 3%,
-                #fff
-            ) 100%
-        );
+    background: linear-gradient(
+        160deg,
+        #fff 0%,
+        color-mix(in srgb, var(--etos-software-accent) 3%, #fff) 100%
+    );
 
-    box-shadow:
-        0 14px 38px rgba($etos-ink, .055);
+    box-shadow: 0 14px 38px rgba($etos-ink, 0.055);
 
     transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 4px;
 
-        background:
-            var(--etos-software-accent);
+        background: var(--etos-software-accent);
 
-        transform: scaleX(.22);
+        transform: scaleX(0.22);
         transform-origin: left center;
-        transition: transform .25s ease;
+        transition: transform 0.25s ease;
     }
 
     &:hover {
-        border-color:
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 32%,
-                rgba($etos-ink, .08)
-            );
+        border-color: color-mix(
+            in srgb,
+            var(--etos-software-accent) 32%,
+            rgba($etos-ink, 0.08)
+        );
 
-        box-shadow:
-            0 20px 48px rgba($etos-ink, .085);
+        box-shadow: 0 20px 48px rgba($etos-ink, 0.085);
 
         transform: translateY(-4px);
 
@@ -815,34 +801,28 @@
         height: 3.5rem;
         margin-bottom: 1.3rem;
 
-        border-radius: .9rem;
+        border-radius: 0.9rem;
 
-        background:
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 12%,
-                #fff
-            );
+        background: color-mix(in srgb, var(--etos-software-accent) 12%, #fff);
     }
 
     .etos-product-card__number {
         color: var(--etos-software-accent);
-        font-size: .85rem;
+        font-size: 0.85rem;
         font-weight: 850;
     }
 
     .etos-product-card__title {
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
         font-size: clamp(1.12rem, 1.6vw, 1.35rem);
     }
 
     .etos-product-card__text {
         color: $etos-muted;
-        font-size: .94rem;
+        font-size: 0.94rem;
         line-height: 1.65;
     }
 }
-
 
 // ==========================================================================
 // Addons — richer secondary section
@@ -852,34 +832,26 @@
     position: relative;
     overflow: hidden;
 
-    padding:
-        clamp(3rem, 6vw, 5rem)
-        clamp(1.5rem, 4vw, 3.5rem);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3.5rem);
 
-    border:
-        1px solid
+    border: 1px solid
         color-mix(
             in srgb,
             var(--etos-software-accent) 10%,
-            rgba($etos-ink, .06)
+            rgba($etos-ink, 0.06)
         );
 
     border-radius: 1.6rem;
 
-    background:
-        linear-gradient(
-            145deg,
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 6%,
-                #f6f8fa
-            ),
-            #f7f8fa 58%,
-            #fff
-        );
+    background: linear-gradient(
+        145deg,
+        color-mix(in srgb, var(--etos-software-accent) 6%, #f6f8fa),
+        #f7f8fa 58%,
+        #fff
+    );
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: -7rem;
         right: -6rem;
@@ -888,12 +860,11 @@
 
         border-radius: 50%;
 
-        background:
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 8%,
-                transparent
-            );
+        background: color-mix(
+            in srgb,
+            var(--etos-software-accent) 8%,
+            transparent
+        );
 
         pointer-events: none;
     }
@@ -908,8 +879,7 @@
     position: relative;
     z-index: 1;
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: clamp(1rem, 2vw, 1.4rem);
 }
@@ -919,25 +889,21 @@
     min-height: 100%;
     overflow: hidden;
 
-    border:
-        1px solid
-        rgba($etos-ink, .07);
+    border: 1px solid rgba($etos-ink, 0.07);
 
     border-radius: 1.05rem;
 
-    background:
-        rgba(#fff, .94);
+    background: rgba(#fff, 0.94);
 
-    box-shadow:
-        0 12px 34px rgba($etos-ink, .05);
+    box-shadow: 0 12px 34px rgba($etos-ink, 0.05);
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: 2;
         top: 0;
@@ -946,25 +912,22 @@
         width: 4px;
         height: 100%;
 
-        background:
-            var(--etos-software-accent);
+        background: var(--etos-software-accent);
 
-        opacity: .55;
+        opacity: 0.55;
         transition:
-            width .25s ease,
-            opacity .25s ease;
+            width 0.25s ease,
+            opacity 0.25s ease;
     }
 
     &:hover {
-        border-color:
-            color-mix(
-                in srgb,
-                var(--etos-software-accent) 24%,
-                rgba($etos-ink, .08)
-            );
+        border-color: color-mix(
+            in srgb,
+            var(--etos-software-accent) 24%,
+            rgba($etos-ink, 0.08)
+        );
 
-        box-shadow:
-            0 18px 44px rgba($etos-ink, .08);
+        box-shadow: 0 18px 44px rgba($etos-ink, 0.08);
 
         transform: translateY(-3px);
 
@@ -979,20 +942,16 @@
     }
 
     .etos-product-card__title {
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
 
-        font-size: clamp(
-            1.08rem,
-            1.5vw,
-            1.28rem
-        );
+        font-size: clamp(1.08rem, 1.5vw, 1.28rem);
 
         line-height: 1.25;
     }
 
     .etos-product-card__text {
         color: $etos-muted;
-        font-size: .92rem;
+        font-size: 0.92rem;
         line-height: 1.65;
     }
 
@@ -1001,25 +960,21 @@
     }
 }
 
-
 // ==========================================================================
 // Responsive
 // ==========================================================================
 
 @media (max-width: 1199.98px) {
-
     .etos-product-grid--addons {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 767.98px) {
-
     .etos-product-section--benefits,
     .etos-product-section--addons {
-        margin-right: -.5rem;
-        margin-left: -.5rem;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
         padding: 2.25rem 1.25rem;
         border-radius: 1.2rem;
     }
@@ -1029,14 +984,12 @@
     }
 
     .etos-product-card--benefit {
-
         &:hover {
             transform: none;
         }
     }
 
     .etos-product-card--addon {
-
         &:hover {
             transform: none;
         }
@@ -1055,10 +1008,9 @@
     --etos-software-surface: #f6f9fc;
     --etos-software-surface-2: #eef4f8;
     --etos-software-blob: #e2edf4;
-    --etos-software-border-soft: rgba(41, 52, 88, .10);
-    --etos-software-card-tint: rgba(41, 52, 88, .035);
+    --etos-software-border-soft: rgba(41, 52, 88, 0.1);
+    --etos-software-card-tint: rgba(41, 52, 88, 0.035);
 }
-
 
 // --------------------------------------------------------------------------
 // Symfonia
@@ -1068,10 +1020,9 @@
     --etos-software-surface: #f3fbf6;
     --etos-software-surface-2: #eaf7ef;
     --etos-software-blob: #d8f1e0;
-    --etos-software-border-soft: rgba(22, 184, 82, .19);
-    --etos-software-card-tint: rgba(22, 184, 82, .055);
+    --etos-software-border-soft: rgba(22, 184, 82, 0.19);
+    --etos-software-card-tint: rgba(22, 184, 82, 0.055);
 }
-
 
 // --------------------------------------------------------------------------
 // InsERT
@@ -1081,10 +1032,9 @@
     --etos-software-surface: #f3f9fd;
     --etos-software-surface-2: #eaf4fb;
     --etos-software-blob: #d8ebf9;
-    --etos-software-border-soft: rgba(0, 143, 207, .18);
-    --etos-software-card-tint: rgba(0, 143, 207, .05);
+    --etos-software-border-soft: rgba(0, 143, 207, 0.18);
+    --etos-software-card-tint: rgba(0, 143, 207, 0.05);
 }
-
 
 // --------------------------------------------------------------------------
 // Streamsoft
@@ -1094,19 +1044,16 @@
     --etos-software-surface: #f5f6fd;
     --etos-software-surface-2: #eceffd;
     --etos-software-blob: #dfe4fb;
-    --etos-software-border-soft: rgba(65, 91, 217, .18);
-    --etos-software-card-tint: rgba(65, 91, 217, .05);
+    --etos-software-border-soft: rgba(65, 91, 217, 0.18);
+    --etos-software-card-tint: rgba(65, 91, 217, 0.05);
 }
-
 
 // ==========================================================================
 // Benefits
 // ==========================================================================
 
 .etos-product-section--benefits {
-    border:
-        1px solid
-        var(--etos-software-border-soft);
+    border: 1px solid var(--etos-software-border-soft);
 
     background:
         radial-gradient(
@@ -1114,43 +1061,33 @@
             var(--etos-software-blob),
             transparent 17rem
         ),
-        linear-gradient(
-            145deg,
-            var(--etos-software-surface) 0%,
-            #fff 78%
-        );
+        linear-gradient(145deg, var(--etos-software-surface) 0%, #fff 78%);
 
     .etos-product-section__eyebrow {
-        background:
-            var(--etos-software-card-tint);
+        background: var(--etos-software-card-tint);
     }
 }
 
 .etos-product-card--benefit {
-    border-color:
-        var(--etos-software-border-soft);
+    border-color: var(--etos-software-border-soft);
 
-    background:
-        linear-gradient(
-            160deg,
-            #fff 0%,
-            var(--etos-software-card-tint) 100%
-        );
+    background: linear-gradient(
+        160deg,
+        #fff 0%,
+        var(--etos-software-card-tint) 100%
+    );
 
     .etos-product-card__icon {
-        background:
-            var(--etos-software-card-tint);
+        background: var(--etos-software-card-tint);
     }
 }
-
 
 // ==========================================================================
 // Addons
 // ==========================================================================
 
 .etos-product-section--addons {
-    border-color:
-        var(--etos-software-border-soft);
+    border-color: var(--etos-software-border-soft);
 
     background:
         radial-gradient(
@@ -1165,51 +1102,81 @@
         );
 
     &::after {
-        background:
-            var(--etos-software-blob);
+        background: var(--etos-software-blob);
 
-        opacity: .72;
+        opacity: 0.72;
     }
 }
 
 .etos-product-card--addon {
-    border-color:
-        var(--etos-software-border-soft);
+    border-color: var(--etos-software-border-soft);
 
-    background:
-        rgba(#fff, .94);
+    background: rgba(#fff, 0.94);
 
     &::before {
-        background:
-            var(--etos-software-accent);
+        background: var(--etos-software-accent);
     }
 }
-
 
 // ==========================================================================
 // Packages
 // ==========================================================================
 
 .etos-product-card--package {
-
     .etos-product-card__badge {
-        color:
-            var(--etos-software-accent);
+        color: var(--etos-software-accent);
 
-        background:
-            var(--etos-software-card-tint);
+        background: var(--etos-software-card-tint);
+    }
+
+    .btn-outline-primary {
+        border-color: var(--etos-software-accent);
+
+        color: var(--etos-software-accent);
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--etos-software-accent);
+
+            background: var(--etos-software-accent);
+
+            color: #fff;
+        }
+    }
+
+    .btn-primary {
+        border-color: var(--etos-software-accent);
+
+        background: var(--etos-software-accent);
+
+        color: #fff;
+
+        &:hover,
+        &:focus-visible {
+            border-color: color-mix(
+                in srgb,
+                var(--etos-software-accent) 82%,
+                #000
+            );
+
+            background: color-mix(
+                in srgb,
+                var(--etos-software-accent) 82%,
+                #000
+            );
+
+            color: #fff;
+        }
     }
 
     &.is-featured {
-        border-color:
-            var(--etos-software-accent);
+        border-color: var(--etos-software-accent);
 
-        background:
-            linear-gradient(
-                180deg,
-                var(--etos-software-card-tint) 0%,
-                #fff 28%
-            );
+        background: linear-gradient(
+            180deg,
+            var(--etos-software-card-tint) 0%,
+            #fff 28%
+        );
     }
 }
 

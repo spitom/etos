@@ -99,6 +99,36 @@
     }
 }
 
+.etos-vendor-promo {
+    padding: clamp(3rem, 5vw, 4.5rem) 0 0;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__frame {
+        display: block;
+        border: 0;
+
+        &--desktop {
+            width: 100%;
+            max-width: 750px;
+            height: 200px;
+        }
+
+        &--mobile {
+            display: none;
+            width: 300px;
+            max-width: 100%;
+            height: 250px;
+        }
+    }
+
+    + .etos-vendor-products {
+        padding-top: clamp(2.5rem, 4vw, 4rem);
+    }
+}
 .etos-vendor-products {
     padding: clamp(4rem, 7vw, 7rem) 0;
 
@@ -247,6 +277,15 @@
 }
 
 @media (max-width: 767.98px) {
+    .etos-vendor-promo {
+        &__frame--desktop {
+            display: none;
+        }
+
+        &__frame--mobile {
+            display: block;
+        }
+    }
     .etos-vendor-hero {
         padding: 3.5rem 0;
 

@@ -403,3 +403,21 @@
         }
     }
 }
+
+// ETOS NEWS MOBILE CONTROL ICON POLISH START
+
+@media (max-width: 575.98px) {
+    .etos-news__control > span {
+        display: inline-flex;
+        width: 1.35rem;
+        height: 1.35rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1;
+        transform: translateY(-1px);
+    }
+}
+
+// ETOS NEWS MOBILE CONTROL ICON POLISH END

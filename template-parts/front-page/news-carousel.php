@@ -154,12 +154,7 @@ $get_image_setting = static function ( $name, $post_id, $default ) {
                 </span>
 
                 <h2 id="etos-news-title">
-                    <?php
-                    esc_html_e(
-                        'Aktualności i praktyczne informacje.',
-                        'etos'
-                    );
-                    ?>
+                    <?php echo esc_html( $news_title ); ?>
                 </h2>
 
             </div>
@@ -215,6 +210,33 @@ $get_image_setting = static function ( $name, $post_id, $default ) {
                         >
                             <span aria-hidden="true">→</span>
                         </button>
+
+                        <?php if ( $news_autoplay ) : ?>
+
+                            <button
+                                type="button"
+                                class="etos-news__control"
+                                data-etos-news-autoplay-toggle
+                                data-label-pause="<?php echo esc_attr__(
+                                    'Zatrzymaj automatyczne przewijanie',
+                                    'etos'
+                                ); ?>"
+                                data-label-resume="<?php echo esc_attr__(
+                                    'Wznów automatyczne przewijanie',
+                                    'etos'
+                                ); ?>"
+                                aria-controls="<?php echo esc_attr(
+                                    $carousel_id
+                                ); ?>"
+                                aria-label="<?php echo esc_attr__(
+                                    'Zatrzymaj automatyczne przewijanie',
+                                    'etos'
+                                ); ?>"
+                            >
+                                <span aria-hidden="true">❚❚</span>
+                            </button>
+
+                        <?php endif; ?>
 
                     </div>
 

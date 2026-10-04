@@ -582,7 +582,14 @@ while ( have_posts() ) :
 
                     <div class="container etos-container">
 
-                        <div class="etos-about-stats__grid">
+                        <div
+                            class="etos-about-stats__grid"
+                            style="<?php echo esc_attr(
+                                '--etos-about-stats-columns: '
+                                . count( $stats )
+                                . ';'
+                            ); ?>"
+                        >
 
                             <?php foreach ( $stats as $stat ) : ?>
 
@@ -632,7 +639,7 @@ while ( have_posts() ) :
                 || '' !== $areas_title
             ) : ?>
 
-                <section class="etos-about-areas">
+                <section id="uslugi" class="etos-about-areas">
 
                     <div class="container etos-container">
 

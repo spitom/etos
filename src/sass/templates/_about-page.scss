@@ -109,7 +109,10 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(
+            var(--etos-about-stats-columns, 4),
+            minmax(0, 1fr)
+        );
         gap: clamp(2rem, 4vw, 4rem);
     }
 }
@@ -136,6 +139,7 @@
 }
 
 .etos-about-areas {
+    scroll-margin-top: 7rem;
     padding: clamp(5rem, 8vw, 8rem) 0;
 
     background: #fff;

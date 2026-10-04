@@ -296,3 +296,18 @@
         font-size: .78rem;
     }
 }
+
+// ETOS ERP HERO IMAGE RATIO START
+
+.etos-erp-suite__media {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+}
+
+@media (max-width: 767.98px) {
+    .etos-erp-suite__media {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+// ETOS ERP HERO IMAGE RATIO END
