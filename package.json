@@ -1,8 +1,8 @@
 {
 
-  "name": "understrap-child",
+  "name": "etos",
   "version": "1.2.0",
-  "description": "Basic Child Theme for Understrap Theme Framework: https://github.com/understrap/understrap",
+  "description": "ETOS WordPress child theme based on Understrap and Bootstrap 5",
   "main": "index.js",
   "scripts": {
     "bs": "browser-sync start --config src/build/browser-sync.config.js",
@@ -27,13 +27,13 @@
 
   ,
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   }
 
   ,
   "repository": {
     "type": "git",
-      "url": "https://github.com/understrap/understrap-child.git"
+      "url": "https://github.com/spitom/etos.git"
   }
 
   ,
@@ -44,14 +44,14 @@
   "underscores"
 
   ],
-  "author": "The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)",
+  "author": "ETOS contributors",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/understrap/understrap-child/issues"
+    "url": "https://github.com/spitom/etos/issues"
   }
 
   ,
-  "homepage": "https://understrap.com",
+  "homepage": "https://github.com/spitom/etos",
   "dependencies": {}
 
   ,
@@ -70,7 +70,6 @@
       "browserslist": "^4.21.4",
       "caniuse-lite": "^1.0.30001430",
       "clean-css-cli": "^5.6.1",
-      "font-awesome": "^4.7.0",
       "nodemon": "^2.0.20",
       "npm-run-all": "^4.1.5",
       "postcss": "^8.4.18",

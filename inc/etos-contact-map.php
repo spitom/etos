@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	const marker = L.marker([lat, lng]).addTo(map);
 
 	if (label) {
-		marker.bindPopup(label);
+		const popupContent = document.createElement('span');
+		popupContent.textContent = label;
+		marker.bindPopup(popupContent);
 	}
 });
 JS;

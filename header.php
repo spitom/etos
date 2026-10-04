@@ -18,7 +18,6 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'offcanvas' );
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 
@@ -29,7 +28,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'offcanvas' );
 	<!-- ******************* The Navbar Area ******************* -->
 	<header id="wrapper-navbar">
 
-		<a class="skip-link <?php echo understrap_get_screen_reader_class( true ); ?>" href="#content">
+		<a class="skip-link <?php echo understrap_get_screen_reader_class( true ); ?>" href="#main">
 			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
 		</a>
 

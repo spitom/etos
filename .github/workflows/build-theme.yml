@@ -17,12 +17,40 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          coverage: none
+          tools: composer:v2
 
+      - name: Lint PHP files
+        run: |
+          find . -type f -name "*.php" \
+            -not -path "./vendor/*" \
+            -not -path "./node_modules/*" \
+            -not -path "./dist/*" \
+            -print0 | xargs -0 -n1 php -l
+
+      - name: Validate Composer files
+        run: composer validate --no-check-publish
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
+      - name: Validate ACF JSON
+        run: |
+          node - <<'NODE'
+          const fs = require("fs");
+          const path = require("path");
+          const dir = "acf-json";
+          const files = fs.readdirSync(dir).filter((file) => file.endsWith(".json"));
+          for (const file of files) {
+            JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+          }
+          console.log(`Validated ${files.length} ACF JSON files.`);
+          NODE
 
       - name: Install dependencies
         run: npm ci

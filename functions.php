@@ -40,7 +40,6 @@ add_filter( 'theme_mod_understrap_bootstrap_version', 'etos_default_bootstrap_ve
 
 require_once get_stylesheet_directory() . '/inc/etos-assets.php';
 require_once get_stylesheet_directory() . '/inc/etos-theme-setup.php';
-require_once get_stylesheet_directory() . '/inc/etos-block-templates.php';
 require_once get_stylesheet_directory() . '/inc/etos-content-types.php';
 require_once get_stylesheet_directory() . '/inc/etos-navigation-data.php';
 require_once get_stylesheet_directory() . '/inc/etos-nav-walker.php';

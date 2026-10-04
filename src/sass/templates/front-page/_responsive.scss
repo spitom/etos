@@ -2,21 +2,6 @@
 // Responsive
 // ==========================================================================
 
-@media (max-width: 991.98px) {
-    .etos-capabilities {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        &--services {
-            .etos-capability:nth-child(2n) {
-                border-right: 0;
-            }
-
-            .etos-capability:nth-child(-n + 2) {
-                border-bottom: 1px solid rgba($etos-ink, 0.08);
-            }
-        }
-    }
-}
 
 @media (max-width: 767.98px) {
     .row.g-5,
@@ -53,9 +38,6 @@
         display: none;
     }
 
-    .etos-operations {
-        padding-top: 2rem;
-    }
 }
 
 @media (max-width: 575.98px) {
@@ -67,18 +49,5 @@
         grid-column: auto;
     }
 
-    .etos-capabilities {
-        grid-template-columns: 1fr;
 
-        &--services {
-            .etos-capability {
-                border-right: 0;
-                border-bottom: 1px solid rgba($etos-ink, 0.08);
-
-                &:last-child {
-                    border-bottom: 0;
-                }
-            }
-        }
-    }
 }

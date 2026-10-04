@@ -4,11 +4,9 @@
 // @import "assets/understrap/theme/woocommerce"; // Optional: enable when WooCommerce is installed.
 
 // Optional files - If you don´t use the corresponding scripts/fonts comment em out
-// @import "assets/fontawesome/font-awesome"; // Optional: enable when Font Awesome icons are used.
 @import "assets/underscores"; // <------- Underscores media styles
 
 // Any additional imported files //
-@import "theme/child_theme"; // <------- Add your styles into this file
 @import "assets/understrap/theme/colors"; // <-------- This creates the necessary bootstrap color classes.
 @import "assets/understrap/theme/blocks"; // <-------- This adds Bootstrap styles to blocks.
 // @import "assets/understrap/theme/contact-form7"; // Optional: enable when Contact Form 7 is installed.
@@ -23,22 +21,16 @@
 @import "components/kicker";
 @import "components/erp-suite";
 @import "components/software-module";
-@import "components/process-flow";
 @import "components/icon-badge";
 
 @import "templates/front-page";
 @import "templates/single-software";
 @import "templates/software-structured";
 @import "templates/single-service";
-@import "templates/about";
-@import "templates/services";
-@import "templates/fiscal";
-@import "templates/contact";
 @import "templates/vendor-archive";
 
 @import "templates/offer-landing";
 
-@import "helpers/mixins";
 @import "templates/about-page";
 @import "templates/news-archive";
 @import "templates/single-news";
