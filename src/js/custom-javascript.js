@@ -346,14 +346,21 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     const loadFrame = function (frame) {
-        const src = frame.dataset.src;
+        const load = function () {
+            const src = frame.dataset.src;
 
-        if (
-            src &&
-            frame.getAttribute('src') !== src
-        ) {
-            frame.setAttribute('src', src);
-        }
+            if (
+                src &&
+                frame.getAttribute('src') !== src
+            ) {
+                frame.setAttribute('src', src);
+            }
+        };
+
+        (
+            window.consentApi?.unblock(frame) ||
+            Promise.resolve()
+        ).then(load);
     };
 
     const unloadFrame = function (frame) {
