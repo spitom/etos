@@ -96,6 +96,10 @@ $footer_cookies = function_exists( 'get_field' )
     ? get_field( 'etos_footer_cookies', 'option' )
     : false;
 
+$footer_privacy_settings = function_exists( 'get_field' )
+    ? get_field( 'etos_footer_privacy_settings', 'option' )
+    : false;
+
 $footer_cta_link = function_exists( 'get_field' )
     ? get_field( 'etos_footer_cta_link', 'option' )
     : false;
@@ -448,6 +452,32 @@ $footer_cta = $GLOBALS['etos_footer_cta'] ?? array(
                                 echo esc_html(
                                     $footer_cookies['title']
                                         ?: 'Polityka cookies'
+                                );
+                                ?>
+                            </a>
+
+                        <?php endif; ?>
+
+                        <?php
+                        if (
+                            is_array( $footer_privacy_settings )
+                            && ! empty( $footer_privacy_settings['url'] )
+                        ) :
+                            ?>
+
+                            <a
+                                href="<?php echo esc_url( $footer_privacy_settings['url'] ); ?>"
+                                <?php if ( ! empty( $footer_privacy_settings['target'] ) ) : ?>
+                                    target="<?php echo esc_attr( $footer_privacy_settings['target'] ); ?>"
+                                <?php endif; ?>
+                                <?php if ( '_blank' === ( $footer_privacy_settings['target'] ?? '' ) ) : ?>
+                                    rel="noopener noreferrer"
+                                <?php endif; ?>
+                            >
+                                <?php
+                                echo esc_html(
+                                    $footer_privacy_settings['title']
+                                        ?: 'Ustawienia prywatności'
                                 );
                                 ?>
                             </a>

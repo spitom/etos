@@ -134,6 +134,14 @@
             "return_format": "array"
         },
         {
+            "key": "field_etos_footer_privacy_settings",
+            "label": "Ustawienia prywatności",
+            "name": "etos_footer_privacy_settings",
+            "type": "link",
+            "required": 0,
+            "return_format": "array"
+        },
+        {
             "key": "field_etos_footer_tab_cta",
             "label": "CTA",
             "name": "",
