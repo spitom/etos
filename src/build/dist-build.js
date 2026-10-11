@@ -22,6 +22,10 @@ async function copyDir(src, dest) {
 		'package.json',
 		'package-lock.json',
 		'phpcs.xml.dist',
+		'phpmd.baseline.xml',
+		'phpmd.xml',
+		'phpstan.neon.dist',
+		'phpstan-baseline.neon',
 		'README.md',
 		'readme.txt'
 	];
