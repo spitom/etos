@@ -59,25 +59,63 @@ Copy-Item `
     -Recurse `
     -Force
 
-Compress-Archive `
-    -Path $themeDir `
-    -DestinationPath $zipPath `
-    -CompressionLevel Optimal
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+$zipArchive = [System.IO.Compression.ZipFile]::Open(
+    $zipPath,
+    [System.IO.Compression.ZipArchiveMode]::Create
+)
+
+try {
+    $themeFiles = @(
+        Get-ChildItem -LiteralPath $themeDir -Recurse -File
+    )
+
+    foreach ($file in $themeFiles) {
+        $relativePath = $file.FullName.Substring($themeDir.Length)
+        $relativePath = $relativePath -replace '^[\\/]+', ''
+        $entryName = 'etos-child/' + ($relativePath -replace '\\', '/')
+
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+            $zipArchive,
+            $file.FullName,
+            $entryName,
+            [System.IO.Compression.CompressionLevel]::Optimal
+        ) | Out-Null
+    }
+}
+finally {
+    $zipArchive.Dispose()
+}
 
 if (-not (Test-Path -LiteralPath $zipPath)) {
     throw 'ZIP archive was not created.'
 }
 
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-
 $archive = [System.IO.Compression.ZipFile]::OpenRead($zipPath)
 
 try {
-    $files = @(
+    $rawEntries = @(
         $archive.Entries |
         ForEach-Object {
-            $_.FullName -replace '\\', '/'
-        } |
+            $_.FullName
+        }
+    )
+
+    $invalidSeparators = @(
+        $rawEntries |
+        Where-Object {
+            $_.Contains('\')
+        }
+    )
+
+    if ($invalidSeparators.Count -gt 0) {
+        throw 'ZIP contains Windows path separators.'
+    }
+
+    $files = @(
+        $rawEntries |
         Where-Object {
             -not $_.EndsWith('/')
         }
