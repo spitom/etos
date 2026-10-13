@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$GLOBALS['etos_footer_cta_hide'] = true;
+
 get_header();
 
 $search_query = get_search_query();
