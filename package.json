@@ -22,7 +22,8 @@
       "dist-build": "node src/build/dist-build.js",
       "dist-clean": "node src/build/dist-clean.js",
       "build": "npm-run-all --parallel css js",
-      "package": "npm-run-all dist-clean build dist-build"
+      "package": "npm-run-all dist-clean build dist-build",
+      "package:zip": "npm run package && powershell -NoProfile -ExecutionPolicy Bypass -File src/build/package-zip.ps1"
   }
 
   ,

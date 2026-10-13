@@ -7,6 +7,7 @@ async function copyDir(src, dest) {
 	let ignore = [
 		'node_modules',
 		'dist',
+		'dist-product',
 		'src',
 		'.git',
 		'.github',
